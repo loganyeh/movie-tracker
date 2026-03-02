@@ -5,9 +5,9 @@ function BrowsePage(){
     return(
         <>
             <div>this is the browse page</div>
-            <div>favorite page</div>
+            <Link to={"/favorite"}><div>favorite page</div></Link>
         </>
     )
 }
 
-export default BrowsePage();
+export default BrowsePage;

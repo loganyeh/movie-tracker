@@ -9,8 +9,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<BrowsePage />} />
-        {/* <Route path="/favorite" element={<FavoritePage />} /> */}
-        {/* figure out whats wrong on line 11 */}
+        <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
     </>
   )
