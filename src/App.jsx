@@ -4,7 +4,6 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -12,7 +11,7 @@ function App() {
         <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
