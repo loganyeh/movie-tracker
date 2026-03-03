@@ -1,5 +1,6 @@
 import BrowsePage from "./Pages/BrowsePage";
 import FavoritePage from "./Pages/FavoritePage";
+import DashboardPage from "./Pages/DashboardPage";
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
 
