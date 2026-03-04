@@ -10,6 +10,9 @@ function DashboardPage(){
         {title: "Horror", icon: <box-icon name='ghost' ></box-icon>},
         {title: "Special", icon: <box-icon name='star' ></box-icon>},
         {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
+        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
+        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
+        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
     ]
 
     return(
@@ -27,13 +30,26 @@ function DashboardPage(){
                             <div>Movie</div>
                             <div>Series</div>
                             <div>Originals</div>
-                            <div>Search</div>
+                            <div className='flex justify-center items-center'><box-icon name='search-alt-2' className="bg-blue-600" ></box-icon></div>
                         </div>
                         {/* profile and settings */}
-                        <div className="h-full w-1/4 border border-black flex justify-around items-center">
-                            <div className="border border-black h-14 w-14 rounded-full"></div>
-                            <div className="border border-black h-14 w-14 rounded-full"></div>
-                            <div className="border border-black h-14 w-24"></div>
+                        <div className="h-full w-1/4 border-2 border-blue-600 flex justify-end">
+                            <div className='border-2 border-red-600 h-full w-2/3 flex justify-around items-center'>
+                                {/* settings */}
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><box-icon name='bell' ></box-icon></div>
+                                {/* profile */}
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><box-icon name='child' ></box-icon></div>
+                                {/* name/status and dropdown */}
+                                <div className="border border-black h-14 w-32 mr-1 flex">
+                                    <div className='border-2 border-red-600 h-full w-2/3'>
+                                        <div className='border border-black h-1/2 w-full font-light'>Sarah J</div>
+                                        <div className='border border-black h-1/2 w-full font-light'>Premium</div>
+                                    </div>
+                                    <div className='border-2 border-red-600 h-full w-1/3 flex justify-center items-center'>
+                                        <box-icon name='chevron-down' className="border border-black" ></box-icon>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -44,10 +60,10 @@ function DashboardPage(){
                     </div>
 
                     {/* genres tabs */}
-                    <div className="h-2/12 w-full border-2 border-red-600 flex justify-between items-center overflow-x-auto touch-pan-left">
+                    <div className="h-2/12 w-full border border-red-600 flex justify-between items-center overflow-x-auto touch-pan-left">
 
                         {genreSection.map((genre, index) => {
-                            return <div key={index} className="border border-black h-full w-48 flex justify-center items-center shrink-0">
+                            return <div key={index} className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
                                 <div className='border border-red-600 flex'>
                                     <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>{genre.icon}</div>
                                     <div className='border border-black flex justify-center items-center font-medium'>{genre.title}</div>
@@ -74,7 +90,63 @@ function DashboardPage(){
 
                     {/* movie posters */}
                     <div className="border-2 border-red-600 h-10/12 w-full flex justify-between">
-                        <div className="border-2 border-black h-full w-72">
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* movie 1 */}
+                        <div className="border-2 border-black h-full w-1/7">
                             <div className="border border-black h-10/12 w-full rounded-4xl"></div>
                             <div className="border border-black h-2/12 w-full">
                                 <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
