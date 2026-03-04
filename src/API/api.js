@@ -32,7 +32,6 @@ const options2 = {
     .then(res => console.log(res))
     .catch(err => console.error(err));
 
-
 // genres - movie list
 const options3 = {
     method: 'GET',
