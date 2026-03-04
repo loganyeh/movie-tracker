@@ -3,7 +3,7 @@ function DashboardPage(){
 
     return(
         <>
-            <div className="h-screen w-screen">
+            <div className="h-screen w-screen p-4">
 
                 <div className="border-2 border-blue-600 h-1/2 w-full">
 
@@ -23,14 +23,14 @@ function DashboardPage(){
                     </div>
 
                     {/* genres tabs */}
-                    <div className="h-1/4 w-full border-2 border-red-600 flex justify-around items-center">
-                        <div className="border border-black h-full w-1/12">Trending</div>
-                        <div className="border border-black h-full w-1/12">Action</div>
-                        <div className="border border-black h-full w-1/12">Romance</div>
-                        <div className="border border-black h-full w-1/12">Animation</div>
-                        <div className="border border-black h-full w-1/12">Horror</div>
-                        <div className="border border-black h-full w-1/12">Special</div>
-                        <div className="border border-black h-full w-1/12">Drakor</div>
+                    <div className="h-1/4 w-full border-2 border-red-600 flex justify-around items-center overflow-x-auto touch-pan-left">
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Trending</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Action</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Romance</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Animation</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Horror</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Special</div>
+                        <div className="border border-black h-full w-48 mx-12 shrink-0">Drakor</div>
                     </div>
 
                 </div>
