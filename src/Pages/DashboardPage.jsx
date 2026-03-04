@@ -37,13 +37,31 @@ function DashboardPage(){
 
                 {/* trending movies */}
                 <div className="border-2 border-blue-600 h-1/2 w-full" >
-                    <div className="h-full w-full border-2 border-red-600 flex justify-around items-center">
-                        <div className="border border-black h-10/12 w-2/12"></div>
-                        <div className="border border-black h-10/12 w-2/12"></div>
-                        <div className="border border-black h-10/12 w-2/12"></div>
-                        <div className="border border-black h-10/12 w-2/12"></div>
-                        <div className="border border-black h-10/12 w-2/12"></div>
+                    {/* header */}
+                    <div className="border-2 border-red-600 h-2/12 w-full flex">
+                        <div className="h-full w-1/2 flex justify-start items-center text-4xl">Trending in Animation</div>
+                        <div className="h-full w-1/2 flex justify-end items-center">
+                            <div className="border border-black h-11 w-40 rounded-3xl">
+
+                            </div>
+                        </div>
                     </div>
+
+                    {/* movie posters */}
+                    <div className="border-2 border-red-600 h-10/12 w-full flex justify-between">
+                        <div className="border-2 border-black h-full w-72">
+                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
+                            <div className="border border-black h-2/12 w-full">
+                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
+                                <div className="border border-black h-1/2 w-full flex">
+                                    <div>RATING</div>
+                                    <div>2026</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
                 </div>
 
             </div>
