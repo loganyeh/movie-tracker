@@ -1,18 +1,17 @@
-import 'boxicons';
 
 function DashboardPage(){
     
     const genreSection = [
-        {title: "Trending", icon: <box-icon type='solid' name='hot'></box-icon>},
-        {title: "Action", icon: <box-icon name='run' ></box-icon>},
-        {title: "Romance", icon: <box-icon name='heart' type='solid' ></box-icon>},
-        {title: "Animation", icon: <box-icon name='dog' type='solid' ></box-icon>},
-        {title: "Horror", icon: <box-icon name='ghost' ></box-icon>},
-        {title: "Special", icon: <box-icon name='star' ></box-icon>},
-        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
-        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
-        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
-        {title: "Drakor", icon: <box-icon name='moon' ></box-icon>},
+        {title: "Trending", icon: <i className='bx bxs-hot' ></i>},
+        {title: "Action", icon: <i className='bx bx-run' ></i>},
+        {title: "Romance", icon: <i className='bx bxs-heart' ></i>},
+        {title: "Animation", icon: <i className='bx bxs-dog' ></i>},
+        {title: "Horror", icon: <i className='bx bx-moon' ></i>},
+        {title: "Special", icon: <i className='bx bx-star' ></i>},
+        {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
+        {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
+        {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
+        {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
     ]
 
     return(
@@ -30,15 +29,15 @@ function DashboardPage(){
                             <div>Movie</div>
                             <div>Series</div>
                             <div>Originals</div>
-                            <div className='flex justify-center items-center'><box-icon name='search-alt-2' className="bg-blue-600" ></box-icon></div>
+                            <div className='flex justify-center items-center'><i class='bx bx-search-alt-2' ></i></div>
                         </div>
                         {/* profile and settings */}
                         <div className="h-full w-1/4 border-2 border-blue-600 flex justify-end">
                             <div className='border-2 border-red-600 h-full w-2/3 flex justify-around items-center'>
                                 {/* settings */}
-                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><box-icon name='bell' ></box-icon></div>
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i class='bx bx-bell' ></i></div>
                                 {/* profile */}
-                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><box-icon name='child' ></box-icon></div>
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i class='bx bx-child'></i></div>
                                 {/* name/status and dropdown */}
                                 <div className="border border-black h-14 w-32 mr-1 flex">
                                     <div className='border-2 border-red-600 h-full w-2/3'>
@@ -46,7 +45,7 @@ function DashboardPage(){
                                         <div className='border border-black h-1/2 w-full font-light'>Premium</div>
                                     </div>
                                     <div className='border-2 border-red-600 h-full w-1/3 flex justify-center items-center'>
-                                        <box-icon name='chevron-down' className="border border-black" ></box-icon>
+                                    <i class='bx bx-chevron-down' ></i>
                                     </div>
                                 </div>
                             </div>
