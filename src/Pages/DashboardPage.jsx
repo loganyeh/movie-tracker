@@ -1,5 +1,8 @@
+import { useState, useEffect } from "react";
+import { fetchGenres } from "../API/api";
 
 function DashboardPage(){
+    const [genreData, setGenreData] = useState([]);
     
     const genreSection = [
         {title: "Trending", icon: <i className='bx bxs-hot' ></i>},
@@ -13,6 +16,19 @@ function DashboardPage(){
         {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
         {title: "Drakor", icon: <i className='bx bx-moon' ></i>},
     ]
+
+    useEffect(() => {
+        async function loadFetchGenres(){
+            const data = await fetchGenres();
+            setGenreData(data);
+        }
+        loadFetchGenres();
+
+    }, []);
+
+    genreData.slice(0,3).map((genre, index) => {
+        return console.log(`${genre.name} has an id of ${genre.id}`);
+    })
 
     return(
         <>
@@ -29,15 +45,15 @@ function DashboardPage(){
                             <div>Movie</div>
                             <div>Series</div>
                             <div>Originals</div>
-                            <div className='flex justify-center items-center'><i class='bx bx-search-alt-2' ></i></div>
+                            <div className='flex justify-center items-center'><i className='bx bx-search-alt-2' ></i></div>
                         </div>
                         {/* profile and settings */}
                         <div className="h-full w-1/4 border-2 border-blue-600 flex justify-end">
                             <div className='border-2 border-red-600 h-full w-2/3 flex justify-around items-center'>
                                 {/* settings */}
-                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i class='bx bx-bell' ></i></div>
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i className='bx bx-bell' ></i></div>
                                 {/* profile */}
-                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i class='bx bx-child'></i></div>
+                                <div className="border border-black h-14 w-14 mr-1 flex justify-center items-center rounded-full"><i className='bx bx-child'></i></div>
                                 {/* name/status and dropdown */}
                                 <div className="border border-black h-14 w-32 mr-1 flex">
                                     <div className='border-2 border-red-600 h-full w-2/3'>
@@ -45,7 +61,7 @@ function DashboardPage(){
                                         <div className='border border-black h-1/2 w-full font-light'>Premium</div>
                                     </div>
                                     <div className='border-2 border-red-600 h-full w-1/3 flex justify-center items-center'>
-                                    <i class='bx bx-chevron-down' ></i>
+                                    <i className='bx bx-chevron-down' ></i>
                                     </div>
                                 </div>
                             </div>
@@ -61,14 +77,12 @@ function DashboardPage(){
                     {/* genres tabs */}
                     <div className="h-2/12 w-full border border-red-600 flex justify-between items-center overflow-x-auto touch-pan-left">
 
-                        {genreSection.map((genre, index) => {
-                            return <div key={index} className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                                <div className='border border-red-600 flex'>
-                                    <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>{genre.icon}</div>
-                                    <div className='border border-black flex justify-center items-center font-medium'>{genre.title}</div>
-                                </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
                             </div>
-                        })}
+                        </div>
 
                     </div>
 
