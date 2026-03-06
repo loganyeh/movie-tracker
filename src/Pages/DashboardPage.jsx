@@ -74,47 +74,15 @@ function DashboardPage(){
                     <div className="h-2/12 w-full border border-red-600 flex justify-between items-center overflow-x-auto touch-pan-left">
 
                         <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            <div className='border border-red-600 h-1/2 w-1/2 flex'>
+                                <div className='border border-black h-full w-1/3 flex justify-center items-center text-xl'>
+                                    <i className='bx bx-run text-2xl'></i>
+                                </div>
+                                <div className='border border-black h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
                             </div>
                         </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='border border-red-600 flex'>
-                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
-                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
-                            </div>
-                        </div>
+                        
+                        
 
                     </div>
 
