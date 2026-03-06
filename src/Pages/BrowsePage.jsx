@@ -36,7 +36,6 @@ function BrowsePage(){
                     </div>
                 </div>
 
-
                 {/* body */}
                 <div className="border-2 border-blue-600 h-500 w-full flex flex-col justify-start items-center">
 
@@ -56,15 +55,28 @@ function BrowsePage(){
                         </div>
                     </div>
 
-
                     {/* anime posters */}
-                    <div className="border border-black h-96 w-10/12">
+                    <div className="border border-black h-96 w-10/12 mb-8">
+                        {/* header */}
                         <div className="h-1/12 w-full text-xl font-medium">Trending Now</div>
+
+                        {/* movie posters */}
                         <div className="h-11/12 w-full flex">
-                            <div className="border border-black h-full w-1/6">
-                                <div className="border border-red-600 h-4/5 w-10/12"></div>
-                            </div>
+                            {filterNames.map(() => {
+                                return <div className="border border-black h-full w-1/6">
+                                            <div className="border border-red-600 h-4/5 w-10/12 rounded-lg"></div>
+                                            <div className="border border-red-600 h-1/5 w-full font-medium">
+                                                <div className="border border-black mt-2 w-10/12">MOVIE NAME</div>
+                                            </div>
+                                        </div>
+                            })}
                         </div>
+                    </div>
+
+                    {/* TOP 100 TRENDING SECTION */}
+                    <div className="border-2 border-black h-100 w-10/12">
+                        <div className="border-2 border-black h-10 w-full flex justify-start items-center">TOP 100 MOVIES</div>
+                        {/* left off here */}
                     </div>
 
 
@@ -73,7 +85,7 @@ function BrowsePage(){
 
 
                 {/* footer */}
-                <div className="border-2 border-red-600 h-72 w-full"></div>
+                <div className="border-2 border-red-600 h-72 w-full bg-gray-800"></div>
 
 
 
