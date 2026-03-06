@@ -79,6 +79,42 @@ function DashboardPage(){
                                 <div className='border border-black flex justify-center items-center font-medium'>Action</div>
                             </div>
                         </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                            <div className='border border-red-600 flex'>
+                                <div className='border border-black h-8 w-8 flex justify-center items-center text-xl'>O</div>
+                                <div className='border border-black flex justify-center items-center font-medium'>Action</div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -91,8 +127,13 @@ function DashboardPage(){
                     <div className="border-2 border-red-600 h-2/12 w-full flex">
                         <div className="h-full w-1/2 flex justify-start items-center text-4xl">Trending in Animation</div>
                         <div className="h-full w-1/2 flex justify-end items-center">
-                            <div className="border border-black h-11 w-40 rounded-3xl">
-
+                            <div className="border border-black h-11 w-40 flex rounded-3xl">
+                                <div className="border-r border-black h-full w-1/2 flex justify-center items-center">
+                                    <i className='bx bx-filter text-2xl'></i>
+                                </div>
+                                <div className="h-full w-1/2 flex justify-center items-center">
+                                    <i className='bx bx-filter-alt text-2xl' ></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,66 +146,12 @@ function DashboardPage(){
                             <div className="border border-black h-2/12 w-full">
                                 <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
                                 <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
+                                    <div className="border-r border-black pr-1">RATING</div>
+                                    <div className="">2026</div>
                                 </div>
                             </div>
                         </div>
-                        {/* movie 1 */}
-                        <div className="border-2 border-black h-full w-1/7">
-                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
-                            <div className="border border-black h-2/12 w-full">
-                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
-                                <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* movie 1 */}
-                        <div className="border-2 border-black h-full w-1/7">
-                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
-                            <div className="border border-black h-2/12 w-full">
-                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
-                                <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* movie 1 */}
-                        <div className="border-2 border-black h-full w-1/7">
-                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
-                            <div className="border border-black h-2/12 w-full">
-                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
-                                <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* movie 1 */}
-                        <div className="border-2 border-black h-full w-1/7">
-                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
-                            <div className="border border-black h-2/12 w-full">
-                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
-                                <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* movie 1 */}
-                        <div className="border-2 border-black h-full w-1/7">
-                            <div className="border border-black h-10/12 w-full rounded-4xl"></div>
-                            <div className="border border-black h-2/12 w-full">
-                                <div className="border border-black h-1/2 w-full">MOVIE NAME</div>
-                                <div className="border border-black h-1/2 w-full flex">
-                                    <div>RATING</div>
-                                    <div>2026</div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         
                     </div>
 
