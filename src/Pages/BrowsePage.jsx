@@ -5,8 +5,26 @@ function BrowsePage(){
 
     return(
         <>
-            <div> this is the browse page</div>
+            {/*  */}
+            <div className="border-2 border-purple-600 h-screen w-screen">
 
+                {/* header */}
+                <div className="border-2 border-red-600 h-20 w-full"></div>
+
+
+                {/* body */}
+                <div className="border-2 border-red-600 h-500 w-full"></div>
+
+
+
+                {/* footer */}
+                <div className="border-2 border-red-600 h-70 w-full"></div>
+
+
+
+
+
+            </div>
         </>
     )
 }
