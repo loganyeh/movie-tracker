@@ -37,11 +37,11 @@ function DashboardPage(){
                         {/* logo */}
                         <div className="h-full w-1/4 mb-4 flex justify-start items-center text-3xl font-light">Flix.id</div>
                         {/* nav bar */}
-                        <div className="border border-black h-12 w-100 mb-4 bg-gray-600 flex justify-around items-center text-white font-light rounded-3xl">
+                        <div className="border border-black h-12 w-100 mb-4 flex justify-around items-center bg-gray-800 text-white font-light rounded-3xl">
                             <div className="font-medium">Movie</div>
-                            <div>Series</div>
-                            <div>Originals</div>
-                            <div className='flex justify-center items-center cursor-pointer'><i className='bx bx-search-alt-2' ></i></div>
+                            <div className="">Series</div>
+                            <div className="">Originals</div>
+                            <div className='h-10 w-10 bg-gray-600 flex justify-center items-center text-2xl rounded-full cursor-pointer'><i className='bx bx-search-alt-2' ></i></div>
                         </div>
                         {/* profile and settings */}
                         <div className="h-full w-1/4 mb-4 flex justify-end">
@@ -74,7 +74,7 @@ function DashboardPage(){
                     {/* genres tabs */}
                     <div className="h-2/12 w-full flex justify-between items-center overflow-x-auto touch-pan-left">
 
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
+                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center bg-gray-400 text-black rounded-3xl shadow-md shrink-0">
                             <div className='h-1/2 w-1/2 flex'>
                                 <div className='h-full w-1/3 flex justify-center items-center text-xl'>
                                     <i className='bx bx-run text-2xl'></i>
@@ -82,64 +82,6 @@ function DashboardPage(){
                                 <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
                             </div>
                         </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        <div className="border border-black h-full w-1/8 mr-2 flex justify-center items-center rounded-3xl shrink-0">
-                            <div className='h-1/2 w-1/2 flex'>
-                                <div className='h-full w-1/3 flex justify-center items-center text-xl'>
-                                    <i className='bx bx-run text-2xl'></i>
-                                </div>
-                                <div className='h-full w-2/3 flex justify-center items-center text-2xl font-normal'>Action</div>
-                            </div>
-                        </div>
-                        
-                        
 
                     </div>
 
@@ -152,7 +94,7 @@ function DashboardPage(){
                     <div className="h-2/12 w-full flex">
                         <div className="h-full w-1/2 flex justify-start items-center text-4xl font-light">Trending in Animation</div>
                         <div className="h-full w-1/2 flex justify-end items-center">
-                            <div className="border border-black h-11 w-40 flex rounded-3xl">
+                            <div className="border border-black h-11 w-40 flex bg-gray-800 text-white rounded-3xl">
                                 <div className="border-r border-black h-full w-1/2 flex justify-center items-center">
                                     <i className='bx bx-filter text-2xl'></i>
                                 </div>
