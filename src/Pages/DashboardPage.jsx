@@ -28,7 +28,7 @@ function DashboardPage(){
 
     return(
         <>
-            <div className="h-screen w-screen p-4">
+            <div className="h-screen w-screen p-4 bg-gray-200">
 
                 <div className="h-1/2 w-full">
 
@@ -37,8 +37,8 @@ function DashboardPage(){
                         {/* logo */}
                         <div className="h-full w-1/4 mb-4 flex justify-start items-center text-3xl font-light">Flix.id</div>
                         {/* nav bar */}
-                        <div className="border border-black h-12 w-100 mb-4 flex justify-around items-center rounded-3xl">
-                            <div>Movie</div>
+                        <div className="border border-black h-12 w-100 mb-4 bg-gray-600 flex justify-around items-center text-white font-light rounded-3xl">
+                            <div className="font-medium">Movie</div>
                             <div>Series</div>
                             <div>Originals</div>
                             <div className='flex justify-center items-center cursor-pointer'><i className='bx bx-search-alt-2' ></i></div>
