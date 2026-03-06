@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<DashboardPage />}></Route>
-        <Route path="/browse" element={<BrowsePage />} />
-        <Route path="/favorite" element={<FavoritePage />} />
+        {/* <Route path="/" element={<DashboardPage />}></Route> */}
+        <Route path="/" element={<BrowsePage />} />
+        {/* <Route path="/favorite" element={<FavoritePage />} /> */}
       </Routes>
     </>
   );
