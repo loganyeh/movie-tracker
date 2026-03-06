@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchGenres } from "../API/api";
+import { fetchGenres, fetchSearchMovies } from "../API/api";
 
 function DashboardPage(){
     const [genreData, setGenreData] = useState([]);
@@ -26,10 +26,6 @@ function DashboardPage(){
 
     }, []);
 
-    genreData.slice(0,3).map((genre, index) => {
-        return console.log(`${genre.name} has an id of ${genre.id}`);
-    })
-
     return(
         <>
             <div className="h-screen w-screen p-4">
@@ -45,7 +41,7 @@ function DashboardPage(){
                             <div>Movie</div>
                             <div>Series</div>
                             <div>Originals</div>
-                            <div className='flex justify-center items-center'><i className='bx bx-search-alt-2' ></i></div>
+                            <div className='flex justify-center items-center cursor-pointer'><i className='bx bx-search-alt-2' ></i></div>
                         </div>
                         {/* profile and settings */}
                         <div className="h-full w-1/4 border-2 border-blue-600 flex justify-end">
