@@ -35,6 +35,8 @@ export async function fetchSearchMovies(query){
   return data.results;
 }
 
+fetchSearchMovies("avengers");
+
 // TODO: get the trending movies or top movie stuff 
 // --- from API ≈ MOVIE LISTS ---
 // Now Playing ...
@@ -47,14 +49,21 @@ export async function fetchNowPlaying(){
     }
   };
 
-  const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
-  const data = await response.json();
+  // fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+  //   .then(res => res.json())
+  //   .then(res => console.log(res))
+  //   .catch(err => console.error(err));
 
-  console.log(data);
+    const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
+    const data = await response.json();
+
+    console.log(data.results);
 
 }
 
 fetchNowPlaying();
+
+console.log('test');
 
 
 

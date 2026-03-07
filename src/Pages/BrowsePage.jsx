@@ -5,10 +5,27 @@ import Filter from "../Components/Filter";
 import TrendingPosterBlock from "../Components/TrendingBlock";
 import TopMoviesBlock from "../Components/TopMoviesBlock";
 
+import { useEffect } from "react";
+
+import { fetchSearchMovies } from "../API/api";
+
 function BrowsePage(){
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
     const movieLists = ["NOW PLAYING", "POPULAR", "TOP RATED", "UPCOMING"];
+
+    useEffect(() => {
+
+        // left of here
+        async function loadSearchMovies(){
+            const data = await fetchSearchMovies();
+            console.log(data);
+            
+        }
+        // figure out why api call didnt work until i typed this useeffect async function 
+        
+
+    }, []);
 
     return(
         <>
