@@ -16,8 +16,8 @@ function TrendingPosterBlock({ title }){
 
                 {/* movie posters */}
                 <div className="h-11/12 w-full flex">
-                    {trendingNowPlaceholder.map(() => {
-                        return <Poster />
+                    {trendingNowPlaceholder.map((placeholder, index) => {
+                        return <Poster key={index} />
                     })}
                 </div>
             </div>
