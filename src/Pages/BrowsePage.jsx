@@ -79,10 +79,10 @@ function BrowsePage(){
                     </div>
 
                     {/* anime posters */}
-                    <TrendingBlock title={"Now Playing"} data={nowPlayingData} />
-                    <TrendingBlock title={"Popular"} data={popularData} />
-                    <TrendingBlock title={"Top Rated"} data={topRatedData} />
-                    <TrendingBlock title={"Upcoming"} data={upcomingData} />
+                    <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
+                    <TrendingBlock title={"POPULAR"} data={popularData} />
+                    <TrendingBlock title={"TOP RATED"} data={topRatedData} />
+                    <TrendingBlock title={"UPCOMING"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
                     <TopMoviesBlock data={top10MoviesData} />

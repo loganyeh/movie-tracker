@@ -1,8 +1,7 @@
 import { genreIDSwitch } from "../../Functions/function";
 
 function MovieBlock({ data }){
-
-    const bubbleColors = ["bg-green-400", "bg-red-600", "bg-pink-600", "bg-red-600", "bg-red-600", "bg-yellow-600", "bg-blue-600", "bg-yellow-600", "bg-blue-600", "bg-yellow-600",]
+    const bubbleColors = ["bg-green-400", "bg-red-400", "bg-pink-400", "bg-red-500", "bg-red-400", "bg-yellow-200", "bg-blue-500", "bg-yellow-500", "bg-blue-300", "bg-yellow-200"];
 
     return(
         <>
@@ -22,7 +21,7 @@ function MovieBlock({ data }){
                         <div className="h-1/2 w-full flex justify-start items-end text-lg font-medium">{data.title}</div>
                         <div className="h-1/2 w-full flex justify-start items-center">
                             {data.genre_ids.map((genre, index) => {
-                                return <div key={index} className={`h-6 w-auto px-4 mr-2 flex justify-center items-center ${bubbleColors[index]} text-xs font-semibold rounded-xl shadow`}>{genreIDSwitch(genre)}</div>
+                                return <div key={index} className={`h-6 w-auto px-4 mr-2 flex justify-center items-center ${bubbleColors[data.key]} text-xs text-gray-900 font-semibold rounded-xl shadow`}>{genreIDSwitch(genre)}</div>
                             })}
                         </div>
                     </div>

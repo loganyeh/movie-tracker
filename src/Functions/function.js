@@ -46,3 +46,14 @@ export function genreIDSwitch(genreID){
 
 
 }
+
+export function movieRatingColor(dataRating){
+    
+    switch(dataRating){
+        case 0:
+            return "bg-red-600";
+    }
+
+
+}
+
