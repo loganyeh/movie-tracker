@@ -2,13 +2,54 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Search from "../Components/Search";
 import Filter from "../Components/Filter";
-import TrendingPosterBlock from "../Components/TrendingBlock";
+import TrendingBlock from "../Components/TrendingBlock";
 import TopMoviesBlock from "../Components/TopMoviesBlock";
 
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../Context/MyContext";
+
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies } from "../API/api";
+
 function BrowsePage(){
+    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
-    const movieHeaderTitles = ["TRENDING NOW", "POPULAR THIS SEASON", "UPCOMING NEXT SEASON", "ALL TIME POPULAR"];
+
+    useEffect(() => {
+
+        async function loadNowPlaying(){
+            const data = await fetchNowPlaying();
+            setNowPlayingData(data);
+        }
+        
+        async function loadPopular(){
+            const data = await fetchPopular();
+            setPopularData(data);
+        }
+
+        async function loadTopRatedData(){
+            const data = await fetchTopRated();
+            setTopRatedData(data);
+        }
+
+        async function loadUpcoming(){
+            const data = await fetchUpcoming();
+            setUpcomingData(data);
+        }
+
+        async function loadTop10Movies(){
+            const data = await fetchTop10Movies();
+            setTop10MoviesData(data);
+        }
+        
+        loadNowPlaying();
+        loadPopular();
+        loadTopRatedData();
+        loadUpcoming();
+        loadTop10Movies();
+
+    }, []);
 
     return(
         <>
@@ -32,18 +73,19 @@ function BrowsePage(){
                         <div className="h-full w-36 flex flex-col justify-center items-end">
                             <div className="h-10 w-full"></div>
                             <div className="border border-gray-200 h-10 w-10 flex justify-center items-center bg-gray-50 rounded-xl shadow-md cursor-pointer">
-                                <i class='bx bx-slider text-2xl text-gray-400 hover:text-blue-400' ></i>
+                                <i className='bx bx-slider text-2xl text-gray-400 hover:text-blue-400' ></i>
                             </div>
                         </div>
                     </div>
 
                     {/* anime posters */}
-                    {movieHeaderTitles.map((title, index) => {
-                        return <TrendingPosterBlock key={index} title={title} />
-                    })}
+                    <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
+                    <TrendingBlock title={"POPULAR"} data={popularData} />
+                    <TrendingBlock title={"TOP RATED"} data={topRatedData} />
+                    <TrendingBlock title={"UPCOMING"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
-                    <TopMoviesBlock />
+                    <TopMoviesBlock data={top10MoviesData} />
 
                 </div>
 

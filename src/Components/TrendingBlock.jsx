@@ -1,7 +1,7 @@
 import Poster from "./TrendingBlockComponents/Poster";
 
-function TrendingPosterBlock({ title }){
-    const trendingNowPlaceholder = ["", "", "", "", "", ""];
+function TrendingBlock({ title, data }){
+
 
     return(
         <>
@@ -16,8 +16,8 @@ function TrendingPosterBlock({ title }){
 
                 {/* movie posters */}
                 <div className="h-11/12 w-full flex">
-                    {trendingNowPlaceholder.map(() => {
-                        return <Poster />
+                    {data.map((data, index) => {
+                        return <Poster key={index} data={data} />
                     })}
                 </div>
             </div>
@@ -25,4 +25,4 @@ function TrendingPosterBlock({ title }){
     )
 }
 
-export default TrendingPosterBlock;
+export default TrendingBlock;
