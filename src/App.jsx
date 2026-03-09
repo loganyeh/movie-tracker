@@ -12,10 +12,11 @@ function App() {
   const [topRatedData, setTopRatedData] = useState([]);
   const [upcomingData, setUpcomingData] = useState([]);
   const [top10MoviesData, setTop10MoviesData] = useState([]);
+  const [searchMovieData, setSearchMovieData] = useState([]);
   
   return (
     <>
-      <MyContext.Provider value={{ nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData }}>
+      <MyContext.Provider value={{ nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData }}>
         <Routes>
           <Route path="/" element={<BrowsePage />} />
         </Routes>

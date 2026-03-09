@@ -1,13 +1,14 @@
 import Poster from "./TrendingBlockComponents/Poster";
 
-function TrendingBlock({ title, data }){
+function SearchMovieBlock({ data }){
 
     return(
         <>
-            <div className="h-96 w-10/12 mb-6">
+        <div className="border-2 border-red-600 block h-200 w-10/12">
+            <div className="border h-96 w-full mb-6">
                 {/* trending now title/header */}
                 <div className="h-1/12 w-full flex">
-                    <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">{title}</div>
+                    <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">{data.title}</div>
                     <div className="h-full w-1/2 flex justify-end items-center text-xs text-gray-400 font-medium">
                         <span className="cursor-pointer hover:text-gray-700">View All</span>
                     </div>
@@ -20,8 +21,9 @@ function TrendingBlock({ title, data }){
                     })}
                 </div>
             </div>
+        </div>
         </>
     )
 }
 
-export default TrendingBlock;
+export default SearchMovieBlock;

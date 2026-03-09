@@ -4,15 +4,16 @@ import Search from "../Components/Search";
 import Filter from "../Components/Filter";
 import TrendingBlock from "../Components/TrendingBlock";
 import TopMoviesBlock from "../Components/TopMoviesBlock";
+import SearchMovieBlock from "../Components/SearchMovieBlock";
 
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../Context/MyContext";
 
-import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies } from "../API/api";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
 function BrowsePage(){
-    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData } = useContext(MyContext);
+    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
 
@@ -51,18 +52,30 @@ function BrowsePage(){
 
     }, []);
 
+    // search movie useEffect
+    useEffect(() => {
+        
+        async function loadSearchMovie(){
+            const data = await fetchSearchMovie();
+            setSearchMovieData(data);
+        }
+
+        loadSearchMovie();
+
+    }, [])
+
     return(
         <>
             {/*  */}
-            <div className="min-h-screen w-screen bg-gray-200">
+            <div className="border-2 border-red-600 min-h-screen w-screen bg-gray-200">
 
                 {/* header */}
                 <Header />
 
                 {/* body */}
-                <div className="h-auto w-full flex flex-col justify-start items-center">
+                <div className="border-2 border-red-600 h-auto w-full flex flex-col justify-start items-center">
                     {/* search and filters */}
-                    <div className="h-36 w-10/12 flex justify-between">
+                    <div className="border-2 border-red-600 h-36 w-10/12 flex justify-between">
                         {/* search */}
                         <Search />
                         {/* filter */}
@@ -77,6 +90,10 @@ function BrowsePage(){
                             </div>
                         </div>
                     </div>
+
+                    {/* WIP */}
+                    {/* Search Menu */}
+                    <SearchMovieBlock data={searchMovieData} />
 
                     {/* anime posters */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
