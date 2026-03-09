@@ -37,7 +37,6 @@ export async function fetchSearchMovies(query){
 
 fetchSearchMovies("avengers");
 
-// TODO: get the trending movies or top movie stuff 
 // --- from API ≈ MOVIE LISTS ---
 // Now Playing ...
 export async function fetchNowPlaying(){
@@ -49,24 +48,115 @@ export async function fetchNowPlaying(){
     }
   };
 
-  // fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
-  //   .then(res => res.json())
-  //   .then(res => console.log(res))
-  //   .catch(err => console.error(err));
-
     const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
     const data = await response.json();
 
-    const nowPlayingBlock = data.results.slice(0, 5).map((movie, index) => {
-      return movie.original_title;
+    const nowPlayingData = data.results.slice(0, 6).map((movie, index) => {
+      return {
+        key: index,
+        title: movie.original_title,
+        poster: movie.poster_path,
+      };
     });
 
-    // console.log(nowPlayingBlock);
-
-    return nowPlayingBlock;
-
+    return nowPlayingData;
 }
 
+// Popular ...
+export async function fetchPopular(){
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+    }
+  };
+
+  const response = await fetch('https://api.themoviedb.org/3/movie/popular', options);
+  const data = await response.json();
+
+  const popularData = data.results.slice(6, 12).map((data, index) => {
+    return {
+      key: index, 
+      title: data.original_title,
+      poster: data.poster_path,
+    }
+  });
+
+  return popularData;
+}
+
+// Top Rated...
+export async function fetchTopRated(){
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+    }
+  };
+
+  const response = await fetch('https://api.themoviedb.org/3/movie/top_rated', options);
+  const data = await response.json();
+
+  const topRatedData = data.results.slice(0, 6).map((data, index) => {
+    return {
+      key: index, 
+      title: data.original_title,
+      poster: data.poster_path,
+    }
+  });
+
+  return topRatedData;
+}
+
+// Upcoming...
+export async function fetchUpcoming(){
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+    }
+  };
+  
+  const response = await fetch('https://api.themoviedb.org/3/movie/upcoming', options);
+  const data = await response.json();
+
+  const upcomingData = data.results.slice(0, 6).map((data, index) => {
+    return {
+      key: index, 
+      title: data.original_title,
+      poster: data.poster_path,
+    }
+  })
+
+  return upcomingData;
+}
+
+// Top 10 Movies
+export async function fetchTop10Movies(){
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+    }
+  };
+
+  const response = await fetch('https://api.themoviedb.org/3/movie/top_rated', options);
+  const data = await response.json();
+
+  const top10MoviesData = data.results.slice(0, 10).map((data, index) => {
+    return {
+      key: index, 
+      title: data.original_title,
+      poster: data.poster_path,
+    }
+  });
+
+  return top10MoviesData;
+}
 
 
 

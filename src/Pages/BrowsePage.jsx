@@ -9,13 +9,12 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../Context/MyContext";
 
-import { fetchNowPlaying } from "../API/api";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies } from "../API/api";
 
 function BrowsePage(){
-    const { nowPlayingData, setNowPlayingData } = useContext(MyContext);
+    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
-    const movieLists = ["NOW PLAYING", "POPULAR", "TOP RATED", "UPCOMING"];
 
     useEffect(() => {
 
@@ -24,7 +23,30 @@ function BrowsePage(){
             setNowPlayingData(data);
         }
         
+        async function loadPopular(){
+            const data = await fetchPopular();
+            setPopularData(data);
+        }
+
+        async function loadTopRatedData(){
+            const data = await fetchTopRated();
+            setTopRatedData(data);
+        }
+
+        async function loadUpcoming(){
+            const data = await fetchUpcoming();
+            setUpcomingData(data);
+        }
+
+        async function loadTop10Movies(){
+            const data = await fetchTop10Movies();
+            setTop10MoviesData(data);
+        }
+        
         loadNowPlaying();
+        loadPopular();
+        loadTopRatedData();
+        loadUpcoming();
 
     }, []);
 
@@ -57,9 +79,9 @@ function BrowsePage(){
 
                     {/* anime posters */}
                     <TrendingBlock title={"Now Playing"} data={nowPlayingData} />
-                    <TrendingBlock title={"Popular"} data={nowPlayingData} />
-                    <TrendingBlock title={"Top Rated"} data={nowPlayingData} />
-                    <TrendingBlock title={"Upcoming"} data={nowPlayingData} />
+                    <TrendingBlock title={"Popular"} data={popularData} />
+                    <TrendingBlock title={"Top Rated"} data={topRatedData} />
+                    <TrendingBlock title={"Upcoming"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
                     <TopMoviesBlock />

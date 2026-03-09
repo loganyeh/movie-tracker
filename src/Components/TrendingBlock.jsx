@@ -16,8 +16,8 @@ function TrendingBlock({ title, data }){
 
                 {/* movie posters */}
                 <div className="h-11/12 w-full flex">
-                    {data.map((title, index) => {
-                        return <Poster key={index} movieTitle={title} />
+                    {data.map((data, index) => {
+                        return <Poster key={index} data={data} />
                     })}
                 </div>
             </div>
