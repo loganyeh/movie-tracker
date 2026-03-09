@@ -1,23 +1,23 @@
 
 
-function MovieBlock({ rankingNumber, movieTitle }){
+function MovieBlock({ data }){
 
     return(
         <>
             <div className="h-20 w-full flex mb-8">
                 {/* ranking */}
-                <div className="h-full w-1/12 flex justify-center items-center text-2xl">{rankingNumber}</div>
+                <div className="h-full w-1/12 flex justify-center items-center text-2xl">#{data.key + 1}</div>
                 
                 {/* poster info */}
                 <div className="h-full w-11/12 flex bg-white rounded shadow-md">
                     {/* poster */}
                     <div className="h-full w-1/12 flex justify-center items-center">
-                        <div className="border-2 border-red-600 h-11/12 w-1/2 rounded"></div>
+                        <img className="h-11/12 w-1/2 rounded" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
                     </div>
 
                     {/* title and genre */}
                     <div className="h-full w-6/12">
-                        <div className="h-1/2 w-full flex justify-start items-end text-lg font-medium">{movieTitle || `Frieren's Beyond Journey ${rankingNumber}`}</div>
+                        <div className="h-1/2 w-full flex justify-start items-end text-lg font-medium">{data.title}</div>
                         <div className="h-1/2 w-full flex justify-start items-center">
                             <div className="h-6 w-auto px-4 mr-2 flex justify-center items-center bg-green-300 text-xs font-semibold rounded-xl shadow">adventure</div>
                             <div className="h-6 w-auto px-4 mr-2 flex justify-center items-center bg-green-300 text-xs font-semibold rounded-xl shadow">drama</div>

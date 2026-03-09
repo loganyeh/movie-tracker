@@ -47,6 +47,7 @@ function BrowsePage(){
         loadPopular();
         loadTopRatedData();
         loadUpcoming();
+        loadTop10Movies();
 
     }, []);
 
@@ -84,7 +85,7 @@ function BrowsePage(){
                     <TrendingBlock title={"Upcoming"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
-                    <TopMoviesBlock />
+                    <TopMoviesBlock data={top10MoviesData} />
 
                 </div>
 

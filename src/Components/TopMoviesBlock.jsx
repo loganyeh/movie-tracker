@@ -1,6 +1,6 @@
 import MovieBlock from "./TopMoviesComponents/MovieBlock";
 
-function TopMoviesBlock(){
+function TopMoviesBlock({ data }){
     const topMovieRankings = ["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8", "#9", "#10"];
 
     return(
@@ -12,8 +12,8 @@ function TopMoviesBlock(){
                     <div className="h-full w-1/2 flex justify-end items-center text-sm font-normal">View All</div>
                 </div>
 
-                {topMovieRankings.map(( rankingNumber, index) => {
-                    return <MovieBlock key={index} rankingNumber={rankingNumber} />
+                {data.map(( data, index) => {
+                    return <MovieBlock key={index} data={data} />
                 })}
             </div>
         </>
