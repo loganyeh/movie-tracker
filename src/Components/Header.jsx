@@ -10,7 +10,7 @@ function Header(){
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/3 flex justify-center items-center">
                         {/* <div className="border-2 border-white h-14 w-14 bg-white"></div> */}
-                        <img className="h-16 w-16" src="../Letterboxd.jpeg" alt="" />
+                        <img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" />
                     </div>
                 </div>
 
@@ -24,9 +24,13 @@ function Header(){
                 {/* profile settings section */}
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/2 flex justify-end items-center">
-                        <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl text-gray-200 cursor-pointer hover:text-white'></i></div>
-                        <img className="h-12 w-12 rounded" src="../hanni.jpg" alt="" />
-                        <div className="h-12 w-6 flex justify-center items-center"><i className='bx bx-chevron-down text-2xl text-gray-200 cursor-pointer hover:text-white' ></i></div>
+                        <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></div>
+                        <div className="h-12 w-18 flex cursor-pointer hover:text-white">
+                            <img className="h-full w-2/3 rounded" src="../hanni.jpg" alt="" />
+                            <div className="h-full w-1/3 flex justify-center items-center">
+                                <i className='bx bx-chevron-down text-2xl' ></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
