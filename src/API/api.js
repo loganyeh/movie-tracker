@@ -152,12 +152,16 @@ export async function fetchTop10Movies(){
       key: index, 
       title: data.original_title,
       poster: data.poster_path,
+      vote_average: data.vote_average,
+      vote_count: data.vote_count,
+      popularity: data.popularity,
+      release_date: data.release_date,
+      genre_ids: data.genre_ids,
     }
   });
 
   return top10MoviesData;
 }
-
 
 
 

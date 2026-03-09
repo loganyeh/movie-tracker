@@ -1,4 +1,4 @@
-
+import { genreBubbleColor } from "../../Functions/function";
 
 function MovieBlock({ data }){
 
@@ -25,22 +25,24 @@ function MovieBlock({ data }){
                         </div>
                     </div>
 
+                    {genreBubbleColor(data)}
+
                     {/* movie stats */}
                     <div className="h-full w-5/12 flex">
                         <div className="h-full w-1/12 flex justify-start items-center">
                             <i className='bx bx-circle text-3xl text-green-500 bg-green-500 rounded-full'></i>
                         </div>
                         <div className="h-full w-1/4 mr-8">
-                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">91%</div>
-                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">391956 Users</div>
+                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">{data.vote_average}</div>
+                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">{data.vote_count} Votes</div>
                         </div>
                         <div className="h-full w-1/4 mr-8">
-                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">TV SHOW</div>
-                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">28 Episodes</div>
+                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">MOVIE</div>
+                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">{data.popularity} Fans (FIX)</div>
                         </div>
                         <div className="h-full w-1/4 mr-8">
-                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">Fall 2023</div>
-                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">Finished</div>
+                            <div className="h-1/2 w-full flex justify-start items-end text-gray-600 text-md font-medium">{data.release_date}</div>
+                            <div className="h-1/2 w-full flex justify-start items-start text-gray-400 text-xs font-normal">FIX</div>
                         </div>
                     </div>
                 </div>
