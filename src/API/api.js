@@ -29,7 +29,7 @@ export async function fetchSearchMovies(query){
   const data = await response.json();
 
   // console.log(data);
-  console.log(data.results);
+  // console.log(data.results);
   // console.log(Array.isArray(data.results)); TRUE
 
   return data.results;
@@ -57,13 +57,17 @@ export async function fetchNowPlaying(){
     const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
     const data = await response.json();
 
-    console.log(data.results);
+    const nowPlayingBlock = data.results.slice(0, 5).map((movie, index) => {
+      return movie.original_title;
+    });
+
+    // console.log(nowPlayingBlock);
+
+    return nowPlayingBlock;
 
 }
 
-fetchNowPlaying();
 
-console.log('test');
 
 
 

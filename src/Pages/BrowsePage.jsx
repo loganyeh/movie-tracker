@@ -2,28 +2,29 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Search from "../Components/Search";
 import Filter from "../Components/Filter";
-import TrendingPosterBlock from "../Components/TrendingBlock";
+import TrendingBlock from "../Components/TrendingBlock";
 import TopMoviesBlock from "../Components/TopMoviesBlock";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../Context/MyContext";
 
-import { fetchSearchMovies } from "../API/api";
+import { fetchNowPlaying } from "../API/api";
 
 function BrowsePage(){
+    const { nowPlayingData, setNowPlayingData } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
     const movieLists = ["NOW PLAYING", "POPULAR", "TOP RATED", "UPCOMING"];
 
     useEffect(() => {
 
-        // left of here
-        async function loadSearchMovies(){
-            const data = await fetchSearchMovies();
-            console.log(data);
-            
+        async function loadNowPlaying(){
+            const data = await fetchNowPlaying();
+            setNowPlayingData(data);
         }
-        // figure out why api call didnt work until i typed this useeffect async function 
         
+        loadNowPlaying();
 
     }, []);
 
@@ -55,9 +56,10 @@ function BrowsePage(){
                     </div>
 
                     {/* anime posters */}
-                    {movieLists.map((title, index) => {
-                        return <TrendingPosterBlock key={index} title={title} />
-                    })}
+                    <TrendingBlock title={"Now Playing"} data={nowPlayingData} />
+                    <TrendingBlock title={"Popular"} data={nowPlayingData} />
+                    <TrendingBlock title={"Top Rated"} data={nowPlayingData} />
+                    <TrendingBlock title={"Upcoming"} data={nowPlayingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
                     <TopMoviesBlock />
