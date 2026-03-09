@@ -147,21 +147,30 @@ export async function fetchTop10Movies(){
   const response = await fetch('https://api.themoviedb.org/3/movie/top_rated', options);
   const data = await response.json();
 
+  // console.log(data.results[0].release_date)
+
   const top10MoviesData = data.results.slice(0, 10).map((data, index) => {
+    function monthDateYearConvert(date){
+      const parts = date.split("-");
+      return `${parts[1]}-${parts[2]}-${parts[0]}`;
+    }
+
     return {
       key: index, 
       title: data.original_title,
       poster: data.poster_path,
-      vote_average: data.vote_average,
-      vote_count: data.vote_count,
-      popularity: data.popularity,
-      release_date: data.release_date,
+      vote_average: Math.round(data.vote_average * 2) / 2,
+      vote_count: data.vote_count.toLocaleString(),
+      popularity: (data.popularity * 10000).toLocaleString(),
+      release_date: monthDateYearConvert(data.release_date),
       genre_ids: data.genre_ids,
     }
   });
 
   return top10MoviesData;
 }
+
+fetchTop10Movies();
 
 
 

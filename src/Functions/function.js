@@ -51,7 +51,29 @@ export function movieRatingColor(dataRating){
     
     switch(dataRating){
         case 0:
-            return "bg-red-600";
+        case 0.5:
+        case 1: 
+        case 1.5: 
+        case 2: 
+        case 2.5: 
+        case 3: 
+        case 3.5: 
+            return "text-red-600 bg-red-600";
+        case 4:
+        case 4.5:
+        case 5: 
+        case 5.5: 
+        case 6: 
+        case 6.5: 
+            return "text-yellow-400 bg-yellow-400";
+        case 7: 
+        case 7.5: 
+        case 8: 
+        case 8.5: 
+        case 8: 
+        case 9.5: 
+        case 10: 
+            return "text-green-600 bg-green-600"
     }
 
 
