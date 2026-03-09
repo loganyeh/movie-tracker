@@ -185,8 +185,16 @@ export async function fetchSearchMovie(){
   const response = await fetch('https://api.themoviedb.org/3/search/movie?query=avengers&include_adult=false&language=en-US&page=1', options);
   const data = await response.json();
 
-  console.log(data.results);
-  return data.results.slice(0,12);
+  const searchMovieData = data.results.map((data, index) => {
+    return {
+      key: index, 
+      title: data.original_title, 
+      poster: data.poster_path,
+    }
+  })
+
+  // console.log(data.results);
+  return searchMovieData;
 
 }
 

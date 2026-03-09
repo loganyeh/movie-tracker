@@ -67,15 +67,15 @@ function BrowsePage(){
     return(
         <>
             {/*  */}
-            <div className="border-2 border-red-600 min-h-screen w-screen bg-gray-200">
+            <div className="min-h-screen w-screen bg-gray-200">
 
                 {/* header */}
                 <Header />
 
                 {/* body */}
-                <div className="border-2 border-red-600 h-auto w-full flex flex-col justify-start items-center">
+                <div className="h-auto w-full flex flex-col justify-start items-center">
                     {/* search and filters */}
-                    <div className="border-2 border-red-600 h-36 w-10/12 flex justify-between">
+                    <div className="h-36 w-10/12 flex justify-between">
                         {/* search */}
                         <Search />
                         {/* filter */}
