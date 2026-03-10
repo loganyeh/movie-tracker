@@ -1,6 +1,12 @@
+import { useContext, useState, useEffect } from "react";
+import { MyContext } from "../Context/MyContext";
 
+function Search({ data }){
+    const { isQuery, setIsQuery, query, setQuery } = useContext(MyContext);
 
-function Search(){
+    function handleSearch(e){
+        console.log(data);
+    }
 
     return(
         <>
@@ -8,8 +14,9 @@ function Search(){
                 <div className="h-10 w-48 flex justify-start items-center text-gray-700 text-md font-semibold">Search</div>
                 {/* search input */}
                 <div className="h-10 w-48 flex bg-gray-50 rounded-lg shadow-md">
-                    <div className="h-full w-2/12 flex justify-center items-center"><i className='bx bx-search text-gray-500' ></i></div>
-                    <input type="text" className=" h-full w-10/12 pl-2 text-sm font-medium bg-gray-50 rounded-lg outline-none"/>
+                    <div onClick={handleSearch} className="h-full w-2/12 flex justify-center items-center"><i className='bx bx-search text-gray-500' ></i></div>
+                    <input onChange={(e) => setQuery(e.target.value)} value={query} type="text" className="h-full w-10/12 pl-2 text-sm font-medium bg-gray-50 outline-none"/>
+                    <div onClick={() => {setQuery("")}} className={`${!query ? "hidden" : ""} h-full w-1/12 flex justify-center items-center`}><i className='bx bx-x text-gray-400 hover:text-gray-600 cursor-pointer' ></i></div>
                 </div>
             </div>
         </>

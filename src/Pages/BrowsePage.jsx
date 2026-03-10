@@ -4,15 +4,18 @@ import Search from "../Components/Search";
 import Filter from "../Components/Filter";
 import TrendingBlock from "../Components/TrendingBlock";
 import TopMoviesBlock from "../Components/TopMoviesBlock";
+import SearchMovieBlock from "../Components/SearchMovieBlock";
 
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../Context/MyContext";
 
-import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies } from "../API/api";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
 function BrowsePage(){
-    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData } = useContext(MyContext);
+    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
+        isQuery, setIsQuery, query, setQuery
+     } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
 
@@ -51,6 +54,18 @@ function BrowsePage(){
 
     }, []);
 
+    // search movie useEffect
+    useEffect(() => {
+        
+        async function loadSearchMovie(){
+            const data = await fetchSearchMovie(query);
+            setSearchMovieData(data);
+        }
+
+        loadSearchMovie();
+
+    }, [query]);
+
     return(
         <>
             {/*  */}
@@ -64,7 +79,7 @@ function BrowsePage(){
                     {/* search and filters */}
                     <div className="h-36 w-10/12 flex justify-between">
                         {/* search */}
-                        <Search />
+                        <Search data={searchMovieData}/>
                         {/* filter */}
                         {filterTitles.map((title, index) => {
                             return <Filter key={index} title={title} />
@@ -77,6 +92,10 @@ function BrowsePage(){
                             </div>
                         </div>
                     </div>
+
+                    {/* WIP */}
+                    {/* Search Menu */}
+                    <SearchMovieBlock data={searchMovieData} />
 
                     {/* anime posters */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />

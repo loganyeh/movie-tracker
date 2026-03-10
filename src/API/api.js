@@ -15,28 +15,6 @@ export async function fetchGenres(){
 
 }
 
-// --- FETCH SEARCH MOVIES ---
-export async function fetchSearchMovies(query){
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
-    }
-  };
-  
-  const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${"Avengers"}&include_adult=false&language=en-US&page=1`, options);
-  const data = await response.json();
-
-  // console.log(data);
-  // console.log(data.results);
-  // console.log(Array.isArray(data.results)); TRUE
-
-  return data.results;
-}
-
-fetchSearchMovies("avengers");
-
 // --- from API ≈ MOVIE LISTS ---
 // Now Playing ...
 export async function fetchNowPlaying(){
@@ -171,7 +149,32 @@ export async function fetchTop10Movies(){
   return top10MoviesData;
 }
 
-fetchTop10Movies();
+// ----------------------------------------
+// Search - Movie
+export async function fetchSearchMovie(query){
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+    }
+  };
+  
+  const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options);
+  const data = await response.json();
+
+  const searchMovieData = data.results.map((data, index) => {
+    return {
+      key: index, 
+      id: data.id,
+      title: data.original_title, 
+      poster: data.poster_path,
+    }
+  })
+
+  return searchMovieData;
+
+}
 
 
 
