@@ -177,13 +177,123 @@ function MovieInfoPage(){
                         <div className="border-2 border-black h-full w-3/4">
 
                             {/* relations */}
-                            <div className="border border-black h-40 w-full">relations</div>
+                            <div className="border border-black min-h-40 w-11/12 mb-6">
+                                <div className="border border-blue-600 h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
+                                <div className="border border-red-600 h-40 w-full flex justify-start items-center">
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                </div>
+                            </div>
 
                             {/* characters */}
-                            <div className="border border-black h-40 w-full">characters</div>
+                            <div className="min-h-40 w-11/12 mb-6">
+                                <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Characters</div>
+                                <div className="border border-red-600 h-auto w-full flex flex-wrap justify-start items-center">
+                                    {/* card */}
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-2/4">
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-center items-start text-sm">Tanjirou Kamado</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-sm">Natsuki Hinae</div>
+                                            </div>
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-start items-end text-xs">Main</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-xs">Japanese</div>
+                                            </div>
+                                        </div>
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                    </div>
+
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-2/4">
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-center items-start text-sm">Tanjirou Kamado</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-sm">Natsuki Hinae</div>
+                                            </div>
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-start items-end text-xs">Main</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-xs">Japanese</div>
+                                            </div>
+                                        </div>
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                    </div>
+
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-2/4">
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-center items-start text-sm">Tanjirou Kamado</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-sm">Natsuki Hinae</div>
+                                            </div>
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-start items-end text-xs">Main</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-xs">Japanese</div>
+                                            </div>
+                                        </div>
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                    </div>
+
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-2/4">
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-center items-start text-sm">Tanjirou Kamado</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-sm">Natsuki Hinae</div>
+                                            </div>
+                                            <div className="h-1/2 w-full flex">
+                                                <div className="h-full w-1/2 p-1 flex justify-start items-end text-xs">Main</div>
+                                                <div className="h-full w-1/2 p-1 flex justify-end items-end text-xs">Japanese</div>
+                                            </div>
+                                        </div>
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
 
                             {/* staff */}
-                            <div className="border border-black h-40 w-full">staff</div>
+                            <div className="min-h-40 w-11/12 mb-6">
+                                <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Staff</div>
+                                <div className="border border-red-600 h-auto w-full flex flex-wrap justify-start items-center">
+                                    {/* card */}
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-3/4 ">
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
+                                        </div>
+                                    </div>
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-3/4 ">
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
+                                        </div>
+                                    </div>
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-3/4 ">
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
+                                        </div>
+                                    </div>
+                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                        <div className="h-full w-1/4 bg-blue-300"></div>
+                                        <div className="h-full w-3/4 ">
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
+                                            <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
 
                             {/* status distibution and score distrubution */}
                             <div className="border border-black h-40 w-full">status and score</div>
