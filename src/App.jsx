@@ -5,6 +5,7 @@ import { MyContext } from "./Context/MyContext.js";
 import { useState } from "react";
 
 import BrowsePage from "./Pages/BrowsePage";
+import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
 
 function App() {
   const [nowPlayingData, setNowPlayingData] = useState([]);
@@ -25,6 +26,7 @@ function App() {
        }}>
         <Routes>
           <Route path="/" element={<BrowsePage />} />
+          <Route path="/movie" element={<MovieInfoPage />}/>
         </Routes>
       </MyContext.Provider>
     </>
