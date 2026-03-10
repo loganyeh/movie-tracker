@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Header(){
     const navSectionTitles = ["Home", "Profile", "Anime List", "Manga List", "Browse", "Forum"];
@@ -10,14 +11,17 @@ function Header(){
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/3 flex justify-center items-center">
                         {/* <div className="border-2 border-white h-14 w-14 bg-white"></div> */}
-                        <img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" />
+                        <Link to={"/movie"}><img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" /></Link>
                     </div>
                 </div>
 
                 {/* nav section */}
                 <div className="h-full w-1/3 flex justify-center items-center text-sm font-medium">
                     {navSectionTitles.map((title, index) => {
-                        return <div key={index} className="h-full w-1/6 flex justify-center items-center"><span className="cursor-pointer hover:text-white">{title}</span></div>
+                        return <Link to={"/"} key={index} className="h-full w-1/6 flex justify-center items-center">
+                            <span className="cursor-pointer hover:text-white">{title}</span>
+                        </Link>
+                        // <div key={index} className="h-full w-1/6 flex justify-center items-center"><span className="cursor-pointer hover:text-white">{title}</span></div>
                     })}
                 </div>
 
