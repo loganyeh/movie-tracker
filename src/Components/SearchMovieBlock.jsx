@@ -1,5 +1,5 @@
 import Poster from "./TrendingBlockComponents/Poster";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { MyContext } from "../Context/MyContext";
 
 function SearchMovieBlock({ data }){
@@ -43,6 +43,10 @@ function SearchMovieBlock({ data }){
                             return <Poster key={index} data={data} />
                         })}
                     </div>
+                    
+                    {/* work on this logic not correct */}
+                    <div className={`${query.length === 0 && query ? "" : "hidden"} h-96 w-full pt-16 flex justify-center items-start text-2xl text-gray-500 font-semibold`}>No Results</div>
+
                 </div>
         </>
     )

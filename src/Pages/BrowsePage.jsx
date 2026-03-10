@@ -14,7 +14,7 @@ import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10
 
 function BrowsePage(){
     const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
-        isQuery, setIsQuery,
+        isQuery, setIsQuery, query, setQuery
      } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
@@ -58,13 +58,13 @@ function BrowsePage(){
     useEffect(() => {
         
         async function loadSearchMovie(){
-            const data = await fetchSearchMovie();
+            const data = await fetchSearchMovie(query);
             setSearchMovieData(data);
         }
 
         loadSearchMovie();
 
-    }, [])
+    }, [query]);
 
     return(
         <>
@@ -79,7 +79,7 @@ function BrowsePage(){
                     {/* search and filters */}
                     <div className="h-36 w-10/12 flex justify-between">
                         {/* search */}
-                        <Search />
+                        <Search data={searchMovieData}/>
                         {/* filter */}
                         {filterTitles.map((title, index) => {
                             return <Filter key={index} title={title} />

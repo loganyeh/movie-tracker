@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MyContext } from "../Context/MyContext";
 
-function Search(){
+function Search({ data }){
     const { isQuery, setIsQuery, query, setQuery } = useContext(MyContext);
     // const [query, setQuery] = useState();
 
     function handleSearch(e){
-        console.log(query);
+        console.log(data);
     }
 
     return(
