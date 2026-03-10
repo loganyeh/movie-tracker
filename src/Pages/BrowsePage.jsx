@@ -13,7 +13,9 @@ import { MyContext } from "../Context/MyContext";
 import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
 function BrowsePage(){
-    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData } = useContext(MyContext);
+    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
+        isQuery, setIsQuery,
+     } = useContext(MyContext);
 
     const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
 

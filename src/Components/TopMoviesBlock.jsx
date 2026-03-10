@@ -1,10 +1,13 @@
 import MovieBlock from "./TopMoviesComponents/MovieBlock";
+import { useContext } from "react";
+import { MyContext } from "../Context/MyContext";
 
 function TopMoviesBlock({ data }){
+    const { query, setQuery } = useContext(MyContext);
 
     return(
         <>
-            <div className="h-auto w-10/12 my-10">
+            <div className={`${!query ? "" : "hidden"} h-auto w-10/12 my-10`}>
                 {/* header title */}
                 <div className="h-10 w-full flex mb-4">
                     <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-600 font-semibold">TOP 10 MOVIES</div>
