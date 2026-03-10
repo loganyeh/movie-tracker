@@ -166,6 +166,7 @@ export async function fetchSearchMovie(query){
   const searchMovieData = data.results.map((data, index) => {
     return {
       key: index, 
+      id: data.id,
       title: data.original_title, 
       poster: data.poster_path,
     }
@@ -174,7 +175,6 @@ export async function fetchSearchMovie(query){
   return searchMovieData;
 
 }
-
 
 
 

@@ -14,7 +14,7 @@ function SearchMovieBlock({ data }){
                     <div className="h-8 w-full flex mb-4">
                         <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">
                             <div className="flex justify-center items-center mr-4"><i className='bx bxs-purchase-tag text-gray-400 text-2xl'></i></div>
-                            <div className={`${!query ? "hidden" : ""} h-10/12 w-auto pl-2 flex justify-center items-center text-sm text-gray-100 font-semibold bg-blue-400 rounded cursor-pointer`}>
+                            <div onClick={() => {setQuery("")}} className={`${!query ? "hidden" : ""} h-10/12 w-auto pl-2 flex justify-center items-center text-sm text-gray-100 font-semibold bg-blue-400 rounded cursor-pointer`}>
                                 <span>Search: {query}</span>
                                 <div className="h-10/12 w-6 flex justify-center items-center bg-blue-400 cursor-pointer"><i className='bx bx-x text-gray-100' ></i></div>
                             </div>
@@ -45,7 +45,7 @@ function SearchMovieBlock({ data }){
                     </div>
                     
                     {/* work on this logic not correct */}
-                    <div className={`${query.length === 0 && query ? "" : "hidden"} h-96 w-full pt-16 flex justify-center items-start text-2xl text-gray-500 font-semibold`}>No Results</div>
+                    <div className={`${query ? "" : "hidden"} h-96 w-full pt-16 flex justify-center items-start text-2xl text-gray-500 font-semibold`}>No Results</div>
 
                 </div>
         </>

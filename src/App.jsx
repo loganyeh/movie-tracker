@@ -16,7 +16,7 @@ function App() {
 
   // search state variable
   const [isQuery, setIsQuery] = useState();
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("");
   
   return (
     <>
