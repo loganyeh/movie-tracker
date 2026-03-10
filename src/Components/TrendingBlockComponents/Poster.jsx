@@ -5,7 +5,7 @@ function Poster({ data }){
 
     return(
         <>
-            <div className="h-full w-1/6 flex flex-col justify-around items-center">
+            <div className="h-86 w-1/6 flex flex-col justify-around items-center mb-2">
                 <div className="h-10/12 w-10/12 bg-white rounded-md ">
                     <img className="h-full w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
                 </div>
