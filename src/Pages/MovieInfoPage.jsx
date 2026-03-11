@@ -15,7 +15,7 @@ function MovieInfoPage(){
                     <div className="h-80 w-full bg-blue-200"></div>
 
                     {/* poster and title */}
-                    <div className="h-72 w-full flex bg-white shadow-lg">
+                    <div className="h-72 w-full flex bg-white shadow-md">
                         <div className="h-full w-1/4 flex flex-col justify-around items-center">
                             <div className="border border-black h-80 w-1/2 -mt-36 bg-gray-400 shadow-md rounded"></div>
                             <div className="h-14 w-1/2 flex justify-around items-start">
@@ -52,10 +52,10 @@ function MovieInfoPage(){
                     </div>
 
                     {/* info and stats */}
-                    <div className="border-2 border-blue-600 h-600 w-full pt-4 flex">
+                    <div className="h-600 w-full pt-4 flex">
 
                         {/* left side */}
-                        <div className="border-2 border-black h-full w-1/4 flex flex-col justify-start items-center">
+                        <div className="h-full w-1/4 flex flex-col justify-start items-center">
 
                             {/* rating */}
                             <div className="h-10 w-2/3 m-2 flex justify-center items-center text-sm font-medium bg-white shadow-md rounded-lg">
@@ -174,27 +174,27 @@ function MovieInfoPage(){
                         </div>
 
                         {/* right side */}
-                        <div className="border-2 border-black h-full w-3/4">
+                        <div className="h-full w-3/4">
 
                             {/* relations */}
                             <div className="border border-black min-h-40 w-11/12 mb-6">
-                                <div className="border border-blue-600 h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
-                                <div className="border border-red-600 h-40 w-full flex justify-start items-center">
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
-                                    <div className="border border-black h-full w-32 mr-6 rounded"></div>
+                                <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
+                                <div className="h-40 w-full flex justify-start items-center">
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
+                                    <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
                                 </div>
                             </div>
 
                             {/* characters */}
-                            <div className="min-h-40 w-11/12 mb-6">
+                            <div className="border border-black min-h-40 w-11/12 mb-6">
                                 <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Characters</div>
-                                <div className="border border-red-600 h-auto w-full flex flex-wrap justify-start items-center">
+                                <div className="h-auto w-full flex flex-wrap justify-start items-center">
                                     {/* card */}
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-2/4">
                                             <div className="h-1/2 w-full flex">
@@ -209,7 +209,7 @@ function MovieInfoPage(){
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                     </div>
 
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-2/4">
                                             <div className="h-1/2 w-full flex">
@@ -224,7 +224,7 @@ function MovieInfoPage(){
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                     </div>
 
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-2/4">
                                             <div className="h-1/2 w-full flex">
@@ -239,7 +239,7 @@ function MovieInfoPage(){
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                     </div>
 
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-2/4">
                                             <div className="h-1/2 w-full flex">
@@ -261,30 +261,30 @@ function MovieInfoPage(){
                             {/* staff */}
                             <div className="min-h-40 w-11/12 mb-6">
                                 <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Staff</div>
-                                <div className="border border-red-600 h-auto w-full flex flex-wrap justify-start items-center">
+                                <div className="h-auto w-full flex flex-wrap justify-start items-center">
                                     {/* card */}
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-3/4 ">
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
                                         </div>
                                     </div>
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-3/4 ">
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
                                         </div>
                                     </div>
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-3/4 ">
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-500 text-xs">Original Creator</div>
                                         </div>
                                     </div>
-                                    <div className="h-25 w-80 mr-4 mb-6 flex bg-white rounded">
+                                    <div className="h-25 w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
                                         <div className="h-full w-1/4 bg-blue-300"></div>
                                         <div className="h-full w-3/4 ">
                                             <div className="h-1/2 w-full pl-1 flex justify-start items-center text-gray-600 text-sm">Author</div>
@@ -296,29 +296,114 @@ function MovieInfoPage(){
                             </div>
 
                             {/* status distibution and score distrubution */}
-                            <div className="h-auto w-11/12 mb-6 flex">
-                                <div className="border border-red-600 h-full w-1/2 flex flex-col justify-center items-start">
+                            <div className="border border-black h-auto w-11/12 mb-6 flex">
+                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
 
-                                    {/* distribution title */}
-                                    <div className="border border-black h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Status Distribution</div>
+                                    {/* STATUS */}
+                                    <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Status Distribution</div>
 
                                     {/* color icons */}
-                                    <div className="border border-red-600 h-26 w-11/12 bg-white rounded shadow-md">
+                                    <div className="h-26 w-11/12 bg-white rounded shadow-md">
 
                                         {/* color title container */}
-                                        <div className="border-2 border-black h-11/12 w-full flex justify-around items-center">
+                                        <div className="h-11/12 w-full flex justify-around items-center">
                                             {/* completed */}
-                                            <div className="border-2 border-blue-600 h-full w-1/6">
-                                                <div className="border-2 border-red-600 h-1/2 w-full flex justify-center items-end">
-                                                    <div className="h-10/12 w-full text-white bg-green-500 flex justify-center items-center text-md">Completed</div>
+                                            <div className="h-full w-1/6">
+                                                <div className="h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-8/12 w-full flex justify-center items-center text-white text-md bg-green-500 rounded-md">Completed</div>
                                                 </div>
-                                                <div className="border-2 border-red-600 h-auto w-full flex justify-center items-start text-xs"><span className="mr-1 text-md text-green-500">739395</span> Users</div>
+                                                <div className="h-auto w-full mt-2 flex justify-center items-center"><span className="h-full mr-1 text-sm text-green-500">739395</span><span className="h-full text-xs">Users</span></div>
+                                            </div>
+                                            {/* planning */}
+                                            <div className="h-full w-1/6">
+                                                <div className="h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-8/12 w-full flex justify-center items-center text-white text-md bg-blue-500 rounded-md">Planning</div>
+                                                </div>
+                                                <div className="h-auto w-full mt-2 flex justify-center items-center"><span className="h-full mr-1 text-sm text-blue-500">70084</span><span className="h-full text-xs">Users</span></div>
+                                            </div>
+                                            {/* current */}
+                                            <div className="h-full w-1/6">
+                                                <div className="h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-8/12 w-full flex justify-center items-center text-white text-md bg-purple-500 rounded-md">Current</div>
+                                                </div>
+                                                <div className="h-auto w-full mt-2 flex justify-center items-center"><span className="h-full mr-1 text-sm text-purple-500">69333</span><span className="h-full text-xs">Users</span></div>
+                                            </div>
+                                            {/* paused */}
+                                            <div className="h-full w-1/6">
+                                                <div className="h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-8/12 w-full flex justify-center items-center text-white text-md bg-pink-400 rounded-md">Paused</div>
+                                                </div>
+                                                <div className="h-auto w-full mt-2 flex justify-center items-center"><span className="h-full mr-1 text-sm text-pink-400">16242</span><span className="h-full text-xs">Users</span></div>
+                                            </div>
+                                            {/* dropped */}
+                                            <div className="h-full w-1/6">
+                                                <div className="h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-8/12 w-full flex justify-center items-center text-white text-md bg-red-400 rounded-md">Dropped</div>
+                                                </div>
+                                                <div className="h-auto w-full mt-2 flex justify-center items-center"><span className="h-full mr-1 text-sm text-red-400">14653</span><span className="h-full text-xs">Users</span></div>
                                             </div>
                                         </div>
 
                                         {/* color bar */}
-                                        <div className="h-1/12 w-full bg-green-500 rounded-b"></div>
+                                        <div className="h-1/12 w-full flex rounded-b">
+                                            <div className="h-full w-8/12 bg-green-500"></div>
+                                            <div className="h-full w-2/12 bg-blue-500"></div>
+                                            <div className="h-full w-2/12 bg-purple-500"></div>
+                                            <div className="h-full w-1/12 bg-pink-400"></div>
+                                            <div className="h-full w-1/12 bg-red-400"></div>
+                                        </div>
                                         
+                                    </div>
+                                </div>
+
+                                {/* SCORE */}
+                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+
+                                    {/* distribution title */}
+                                    <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Score Distribution</div>
+
+                                    {/* color icons */}
+                                    <div className="border h-26 w-11/12 flex justify-around items-center bg-white rounded shadow-md">
+                                        {/* 1 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-5 w-5 bg-red-500 rounded-full"></div>
+                                        </div>
+                                        {/* 2 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-5 w-5 bg-orange-700 rounded-full"></div>
+                                        </div>
+                                        {/* 3 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-5 w-5 bg-orange-500 rounded-full"></div>
+                                        </div>
+                                        {/* 4 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-5 w-5 bg-yellow-500 rounded-full"></div>
+                                        </div>
+                                        {/* 5 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-5 w-5 bg-yellow-500 rounded-full"></div>
+                                        </div>
+                                        {/* 6 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-7 w-5 bg-yellow-500 rounded-full"></div>
+                                        </div>
+                                        {/* 7 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-10 w-5 bg-green-500 rounded-full"></div>
+                                        </div>
+                                        {/* 8 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-14 w-5 bg-green-500 rounded-full"></div>
+                                        </div>
+                                        {/* 9 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-20 w-5 bg-green-500 rounded-full"></div>
+                                        </div>
+                                        {/* 10 */}
+                                        <div className="h-full w-1/12 pb-2 flex justify-center items-end">
+                                            <div className="h-12 w-5 bg-green-500 rounded-full"></div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -328,16 +413,16 @@ function MovieInfoPage(){
                             </div>
 
                             {/* watch */}
-                            <div className="border border-black h-40 w-full">watch</div>
+
 
                             {/* trailer */}
-                            <div className="border border-black h-40 w-full">trailer</div>
+
 
                             {/* recsommendations */}
-                            <div className="border border-black h-40 w-full">reccommendations</div>
+
 
                             {/* threads and reviews */}
-                            <div className="border border-black h-40 w-full">threads and reviews</div>
+
 
 
 
