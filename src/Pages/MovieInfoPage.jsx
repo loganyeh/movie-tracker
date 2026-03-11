@@ -296,7 +296,36 @@ function MovieInfoPage(){
                             </div>
 
                             {/* status distibution and score distrubution */}
-                            <div className="border border-black h-40 w-full">status and score</div>
+                            <div className="h-auto w-11/12 mb-6 flex">
+                                <div className="border border-red-600 h-full w-1/2 flex flex-col justify-center items-start">
+
+                                    {/* distribution title */}
+                                    <div className="border border-black h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Status Distribution</div>
+
+                                    {/* color icons */}
+                                    <div className="border border-red-600 h-26 w-11/12 bg-white rounded shadow-md">
+
+                                        {/* color title container */}
+                                        <div className="border-2 border-black h-11/12 w-full flex justify-around items-center">
+                                            {/* completed */}
+                                            <div className="border-2 border-blue-600 h-full w-1/6">
+                                                <div className="border-2 border-red-600 h-1/2 w-full flex justify-center items-end">
+                                                    <div className="h-10/12 w-full text-white bg-green-500 flex justify-center items-center text-md">Completed</div>
+                                                </div>
+                                                <div className="border-2 border-red-600 h-auto w-full flex justify-center items-start text-xs"><span className="mr-1 text-md text-green-500">739395</span> Users</div>
+                                            </div>
+                                        </div>
+
+                                        {/* color bar */}
+                                        <div className="h-1/12 w-full bg-green-500 rounded-b"></div>
+                                        
+                                    </div>
+                                </div>
+
+                                
+
+
+                            </div>
 
                             {/* watch */}
                             <div className="border border-black h-40 w-full">watch</div>
