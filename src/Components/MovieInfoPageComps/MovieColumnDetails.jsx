@@ -26,7 +26,7 @@ function MovieColumnDetails(){
 
     return(
         <>
-            <div className="border h-auto w-2/3 m-2 mb-6 bg-white rounded-lg shadow-md">
+            <div className="h-auto w-2/3 m-2 mb-6 bg-white rounded-lg shadow-md">
                 {/* Column Details */}
                 {columnDetailData.map((row, index) => {
                     return <div key={index} className="min-h-12 w-8/12 m-4">

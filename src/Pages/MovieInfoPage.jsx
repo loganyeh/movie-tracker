@@ -11,6 +11,7 @@ import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat";
 import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails";
 import Tags from "../Components/MovieInfoPageComps/Tags";
 import EditComment from "../Components/MovieInfoPageComps/EditComment";
+import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia";
 
 function MovieInfoPage({ data }){
     
@@ -49,7 +50,7 @@ function MovieInfoPage({ data }){
                     {/* ------------------------------- */}
 
                     {/* info and stats */}
-                    <div className="border-6 border-black min-h-600 w-full pt-4 flex">
+                    <div className="border-4 border-red-600 h-auto w-full pt-4 pb-16 flex">
 
                         {/* Column Stats/Info */}
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
@@ -66,8 +67,10 @@ function MovieInfoPage({ data }){
 
                             {/* Write/Edit Comment */}
                             <EditComment />
-                            
 
+                            {/* Social Media */}
+                            <SocialMedia />
+                            
                         </div>
 
                         {/* right side */}

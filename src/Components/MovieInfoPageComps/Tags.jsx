@@ -31,10 +31,10 @@ function Tags(){
 
     return(
         <>
-            <div className="border h-auto w-2/3 mb-6">
+            <div className="h-auto w-2/3 mb-6">
                 {/* Tag Header */}
-                <div className="h-8 w-full text-lg font-normal text-gray-600">Tags</div>
-                <div className="border h-auto w-full mb-6">
+                <div className="h-8 w-full mb-2 text-xl font-normal text-gray-600">Tags</div>
+                <div className="h-auto w-full mb-6">
 
                     {/* Tag Box */}
                     {tagsData.map((tag, index) => {
