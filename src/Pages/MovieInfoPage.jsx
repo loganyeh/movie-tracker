@@ -10,6 +10,7 @@ import Tabs from "../Components/MovieInfoPageComps/Tabs";
 import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat";
 import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails";
 import Tags from "../Components/MovieInfoPageComps/Tags";
+import EditComment from "../Components/MovieInfoPageComps/EditComment";
 
 function MovieInfoPage({ data }){
     
@@ -62,6 +63,10 @@ function MovieInfoPage({ data }){
 
                             {/* Tags */}
                             <Tags />
+
+                            {/* Write/Edit Comment */}
+                            <EditComment />
+                            
 
                         </div>
 

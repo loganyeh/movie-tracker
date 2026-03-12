@@ -39,8 +39,8 @@ function Tags(){
                     {/* Tag Box */}
                     {tagsData.map((tag, index) => {
                         return <div key={index} className="h-10 w-full flex mb-3 bg-white rounded shadow-md">
-                            <div className="h-full w-1/2 pl-2 flex justify-start items-center font-medium text-gray-600">{tag.tag}</div>
-                            <div className="h-full w-1/2 pr-2 flex justify-end items-center font-normal text-gray-400">{tag.percentage}%</div>
+                            <div className="h-full w-1/2 pl-2 flex justify-start items-center font-normal text-gray-600">{tag.tag}</div>
+                            <div className="h-full w-1/2 pr-2 flex justify-end items-center font-light text-gray-400">{tag.percentage}%</div>
                         </div>
                     })}
 
