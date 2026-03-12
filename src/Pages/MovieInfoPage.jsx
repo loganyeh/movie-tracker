@@ -515,10 +515,9 @@ function MovieInfoPage(){
                                 </div>
                             </div>
 
-
                             {/* threads and reviews */}
-                            <div className="border h-auto w-11/12 mb-6 flex">
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                            <div className="h-auto w-11/12 mb-6 flex">
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* threads */}
                                     <div className="h-10 w-11/12 flex justify-between items-center text-gray-600 text-lg font-semibold rounded">
@@ -566,26 +565,22 @@ function MovieInfoPage(){
                                 </div>
 
                                 {/* Following */}
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* reviews title */}
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Reviews</div>
 
-                                    <div className="border border-red-600 min-h-20 w-full mb-6 flex justify-around items-center">
-                                        <div className="border h-16 w-16 bg-blue-400 rounded"></div>
-                                        <div className="border h-20 w-5/6 flex bg-white rounded shadow-md">
-                                            <div className="border h-auto w-5/6 flex justify-center items-center">
-                                                What if you had the ability to make your own Demon Slayer breathing style/form... 
-                                                what would it be?
-                                                What if you had the ability to make your own Demon Slayer breathing style/form... 
-                                                what would it be?
+                                    <div className="h-auto w-full mb-6 flex justify-around items-center">
+                                        <div className="h-16 w-16 bg-blue-400 rounded"></div>
+                                        <div className="h-auto w-5/6 flex bg-white rounded shadow-md">
+                                            <div className="min-h-20 w-5/6 p-2 flex justify-center items-center text-gray-600">
                                                 What if you had the ability to make your own Demon Slayer breathing style/form... 
                                                 what would it be?
                                             </div>
-                                            <div className="border-2 border-purple-600 h-full w-1/6">
+                                            <div className="bmin-h-20 w-1/6">
                                                 <div className="h-full w-full flex justify-center items-end">
-                                                    <div className="border-2 border-blue-600 h-1/2 w-1/3 flex justify-center items-center"><i className='bx bx-like' ></i></div>
-                                                    <div className="border-2 border-blue-600 h-1/2 w-2/3 flex justify-center items-center">1197</div>
+                                                    <div className="h-10 w-1/3 flex justify-center items-center"><i className='bx bx-like' ></i></div>
+                                                    <div className="h-10 w-2/3 pl-2 flex justify-start items-center">1197</div>
                                                 </div>
                                             </div>
                                         </div>
