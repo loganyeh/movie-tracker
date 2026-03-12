@@ -1,7 +1,19 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-function MovieInfoPage(){
+// header
+import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster";
+import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription";
+import Tabs from "../Components/MovieInfoPageComps/Tabs";
+
+// body
+import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat";
+import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails";
+import Tags from "../Components/MovieInfoPageComps/Tags";
+
+function MovieInfoPage({ data }){
+    
+    const tabNames = ["Overview", "Watch", "Characters", "Staff", "Stats", "Review", "Social"];
 
     return(
         <>
@@ -11,165 +23,45 @@ function MovieInfoPage(){
 
                 {/* body */}
                 <div className="min-h-200 w-full">
-                    {/* banner */}
+                    {/* Movie Banner */}
                     <div className="h-80 w-full bg-blue-200"></div>
 
-                    {/* poster and title */}
-                    <div className="h-72 w-full flex bg-white shadow-md">
-                        <div className="h-full w-1/4 flex flex-col justify-around items-center">
-                            <div className="border border-black h-80 w-1/2 -mt-36 bg-gray-400 shadow-md rounded"></div>
-                            <div className="h-14 w-1/2 flex justify-around items-start">
-                                <div className="h-2/3 w-auto flex justify-center items-center text-gray-100">
-                                    <span className="h-full w-27  flex justify-center items-center text-sm bg-blue-400 rounded-l">Add to List</span>
-                                    <div className="h-full w-10 flex justify-center items-center bg-blue-300 rounded-r"><i className='bx bx-chevron-down text-2xl' ></i></div>
-                                </div>
-                                <div className="h-2/3 w-1/6 flex justify-center items-center bg-red-600 rounded"><i className='bx bxs-heart text-white text-2xl'></i></div>
-                            </div>
-                        </div>
-                        <div className="h-full w-3/4 flex flex-col justify-center items-center">
-                            <div className="h-10/12 w-full">
-                                <div className="h-1/3 w-full flex justify-start items-center text-xl font-normal">Demon Slayer: Kimetsu no Yaiba</div>
-                                <div className="h-2/3 w-5/6 flex justify-start items-start text-md font-light">
-                                    It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. 
-                                    To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, 
-                                    Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.
-                                </div>
-                            </div>
+                    {/* Movie Info Description */}
+                    <div className="border border-red-600 h-72 w-full flex bg-white shadow-md">
 
-                            <div className="h-2/12 w-2/3 flex justify-center items-center">
-                                <div className="h-full w-full flex justify-between items-center">
-                                    <div className="text-sm text-gray-500 font-semibold">Overview</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Watch</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Characters</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Staff</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Stats</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Review</div>
-                                    <div className="text-sm text-gray-500 font-semibold">Social</div>
-                                </div>
-                            </div>
-
+                        {/* Poster and Toggle */}
+                        <div className="border border-red-600 h-full w-1/4 flex flex-col justify-around items-center">
+                            <InfoPoster />
                         </div>
+
+                        {/* Movie Summary */}
+                        <div className="border border-red-600 h-full w-3/4 flex flex-col justify-center items-center">
+                            {/* Movie Description */}
+                            <MovieDescription />
+
+                            {/* Tabs */}
+                            <Tabs />
+                        </div>
+
                     </div>
 
-                    {/* info and stats */}
-                    <div className="border-2 border-red-600 min-h-600 w-full pt-4 flex">
+                    {/* ------------------------------- */}
 
-                        {/* left side */}
+                    {/* info and stats */}
+                    <div className="border-6 border-black min-h-600 w-full pt-4 flex">
+
+                        {/* Column Stats/Info */}
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
 
-                            {/* rating */}
-                            <div className="h-10 w-2/3 m-2 flex justify-center items-center text-sm font-medium bg-white shadow-md rounded-lg">
-                                <div className="mr-2"><i className='bx bxs-star text-yellow-300 text-xl' ></i></div>
-                                <div className="text-gray-600">#161 Highest Rated All Time</div>
-                            </div>
+                            {/* All Time Stats - highest rated & most popular */}
+                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
-                            {/* most popular */}
-                            <div className="h-10 w-2/3 m-2 flex justify-center items-center text-sm font-medium bg-white shadow-md rounded-lg">
-                                <div className="mr-2"><i className='bx bxs-heart text-red-500 text-xl' ></i></div>
-                                <div className="text-gray-600">#2 Most Popular All Time</div>
-                            </div>
+                            {/* Movie Column Details */}
+                            <MovieColumnDetails />
 
-                            {/* data stats and stuff */}
-                            <div className="h-auto w-2/3 m-2 bg-white rounded-lg shadow-md">
-
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Format</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">TV</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Episodes</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">26</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Episode Duration</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">24 Mins</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Status</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Finished</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Start Date</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Apr 6, 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">End Date</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Sep 28, 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Season</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Spring 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Average Score</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">82%</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Mean Score</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">82%</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Popularity</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">909465</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Favorites</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">44833</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Studios</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">ufotable</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Format</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">TV</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Episodes</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">26</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Episode Duration</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">24 Mins</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Status</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Finished</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Start Date</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Apr 6, 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">End Date</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Sep 28, 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Season</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">Spring 2019</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Average Score</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">82%</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Mean Score</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">82%</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Popularity</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">909465</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Favorites</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">44833</div>
-                                </div>
-                                <div className="h-12 w-8/12 m-4">
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">Studios</div>
-                                    <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">ufotable</div>
-                                </div>
-
-                            </div>
+                            {/* Tags */}
+                            <Tags />
 
                         </div>
 
@@ -516,7 +408,7 @@ function MovieInfoPage(){
                             </div>
 
                             {/* threads and reviews */}
-                            <div className="h-auto w-11/12 mb-6 flex">
+                            <div className="border h-auto w-11/12 mb-6 flex">
                                 <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* threads */}
