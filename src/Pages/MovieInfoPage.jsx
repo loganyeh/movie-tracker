@@ -25,8 +25,6 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 
 
 function MovieInfoPage({ data }){
-    
-    const tabNames = ["Overview", "Watch", "Characters", "Staff", "Stats", "Review", "Social"];
 
     return(
         <>
@@ -111,9 +109,6 @@ function MovieInfoPage({ data }){
 
                             {/* threads and reviews */}
                             <ThreadReview />
-
-
-
 
                         </div>
 
