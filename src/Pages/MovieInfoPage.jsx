@@ -29,15 +29,15 @@ function MovieInfoPage({ data }){
                     <div className="h-80 w-full bg-blue-200"></div>
 
                     {/* Movie Info Description */}
-                    <div className="border border-red-600 h-72 w-full flex bg-white shadow-md">
+                    <div className="h-72 w-full flex bg-white shadow-md">
 
                         {/* Poster and Toggle */}
-                        <div className="border border-red-600 h-full w-1/4 flex flex-col justify-around items-center">
+                        <div className="h-full w-1/4 flex flex-col justify-around items-center">
                             <InfoPoster />
                         </div>
 
                         {/* Movie Summary */}
-                        <div className="border border-red-600 h-full w-3/4 flex flex-col justify-center items-center">
+                        <div className="h-full w-3/4 flex flex-col justify-center items-center">
                             {/* Movie Description */}
                             <MovieDescription />
 
@@ -50,7 +50,7 @@ function MovieInfoPage({ data }){
                     {/* ------------------------------- */}
 
                     {/* info and stats */}
-                    <div className="border-4 border-red-600 h-auto w-full pt-4 pb-16 flex">
+                    <div className="h-auto w-full pt-4 pb-16 flex">
 
                         {/* Column Stats/Info */}
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
@@ -77,7 +77,7 @@ function MovieInfoPage({ data }){
                         <div className="h-full w-3/4">
 
                             {/* relations */}
-                            <div className="border border-black min-h-40 w-11/12 mb-6">
+                            <div className="min-h-40 w-11/12 mb-6">
                                 <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
                                 <div className="h-40 w-full flex justify-start items-center">
                                     <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div>
@@ -90,7 +90,7 @@ function MovieInfoPage({ data }){
                             </div>
 
                             {/* characters */}
-                            <div className="border border-black min-h-40 w-11/12 mb-6">
+                            <div className="min-h-40 w-11/12 mb-6">
                                 <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Characters</div>
                                 <div className="h-auto w-full flex flex-wrap justify-start items-center">
                                     {/* card */}
@@ -196,8 +196,8 @@ function MovieInfoPage({ data }){
                             </div>
 
                             {/* status distibution and score distrubution */}
-                            <div className="border border-black h-auto w-11/12 mb-6 flex">
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                            <div className="h-auto w-11/12 mb-6 flex">
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* STATUS */}
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Status Distribution</div>
@@ -257,13 +257,13 @@ function MovieInfoPage({ data }){
                                 </div>
 
                                 {/* SCORE */}
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* distribution title */}
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Score Distribution</div>
 
                                     {/* color icons */}
-                                    <div className="border h-26 w-11/12 flex justify-around items-center bg-white rounded shadow-md">
+                                    <div className="h-26 w-11/12 flex justify-around items-center bg-white rounded shadow-md">
                                         {/* 1 */}
                                         <div className="h-full w-1/12 pb-2 flex justify-center items-end">
                                             <div className="h-5 w-5 bg-red-500 rounded-full"></div>
@@ -310,34 +310,46 @@ function MovieInfoPage({ data }){
                             </div>
 
                             {/* watch */}
-                            <div className="border border-black h-auto w-11/12 mb-6 flex">
-                                <div className="border h-full w-full flex flex-col justify-center items-start">
+                            <div className="h-auto w-11/12 mb-6 flex">
+                                <div className="h-full w-full flex flex-col justify-center items-start">
 
                                     {/* STATUS */}
                                     <div className="h-10 w-full flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Watch</div>
-                                    <div className="border border-red-600 h-auto w-full flex flex-wrap items-center">
-                                        <div className="border border-black h-32 w-1/4 mb-6 mr-8 bg-white rounded shadow-md">MOVIE PREVIEW/CLIPS/TRAILER</div>
-                                        <div className="border border-black h-32 w-1/4 mb-6 mr-8 bg-white rounded shadow-md">MOVIE PREVIEW/CLIPS/TRAILER</div>
-                                        <div className="border border-black h-32 w-1/4 mb-6 mr-8 bg-white rounded shadow-md">MOVIE PREVIEW/CLIPS/TRAILER</div>
-                                        <div className="border border-black h-32 w-1/4 mb-6 mr-8 bg-white rounded shadow-md">MOVIE PREVIEW/CLIPS/TRAILER</div>
-                                        <div className="border border-black h-32 w-1/4 mb-6 mr-8 bg-white rounded shadow-md">MOVIE PREVIEW/CLIPS/TRAILER</div>
+                                    <div className="h-auto w-full flex flex-wrap items-center">
+                                        <div className="relative h-28 w-72 mb-6 mr-8 gap-2 flex justify-center items-end bg-blue-300 rounded shadow-md z-0">
+                                            <div className="absolute h-8 w-full flex pl-4 justify-start items-center text-white text-sm bg-black opacity-80 z-10">Episode 1 - Cruelty</div>
+                                        </div>
+                                        <div className="relative h-28 w-72 mb-6 mr-8 gap-2 flex justify-center items-end bg-blue-300 rounded shadow-md z-0">
+                                            <div className="absolute h-8 w-full flex pl-4 justify-start items-center text-white text-sm bg-black opacity-80 z-10">Episode 1 - Cruelty</div>
+                                        </div>
+                                        <div className="relative h-28 w-72 mb-6 mr-8 gap-2 flex justify-center items-end bg-blue-300 rounded shadow-md z-0">
+                                            <div className="absolute h-8 w-full flex pl-4 justify-start items-center text-white text-sm bg-black opacity-80 z-10">Episode 1 - Cruelty</div>
+                                        </div>
+                                        <div className="relative h-28 w-72 mb-6 mr-8 gap-2 flex justify-center items-end bg-blue-300 rounded shadow-md z-0">
+                                            <div className="absolute h-8 w-full flex pl-4 justify-start items-center text-white text-sm bg-black opacity-80 z-10">Episode 1 - Cruelty</div>
+                                        </div>
+                                        <div className="relative h-28 w-72 mb-6 mr-8 gap-2 flex justify-center items-end bg-blue-300 rounded shadow-md z-0">
+                                            <div className="absolute h-8 w-full flex pl-4 justify-start items-center text-white text-sm bg-black opacity-80 z-10">Episode 1 - Cruelty</div>
+                                        </div>
                                     </div>
 
                                 </div>
-
-                                
-
 
                             </div>
 
 
                             {/* trailer */}
-                            <div className="border border-black h-auto w-11/12 mb-6 flex">
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                            <div className="h-auto w-11/12 mb-6 flex">
 
-                                    {/* trailer */}
+                                {/* trailer */}
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
+
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold rounded">Trailer</div>
-                                    <div className="border h-64 w-11/12 bg-white rounded"></div>
+                                    <div className="h-64 w-11/12 flex justify-center items-center bg-blue-300 rounded">
+                                        <div className="h-auto w-auto flex justify-center items-center">
+                                            <i className='bx bx-play-circle text-6xl hover:text-red-500 cursor-pointer'></i>
+                                        </div>
+                                    </div>
                                         
                                 </div>
 
@@ -361,24 +373,8 @@ function MovieInfoPage({ data }){
                                             </div>
                                         </div>
                                     </div>
-                                    {/* profile card */}
-                                    <div className="border h-auto w-full">
-                                        <div className="h-10 w-full mb-2 flex justify-between items-center bg-white">
-                                            <div className="border border-red-600 h-full min-w-1/3 max-width-1/2 flex">
-                                                <div className="border h-10 w-10 flex justify-center items-center">
-                                                    <div className="border h-8 w-8 bg-blue-400 rounded"></div>
-                                                </div>
-                                                <div className="border h-full min-w-14 flex justify-center items-center text-gray-600 font-medium">Rukia</div>
-                                            </div>
-                                            <div className="border border-red-600 h-full w-1/2 flex justify-center items-center">
-                                                <div className="border h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">Completed</div>
-                                                <div className="border h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">9/10</div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-
-                                    </div>
+                                </div>
 
                             </div>
 

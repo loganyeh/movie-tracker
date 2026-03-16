@@ -4,7 +4,7 @@ function MovieDescription(){
 
     return(
         <>
-            <div className="border border-red-600 h-10/12 w-full">
+            <div className="h-10/12 w-full">
                 {/* Title */}
                 <div className="h-1/3 w-full flex justify-start items-center text-xl font-normal">Demon Slayer: Kimetsu no Yaiba</div>
                 {/* Description Blurb */}
