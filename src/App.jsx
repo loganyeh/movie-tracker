@@ -18,11 +18,16 @@ function App() {
   // search state variable
   const [isQuery, setIsQuery] = useState();
   const [query, setQuery] = useState("");
+
+  // characters state variable 
+  const [actorData, setActorData] = useState();
+  const [relationsData, setRelationsData] = useState();
   
   return (
     <>
       <MyContext.Provider value={{ nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
-          isQuery, setIsQuery, query, setQuery
+          isQuery, setIsQuery, query, setQuery,
+          actorData, setActorData, relationsData, setRelationsData
        }}>
         <Routes>
           <Route path="/" element={<BrowsePage />} />

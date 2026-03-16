@@ -1,10 +1,13 @@
 
 
-function InfoPoster(){
+function InfoPoster({ data }){
+    // console.log(data)
 
     return(
         <>
-            <div className="border border-black h-80 w-1/2 -mt-36 bg-gray-400 shadow-md rounded"></div>
+            <div className="border border-black h-80 w-1/2 -mt-36 bg-gray-400 shadow-md rounded">
+                <img className="h-full w-full" src={`https://image.tmdb.org/t/p/w500${data?.poster_path}` || "loading..."} alt="" />
+            </div>
             <div className="h-14 w-1/2 flex justify-around items-start">
                 <div className="h-2/3 w-auto flex justify-center items-center text-gray-100">
                     <span className="h-full w-27  flex justify-center items-center text-sm bg-blue-400 rounded-l">Add to List</span>
