@@ -354,22 +354,22 @@ function MovieInfoPage({ data }){
                                 </div>
 
                                 {/* Following */}
-                                <div className="border h-full w-1/2 flex flex-col justify-center items-start">
+                                <div className="h-full w-1/2 flex flex-col justify-center items-start">
 
                                     {/* following title */}
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Following</div>
                                     {/* profile card */}
-                                    <div className="border h-auto w-full">
-                                        <div className="h-10 w-full mb-2 flex justify-between items-center bg-white">
-                                            <div className="border border-red-600 h-full min-w-1/3 max-width-1/2 flex">
-                                                <div className="border h-10 w-10 flex justify-center items-center">
-                                                    <div className="border h-8 w-8 bg-blue-400 rounded"></div>
+                                    <div className="h-auto w-full">
+                                        <div className="h-12 w-full mb-2 flex justify-between items-center bg-white">
+                                            <div className="h-full min-w-1/3 max-width-1/2 flex justify-start items-center">
+                                                <div className="h-10 w-10 flex justify-center items-center">
+                                                    <div className="h-8 w-8 bg-blue-400 rounded"></div>
                                                 </div>
-                                                <div className="border h-full min-w-14 flex justify-center items-center text-gray-600 font-medium">Rukia</div>
+                                                <div className="h-full min-w-14 flex justify-center items-center text-gray-600 font-medium">Rukia</div>
                                             </div>
-                                            <div className="border border-red-600 h-full w-1/2 flex justify-center items-center">
-                                                <div className="border h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">Completed</div>
-                                                <div className="border h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">9/10</div>
+                                            <div className="h-full w-1/2 flex justify-center items-center">
+                                                <div className="h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">Completed</div>
+                                                <div className="h-full w-1/2 flex justify-center items-center text-gray-600 font-normal">9/10</div>
                                             </div>
                                         </div>
                                     </div>
@@ -379,34 +379,22 @@ function MovieInfoPage({ data }){
                             </div>
 
 
-                            {/* recsommendations */}
+                            {/* recommendations */}
                             <div className="min-h-40 w-11/12 mb-6">
-                                <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
+                                <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">
+                                    <div className="h-full w-1/2 flex justify-start items-center">Recommendations</div>
+                                    <div className="h-full w-1/2 flex justify-end items-center">
+                                        <div className="h-full w-1/3 flex justify-between items-center">
+                                            <div className="h-full w-auto flex justify-center items-center font-medium text-xs">+Add</div>
+                                            <div className="h-full w-auto flex justify-center items-center font-medium text-xs">View All Recommendations</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 {/* movie poster # 1 */}
-                                <div className="border min-h-40 w-full flex flex-wrap justify-start items-center">
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
-                                    </div>
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
-                                    </div>
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
-                                    </div>
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
-                                    </div>
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
-                                    </div>
-                                    <div className="min-h-48 w-32 mr-8">
-                                        <div className="border h-40 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
-                                        <div className="h-10 w-full flex justify-start items-center text-gray-600 font-semibold">JJK</div>
+                                <div className="min-h-40 w-full flex flex-wrap justify-start items-center">
+                                    <div className="min-h-48 w-36 mr-8">
+                                        <div className="h-48 w-full mr-12 bg-blue-300 rounded shadow-md"></div>
+                                        <div className="h-10 w-full flex justify-start items-center text-sm text-gray-600 font-semibold">JJK</div>
                                     </div>
                                 </div>
                             </div>
@@ -418,7 +406,7 @@ function MovieInfoPage({ data }){
                                     {/* threads */}
                                     <div className="h-10 w-11/12 flex justify-between items-center text-gray-600 text-lg font-semibold rounded">
                                         <div>Threads</div>
-                                        <div className="text-sm font-light">Create New Thread</div>
+                                        <div className="text-xs font-light">Create New Thread</div>
                                     </div>
                                     
 
@@ -466,7 +454,7 @@ function MovieInfoPage({ data }){
                                     {/* reviews title */}
                                     <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Reviews</div>
 
-                                    <div className="h-auto w-full mb-6 flex justify-around items-center">
+                                    <div className="h-auto w-full mb-6 flex justify-between items-center">
                                         <div className="h-16 w-16 bg-blue-400 rounded"></div>
                                         <div className="h-auto w-5/6 flex bg-white rounded shadow-md">
                                             <div className="min-h-20 w-5/6 p-2 flex justify-center items-center text-gray-600">
