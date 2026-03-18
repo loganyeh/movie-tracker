@@ -1,12 +1,12 @@
 
 
-function MovieDescription(){
+function MovieDescription({ title }){
 
     return(
         <>
             <div className="h-10/12 w-full">
                 {/* Title */}
-                <div className="h-1/3 w-full flex justify-start items-center text-xl font-normal">Demon Slayer</div>
+                <div className="h-1/3 w-full flex justify-start items-center text-xl font-normal">{title || "Demon Slayer"}</div>
                 {/* Description Blurb */}
                 <div className="h-2/3 w-5/6 flex justify-start items-start text-md font-light">
                     It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, 

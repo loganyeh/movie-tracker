@@ -1,5 +1,3 @@
 
-// work on the relations data first and get the posters
 
-
-// testing rebase git branch ....
+// do the query thing first to get the id
