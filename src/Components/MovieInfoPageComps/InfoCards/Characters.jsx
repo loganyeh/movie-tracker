@@ -2,8 +2,7 @@ import { useContext, useEffect } from "react";
 import CharacterCard from "./CharacterCard";
 import { MyContext } from "../../../Context/MyContext";
 
-function Characters({ data }){
-    const { actorData, setActorData } = useContext(MyContext);
+function Characters(){
 
     // console.log(actorData);
 
@@ -21,8 +20,8 @@ function Characters({ data }){
                 <div className="h-auto w-full flex flex-wrap justify-start items-center">
 
                     {/* card */}
-                    {actorData?.cast.slice(0, 6).map((character, index) => {
-                        return <CharacterCard key={index} data={character} />
+                    {characterData.map((character, index) => {
+                        return <CharacterCard key={index} />
                     })}
 
                 </div>

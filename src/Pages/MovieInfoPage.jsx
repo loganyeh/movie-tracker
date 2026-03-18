@@ -27,37 +27,9 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 import { useContext, useEffect, useState } from "react";
 
 // api calls
-import { fetchMovieID } from "../API/MovieOverviewAPI";
 import { MyContext } from "../Context/MyContext";
-import { fetchRelations } from "../API/MovieOverviewAPI";
-
 
 function MovieInfoPage({ data }){
-    const { actorData, setActorData, relationsData, setRelationsData } = useContext(MyContext);
-
-    const [idData, setIDData] = useState();
-    const [actors, setActors] = useState();
-
-    useEffect(() => {
-        async function getMovieID(){
-            const data = await fetchMovieID();
-            setIDData(data.data2);
-            setActorData(data.data3);
-        }
-
-        async function getRelations(){
-            const data = await fetchRelations();
-            setRelationsData(data);
-        }
-
-        getMovieID();
-        getRelations();
-    }, []);
-
-    // console.log(idData);
-    // console.log(actors);
-    // console.log(relationsData);
-
 
     return(
         <>
@@ -75,13 +47,13 @@ function MovieInfoPage({ data }){
 
                         {/* Poster and Toggle */}
                         <div className="h-full w-1/4 flex flex-col justify-around items-center">
-                            <InfoPoster data={idData} />
+                            <InfoPoster />
                         </div>
 
                         {/* Movie Summary */}
                         <div className="h-full w-3/4 flex flex-col justify-center items-center">
                             {/* Movie Description */}
-                            <MovieDescription data={idData} />
+                            <MovieDescription />
 
                             {/* Tabs */}
                             <Tabs />
@@ -119,10 +91,10 @@ function MovieInfoPage({ data }){
                         <div className="h-full w-3/4">
 
                             {/* relations */}
-                            <Relations data={relationsData}/>
+                            <Relations />
 
                             {/* characters */}
-                            <Characters data={actors?.cast.slice(0, 6)} />
+                            <Characters />
 
                             {/* staff */}
                             <Staff />
