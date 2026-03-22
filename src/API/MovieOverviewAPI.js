@@ -59,7 +59,7 @@ export async function fetchRelations(query){
 };
 
 // FETCH CREDITS
-export async function fetchCredits(){
+export async function fetchCredits(query){
     const options = {
         method: 'GET',
         headers: {
@@ -68,15 +68,11 @@ export async function fetchCredits(){
         }
     };
     
-    const response = await fetch('https://api.themoviedb.org/3/movie/24428/credits', options);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/credits`, options);
     const data = await response.json();
 
-    console.log(data.cast.slice(0, 6));
-
-    return data.cast.slice(0, 6);
+    return data;
 };
-
-fetchCredits();
 
 
 

@@ -31,7 +31,6 @@ import { MyContext } from "../Context/MyContext";
 // api calls
 import { fetchMovieInfoData, fetchRelations, fetchCredits } from "../API/MovieOverviewAPI";
 
-
 function MovieInfoPage(){
     const { idFromPoster, setIDFromPoster, movieData, setMovieData, 
         relationData, setRelationData, creditsData, setCreditsData
@@ -41,14 +40,9 @@ function MovieInfoPage(){
 
     useEffect(() => {
         async function getMovieInfoData(){
-            // Avengers
             const apiMovieData = await fetchMovieInfoData(movieID);
             const apiRelationData = await fetchRelations(movieID);
-            const creditsData = await fetchCredits();
-            // Project Hail Mary
-            // const data = await fetchMovieInfoData(687163);
-            // Zootopia
-            // const data = await fetchMovieInfoData(1084242);
+            const creditsData = await fetchCredits(movieID);
             setMovieData(apiMovieData);
             setRelationData(apiRelationData);
             setCreditsData(creditsData);
@@ -125,7 +119,7 @@ function MovieInfoPage(){
                             <Characters data={creditsData} />
 
                             {/* staff */}
-                            <Staff />
+                            <Staff data={creditsData} />
 
                             {/* status distibution and score distrubution */}
                             <Distribution />

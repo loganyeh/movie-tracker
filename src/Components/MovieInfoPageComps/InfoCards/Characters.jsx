@@ -21,7 +21,7 @@ function Characters({ data }){
                     {/* {characterData.map((character, index) => {
                         return <CharacterCard key={index} />
                     })} */}
-                    {data?.map((character, index) => {
+                    {data?.cast?.slice(0, 6)?.map((character, index) => {
                         return <CharacterCard key={index} data={character} />
                     })}
 

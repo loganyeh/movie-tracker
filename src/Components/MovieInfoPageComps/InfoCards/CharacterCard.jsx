@@ -7,8 +7,8 @@ function CharacterCard({ data }){
     return(
         <>
             <div className="h-auto w-80 mr-10 mb-6 flex bg-white rounded shadow-md">
-                <div className="min-h-28 w-1/4 bg-blue-300">
-                    <img className="h-auto w-auto" src={`https://image.tmdb.org/t/p/original${data?.profile_path}`} alt="no img available" />
+                <div className="min-h-28 w-1/4 bg-blue-300 rounded-l">
+                    <img className="h-auto w-auto rounded-l" src={`https://image.tmdb.org/t/p/original${data?.profile_path}`} alt="no img available" />
                 </div>
                 <div className="min-h-28 w-3/4">
                     <div className="h-2/3 w-full flex">
