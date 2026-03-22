@@ -73,7 +73,7 @@ export async function fetchCredits(){
 
     console.log(data.cast.slice(0, 6));
 
-    return data.cast.slice(0, 1);
+    return data.cast.slice(0, 6);
 };
 
 fetchCredits();

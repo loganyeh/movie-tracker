@@ -13,9 +13,9 @@ function Characters({ data }){
 
     return(
         <>
-            <div className="border min-h-40 w-11/12 mb-6">
+            <div className="min-h-40 w-11/12 mb-6">
                 <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Characters</div>
-                <div className="border-2 border-red-600 h-auto w-full flex flex-wrap justify-start items-center">
+                <div className="h-auto w-full flex flex-wrap justify-start items-center">
 
                     {/* card */}
                     {/* {characterData.map((character, index) => {
