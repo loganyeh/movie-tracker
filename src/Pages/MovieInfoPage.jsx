@@ -35,7 +35,7 @@ import { fetchMovieID, fetchMovieInfoData } from "../API/MovieOverviewAPI";
 function MovieInfoPage(){
     const { idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
     // const [movieID, setMovieID] = useState(24428);
-    const [movieID, setMovieID] = useState(687163);
+    const [movieID, setMovieID] = useState(299536);
 
     useEffect(() => {
         async function getMovieInfoData(){
@@ -60,21 +60,15 @@ function MovieInfoPage(){
                 {/* body */}
                 <div className="min-h-200 w-full">
                     {/* Movie Banner */}
-                    <div className="border-2 border-red-600 h-80 w-full flex justify-center items-center"
-                        style={{
-                            backgroundImage: `url(https://image.tmdb.org/t/p/original${movieData?.backdrop_path})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            // filter: "blur(8px)", // blur the backdrop
-                        }}>
-                        <img className="h-full" src={`https://image.tmdb.org/t/p/original${movieData?.backdrop_path}`} alt="" />
+                    <div className="relative h-80 w-full flex justify-center items-center">
+                        <MovieBanner data={movieData} />
                     </div>
 
                     {/* Movie Info Description */}
                     <div className="h-72 w-full flex bg-white shadow-md">
 
                         {/* Poster and Toggle */}
-                        <div className="h-full w-1/4 flex flex-col justify-around items-center">
+                        <div className="relative h-full w-1/4 flex flex-col justify-around items-center">
                             <InfoPoster data={movieData} />
                         </div>
 

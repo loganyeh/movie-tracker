@@ -9,7 +9,7 @@ function MovieColumnDetails({ data }){
         {title: "Average Score", stat: [`${data?.vote_average.toString().split(".").join("").slice(0, 2)}%`]},
         {title: "Mean Score", stat: [`${data?.vote_average.toString().split(".").join(".").slice(0,3)}`]},
         {title: "Popularity", stat: [`${data?.popularity.toLocaleString().split(".")}`]},
-        {title: "Vote Count", stat: [`${data?.vote_count}`]},
+        {title: "Vote Count", stat: [`${data?.vote_count.toLocaleString()}`]},
         {title: "Studios", stat: [`${data?.production_companies.map((company, index) => {
             return company.name
         }).join(" ")}`]},
