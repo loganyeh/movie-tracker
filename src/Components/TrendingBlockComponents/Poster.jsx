@@ -1,12 +1,31 @@
 
+// get the id to fetchMovieID();
+// then pass to fetchMovieInfoData
+
+// hooks
+import { useContext } from "react";
+import { MyContext } from "../../Context/MyContext";
+
+// api 
+import { fetchMovieID } from "../../API/MovieOverviewAPI";
+
 
 function Poster({ data }){
+    const { idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
     const bubbleColors = ["hover:text-green-400", "hover:text-red-400", "hover:text-pink-400", "hover:text-red-500", "hover:text-red-400", "hover:text-blue-500"];
+
+    async function handleClick(){
+        // console.log(`${typeof data.title} at ${data.title}`);
+        const call = await fetchMovieID(data.title);
+        setIDFromPoster(call);
+        console.log(`after call var. the id is ${call}`);
+        // console.log(movieData);
+    }
 
     return(
         <>
             <div className="h-86 w-1/6 flex flex-col justify-around items-center mb-2">
-                <div className="h-10/12 w-10/12 bg-white rounded-md ">
+                <div onClick={handleClick} className="border-2 border-red-600 h-10/12 w-10/12 bg-white rounded-md ">
                     <img className="h-full w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
                 </div>
                 <div className="h-1/12 w-full flex justify-center items-center font-medium">

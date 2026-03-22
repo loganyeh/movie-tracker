@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 // header
+import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner";
 import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster";
 import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription";
 import Tabs from "../Components/MovieInfoPageComps/Tabs";
@@ -25,11 +26,34 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 
 // Hooks
 import { useContext, useEffect, useState } from "react";
-
-// api calls
 import { MyContext } from "../Context/MyContext";
 
-function MovieInfoPage({ data }){
+// api calls
+import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI";
+
+function MovieInfoPage(){
+    const { idFromPoster, setIDFromPoster, movieData, setMovieData, 
+        relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData
+    } = useContext(MyContext);
+    // const [movieID, setMovieID] = useState(24428);
+    const [movieID, setMovieID] = useState(569094);
+    // chainsaw man 1218925
+    // spiderverse 569094
+
+    useEffect(() => {
+        async function getMovieInfoData(){
+            const apiMovieData = await fetchMovieInfoData(movieID);
+            const apiRelationData = await fetchRelations(movieID);
+            const creditsData = await fetchCredits(movieID);
+            const videoData = await fetchVideos(movieID);
+            setMovieData(apiMovieData);
+            setRelationData(apiRelationData);
+            setCreditsData(creditsData);
+            setVideoData(videoData);
+        }
+        
+        getMovieInfoData();
+    }, []);
 
     return(
         <>
@@ -40,20 +64,22 @@ function MovieInfoPage({ data }){
                 {/* body */}
                 <div className="min-h-200 w-full">
                     {/* Movie Banner */}
-                    <div className="h-80 w-full bg-blue-200"></div>
+                    <div className="relative h-80 w-full flex justify-center items-center">
+                        <MovieBanner data={movieData} />
+                    </div>
 
                     {/* Movie Info Description */}
                     <div className="h-72 w-full flex bg-white shadow-md">
 
                         {/* Poster and Toggle */}
-                        <div className="h-full w-1/4 flex flex-col justify-around items-center">
-                            <InfoPoster />
+                        <div className="relative h-full w-1/4 flex flex-col justify-around items-center">
+                            <InfoPoster data={movieData} />
                         </div>
 
                         {/* Movie Summary */}
                         <div className="h-full w-3/4 flex flex-col justify-center items-center">
                             {/* Movie Description */}
-                            <MovieDescription />
+                            <MovieDescription data={movieData} />
 
                             {/* Tabs */}
                             <Tabs />
@@ -74,7 +100,7 @@ function MovieInfoPage({ data }){
                             <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
                             {/* Movie Column Details */}
-                            <MovieColumnDetails />
+                            <MovieColumnDetails data={movieData} />
 
                             {/* Tags */}
                             <Tags />
@@ -91,25 +117,25 @@ function MovieInfoPage({ data }){
                         <div className="h-full w-3/4">
 
                             {/* relations */}
-                            <Relations />
+                            <Relations data={relationData}/>
 
                             {/* characters */}
-                            <Characters />
+                            <Characters data={creditsData} />
 
                             {/* staff */}
-                            <Staff />
+                            <Staff data={creditsData} />
 
                             {/* status distibution and score distrubution */}
                             <Distribution />
 
                             {/* watch */}
-                            <Watch />
+                            <Watch data={videoData} />
 
                             {/* trailer */}
-                            <TrailerFollowing />
+                            <TrailerFollowing trailerData={videoData} />
 
                             {/* recommendations */}
-                            <Recommendations />
+                            <Recommendations data={relationData} />
 
                             {/* threads and reviews */}
                             <ThreadReview />

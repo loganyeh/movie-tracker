@@ -2,9 +2,7 @@ import { useContext, useEffect } from "react";
 import CharacterCard from "./CharacterCard";
 import { MyContext } from "../../../Context/MyContext";
 
-function Characters(){
-
-    // console.log(actorData);
+function Characters({ data }){
 
     const characterData = [
         { character: "Tanjirou Kamado", actor: "Natsuki Hinae", lead: "Main", language: "Japanese" },  
@@ -20,8 +18,11 @@ function Characters(){
                 <div className="h-auto w-full flex flex-wrap justify-start items-center">
 
                     {/* card */}
-                    {characterData.map((character, index) => {
+                    {/* {characterData.map((character, index) => {
                         return <CharacterCard key={index} />
+                    })} */}
+                    {data?.cast?.slice(0, 6)?.map((character, index) => {
+                        return <CharacterCard key={index} data={character} />
                     })}
 
                 </div>

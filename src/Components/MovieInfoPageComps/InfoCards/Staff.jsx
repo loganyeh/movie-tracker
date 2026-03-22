@@ -1,6 +1,6 @@
 import StaffCard from "./StaffCard";
 
-function Staff(){
+function Staff({ data }){
 
     const staffData = [
         { img: "placeholder//", name: "Koyoharu Gotogue", role: "Original Creator"},
@@ -17,8 +17,8 @@ function Staff(){
                 <div className="h-auto w-full flex flex-wrap justify-start items-center">
 
                     {/* card */}
-                    {staffData.map(( staff, index) => {
-                        return <StaffCard key={index} name={staff.name} role={staff.role} />
+                    {data?.crew?.slice(0, 3)?.map((data, index) => {
+                        return <StaffCard key={index} data={data} />
                     })}
 
 
