@@ -11,15 +11,15 @@ import { fetchMovieID } from "../../API/MovieOverviewAPI";
 
 
 function Poster({ data }){
-    const { idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
+    const { movieID, setMovieID, idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
     const bubbleColors = ["hover:text-green-400", "hover:text-red-400", "hover:text-pink-400", "hover:text-red-500", "hover:text-red-400", "hover:text-blue-500"];
 
+    // chainsaw man 1218925
+    // spiderverse 569094
+
     async function handleClick(){
-        // console.log(`${typeof data.title} at ${data.title}`);
-        const call = await fetchMovieID(data.title);
-        setIDFromPoster(call);
-        console.log(`after call var. the id is ${call}`);
-        // console.log(movieData);
+        console.log(data?.id);
+        console.log(data);
     }
 
     return(
