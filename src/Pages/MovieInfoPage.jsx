@@ -29,23 +29,27 @@ import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../Context/MyContext";
 
 // api calls
-import { fetchMovieInfoData, fetchRelations, fetchCredits } from "../API/MovieOverviewAPI";
+import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI";
 
 function MovieInfoPage(){
     const { idFromPoster, setIDFromPoster, movieData, setMovieData, 
-        relationData, setRelationData, creditsData, setCreditsData
+        relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData
     } = useContext(MyContext);
     // const [movieID, setMovieID] = useState(24428);
-    const [movieID, setMovieID] = useState(24428);
+    const [movieID, setMovieID] = useState(569094);
+    // chainsaw man 1218925
+    // spiderverse 569094
 
     useEffect(() => {
         async function getMovieInfoData(){
             const apiMovieData = await fetchMovieInfoData(movieID);
             const apiRelationData = await fetchRelations(movieID);
             const creditsData = await fetchCredits(movieID);
+            const videoData = await fetchVideos(movieID);
             setMovieData(apiMovieData);
             setRelationData(apiRelationData);
             setCreditsData(creditsData);
+            setVideoData(videoData);
         }
         
         getMovieInfoData();
@@ -125,13 +129,13 @@ function MovieInfoPage(){
                             <Distribution />
 
                             {/* watch */}
-                            <Watch />
+                            <Watch data={videoData} />
 
                             {/* trailer */}
-                            <TrailerFollowing />
+                            <TrailerFollowing trailerData={videoData} />
 
                             {/* recommendations */}
-                            <Recommendations />
+                            <Recommendations data={relationData} />
 
                             {/* threads and reviews */}
                             <ThreadReview />

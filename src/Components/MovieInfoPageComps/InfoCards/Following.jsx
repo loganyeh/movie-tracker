@@ -14,7 +14,9 @@ function Following({ img, username, status, rating }){
                     <div className="h-12 w-full mb-2 flex justify-between items-center bg-white">
                         <div className="h-full min-w-1/3 max-width-1/2 flex justify-start items-center">
                             <div className="h-10 w-10 flex justify-center items-center">
-                                <div className="h-8 w-8 bg-blue-400 rounded"></div>
+                                <div className="h-8 w-8 bg-blue-400 rounded">
+                                    <img className="rounded" src={`hanni.jpg`} alt="" />
+                                </div>
                             </div>
                             <div className="h-full min-w-14 flex justify-center items-center text-gray-600 font-medium">{username || "Rukia"}</div>
                         </div>
