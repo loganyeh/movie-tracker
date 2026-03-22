@@ -31,10 +31,53 @@ export async function fetchMovieInfoData(query){
       const response = await fetch(`https://api.themoviedb.org/3/movie/${query || 24428}?language=en-US`, options);
       const data = await response.json();
 
-      console.log(data);
+    //   console.log(data);
 
       return data;
 }
 
 fetchMovieInfoData();
 // fetchMovieInfoData(1159559);
+
+
+// --------------------
+export async function fetchRelations(query){
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+        }
+      };
+      
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/recommendations`, options);
+      const data = await response.json();
+
+    //   console.log(data.results.slice(0, 5));
+
+      return data.results.slice(0, 5);
+};
+
+// FETCH CREDITS
+export async function fetchCredits(){
+    const options = {
+        method: 'GET',
+        headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzgwZGEzMDAwZmI3MDQ3NDM1ZjU4OWM5NjdjMjlkNiIsIm5iZiI6MTc3MjQ3NDQyMS42OTgsInN1YiI6IjY5YTVkMDM1OGU4MDM3YTE1YmMxN2ZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4q8zWeqQYVZD3WKTVOFnp6bYNCXoyXGg77fMU4Lf_5c'
+        }
+    };
+    
+    const response = await fetch('https://api.themoviedb.org/3/movie/24428/credits', options);
+    const data = await response.json();
+
+    console.log(data.cast.slice(0, 6));
+
+    return data.cast.slice(0, 1);
+};
+
+fetchCredits();
+
+
+
+

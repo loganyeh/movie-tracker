@@ -29,23 +29,29 @@ import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../Context/MyContext";
 
 // api calls
-import { fetchMovieID, fetchMovieInfoData } from "../API/MovieOverviewAPI";
+import { fetchMovieInfoData, fetchRelations, fetchCredits } from "../API/MovieOverviewAPI";
 
 
 function MovieInfoPage(){
-    const { idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
+    const { idFromPoster, setIDFromPoster, movieData, setMovieData, 
+        relationData, setRelationData, creditsData, setCreditsData
+    } = useContext(MyContext);
     // const [movieID, setMovieID] = useState(24428);
-    const [movieID, setMovieID] = useState(299536);
+    const [movieID, setMovieID] = useState(24428);
 
     useEffect(() => {
         async function getMovieInfoData(){
             // Avengers
-            const data = await fetchMovieInfoData(movieID);
+            const apiMovieData = await fetchMovieInfoData(movieID);
+            const apiRelationData = await fetchRelations(movieID);
+            const creditsData = await fetchCredits();
             // Project Hail Mary
             // const data = await fetchMovieInfoData(687163);
             // Zootopia
             // const data = await fetchMovieInfoData(1084242);
-            setMovieData(data);
+            setMovieData(apiMovieData);
+            setRelationData(apiRelationData);
+            setCreditsData(creditsData);
         }
         
         getMovieInfoData();
@@ -113,10 +119,10 @@ function MovieInfoPage(){
                         <div className="h-full w-3/4">
 
                             {/* relations */}
-                            <Relations />
+                            <Relations data={relationData}/>
 
                             {/* characters */}
-                            <Characters />
+                            <Characters data={creditsData} />
 
                             {/* staff */}
                             <Staff />
