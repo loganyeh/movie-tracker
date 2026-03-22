@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 // header
+import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner";
 import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster";
 import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription";
 import Tabs from "../Components/MovieInfoPageComps/Tabs";
@@ -25,11 +26,30 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 
 // Hooks
 import { useContext, useEffect, useState } from "react";
-
-// api calls
 import { MyContext } from "../Context/MyContext";
 
-function MovieInfoPage({ data }){
+// api calls
+import { fetchMovieID, fetchMovieInfoData } from "../API/MovieOverviewAPI";
+
+
+function MovieInfoPage(){
+    const { idFromPoster, setIDFromPoster, movieData, setMovieData } = useContext(MyContext);
+    // const [movieID, setMovieID] = useState(24428);
+    const [movieID, setMovieID] = useState(687163);
+
+    useEffect(() => {
+        async function getMovieInfoData(){
+            // Avengers
+            const data = await fetchMovieInfoData(movieID);
+            // Project Hail Mary
+            // const data = await fetchMovieInfoData(687163);
+            // Zootopia
+            // const data = await fetchMovieInfoData(1084242);
+            setMovieData(data);
+        }
+        
+        getMovieInfoData();
+    }, []);
 
     return(
         <>
@@ -40,20 +60,28 @@ function MovieInfoPage({ data }){
                 {/* body */}
                 <div className="min-h-200 w-full">
                     {/* Movie Banner */}
-                    <div className="h-80 w-full bg-blue-200"></div>
+                    <div className="border-2 border-red-600 h-80 w-full flex justify-center items-center"
+                        style={{
+                            backgroundImage: `url(https://image.tmdb.org/t/p/original${movieData?.backdrop_path})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            // filter: "blur(8px)", // blur the backdrop
+                        }}>
+                        <img className="h-full" src={`https://image.tmdb.org/t/p/original${movieData?.backdrop_path}`} alt="" />
+                    </div>
 
                     {/* Movie Info Description */}
                     <div className="h-72 w-full flex bg-white shadow-md">
 
                         {/* Poster and Toggle */}
                         <div className="h-full w-1/4 flex flex-col justify-around items-center">
-                            <InfoPoster />
+                            <InfoPoster data={movieData} />
                         </div>
 
                         {/* Movie Summary */}
                         <div className="h-full w-3/4 flex flex-col justify-center items-center">
                             {/* Movie Description */}
-                            <MovieDescription />
+                            <MovieDescription data={movieData} />
 
                             {/* Tabs */}
                             <Tabs />
@@ -74,7 +102,7 @@ function MovieInfoPage({ data }){
                             <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
                             {/* Movie Column Details */}
-                            <MovieColumnDetails />
+                            <MovieColumnDetails data={movieData} />
 
                             {/* Tags */}
                             <Tags />
