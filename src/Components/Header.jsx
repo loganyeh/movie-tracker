@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 
 function Header(){
-    const navSectionTitles = ["Home", "Profile", "Movie List", "TV List", "Browse", "Forum"];
+    const navSectionData = [
+        {title: "Home", url: "/browse"},
+        {title: "Profile", url: "/"},
+        {title: "Movie List", url: "/browse"},
+        {title: "TV List", url: "/browse"},
+        {title: "Browse", url: "/browse"},
+        {title: "Forum", url: "/browse"},
+    ]
 
     return(
         <>
@@ -17,9 +24,9 @@ function Header(){
 
                 {/* nav section */}
                 <div className="h-full w-1/3 flex justify-center items-center text-sm font-medium">
-                    {navSectionTitles.map((title, index) => {
-                        return <Link to={"/"} key={index} className="h-full w-1/6 flex justify-center items-center">
-                            <span className="cursor-pointer hover:text-white">{title}</span>
+                    {navSectionData.map((data, index) => {
+                        return <Link key={index} to={data.url} className="h-full w-1/6 flex justify-center items-center">
+                            <span className="cursor-pointer hover:text-white">{data.title}</span>
                         </Link>
                         // <div key={index} className="h-full w-1/6 flex justify-center items-center"><span className="cursor-pointer hover:text-white">{title}</span></div>
                     })}
@@ -28,8 +35,10 @@ function Header(){
                 {/* profile settings section */}
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/2 flex justify-end items-center">
-                        <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></div>
-                        <div className="h-12 w-18 flex cursor-pointer hover:text-white">
+                        <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl'></i></div>
+                        {/* <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></div> */}
+                        <div className="h-12 w-18 flex">
+                        {/* <div className="h-12 w-18 flex cursor-pointer hover:text-white"> */}
                             <img className="h-full w-2/3 rounded" src="../hanni.jpg" alt="" />
                             <div className="h-full w-1/3 flex justify-center items-center">
                                 <i className='bx bx-chevron-down text-2xl' ></i>
