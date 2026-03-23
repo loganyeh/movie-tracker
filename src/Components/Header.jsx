@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Header(){
-    const navSectionTitles = ["Home", "Profile", "Anime List", "Manga List", "Browse", "Forum"];
+    const navSectionTitles = ["Home", "Profile", "Movie List", "TV List", "Browse", "Forum"];
 
     return(
         <>
