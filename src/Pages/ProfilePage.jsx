@@ -9,6 +9,14 @@ import { Link } from "react-router-dom";
 function ProfilePage(){
 
     const middleNavTitles = ["Overview", "Anime List", "Manga List", "Favorites", "Stats", "Social", "Reviews", "Submissions"];
+    const squareColors = ["bg-blue-200", "bg-blue-300", "bg-blue-400", "bg-blue-500", "bg-gray-200", "bg-gray-200", "bg-gray-200"];
+    const genreOverviewData = [
+        {genre: "Comedy", numOfEntries: 51, bgColor: "bg-green-500", textColor: "text-green-500", bar: "w-4/12"},
+        {genre: "Action", numOfEntries: 46, bgColor: "bg-blue-500", textColor: "text-blue-500", bar: "w-3/12"},
+        {genre: "Supernatural", numOfEntries: 38, bgColor: "bg-purple-500", textColor: "text-purple-500", bar: "w-2/12"},
+        {genre: "Drama", numOfEntries: 33, bgColor: "bg-red-300", textColor: "text-red-300", bar: "w-2/12"},
+        {genre: "Romance", numOfEntries: 31, bgColor: "bg-pink-500", textColor: "text-pink-500", bar: "w-1/12"},
+    ]
 
     return(
         <>
@@ -40,18 +48,55 @@ function ProfilePage(){
                     </div>
 
                     {/* -- Profile Page Stats */}
-                    <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center">
+                    <div className="border-4 border-purple-500 h-auto w-full flex justify-center items-center">
                         
                         {/* Container */}
-                        <div className="border border-red-600 h-full w-10/12 flex justify-center items-center">
+                        <div className="border h-auto w-10/12 flex justify-center items-center">
                             {/* Left Side */}
-                            <div className="border-2 border-yellow-500 h-96 w-1/2">
-                                
+                            <div className="border border-orange-500 min-h-96 w-1/2">
+
+                                {/* - Active History */}
+                                <div className="min-h-56 w-4/5 mt-6">
+                                    <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Active History</div>
+                                    <div className="h-48 w-full bg-white shadow-md rounded flex flex-wrap justify-center items-center">
+                                        {Array.from({length: 1}).map((_, index) => {
+                                            const randomColor = squareColors[Math.floor(Math.random() * squareColors.length)];
+                                            return <div key={index} className={`${randomColor} h-4 w-4 m-1 rounded-md`}></div>
+                                        })}
+                                    </div>
+                                </div>
+
+                                {/* - Genre Overview */}
+                                <div className="min-h-40 w-4/5 mt-6">
+                                    <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Genre Overview</div>
+
+                                    <div className="h-auto w-full bg-white shadow-md rounded flex flex-col">
+
+                                        <div className="h-24 w-full flex">
+                                            {genreOverviewData.map((genre, index) => {
+                                                return <div key={index} className={`h-full w-1/5 flex flex-col justify-center items-center`}>
+                                                            <div className={`h-8 w-10/12 flex justify-center items-center ${genre.bgColor} text-white text-sm font-normal rounded`}>{genre.genre}</div>
+                                                            <div className={`mt-1 ${genre.textColor} text-sm`}>{genre.numOfEntries} <span className="text-xs text-gray-400">Entries</span></div>
+                                                        </div>
+                                            })}
+                                        </div>
+
+                                        <div className="h-2 w-full flex">
+                                            {genreOverviewData.map((genre, index) => {
+                                                return <div key={index} className={`h-full ${genre.bar} ${genre.bgColor}`}></div>
+                                            })}
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                    
+
                             </div>
 
 
                             {/* Right Side */}
-                            <div className="border-2 border-green-500 h-96 w-1/2"></div>
+                            <div className="border-2 border-green-500 min-h-96 w-1/2"></div>
                         </div>
 
                     </div>
