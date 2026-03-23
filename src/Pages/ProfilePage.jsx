@@ -69,7 +69,7 @@ function ProfilePage(){
                             <div className="h-auto w-1/2 flex flex-col justify-center items-center">
 
                                 {/* - Active History */}
-                                <div className="border h-auto w-4/5 mt-4">
+                                <div className="h-auto w-4/5 mt-4">
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Active History</div>
                                     <div className="h-48 w-full flex flex-wrap justify-center items-center bg-white shadow-md rounded">
                                         {Array.from({length: 0}).map((_, index) => {
@@ -129,7 +129,7 @@ function ProfilePage(){
                             <div className="h-auto w-1/2 flex flex-col justify-center items-center">
 
                                 {/* -- Charts */}
-                                <div className="h-auto w-full mt-4 flex justify-between items-center">
+                                <div className="h-auto w-full mt-8 flex justify-between items-center">
 
                                     {/* - Total Anime */}
                                     <div className="h-auto w-96 bg-white shadow-md rounded">
@@ -201,7 +201,19 @@ function ProfilePage(){
                                 </div>
 
                                 {/* -- Activity */}
-
+                                <div className="h-auto w-full mt-4">
+                                    <div className="h-10 w-full px-2 flex justify-between items-center text-md text-gray-600 font-semibold">
+                                        <div>Activity</div>
+                                        <div className="text-sm text-gray-400 font-light flex">
+                                            <span className="mr-1">Filter</span>
+                                            <div className="flex justify-center items-center"><i className='bx bx-chevron-down'></i></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div className="h-12 w-full flex justify-start items-center bg-white shadow-md rounded">
+                                        <div className="h-full w-auto ml-2 flex justify-center items-center text-sm text-gray-400">Write a Status...</div>
+                                    </div>
+                                </div>
 
                             </div>
 
