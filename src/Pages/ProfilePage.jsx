@@ -17,6 +17,18 @@ function ProfilePage(){
         {genre: "Drama", numOfEntries: 33, bgColor: "bg-red-300", textColor: "text-red-300", bar: "w-2/12"},
         {genre: "Romance", numOfEntries: 31, bgColor: "bg-pink-500", textColor: "text-pink-500", bar: "w-1/12"},
     ]
+    const totalAnimeData = [
+        {number: 75, subtitle: "Total Anime"},
+        {number: 28.6, subtitle: "Days Watched"},
+        {number: 78.2, subtitle: "Mean Score"},
+    ];
+    const totalMangaData = [
+        {number: 14, subtitle: "Total Manga"},
+        {number: 714, subtitle: "Chapters Read"},
+        {number: 85.0, subtitle: "Mean Score"},
+    ];
+    const totalAnimeMeasure = ["10", "30", "50"];
+    const totalMangaMeasure = ["100", "500", "1000"];
 
     return(
         <>
@@ -51,16 +63,16 @@ function ProfilePage(){
                     <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center">
                         
                         {/* Container */}
-                        <div className="h-auto w-10/12 flex justify-center items-center">
+                        <div className="h-auto w-10/12 flex justify-center items-start">
 
                             {/* Left Side */}
                             <div className="h-auto w-1/2 flex flex-col justify-center items-center">
 
                                 {/* - Active History */}
-                                <div className="h-auto w-4/5 mt-4">
+                                <div className="border h-auto w-4/5 mt-4">
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Active History</div>
                                     <div className="h-48 w-full flex flex-wrap justify-center items-center bg-white shadow-md rounded">
-                                        {Array.from({length: 6}).map((_, index) => {
+                                        {Array.from({length: 0}).map((_, index) => {
                                             const randomColor = squareColors[Math.floor(Math.random() * squareColors.length)];
                                             return <div key={index} className={`${randomColor} h-4 w-4 m-1 rounded-md`}></div>
                                         })}
@@ -111,13 +123,90 @@ function ProfilePage(){
                                     </div>
                                 </div>
 
+                            </div>
+
+                            {/* Right Side */}
+                            <div className="h-auto w-1/2 flex flex-col justify-center items-center">
+
+                                {/* -- Charts */}
+                                <div className="h-auto w-full mt-4 flex justify-between items-center">
+
+                                    {/* - Total Anime */}
+                                    <div className="h-auto w-96 bg-white shadow-md rounded">
+                                        {/* days watched */}
+                                        <div className="border-b border-gray-300 h-24 w-full flex">
+                                            {totalAnimeData.map((data, index) => {
+                                                return <div key={index} className="h-full w-1/3 flex flex-col justify-center items-center">
+                                                            <div className="h-1/2 w-full flex justify-center items-end text-lg text-blue-400 font-medium">{data.number}</div>
+                                                            <div className="h-1/2 w-full flex justify-center items-start text-sm text-gray-500 font-medium">{data.subtitle}</div>
+                                                        </div>
+                                            })}
+                                        </div>
+
+                                        {/* measure */}
+                                        <div className="h-10 w-full flex bg-gray-100">
+                                            {totalAnimeMeasure.map((measure, index) => {
+                                                return <div key={index} className="h-full w-1/3 flex flex-col justify-end items-start">
+                                                            <div className="h-1/3 w-full flex justify-center items-center">
+                                                                <div className="text-sm text-gray-600">{measure}</div>
+                                                            </div>
+                                                            <div className="h-1/3 w-full mt-1">
+                                                                <div className="border-r border-gray-400 h-full w-1/2"></div>
+                                                            </div>
+                                                        </div>
+                                            })}
+                                        </div>
+
+                                        {/* bar */}
+                                        <div className="h-2 w-full flex bg-gray-200 rounded-b">
+                                            <div className="h-full w-1/2 bg-blue-400 rounded-bl rounded-r"></div>
+                                        </div>
+                                    </div>
+
+                                    {/* - Total Manga */}
+                                    <div className="h-auto w-96 bg-white shadow-md rounded">
+                                        {/* days watched */}
+                                        <div className="border-b border-gray-300 h-24 w-full flex">
+                                            {totalMangaData.map((data, index) => {
+                                                return <div key={index} className="h-full w-1/3 flex flex-col justify-center items-center">
+                                                            <div className="h-1/2 w-full flex justify-center items-end text-lg text-blue-400 font-medium">{data.number}</div>
+                                                            <div className="h-1/2 w-full flex justify-center items-start text-sm text-gray-500 font-medium">{data.subtitle}</div>
+                                                        </div>
+                                            })}
+                                        </div>
+
+                                        {/* measure */}
+                                        <div className="h-10 w-full flex bg-gray-100">
+                                            {totalMangaMeasure.map((measure, index) => {
+                                                return <div key={index} className="h-full w-1/3 flex flex-col justify-end items-start">
+                                                            <div className="h-1/3 w-full flex justify-center items-center">
+                                                                <div className="text-sm text-gray-600">{measure}</div>
+                                                            </div>
+                                                            <div className="h-1/3 w-full mt-1">
+                                                                <div className="border-r border-gray-400 h-full w-1/2"></div>
+                                                            </div>
+                                                        </div>
+                                            })}
+                                        </div>
+
+                                        {/* bar */}
+                                        <div className="h-2 w-full flex bg-gray-200 rounded-b">
+                                            <div className="h-full w-7/12 bg-blue-400 rounded-bl rounded-r"></div>
+                                        </div>
+                                    </div>
                                     
+
+
+
+                                </div>
+
+                                {/* -- Activity */}
+
 
                             </div>
 
 
-                            {/* Right Side */}
-                            <div className="border-2 border-green-500 min-h-96 w-1/2"></div>
+
                         </div>
 
                     </div>
