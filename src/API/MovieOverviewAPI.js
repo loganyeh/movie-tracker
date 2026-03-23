@@ -1,5 +1,3 @@
-const movieQuery = null;
-
 export async function fetchMovieID(query){
     const options = {
         method: 'GET',
@@ -17,8 +15,6 @@ export async function fetchMovieID(query){
     return data?.results[0].id || null;
 };
 
-// const searchMovie = await fetchMovieID("Avengers");
-
 export async function fetchMovieInfoData(query){
     const options = {
         method: 'GET',
@@ -35,10 +31,6 @@ export async function fetchMovieInfoData(query){
 
       return data;
 }
-
-fetchMovieInfoData();
-// fetchMovieInfoData(1159559);
-
 
 // --------------------
 export async function fetchRelations(query){
