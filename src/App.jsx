@@ -24,7 +24,8 @@ function App() {
   const [relationsData, setRelationsData] = useState();
 
   // movieOverviewAPI variables 
-  const [idFromPoster, setIDFromPoster] = useState();
+  const [movieID, setMovieID] = useState(569094);
+  const [movieTitleURL, setMovieTitleURL] = useState("");
   const [movieData, setMovieData] = useState();
   const [relationData, setRelationData] = useState();
   const [creditsData, setCreditsData]= useState();
@@ -35,11 +36,11 @@ function App() {
       <MyContext.Provider value={{ nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
           isQuery, setIsQuery, query, setQuery,
           actorData, setActorData, relationsData, setRelationsData,
-          idFromPoster, setIDFromPoster, movieData, setMovieData, relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData,
+          movieID, setMovieID, movieTitleURL, setMovieTitleURL, movieData, setMovieData, relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData,
        }}>
         <Routes>
           <Route path="/" element={<BrowsePage />} />
-          <Route path="/movie" element={<MovieInfoPage />}/>
+          <Route path={`/movie`} element={<MovieInfoPage />}/>
         </Routes>
       </MyContext.Provider>
     </>

@@ -32,13 +32,9 @@ import { MyContext } from "../Context/MyContext";
 import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI";
 
 function MovieInfoPage(){
-    const { idFromPoster, setIDFromPoster, movieData, setMovieData, 
+    const { movieID, setMovieID, movieData, setMovieData, 
         relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData
     } = useContext(MyContext);
-    // const [movieID, setMovieID] = useState(24428);
-    const [movieID, setMovieID] = useState(569094);
-    // chainsaw man 1218925
-    // spiderverse 569094
 
     useEffect(() => {
         async function getMovieInfoData(){

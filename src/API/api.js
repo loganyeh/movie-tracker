@@ -32,6 +32,7 @@ export async function fetchNowPlaying(){
     const nowPlayingData = data.results.slice(0, 6).map((movie, index) => {
       return {
         key: index,
+        id: movie.id,
         title: movie.original_title,
         poster: movie.poster_path,
       };
@@ -56,6 +57,7 @@ export async function fetchPopular(){
   const popularData = data.results.slice(6, 12).map((data, index) => {
     return {
       key: index, 
+      id: data.id,
       title: data.original_title,
       poster: data.poster_path,
     }
@@ -79,7 +81,8 @@ export async function fetchTopRated(){
 
   const topRatedData = data.results.slice(0, 6).map((data, index) => {
     return {
-      key: index, 
+      key: index,
+      id: data.id, 
       title: data.original_title,
       poster: data.poster_path,
     }
@@ -104,6 +107,7 @@ export async function fetchUpcoming(){
   const upcomingData = data.results.slice(0, 6).map((data, index) => {
     return {
       key: index, 
+      id: data.id,
       title: data.original_title,
       poster: data.poster_path,
     }
@@ -135,6 +139,7 @@ export async function fetchTop10Movies(){
 
     return {
       key: index, 
+      id: data.id,
       title: data.original_title,
       poster: data.poster_path,
       // vote_average: Math.round(data.vote_average * 2) / 2,
