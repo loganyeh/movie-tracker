@@ -48,18 +48,19 @@ function ProfilePage(){
                     </div>
 
                     {/* -- Profile Page Stats */}
-                    <div className="border-4 border-purple-500 h-auto w-full flex justify-center items-center">
+                    <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center">
                         
                         {/* Container */}
-                        <div className="border h-auto w-10/12 flex justify-center items-center">
+                        <div className="h-auto w-10/12 flex justify-center items-center">
+
                             {/* Left Side */}
-                            <div className="border border-orange-500 min-h-96 w-1/2">
+                            <div className="h-auto w-1/2 flex flex-col justify-center items-center">
 
                                 {/* - Active History */}
-                                <div className="min-h-56 w-4/5 mt-6">
+                                <div className="h-auto w-4/5 mt-4">
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Active History</div>
-                                    <div className="h-48 w-full bg-white shadow-md rounded flex flex-wrap justify-center items-center">
-                                        {Array.from({length: 1}).map((_, index) => {
+                                    <div className="h-48 w-full flex flex-wrap justify-center items-center bg-white shadow-md rounded">
+                                        {Array.from({length: 6}).map((_, index) => {
                                             const randomColor = squareColors[Math.floor(Math.random() * squareColors.length)];
                                             return <div key={index} className={`${randomColor} h-4 w-4 m-1 rounded-md`}></div>
                                         })}
@@ -67,10 +68,10 @@ function ProfilePage(){
                                 </div>
 
                                 {/* - Genre Overview */}
-                                <div className="min-h-40 w-4/5 mt-6">
+                                <div className="h-auto w-4/5 mt-4">
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Genre Overview</div>
 
-                                    <div className="h-auto w-full bg-white shadow-md rounded flex flex-col">
+                                    <div className="h-auto w-full flex flex-col bg-white shadow-md rounded">
 
                                         <div className="h-24 w-full flex">
                                             {genreOverviewData.map((genre, index) => {
@@ -87,6 +88,26 @@ function ProfilePage(){
                                             })}
                                         </div>
 
+                                    </div>
+                                </div>
+
+                                {/* - Anime FAVORITES */}
+                                <div className="h-auto w-4/5 mt-4">
+                                    <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Anime</div>
+                                    <div className="min-h-44 w-full flex flex-wrap justify-around items-center bg-white shadow-md rounded">
+                                        {Array.from({length: 5}).map((_, index) => {
+                                            return <div key={index} className="border h-32 w-24 m-3 rounded"></div>
+                                        })}
+                                    </div>
+                                </div>
+
+                                {/* - Character FAVORITES */}
+                                <div className="h-auto w-4/5 mt-4">
+                                    <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Characters</div>
+                                    <div className="min-h-44 w-full flex flex-wrap justify-around items-center bg-white shadow-md rounded">
+                                        {Array.from({length: 8}).map((_, index) => {
+                                            return <div key={index} className="border h-32 w-24 m-3 rounded"></div>
+                                        })}
                                     </div>
                                 </div>
 
