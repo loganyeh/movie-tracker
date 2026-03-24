@@ -1,10 +1,8 @@
 import Header from "../Components/Header";
-
 import Footer from "../Components/Footer";
 
 // react router dom import
 import { Link } from "react-router-dom";
-
 
 function ProfilePage(){
 
@@ -37,13 +35,13 @@ function ProfilePage(){
                 <Header />
 
                 {/* --- body */}
-                <div className="border-2 border-red-600 h-auto w-full mb-8">
+                <div className="h-auto w-full">
 
                     {/* - profile banner */}
                     <div className="h-64 w-full flex justify-center items-end shadow" style={{ backgroundImage: `url(public/newJeansBanner.jpg)`, backgroundSize: "cover", backgroundPosition: "center",}}>
                         <div className="min-h-1/2 w-10/12 flex justify-start items-end">
                             <div className="h-36 w-36 flex justify-center items-center">
-                                <img className="rounded-t" src={`public/hanni.jpg`} alt="" />
+                                <img className="rounded-t" src={`/hanni.jpg`} alt="" />
                             </div>
                             <div className="h-12 min-w-32 flex justify-center items-center text-gray-700 text-2xl font-semibold">Hanni</div>
                         </div>
@@ -60,7 +58,7 @@ function ProfilePage(){
                     </div>
 
                     {/* -- Profile Page Stats */}
-                    <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center">
+                    <div className="h-auto w-full flex justify-center items-center pb-20">
                         
                         {/* Container */}
                         <div className="h-auto w-10/12 flex justify-center items-start">
@@ -214,6 +212,31 @@ function ProfilePage(){
                                         <div className="h-full w-auto ml-2 flex justify-center items-center text-sm text-gray-400">Write a Status...</div>
                                     </div>
                                 </div>
+
+                                {/* Status Timeline */}
+                                <div className="h-auto w-full mt-4">
+                                    <div className="h-auto w-full flex flex-wrap justify-between items-center">
+                                        {Array.from({length: 23}).map((_, index) => {
+                                            return <div className="min-h-14 w-96 mb-4 flex justify-between items-center bg-white shadow-md rounded">
+                                                        <div className="h-18 w-14 bg-blue-300 rounded-l"></div>
+                                                        <div className="h-18 w-56 flex justify-center items-center text-sm font-normal">
+                                                            <span>Read Chapter 229-230 of <span className="text-blue-400">Chainsaw Man</span></span>
+                                                        </div>
+                                                        <div className="h-18 w-24">
+                                                            <div className="h-1/2 w-full flex justify-center items-center text-xs text-gray-500 whitespace-nowrap">2 Weeks Ago</div>
+                                                            <div className="h-1/2 w-full flex justify-end items-center">
+                                                                <div className="h-full w-1/4 flex justify-center items-center text-gray-400"><i className='bx bxs-chat text-xl' ></i></div>
+                                                                <div className="h-full w-1/4 flex justify-center items-center text-gray-400"><i className='bx bxs-heart text-xl' ></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        })}
+
+                                    </div>
+                                </div>
+
+                                {/* Load More Timeline */}
+                                <div className="h-12 w-full mt-6 flex justify-center items-center bg-white text-gray-500 font-semibold rounded">Load More</div>
 
                             </div>
 
