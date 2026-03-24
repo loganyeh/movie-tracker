@@ -5,8 +5,8 @@ function Header(){
         {title: "Home", url: "/movie"},
         {title: "Profile", url: "/profile"},
         {title: "Movie List", url: "/movielist"},
-        {title: "TV List", url: "/wip"},
-        {title: "Browse", url: "/browse"},
+        {title: "TV List", url: "/movielist"},
+        {title: "Browse", url: "/"},
         {title: "Forum", url: "/wip"},
     ]
 
@@ -18,8 +18,8 @@ function Header(){
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/3 flex justify-center items-center">
                         {/* <div className="border-2 border-white h-14 w-14 bg-white"></div> */}
-                        {/* <Link to={"/profile"}><img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" /></Link> */}
-                        <div><img className="h-16 w-16" src="../Letterboxd.jpeg" alt="logo.jpg" /></div>
+                        <Link to={"/movie"}><img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" /></Link>
+                        {/* <div><img className="h-16 w-16" src="../Letterboxd.jpeg" alt="logo.jpg" /></div> */}
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@ function Header(){
                 {/* profile settings section */}
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/2 flex justify-end items-center">
-                        <Link to={"/browse"} className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></Link>
+                        <Link to={"/"} className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></Link>
                         {/* <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl'></i></div> */}
                         {/* <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></div> */}
                         <div className="h-12 w-18 flex">
