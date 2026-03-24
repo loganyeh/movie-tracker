@@ -7,10 +7,10 @@ function MiddleNavBar(){
         {title: "Movie List", url: "/movielist"},
         {title: "TV List", url: "/movielist"},
         {title: "Favorites", url: "/favorites"},
-        {title: "Stats", url: "/wip"},
-        {title: "Social", url: "/wip"},
-        {title: "Review", url: "/wip"},
-        {title: "Submissions", url: "/wip"},
+        {title: "Stats", url: "/stats"},
+        {title: "Social", url: "/social"},
+        {title: "Review", url: "/reviews"},
+        {title: "Submissions", url: "/submissions"},
     ]
 
     return(
