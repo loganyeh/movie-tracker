@@ -15,8 +15,19 @@ function SubmissionsPage(){
                 <MiddleNavBar />
 
                 {/* body */}
-                <div className="border-2 border-blue-600 h-full w-full flex justify-center items-center text-4xl">
-                    Submissions Page
+                <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center bg-gray-200">
+                    
+                    {/* container */}
+                    <div className="border h-96 w-10/12 flex justify-around items-center">
+
+                        {/* left */}
+                        <div className="border-2 border-green-400 h-full w-2/12">Submissions</div>
+
+                        {/* right */}
+                        <div className="border-2 border-orange-400 h-full w-9/12"></div>
+
+                    </div>
+
                 </div>
 
                 {/* footer */}

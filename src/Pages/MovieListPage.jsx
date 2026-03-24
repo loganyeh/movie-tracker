@@ -43,7 +43,7 @@ function MovieListPage(){
                             <FilterSearchBar />
 
                             {/* Lists */}
-                            <ListStatus category={listCats} />
+                            <ListStatus title={"Lists"} category={listCats} />
 
                             {/* Filters */}
                             <FilterDropdown category={filterBlockCats} />
