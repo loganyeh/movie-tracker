@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function MiddleNavBar(){
     const middleNavData = [
         {title: "Overview", url: "/profile"},
-        {title: "Movie List", url: "/browse"},
-        {title: "TV List", url: "/browse"},
-        {title: "Favorites", url: "/profile"},
-        {title: "Stats", url: "/profile"},
-        {title: "Social", url: "/profile"},
-        {title: "Review", url: "/profile"},
-        {title: "Submissions", url: "/profile"},
+        {title: "Movie List", url: "/movielist"},
+        {title: "TV List", url: "/wip"},
+        {title: "Favorites", url: "/wip"},
+        {title: "Stats", url: "/wip"},
+        {title: "Social", url: "/wip"},
+        {title: "Review", url: "/wip"},
+        {title: "Submissions", url: "/wip"},
     ]
 
     return(

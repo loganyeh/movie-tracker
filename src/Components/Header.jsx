@@ -4,10 +4,10 @@ function Header(){
     const navSectionData = [
         {title: "Home", url: "/movie"},
         {title: "Profile", url: "/profile"},
-        {title: "Movie List", url: "/browse"},
-        {title: "TV List", url: "/browse"},
+        {title: "Movie List", url: "/movielist"},
+        {title: "TV List", url: "/wip"},
         {title: "Browse", url: "/browse"},
-        {title: "Forum", url: "/browse"},
+        {title: "Forum", url: "/wip"},
     ]
 
     return(
@@ -36,7 +36,8 @@ function Header(){
                 {/* profile settings section */}
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/2 flex justify-end items-center">
-                        <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl'></i></div>
+                        <Link to={"/browse"} className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></Link>
+                        {/* <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl'></i></div> */}
                         {/* <div className="h-12 w-12 flex justify-center items-center"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></div> */}
                         <div className="h-12 w-18 flex">
                         {/* <div className="h-12 w-18 flex cursor-pointer hover:text-white"> */}

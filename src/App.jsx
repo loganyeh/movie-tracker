@@ -7,6 +7,8 @@ import { useState } from "react";
 import BrowsePage from "./Pages/BrowsePage";
 import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
+import WIP from "./Pages/WIP.jsx";
+import MovieListPage from "./Pages/MovieListPage.jsx";
 
 function App() {
   const [nowPlayingData, setNowPlayingData] = useState([]);
@@ -43,6 +45,9 @@ function App() {
           <Route path="/browse" element={<BrowsePage />} />
           <Route path={`/movie`} element={<MovieInfoPage />}/>
           <Route path={`/profile`} element={<ProfilePage />}/>
+          <Route path={`/wip`} element={<WIP />}/>
+          <Route path={`/movielist`} element={<MovieListPage />}/>
+
         </Routes>
       </MyContext.Provider>
     </>
