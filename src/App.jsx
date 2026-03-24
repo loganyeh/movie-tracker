@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/browse" element={<BrowsePage />} />
           <Route path={`/movie`} element={<MovieInfoPage />}/>
-          <Route path={`/`} element={<ProfilePage />}/>
+          <Route path={`/profile`} element={<ProfilePage />}/>
         </Routes>
       </MyContext.Provider>
     </>

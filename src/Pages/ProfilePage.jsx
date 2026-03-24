@@ -38,7 +38,7 @@ function ProfilePage(){
                 <div className="h-auto w-full">
 
                     {/* - profile banner */}
-                    <div className="h-64 w-full flex justify-center items-end shadow" style={{ backgroundImage: `url(public/newJeansBanner.jpg)`, backgroundSize: "cover", backgroundPosition: "center",}}>
+                    <div className="h-64 w-full flex justify-center items-end shadow" style={{ backgroundImage: `url(/newJeansBanner.jpg)`, backgroundSize: "cover", backgroundPosition: "center",}}>
                         <div className="min-h-1/2 w-10/12 flex justify-start items-end">
                             <div className="h-36 w-36 flex justify-center items-center">
                                 <img className="rounded-t" src={`/hanni.jpg`} alt="" />
@@ -46,7 +46,6 @@ function ProfilePage(){
                             <div className="h-12 min-w-32 flex justify-center items-center text-gray-700 text-2xl font-semibold">Hanni</div>
                         </div>
                     </div>
-                    
 
                     {/* - midSection NavBar */}
                     <div className="h-12 w-full flex justify-center items-center bg-white shadow">
@@ -70,7 +69,7 @@ function ProfilePage(){
                                 <div className="h-auto w-4/5 mt-4">
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Active History</div>
                                     <div className="h-48 w-full flex flex-wrap justify-center items-center bg-white shadow-md rounded">
-                                        {Array.from({length: 0}).map((_, index) => {
+                                        {Array.from({length: 104}).map((_, index) => {
                                             const randomColor = squareColors[Math.floor(Math.random() * squareColors.length)];
                                             return <div key={index} className={`${randomColor} h-4 w-4 m-1 rounded-md`}></div>
                                         })}
@@ -106,7 +105,7 @@ function ProfilePage(){
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Anime</div>
                                     <div className="min-h-44 w-full flex flex-wrap justify-around items-center bg-white shadow-md rounded">
                                         {Array.from({length: 5}).map((_, index) => {
-                                            return <div key={index} className="border h-32 w-24 m-3 rounded"></div>
+                                            return <div key={index} className="border h-32 w-24 m-3 bg-blue-300 rounded"></div>
                                         })}
                                     </div>
                                 </div>
@@ -116,7 +115,7 @@ function ProfilePage(){
                                     <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Characters</div>
                                     <div className="min-h-44 w-full flex flex-wrap justify-around items-center bg-white shadow-md rounded">
                                         {Array.from({length: 8}).map((_, index) => {
-                                            return <div key={index} className="border h-32 w-24 m-3 rounded"></div>
+                                            return <div key={index} className="border h-32 w-24 m-3 bg-blue-300 rounded"></div>
                                         })}
                                     </div>
                                 </div>
@@ -241,14 +240,9 @@ function ProfilePage(){
                             </div>
 
 
-
                         </div>
 
                     </div>
-
-
-
-
 
                 </div>
 
