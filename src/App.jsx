@@ -9,6 +9,7 @@ import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
 import WIP from "./Pages/WIP.jsx";
 import MovieListPage from "./Pages/MovieListPage.jsx";
+import FavoritesPage from "./Pages/FavoritesPage.jsx";
 
 function App() {
   const [nowPlayingData, setNowPlayingData] = useState([]);
@@ -47,6 +48,7 @@ function App() {
           <Route path={`/profile`} element={<ProfilePage />}/>
           <Route path={`/wip`} element={<WIP />}/>
           <Route path={`/movielist`} element={<MovieListPage />}/>
+          <Route path={`/favorites`} element={<FavoritesPage />}/>
 
         </Routes>
       </MyContext.Provider>
