@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 
 
 function MiddleNavBar(){
-    // const middleNavData = ["Overview", "Anime List", "Manga List", "Favorites", "Stats", "Social", "Reviews", "Submissions"];
     const middleNavData = [
         {title: "Overview", url: "/profile"},
         {title: "Movie List", url: "/browse"},
-        {title: "List List", url: "/browse"},
+        {title: "TV List", url: "/browse"},
         {title: "Favorites", url: "/profile"},
         {title: "Stats", url: "/profile"},
         {title: "Social", url: "/profile"},
