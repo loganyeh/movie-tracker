@@ -27,7 +27,7 @@ function MovieListPage(){
                 <div className="h-auto w-full flex justify-center items-start pb-20">
 
                     {/* container */}
-                    <div className="border-2 border-red-600 h-auto w-10/12 flex justify-around items-start">
+                    <div className="h-auto w-10/12 flex justify-around items-start">
 
                         {/* left side */}
                         <div className="h-auto w-2/12">
@@ -100,13 +100,13 @@ function MovieListPage(){
 
                         
                         {/* right side */}
-                        <div className="border-2 border-blue-600 h-auto w-9/12">
+                        <div className="h-auto w-9/12">
                             
                             {/* BLOCKS */}
                             {/* watching block */}
                             {blockTitles.map((block, index) => {
-                                return <div key={index} className="h-auto w-full mt-6">
-                                            <div className="h-10 w-full pl-2 flex justify-start items-center">{block}</div>
+                                return <div key={index} className="h-auto w-full mt-8">
+                                            <div className="h-12 w-full pl-6 flex justify-start items-center text-xl font-normal text-gray-600">{block}</div>
 
                                             {/* block body */}
                                             <div className="min-h-10 w-full bg-white shadow rounded">
