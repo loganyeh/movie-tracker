@@ -87,8 +87,9 @@ function BrowsePage(){
                         {/* filter ICON*/}
                         <div className="h-full w-36 flex flex-col justify-center items-end">
                             <div className="h-10 w-full"></div>
-                            <div className="border border-gray-200 h-10 w-10 flex justify-center items-center bg-gray-50 rounded-xl shadow-md cursor-pointer">
-                                <i className='bx bx-slider text-2xl text-gray-400 hover:text-blue-400' ></i>
+                            <div className="border border-gray-200 h-10 w-10 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
+                                <i className='bx bx-slider text-2xl text-gray-400' ></i>
+                                {/* <i className='bx bx-slider text-2xl text-gray-400 hover:text-blue-400' ></i> */}
                             </div>
                         </div>
                     </div>

@@ -21,17 +21,20 @@ function MovieBlock({ data }){
                 <div className="h-full w-11/12 flex bg-white rounded shadow-md">
                     {/* poster */}
                     <div className="h-full w-1/12 flex justify-center items-center">
-                        <img className="h-11/12 w-1/2 rounded cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
+                        <img className="h-11/12 w-1/2 rounded" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
+                        {/* <img className="h-11/12 w-1/2 rounded cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} /> */}
                     </div>
 
                     {/* title and genre */}
                     <div className="h-full w-6/12">
                         <div className="h-1/2 w-full flex justify-start items-end text-lg text-gray-600 font-medium">
-                            <span className={`${hoverBubbleColors[data.key]} cursor-pointer`}>{data.title}</span>
+                            <span>{data.title}</span>
+                            {/* <span className={`${hoverBubbleColors[data.key]} cursor-pointer`}>{data.title}</span> */}
                         </div>
                         <div className="h-1/2 w-full flex justify-start items-center">
                             {data.genre_ids.map((genre, index) => {
-                                return <div key={index} className={`h-6 w-auto px-4 mr-2 flex justify-center items-center ${bubbleColors[data.key]} text-xs text-gray-900 font-semibold rounded-xl shadow cursor-pointer`}>{genreIDSwitch(genre)}</div>
+                                return <div key={index} className={`h-6 w-auto px-4 mr-2 flex justify-center items-center ${bubbleColors[data.key]} text-xs text-gray-900 font-semibold rounded-xl shadow`}>{genreIDSwitch(genre)}</div>
+                                // return <div key={index} className={`h-6 w-auto px-4 mr-2 flex justify-center items-center ${bubbleColors[data.key]} text-xs text-gray-900 font-semibold rounded-xl shadow cursor-pointer`}>{genreIDSwitch(genre)}</div>
                             })}
                         </div>
                     </div>
