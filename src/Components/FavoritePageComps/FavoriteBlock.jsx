@@ -13,7 +13,7 @@ function FavoriteBlock({ title, numOfFavs}){
                 </div>
 
                 {/* Anime Fav Body */}
-                <div className="border h-auto w-full flex justify-center items-center">
+                <div className="h-auto w-full flex justify-center items-center">
                     <div className="min-h-40 w-full mx-2 flex flex-wrap justify-around items-center bg-white shadow-md rounded">
                         {Array.from({length: numOfFavs || 10}).map((_, index) => {
                             return <div key={index} className="border h-30 w-24 2xl:m-4 xl:m-3 bg-blue-300 rounded"></div>
