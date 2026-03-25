@@ -4,7 +4,7 @@ function PinComment({ numOfPins }){
 
     return(
         <>
-            <div className="min-h-10 w-full mt-6 pb-2 flex flex-wrap justify-around items-center">
+            <div className="min-h-10 w-full mt-10 pb-2 flex flex-wrap justify-around items-center">
                 {Array.from({length: numOfPins || 8}).map((_, index) => {
                     return <div key={index} className="h-auto w-5/12 mb-4 flex justify-between items-center bg-white rounded">
 

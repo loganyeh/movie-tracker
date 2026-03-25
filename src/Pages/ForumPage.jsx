@@ -18,22 +18,22 @@ function ForumPage(){
 
     return(
         <>
-            <div className="border-2 border-red-600 h-screen w-screen">
+            <div className="h-screen w-screen">
 
                 {/* header */}
                 <Header />
 
                 {/* body */}
-                <div className="border-4 border-blue-600 h-auto w-full flex justify-center items-center bg-gray-200">
+                <div className="h-auto w-full flex justify-center items-center bg-gray-200">
                     
                     {/* container */}
-                    <div className="border-2 border-red-600 h-auto w-10/12 pb-24 flex justify-around items-start">
+                    <div className="h-auto w-10/12 pb-24 flex justify-around items-start">
 
                         {/* left */}
-                        <div className="border-2 border-green-400 h-full w-2/12 flex flex-col justify-center items-center">
+                        <div className="h-full w-2/12 flex flex-col justify-center items-center">
 
                             {/* create thread */}
-                            <div className="h-10 w-11/12 mt-6 flex justify-center items-center bg-blue-400 text-white font-light rounded-lg">Create Thread</div>
+                            <div className="h-10 w-11/12 mt-10 flex justify-center items-center bg-blue-400 text-white font-light rounded-lg">Create Thread</div>
 
                             {/* search forum */}
                             <div className="h-10 w-11/12 mt-6 pl-4 flex justify-start items-center bg-white text-gray-500 font-light rounded">
@@ -50,7 +50,7 @@ function ForumPage(){
                         </div>
 
                         {/* right */}
-                        <div className="border-2 border-orange-400 h-auto w-9/12">
+                        <div className="h-auto w-9/12">
                             {/* pin comment */}
                             <PinComment numOfPins={6} />
 
