@@ -92,8 +92,8 @@ function MovieInfoPage(){
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
 
                             {/* All Time Stats - highest rated & most popular */}
-                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
-                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
 
                             {/* Movie Column Details */}
                             <MovieColumnDetails data={movieData} />
