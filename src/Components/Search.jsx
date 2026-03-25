@@ -11,11 +11,11 @@ function Search({ data }){
     return(
         <>
             <div className="h-full w-56 flex flex-col justify-center items-start">
-                <div className="h-10 w-48 flex justify-start items-center text-gray-700 text-md font-semibold">Search</div>
+                <div className="2xl:h-10 xl:h-8 w-48 flex justify-start items-center text-gray-700 text-base font-semibold">Search</div>
                 {/* search input */}
-                <div className="h-10 w-48 flex bg-gray-50 rounded-lg shadow-md">
+                <div className="2xl:h-10 2xl:w-48 xl:h-8 xl:w-40 flex bg-gray-50 rounded-lg shadow-md">
                     <div onClick={handleSearch} className="h-full w-2/12 flex justify-center items-center"><i className='bx bx-search text-gray-500' ></i></div>
-                    <input onChange={(e) => setQuery(e.target.value)} value={query} type="text" className="h-full w-10/12 pl-2 text-sm font-medium bg-gray-50 outline-none"/>
+                    <input onChange={(e) => setQuery(e.target.value)} value={query} type="text" className="h-full w-10/12 pl-2 text-sm font-medium bg-gray-50 outline-none rounded-r-lg"/>
                     <div onClick={() => {setQuery("")}} className={`${!query ? "hidden" : ""} h-full w-1/12 flex justify-center items-center`}><i className='bx bx-x text-gray-400 hover:text-gray-600 cursor-pointer' ></i></div>
                 </div>
             </div>
