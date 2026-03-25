@@ -15,7 +15,7 @@ function Poster({ data }){
 
     return(
         <>
-            <div className="2xl:h-86 xl:h-72 w-1/6 flex flex-col justify-around items-center">
+            <div className="2xl:h-80 xl:h-72 w-1/6 flex flex-col justify-around items-center">
                 <Link to={`/movie`} onClick={handleClick} className="h-10/12 2xl:w-9/12 xl:w-10/12 bg-white rounded-md">
                     <img className="h-full w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
                 </Link>
