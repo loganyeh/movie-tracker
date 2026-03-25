@@ -4,7 +4,7 @@ function FavoriteBlock({ title, numOfFavs}){
 
     return(
         <>
-            <div className="h-auto w-10/12 mt-10">
+            <div className="h-auto w-9/12 mt-10">
 
                 {/* Anime Title */}
                 <div className="h-auto w-full flex justify-between items-center">

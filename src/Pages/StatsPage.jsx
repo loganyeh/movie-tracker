@@ -6,6 +6,12 @@ import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
 // comp from movieListPage
 import ListStatus from "../Components/MovieListComps/ListStatus";
 
+// page COMPS
+import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock";
+import BarGraphBlock from "../Components/StatsPageComps/BarGraphBlock";
+import PieChartBlock from "../Components/StatsPageComps/PieChartBlock";
+import PieChart from "../Components/StatsPageComps/PieChart";
+
 function StatsPage(){
 
     const animeStatsList = ["Overview", "Genres", "Tags", "Voice Actors", "Studios", "Staff"];
@@ -20,6 +26,54 @@ function StatsPage(){
         {icon: 'bx bx-checkbox-minus', number: 14.2, category: "Standard Deviation"},
     ];
 
+    const scoreData = [
+        {barHeight: "h-1/12", barY: 4, barX: 5},
+        {barHeight: "h-2/12", barY: 5, barX: 6},
+        {barHeight: "h-4/12", barY: 6, barX: 7},
+        {barHeight: "h-5/12", barY: 7, barX: 8},
+        {barHeight: "h-6/12", barY: 8, barX: 9},
+        {barHeight: "h-3/12", barY: 9, barX: 10},
+    ]
+
+    const episodeCountData = [
+        {barHeight: "h-6/12", barY: 4, barX: "1"},
+        {barHeight: "h-4/12", barY: 5, barX: "2-6"},
+        {barHeight: "h-10/12", barY: 6, barX: "7-16"},
+        {barHeight: "h-4/12", barY: 7, barX: "17-18"},
+        {barHeight: "h-2/12", barY: 8, barX: "101+"},
+    ]
+
+    const releaseYearData = [
+        {barHeight: "h-6/12", barY: 6, barX: "2023"},
+        {barHeight: "h-8/12", barY: 8, barX: "2024"},
+        {barHeight: "h-7/12", barY: 7, barX: "2025"},
+        {barHeight: "h-10/12", barY: 25, barX: "2026"},
+    ]; 
+    
+    const watchYearData = [
+        {barHeight: "h-1/12", barY: 1, barX: "2024"},
+        {barHeight: "h-2/12", barY: 3, barX: "2025"},
+        {barHeight: "h-10/12", barY: 70, barX: "2026"},
+
+    ];
+
+
+    // Pie Chart Data
+    const formatDistributionData = [
+        {category: "TV", percentage: "68"},
+        {category: "MOVIE", percentage: "11"},
+        {category: "OVA", percentage: "10"},
+    ]
+    const statusDistributionData = [
+        {category: "Plannning", percentage: "68"},
+        {category: "Completed", percentage: "24"},
+        {category: "Paused", percentage: "5"},
+    ]
+    const countryDistributionData = [
+        {category: "Japan", percentage: "96"},
+        {category: "China", percentage: "3"},
+        {category: "South Korea", percentage: "1"},
+    ]
 
     return(
         <>
@@ -35,35 +89,41 @@ function StatsPage(){
                 <MiddleNavBar />
 
                 {/* body */}
-                <div className="border-2 border-blue-600 h-auto w-full flex justify-center items-center bg-gray-200">
+                <div className="h-auto w-full flex justify-center items-center bg-gray-200">
                     
                     {/* container */}
-                    <div className="border h-auto w-10/12 pb-20 flex justify-around items-start">
+                    <div className="h-auto w-10/12 pb-32 flex justify-around items-start">
 
                         {/* left */}
-                        <div className="border-2 border-green-400 h-auto w-2/12">
+                        <div className="h-auto w-2/12">
                             <ListStatus title={"Anime Stats"} category={animeStatsList}/>
                             <ListStatus title={"Manga Stats"} category={mangaStatsList}/>
                         </div>
 
                         {/* right */}
-                        <div className="border-2 border-orange-400 h-full w-9/12">
+                        <div className="h-full w-9/12">
 
                             {/* stats */}
-                            <div className="h-36 w-full mt-6 flex justify-center items-center">
-                                {statsIconData.map((stat, index) => {
-                                    return <div key={index} className="h-full w-1/6 flex">
-                                                <div className="h-full w-2/5 flex justify-center items-center">
-                                                    <div className="h-12 w-12 flex justify-center items-center bg-white shadow-md rounded-full"><i className= {`${stat.icon} text-3xl text-gray-400`}></i></div>
-                                                </div>
-                                                <div className="h-full w-3/5">
-                                                    <div className="h-1/2 w-full flex justify-start items-end text-2xl text-blue-400 font-semibold">{stat.number || "75"}</div>
-                                                    <div className="h-1/2 w-full flex justify-start items-start text-sm text-gray-500 font-medium">{stat.category || "Total Anime"}</div>
-                                                </div>
-                                            </div>
-                                })}
+                            <StatIconsBlock data={statsIconData} />
+
+                            {/* score bar graphs */}
+                            <BarGraphBlock data={scoreData} title={"Score"} />
+                            {/* episode count */}
+                            <BarGraphBlock data={episodeCountData} title={"Episode Count"} />
+
+                            {/* Pie Charts */}
+                            <div className="h-auto w-full my-20 flex justify-between items-center">
+                                <PieChartBlock title={"Format Distribution"} data={formatDistributionData} />
+                                <PieChartBlock title={"Status Distribution"} data={statusDistributionData} />
+                                <PieChartBlock title={"Country Distribution"} data={countryDistributionData} />
                             </div>
 
+                            {/* Release Year */}
+                            <BarGraphBlock data={releaseYearData} title={"Release Year"}/>
+
+
+                            {/* Watch Year */}
+                            <BarGraphBlock data={watchYearData} title={"Watch Year"} />
 
                         </div>
 
