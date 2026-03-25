@@ -18,7 +18,7 @@ function Header(){
                 <div className="h-full w-1/3 flex justify-center items-center">
                     <div className="h-full w-1/3 flex justify-center items-center">
                         {/* <div className="border-2 border-white h-14 w-14 bg-white"></div> */}
-                        <Link to={"/movie"}><img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" /></Link>
+                        <Link to={"/profile"}><img className="h-16 w-16 cursor-pointer" src="../Letterboxd.jpeg" alt="" /></Link>
                         {/* <div><img className="h-16 w-16" src="../Letterboxd.jpeg" alt="logo.jpg" /></div> */}
                     </div>
                 </div>
