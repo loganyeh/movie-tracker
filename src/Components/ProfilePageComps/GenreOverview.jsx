@@ -12,15 +12,15 @@ function GenreOverview(){
     return(
         <>
             <div className="h-auto w-4/5 mt-4">
-                <div className="h-10 w-full pl-2 flex justify-start items-center text-md text-gray-600 font-semibold">Genre Overview</div>
+                <div className="2xl:h-10 xl:h-10 w-full pl-2 flex justify-start items-center 2xl:text-base xl:text-sm text-gray-600 font-semibold">Genre Overview</div>
 
                 <div className="h-auto w-full flex flex-col bg-white shadow-md rounded">
 
-                    <div className="h-24 w-full flex">
+                    <div className="2xl:h-24 xl:h-20 w-full flex">
                         {genreOverviewData.map((genre, index) => {
                             return <div key={index} className={`h-full w-1/5 flex flex-col justify-center items-center`}>
-                                        <div className={`h-8 w-10/12 flex justify-center items-center ${genre.bgColor} text-white text-sm font-normal rounded`}>{genre.genre}</div>
-                                        <div className={`mt-1 ${genre.textColor} text-sm`}>{genre.numOfEntries} <span className="text-xs text-gray-400">Entries</span></div>
+                                        <div className={`2xl:h-8 w-10/12 xl:h-6 flex justify-center items-center ${genre.bgColor} text-white 2xl:text-sm xl:text-xs 2xl:font-normal xl:font-light rounded`}>{genre.genre}</div>
+                                        <div className={`mt-1 ${genre.textColor} 2xl:text-sm xl:text-xs`}>{genre.numOfEntries} <span className="text-xs text-gray-400">Entries</span></div>
                                     </div>
                         })}
                     </div>

@@ -45,9 +45,9 @@ function ProfilePage(){
 
                                 {/* - Anime FAVORITES */}
                                 <FavoritesBlock blockName={"Movies"} posterAmount={5} />
-                                <FavoritesBlock blockName={"Shows"} posterAmount={5} />
+                                {/* <FavoritesBlock blockName={"Shows"} posterAmount={5} /> */}
                                 {/* - Character FAVORITES */}
-                                <FavoritesBlock blockName={"Characters"} posterAmount={8} />
+                                <FavoritesBlock blockName={"Characters"} posterAmount={6} />
 
                             </div>
 
