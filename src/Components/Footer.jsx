@@ -10,21 +10,17 @@ function Footer(){
 
     return(
         <>
-            <div className="h-72 w-full flex bg-gray-900">
+            <div className="2xl:h-72 xl:h-64 w-full flex bg-gray-900">
 
                 {/* left side */}
                 <div className="h-full w-1/2 flex justify-center items-center">
                     <div className="h-2/3 w-1/2">
                         <div className="text-lg text-blue-400 font-semibold">Site Theme</div>
                         <div className="mt-2">
-                            <i className='bx bx-sun mr-4 text-white text-3xl' ></i>
-                            <i className='bx bxs-moon mr-4 text-black text-3xl' ></i>
-                            <i className='bx bx-moon mr-4 text-white text-3xl' ></i>
-                            <i className='bx bxs-sun mr-4 text-black text-3xl' ></i>
-                            {/* <i className='bx bx-sun mr-4 text-white text-3xl rounded cursor-pointer' ></i>
-                            <i className='bx bxs-moon mr-4 text-black text-3xl rounded cursor-pointer' ></i>
-                            <i className='bx bx-moon mr-4 text-white text-3xl rounded cursor-pointer' ></i>
-                            <i className='bx bxs-sun mr-4 text-black text-3xl rounded cursor-pointer' ></i> */}
+                            <i className='bx bx-sun mr-4 text-white 2xl:text-3xl xl:text-2xl' ></i>
+                            <i className='bx bxs-moon mr-4 text-black 2xl:text-3xl xl:text-2xl' ></i>
+                            <i className='bx bx-moon mr-4 text-white 2xl:text-3xl xl:text-2xl' ></i>
+                            <i className='bx bxs-sun mr-4 text-black 2xl:text-3xl xl:text-2xl' ></i>
                         </div>
                     </div>
                 </div>
