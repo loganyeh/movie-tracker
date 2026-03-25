@@ -60,12 +60,12 @@ function MovieInfoPage(){
                 {/* body */}
                 <div className="min-h-200 w-full">
                     {/* Movie Banner */}
-                    <div className="relative h-80 w-full flex justify-center items-center">
+                    <div className="relative 2xl:h-80 xl:h-64 w-full flex justify-center items-center">
                         <MovieBanner data={movieData} />
                     </div>
 
                     {/* Movie Info Description */}
-                    <div className="h-72 w-full flex bg-white shadow-md">
+                    <div className="2xl:h-72 xl:h-64 w-full flex bg-white shadow-md">
 
                         {/* Poster and Toggle */}
                         <div className="relative h-full w-1/4 flex flex-col justify-around items-center">
@@ -92,8 +92,8 @@ function MovieInfoPage(){
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
 
                             {/* All Time Stats - highest rated & most popular */}
-                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
-                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
 
                             {/* Movie Column Details */}
                             <MovieColumnDetails data={movieData} />

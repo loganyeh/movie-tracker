@@ -33,14 +33,14 @@ function Tags(){
         <>
             <div className="h-auto w-2/3 mb-6">
                 {/* Tag Header */}
-                <div className="h-8 w-full mb-2 text-xl font-normal text-gray-600">Tags</div>
+                <div className="h-8 w-full mb-2 2xl:text-xl xl:text-lg font-normal text-gray-600">Tags</div>
                 <div className="h-auto w-full mb-6">
 
                     {/* Tag Box */}
                     {tagsData.map((tag, index) => {
-                        return <div key={index} className="h-10 w-full flex mb-3 bg-white rounded shadow-md">
-                            <div className="h-full w-1/2 pl-2 flex justify-start items-center font-normal text-gray-600 overflow-visible whitespace-nowrap">{tag.tag}</div>
-                            <div className="h-full w-1/2 pr-2 flex justify-end items-center font-light text-gray-400">{tag.percentage}%</div>
+                        return <div key={index} className="2xl:h-10 xl:h-8 w-full flex mb-3 bg-white rounded shadow-md">
+                            <div className="h-full w-1/2 pl-2 flex justify-start items-center 2xl:text-base xl:text-sm font-normal text-gray-600 overflow-visible whitespace-nowrap">{tag.tag}</div>
+                            <div className="h-full w-1/2 pr-2 flex justify-end items-center font-light 2xl:text-base xl:text-sm text-gray-400">{tag.percentage}%</div>
                         </div>
                     })}
 

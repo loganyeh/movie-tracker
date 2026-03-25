@@ -5,11 +5,11 @@ function Recommendations({ data }){
     return(
         <>
             <div className="h-auto w-11/12 mb-6">
-                <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">
+                <div className="h-10 w-full flex justify-start items-center text-gray-600 text-lg font-semibold">
                     <div className="h-full w-1/2 flex justify-start items-center">Recommendations</div>
                     <div className="h-full w-1/2 flex justify-end items-center">
-                        <div className="h-full w-1/3 flex justify-between items-center">
-                            <div className="h-full w-auto flex justify-center items-center font-medium text-xs">+Add</div>
+                        <div className="h-full w-full flex justify-end items-center">
+                            <div className="h-full w-auto 2xl:mr-4 xl:mr-2 flex justify-center items-center font-medium text-xs">+Add</div>
                             <div className="h-full w-auto flex justify-center items-center font-medium text-xs">View All Recommendations</div>
                         </div>
                     </div>
