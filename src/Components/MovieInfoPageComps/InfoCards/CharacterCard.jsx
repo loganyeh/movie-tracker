@@ -12,8 +12,8 @@ function CharacterCard({ data }){
                 </div>
                 <div className="h-28 w-3/4">
                     <div className="h-full w-full flex justify-around items-center">
-                        <div className="h-full w-full p-1 flex justify-center items-center text-sm text-gray-600">{data?.character ||"Tanjirou Kamado"}</div>
-                        <div className="h-full w-full p-1 flex justify-start items-center text-sm text-gray-500">{data?.name ||"Natsuki Hinae"}</div>
+                        <div className="h-full w-auto p-1 flex justify-center items-center text-sm text-gray-600">{data?.character ||"Tanjirou Kamado"}</div>
+                        <div className="h-full w-auto p-1 flex justify-start items-center text-sm text-gray-500">{data?.name ||"Natsuki Hinae"}</div>
                     </div>
                     {/* <div className="h-1/3 w-full flex">
                         <div className="h-full w-1/2 p-1 flex justify-start items-end text-xs">{"" ||"Main"}</div>
