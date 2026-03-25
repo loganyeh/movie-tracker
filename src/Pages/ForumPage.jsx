@@ -1,7 +1,12 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
+// from MovieList comps
 import ListStatus from "../Components/MovieListComps/ListStatus";
+
+// comps
+import PinComment from "../Components/ForumPageComps/PinComment";
+import ThreadForumBlock from "../Components/ForumPageComps/ThreadForumBlock";
 
 function ForumPage(){
     const feedData = ["Overview", "Recent Activity", "New Threads", "Subscribed", "Search"];
@@ -9,7 +14,6 @@ function ForumPage(){
         "News", "Music", "Gaming", "Visual Novels", "Light Novels", "Forum Games", "Recommendations",
         "Site Feedback", "Bug Reports", "AniList Apps", "Misc",
     ];
-
     const threadsData = ["Recently Active Threads", "Release Discussion Threads", "Newly Created Threads"];
 
     return(
@@ -47,56 +51,12 @@ function ForumPage(){
 
                         {/* right */}
                         <div className="border-2 border-orange-400 h-auto w-9/12">
+                            {/* pin comment */}
+                            <PinComment numOfPins={6} />
 
-                            {/* threads */}
-                            <div className="min-h-10 w-full mt-6 pb-2 flex flex-wrap justify-around items-center">
-                                {Array.from({length: 9}).map((_, index) => {
-                                    return <div key={index} className="h-auto w-5/12 mb-4 flex justify-between items-center bg-white rounded">
-
-                                                {/* tweet */}
-                                                <div className="h-10 w-auto flex">
-                                                    <div className="h-10 w-10 flex justify-center items-center"><i className='bx bxs-pin text-blue-400 text-2xl' ></i></div>
-                                                    <div className="h-10 w-auto flex justify-start items-center text-sm text-gray-500 font-medium">New User Intro Thread - Welcome!</div>
-                                                </div>
-
-                                                {/* views and comments */}
-                                                <div className="h-10 w-auto flex mr-2">
-                                                    <div className="h-full w-auto flex mr-4">
-                                                        <div className="h-10 w-auto mr-1 flex justify-center items-center"><i className='bx bx-bar-chart-alt-2 text-gray-500 text-sm' ></i></div>
-                                                        <div className="h-10 flex justify-center items-center text-xs text-gray-500 font-medium">1010239</div>
-                                                    </div>
-                                                    <div className="h-full w-auto flex">
-                                                        <div className="h-10 w-auto mr-1 flex justify-center items-center"><i className='bx bx-chat text-gray-500 text-sm' ></i></div>
-                                                        <div className="h-10 flex justify-center items-center text-xs text-gray-500 font-medium">21354</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                })}
-                            </div>
-
-                            
                             {/* forum threads */}
-                            {/* Recently Active Threads */}
                             {threadsData.map((thread, index) => {
-                                return <div key={index} className="h-auto w-full mt-6">
-                                            {/* header */}
-                                            <div className="h-10 w-full flex justify-between items-center">
-                                                <div className="h-10 w-auto flex justify-center items-center text-gray-600 font-medium">{thread || "Recently Active Threads"}</div>
-                                                <div className="h-10 w-auto flex justify-center items-center text-gray-500 text-xs font-medium">View All</div>
-                                            </div>
-
-                                            {/* threads */}
-                                            {Array.from({length: 4}).map((_, index) => {
-                                                return <div key={index} className="h-auto w-full mb-4 bg-white shadow-md rounded">
-                                                            <div className="h-10 w-full pl-4 flex justify-start items-end text-gray-700 font-normal text-lg">Crunchyroll Release Schedule for Spring 2026 Season</div>
-                                                            <div className="h-10 w-full pl-6 pt-1 flex justify-start items-start text-gray-500 text-sm truncate">Crunchyroll announced on Tuesday that it is streaming the following anime (dub languages streaming at later date in parentheses) for the spring 2026 season: March 28 Agents</div>
-                                                            <div className="h-10 w-full pl-4 flex justify-start items-center">
-                                                                <div className="h-6 w-6 mr-2 bg-blue-400 rounded"></div>
-                                                                <div className="text-sm text-gray-700"><span className="text-blue-400">Hanni</span> replied 1 hour ago</div>
-                                                            </div>
-                                                        </div>
-                                            })}
-                                        </div>
+                                return <ThreadForumBlock key={index} title={thread} />
                             })}
                         </div>
 
