@@ -1,11 +1,11 @@
 
 
-function ListStatus({ category }){
+function ListStatus({ title, category }){
 
     return(
         <>
             <div className="h-auto w-full mt-6">
-                <div className="h-10 w-full pl-2 flex justify-start items-center text-gray-500 font-light">Lists</div>
+                <div className="h-10 w-full pl-2 flex justify-start items-center text-gray-500 font-light">{title}</div>
 
                 {/* categorires for list */}
                 <div className="h-auto w-full flex flex-col justify-center items-center">
