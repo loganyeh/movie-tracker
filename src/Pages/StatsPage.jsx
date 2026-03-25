@@ -10,7 +10,7 @@ import ListStatus from "../Components/MovieListComps/ListStatus";
 import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock";
 import BarGraphBlock from "../Components/StatsPageComps/BarGraphBlock";
 import PieChartBlock from "../Components/StatsPageComps/PieChartBlock";
-import PieChart from "../Components/StatsPageComps/PieChart";
+// import PieChart from "../Components/StatsPageComps/PieChart";
 
 function StatsPage(){
 
@@ -56,7 +56,6 @@ function StatsPage(){
         {barHeight: "h-10/12", barY: 70, barX: "2026"},
 
     ];
-
 
     // Pie Chart Data
     const formatDistributionData = [

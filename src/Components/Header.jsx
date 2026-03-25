@@ -7,7 +7,7 @@ function Header(){
         {title: "Movie List", url: "/movielist"},
         {title: "TV List", url: "/movielist"},
         {title: "Browse", url: "/"},
-        {title: "Forum", url: "/wip"},
+        {title: "Forum", url: "/forum"},
     ]
 
     return(
