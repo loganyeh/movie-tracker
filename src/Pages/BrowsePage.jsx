@@ -76,25 +76,28 @@ function BrowsePage(){
 
                 {/* body */}
                 <div className="h-auto w-full flex flex-col justify-start items-center">
+                    
                     {/* search and filters */}
                     <div className="h-36 w-10/12 flex justify-between">
+
                         {/* search */}
                         <Search data={searchMovieData}/>
+
                         {/* filter */}
                         {filterTitles.map((title, index) => {
                             return <Filter key={index} title={title} />
                         })}
+
                         {/* filter ICON*/}
                         <div className="h-full w-36 flex flex-col justify-center items-end">
-                            <div className="h-10 w-full"></div>
-                            <div className="border border-gray-200 h-10 w-10 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
-                                <i className='bx bx-slider text-2xl text-gray-400' ></i>
-                                {/* <i className='bx bx-slider text-2xl text-gray-400 hover:text-blue-400' ></i> */}
+                            <div className="2xl:h-10 xl:h-8 w-full"></div>
+                            <div className="border border-gray-200 2xl:h-10 2xl:w-10 xl:h-8 xl:w-8 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
+                                <i className='bx bx-slider 2xl:text-2xl xl:text-xl text-gray-400' ></i>
                             </div>
                         </div>
+
                     </div>
 
-                    {/* WIP */}
                     {/* Search Menu */}
                     <SearchMovieBlock data={searchMovieData} />
 
