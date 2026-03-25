@@ -34,7 +34,7 @@ function SocialPage(){
                         </div>
 
                         {/* right */}
-                        <div className="h-96 w-9/12 mb-96 flex justify-center items-center text-2xl text-gray-500 font-normal">
+                        <div className="h-96 w-9/12 mb-96 flex justify-center items-center 2xl:text-2xl xl:text-xl text-gray-500 font-normal">
                             Following 0 users ｡ﾟヽ(ﾟ´Д｀)ﾉﾟ｡
                         </div>
 
