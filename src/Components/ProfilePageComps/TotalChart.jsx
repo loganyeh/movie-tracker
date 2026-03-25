@@ -16,7 +16,7 @@ function TotalChart(){
 
     return(
         <>
-            <div className="h-auto w-full mt-8 flex justify-between items-center">
+            <div className="h-auto w-full mt-8 2xl:flex justify-between items-center xl:block">
 
                 {/* - Total Anime */}
                 <ChartBlock data={totalAnimeData} measure={totalAnimeMeasure} barProgress={"w-1/2"} />
