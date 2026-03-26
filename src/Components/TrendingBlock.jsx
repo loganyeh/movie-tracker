@@ -7,7 +7,7 @@ function TrendingBlock({ title, data }){
 
     return(
         <>
-            <div className={`${!query ? "" : "hidden"} h-auto w-10/12 mb-6`}>
+            <div className={`${!query ? "" : "hidden"} h-auto w-10/12 2xl:mb-2 xl:mb-1`}>
                 {/* trending now title/header */}
                 <div className="2xl:h-12 xl:h-12 w-full flex">
                     <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">{title}</div>
