@@ -15,13 +15,15 @@ function Poster({ data }){
 
     return(
         <>
-            <div className="h-86 w-1/6 flex flex-col justify-around items-center mb-2">
-                <Link to={`/movie`} onClick={handleClick} className="h-10/12 w-10/12 bg-white rounded-md">
-                    <img className="h-full w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
+            <div className="h-auto w-1/6 flex flex-col justify-start items-center">
+                <Link to={`/movie`} onClick={handleClick} className="h-auto w-9/12 bg-white rounded-md">
+                    <img className="2xl:h-72 xl:h-48 w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
                 </Link>
-                <div className="h-1/12 w-full flex justify-center items-center font-medium">
-                    <div className="h-full w-10/12 text-gray-500 text-md flex justify-center items-center">
-                        <span className={`${bubbleColors[data.key]} cursor-pointer`}>{data.title}</span>
+                <div className="min-h-8 w-full 2xl:my-2 xl:my-1 flex justify-center items-center font-medium">
+                    <div className="h-auto w-10/12 text-gray-500 text-md flex justify-center items-center">
+                        <Link to={"/movie"} onClick={handleClick} className="h-auto">
+                            <span className={`h-full ${bubbleColors[data?.key]} cursor-pointer`}>{data.title}</span>
+                        </Link>
                     </div>
                 </div>
             </div>

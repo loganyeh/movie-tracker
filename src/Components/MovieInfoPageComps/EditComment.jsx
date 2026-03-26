@@ -10,9 +10,9 @@ function EditComment(){
         <>
             <div className="h-auto w-2/3 mb-6">
                 {commentData.map((comment, index) => {
-                    return <div key={index} className="h-10 w-full mb-4 flex bg-blue-400 rounded">
-                        <div className="h-full w-1/5 flex justify-center items-center text-white text-2xl">{comment.boxicon}</div>
-                        <div className="h-full w-4/5 flex justify-center items-center text-white text-xl">{comment.text}</div>
+                    return <div key={index} className="2xl:h-10 xl:h-8 w-full mb-4 flex bg-blue-400 rounded">
+                        <div className="h-full w-1/5 flex justify-center items-center text-white 2xl:text-2xl xl:text-xl">{comment.boxicon}</div>
+                        <div className="h-full w-4/5 flex justify-center items-center text-white 2xl:text-xl xl:text-base">{comment.text}</div>
                     </div>
                 })}
             </div>

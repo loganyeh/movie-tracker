@@ -8,7 +8,7 @@ function WatchStatusBlock({ blockTitle }){
                 <div className="h-12 w-full pl-6 flex justify-start items-center text-xl font-normal text-gray-600">{blockTitle}</div>
 
                 {/* block body */}
-                <div className="min-h-10 w-full bg-white shadow rounded">
+                <div className="min-h-10 w-full 2xl:p-0 xl:p-1 bg-white shadow rounded">
                     <div className="h-10 w-full flex justify-center items-center">
                         <div className="h-full w-6/12 pl-16 flex justify-start items-center text-gray-700 font-medium">Title</div>
                         <div className="h-full w-2/12 flex justify-center items-center text-gray-700 font-medium">Score</div>

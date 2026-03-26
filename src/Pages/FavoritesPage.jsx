@@ -24,7 +24,7 @@ function FavoritesPage(){
                 <MiddleNavBar />
 
                 {/* body */}
-                <div className="h-auto w-full pb-64 flex justify-center items-center bg-gray-200 text-4xl">
+                <div className="h-auto w-full 2xl:pb-64 xl:pb-52 flex justify-center items-center bg-gray-200 text-4xl">
                     
                     {/* favorite block container */}
                     <div className="h-auto w-full flex flex-col justify-center items-center">
