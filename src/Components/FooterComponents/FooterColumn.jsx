@@ -3,9 +3,9 @@ function FooterColumn({ column }){
 
     return(
         <>
-            <div className="h-2/3 w-1/4">
+            <div className="flex flex-col gap-3">
                 {column.map((rowName, index) => {
-                    return <div key={index} className="2xl:text-base xl:text-sm text-gray-400 font-semibold mb-3">{rowName}</div>
+                    return <div key={index} className="text-gray-400 font-semibold text-sm tracking-wide">{rowName}</div>
                 })}
             </div>
         </>

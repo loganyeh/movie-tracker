@@ -7,55 +7,51 @@ function SearchMovieBlock({ data }){
 
     return(
         <>
-            {/* <div className="border-2 border-yellow-400 h-200 w-10/12 mb-10">
-            </div> */}
-                <div className={`${!query ? "hidden" : ""} min-h-96 w-10/12 mb-6`}>
+                <div className={`${!query ? "hidden" : ""} w-full max-w-7xl mb-20 flex gap-8 flex-col`}>
                     
                     {/* trending now title/header */}
-                    <div className="h-8 w-full flex mb-4">
-                        <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">
+                    <div className="flex justify-between">
 
-                            <div className="flex justify-center items-center mr-4"><i className='bx bxs-purchase-tag text-gray-400 text-2xl'></i></div>
+                        {/* left side */}
+                        <div className="flex gap-2 items-center text-lg text-gray-700 font-medium">
 
-                            <div onClick={() => {setQuery("")}} className={`${!query ? "hidden" : ""} h-10/12 w-auto pl-2 flex justify-center items-center text-sm text-gray-100 font-semibold bg-blue-400 rounded cursor-pointer`}>
-                                <span>Search: {query}</span>
-                                <div className="h-10/12 w-6 flex justify-center items-center bg-blue-400 cursor-pointer"><i className='bx bx-x text-gray-100' ></i></div>
+                            <i className='bx bxs-purchase-tag text-gray-400 text-2xl'></i>
+
+                            <div onClick={() => {setQuery("")}} className={`border ${!query ? "hidden" : ""} px-2 py-0.5 flex gap-1.5 items-center text-sm text-gray-100 font-semibold bg-blue-400 rounded-md cursor-pointer`}>
+                                <span className="">Search: {query}</span>
+                                <i className='bx bx-x text-gray-100 bg-blue-400 cursor-pointer' ></i>
                             </div>
                             
                         </div>
 
-                        <div className="h-full w-1/2 flex justify-end items-center text-xs text-gray-400 font-medium">
+                        {/* right side */}
+                        <div className="flex gap-2 justify-end items-center text-xs text-gray-400 font-medium">
 
-                            <div className="flex justify-center items-center cursor-pointer hover:text-gray-500">
-                                <div className="h-full w-auto mr-2 flex flex-col justify-center items-center cursor-pointer">
+                            <div className="flex gap-2 items-center cursor-pointer hover:text-gray-500">
+                                <div className="hidden md:flex flex-col cursor-pointer">
                                     <i className='bx bxs-up-arrow' ></i>
                                     <i className='bx bxs-down-arrow' ></i>
                                 </div>
-                                <span className="mr-3 text-md">Popularity</span>
+                                <span className="hidden md:flex text-md">Popularity</span>
                             </div>
 
-                            <span className="mr-2 text-2xl font-thin">|</span>
+                            <span className="hidden md:flex text-2xl font-thin">|</span>
 
-                            <div className="h-full w-auto flex justify-center items-center">
-                                <i className='bx bxs-grid mr-1 text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
-                                <i className='bx bxs-grid-alt mr-1 text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
-                                <i className='bx bx-grid-horizontal mr-1 text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
-                            </div>
+                            {/* check why hidden is not working */}
+                            <i className='hidden bx bxs-grid text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
+                            <i className='bx bxs-grid-alt text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
+                            <i className='bx bx-grid-horizontal text-3xl text-gray-400 hover:text-gray-500 cursor-pointer' ></i>
 
                         </div>
                     </div>
 
-                    {/* --------------- */}
 
-                    {/* movie posters */}
-                    <div className="h-11/12 w-full flex flex-wrap">
+                    {/* Movie Search Grid */}
+                    <div className="grid gap-2.5 md:gap-x-3 md:gap-y-5 lg:gap-y-8 xl:gap-x-8 xl:gap-y-10 grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-5">
                         {data.map((data, index) => {
                             return <Poster key={index} data={data} />
                         })}
                     </div>
-                    
-                    {/* work on this logic not correct */}
-                    {/* <div className={`${query ? "" : "hidden"} h-96 w-full pt-16 flex justify-center items-start text-2xl text-gray-500 font-semibold`}>No Results</div> */}
 
                 </div>
         </>

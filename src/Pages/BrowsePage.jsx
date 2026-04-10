@@ -69,17 +69,23 @@ function BrowsePage(){
     return(
         <>
             {/*  */}
-            <div className="min-h-screen w-screen bg-gray-200">
+            <div className="bg-gray-200">
 
                 {/* header */}
                 <Header />
 
                 {/* body */}
-                <div className="h-auto w-full flex flex-col justify-start items-center">
+                {/* added padding for sides */}
+                <div className="w-full px-5 pt-6 xl:pt-10 flex gap-8 flex-col items-center">
                     
-                    {/* search and filters */}
-                    <div className="h-36 w-10/12 flex justify-between">
+                    {/* Browse & Anime Popup above Search Bar @ Mobile */}
+                    <div className="w-full xl:hidden flex text-3xl text-gray-500 font-semibold">
+                        <div className="px-3 py-1.5 bg-gray-200 rounded-md">Browse</div>
+                        <div className="px-3 py-1.5 bg-gray-50 rounded-md">Anime</div>
+                    </div>
 
+                    {/* Search & Filters & Icon */}
+                    <div className="w-full max-w-7xl flex gap-4 xl:grid xl:gap-5 xl:grid-cols-7">
                         {/* search */}
                         <Search data={searchMovieData}/>
 
@@ -89,11 +95,8 @@ function BrowsePage(){
                         })}
 
                         {/* filter ICON*/}
-                        <div className="h-full w-36 flex flex-col justify-center items-end">
-                            <div className="2xl:h-10 xl:h-8 w-full"></div>
-                            <div className="border border-gray-200 2xl:h-10 2xl:w-10 xl:h-8 xl:w-8 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
-                                <i className='bx bx-slider 2xl:text-2xl xl:text-xl text-gray-400' ></i>
-                            </div>
+                        <div className="flex justify-end items-end">
+                            <i className='bx bx-slider p-2 xl:p-1.5 text-2xl text-gray-400 bg-gray-50 rounded-lg shadow-md' ></i>
                         </div>
 
                     </div>
@@ -101,7 +104,7 @@ function BrowsePage(){
                     {/* Search Menu */}
                     <SearchMovieBlock data={searchMovieData} />
 
-                    {/* anime posters */}
+                    {/* Trending/Most Popular Posters Ratings Stuff */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
                     <TrendingBlock title={"POPULAR"} data={popularData} />
                     <TrendingBlock title={"TOP RATED"} data={topRatedData} />

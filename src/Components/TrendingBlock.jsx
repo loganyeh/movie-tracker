@@ -1,27 +1,28 @@
 import Poster from "./TrendingBlockComponents/Poster";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { MyContext } from "../Context/MyContext";
 
 function TrendingBlock({ title, data }){
+    const [loading, setLoading] = useState();
     const { query, setQuery } = useContext(MyContext);
 
     return(
         <>
-            <div className={`${!query ? "" : "hidden"} h-auto w-10/12 2xl:mb-2 xl:mb-1`}>
+            <div className={`${!query ? "" : "hidden"} w-full max-w-7xl flex flex-col gap-3`}>
+                
                 {/* trending now title/header */}
-                <div className="2xl:h-12 xl:h-12 w-full flex">
-                    <div className="h-full w-1/2 flex justify-start items-center text-lg text-gray-700 font-medium">{title}</div>
-                    <div className="h-full w-1/2 flex justify-end items-center text-xs text-gray-400 font-medium">
-                        <span>View All</span>
-                    </div>
+                <div className="flex items-center justify-between">
+                    <div className="text-lg text-zinc-500 font-semibold leading-loose tracking-wider">{title}</div>
+                    <div className="text-xs text-gray-400 font-semibold tracking-wide">View All</div>
                 </div>
 
                 {/* movie posters */}
-                <div className="h-auto w-full flex justify-center items-start">
+                <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-5 gap-3 lg:gap-4 xl:gap-10">
                     {data.map((data, index) => {
                         return <Poster key={index} data={data} />
                     })}
                 </div>
+
             </div>
         </>
     )
