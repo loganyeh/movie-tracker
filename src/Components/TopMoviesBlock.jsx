@@ -16,6 +16,7 @@ function TopMoviesBlock({ data }){
                     <div className="text-xs text-gray-400 font-semibold tracking-wide">View All</div>
                 </div>
 
+                {/* -> LG */}
                 <div className="xl:hidden grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-2.5 gap-y-6">
                     {data.map((data, index) => {
                         return <div key={index} className="relative w-full">
@@ -25,8 +26,10 @@ function TopMoviesBlock({ data }){
                     })}
                 </div>
 
-                <div className="hidden xl:flex gap-6 flex-col">
-                    {data.map(( data, index) => {
+                {/* XL -> */}
+                {/* wip max-w-7xl */}
+                <div className="border hidden xl:flex gap-6 flex-col items-center">
+                    {data.slice(0, 2).map(( data, index) => {
                         return <MovieBlock key={index} data={data} />
                     })}
                 </div>
