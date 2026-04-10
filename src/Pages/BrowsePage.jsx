@@ -75,7 +75,8 @@ function BrowsePage(){
                 <Header />
 
                 {/* body */}
-                <div className="h-auto w-full flex flex-col justify-start items-center">
+                {/* added padding for sides */}
+                <div className="w-full max-w-7xl px-2 flex flex-col items-center">
                     
                     {/* search and filters */}
                     <div className="h-36 w-10/12 flex justify-between">
@@ -103,9 +104,9 @@ function BrowsePage(){
 
                     {/* anime posters */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
-                    <TrendingBlock title={"POPULAR"} data={popularData} />
-                    <TrendingBlock title={"TOP RATED"} data={topRatedData} />
-                    <TrendingBlock title={"UPCOMING"} data={upcomingData} />
+                    {/* <TrendingBlock title={"POPULAR"} data={popularData} /> */}
+                    {/* <TrendingBlock title={"TOP RATED"} data={topRatedData} /> */}
+                    {/* <TrendingBlock title={"UPCOMING"} data={upcomingData} /> */}
 
                     {/* TOP 10 TRENDING SECTION */}
                     {/* <TopMoviesBlock data={top10MoviesData} /> */}
