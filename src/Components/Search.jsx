@@ -10,9 +10,9 @@ function Search({ data }){
 
     return(
         <>
-            <div className="flex flex-col justify-between">
+            <div className="w-full flex flex-col justify-between">
 
-                <div className="text-gray-700 font-semibold">Search</div>
+                <div className="hidden xl:flex text-lg text-gray-700 font-semibold">Search</div>
                 {/* search input */}
                 {/* <div className=""> */}
                     

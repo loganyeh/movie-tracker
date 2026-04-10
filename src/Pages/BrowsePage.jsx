@@ -76,13 +76,16 @@ function BrowsePage(){
 
                 {/* body */}
                 {/* added padding for sides */}
-                <div className="w-full px-5 flex flex-col items-center">
+                <div className="w-full px-5 pt-6 xl:pt-10 flex gap-8 flex-col items-center">
                     
-                    {/* ------------ */}
+                    {/* Browse & Anime Popup above Search Bar @ Mobile */}
+                    <div className="w-full xl:hidden flex text-3xl text-gray-500 font-semibold">
+                        <div className="px-3 py-1.5 bg-gray-200 rounded-md">Browse</div>
+                        <div className="px-3 py-1.5 bg-gray-50 rounded-md">Anime</div>
+                    </div>
 
-                    {/* search and filters */}
-                    <div className="w-full max-w-7xl grid gap-8 grid-cols-7">
-
+                    {/* Search & Filters & Icon */}
+                    <div className="w-full max-w-7xl flex gap-4 xl:grid xl:gap-5 xl:grid-cols-7">
                         {/* search */}
                         <Search data={searchMovieData}/>
 
@@ -93,48 +96,20 @@ function BrowsePage(){
 
                         {/* filter ICON*/}
                         <div className="flex justify-end items-end">
-                            <i className='bx bx-slider p-1.5 text-2xl text-gray-400 bg-gray-50 rounded-lg shadow-md' ></i>
+                            <i className='bx bx-slider p-2 xl:p-1.5 text-2xl text-gray-400 bg-gray-50 rounded-lg shadow-md' ></i>
                         </div>
 
                     </div>
-
-                    {/* search and filters */}
-                    {/* <div className="border h-36 w-10/12 flex justify-between">
-
-
-                        <Search data={searchMovieData}/>
-
-
-                        {filterTitles.map((title, index) => {
-                            return <Filter key={index} title={title} />
-                        })}
-
-
-                        <div className="h-full w-36 flex flex-col justify-center items-end">
-                            <div className="2xl:h-10 xl:h-8 w-full"></div>
-                            <div className="border border-gray-200 2xl:h-10 2xl:w-10 xl:h-8 xl:w-8 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
-                                <i className='bx bx-slider 2xl:text-2xl xl:text-xl text-gray-400' ></i>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-                    {/* -------------------------- */}
-
-
-
 
                     {/* Search Menu */}
                     {/* pops up when searching movies */}
                     <SearchMovieBlock data={searchMovieData} />
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
-                    <div className="w-full flex gap-10 flex-col items-center">
-                        <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
-                        <TrendingBlock title={"POPULAR"} data={popularData} />
-                        <TrendingBlock title={"TOP RATED"} data={topRatedData} />
-                        <TrendingBlock title={"UPCOMING"} data={upcomingData} />
-                    </div>
+                    <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
+                    <TrendingBlock title={"POPULAR"} data={popularData} />
+                    <TrendingBlock title={"TOP RATED"} data={topRatedData} />
+                    <TrendingBlock title={"UPCOMING"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
                     {/* <TopMoviesBlock data={top10MoviesData} /> */}
