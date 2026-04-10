@@ -9,7 +9,7 @@ function TopMoviesBlock({ data }){
 
     return(
         <>
-            <div className={`${!query ? "" : "hidden"} w-full max-w-7xl`}>
+            <div className={`${!query ? "" : "hidden"} w-full mb-16 flex gap-4 flex-col max-w-7xl`}>
                 {/* header title */}
                 <div className="flex items-center justify-between">
                     <div className="text-lg text-zinc-500 font-semibold leading-loose tracking-wider">TOP 100 Movies</div>
@@ -28,8 +28,8 @@ function TopMoviesBlock({ data }){
 
                 {/* XL -> */}
                 {/* wip max-w-7xl */}
-                <div className="border hidden xl:flex gap-6 flex-col items-center">
-                    {data.slice(0, 2).map(( data, index) => {
+                <div className="hidden xl:flex gap-6 flex-col items-center">
+                    {data.slice(0, 10).map(( data, index) => {
                         return <MovieBlock key={index} data={data} />
                     })}
                 </div>
