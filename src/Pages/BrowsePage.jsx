@@ -78,18 +78,38 @@ function BrowsePage(){
                 {/* added padding for sides */}
                 <div className="w-full px-5 flex flex-col items-center">
                     
+                    {/* ------------ */}
+
                     {/* search and filters */}
-                    <div className="h-36 w-10/12 flex justify-between">
+                    <div className="w-full max-w-7xl grid gap-8 grid-cols-7">
 
                         {/* search */}
                         <Search data={searchMovieData}/>
 
                         {/* filter */}
-                        {/* {filterTitles.map((title, index) => {
+                        {filterTitles.map((title, index) => {
                             return <Filter key={index} title={title} />
-                        })} */}
+                        })}
 
                         {/* filter ICON*/}
+                        <div className="flex justify-end items-end">
+                            <i className='bx bx-slider p-1.5 text-2xl text-gray-400 bg-gray-50 rounded-lg shadow-md' ></i>
+                        </div>
+
+                    </div>
+
+                    {/* search and filters */}
+                    {/* <div className="border h-36 w-10/12 flex justify-between">
+
+
+                        <Search data={searchMovieData}/>
+
+
+                        {filterTitles.map((title, index) => {
+                            return <Filter key={index} title={title} />
+                        })}
+
+
                         <div className="h-full w-36 flex flex-col justify-center items-end">
                             <div className="2xl:h-10 xl:h-8 w-full"></div>
                             <div className="border border-gray-200 2xl:h-10 2xl:w-10 xl:h-8 xl:w-8 flex justify-center items-center bg-gray-50 rounded-xl shadow-md">
@@ -97,7 +117,12 @@ function BrowsePage(){
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
+
+                    {/* -------------------------- */}
+
+
+
 
                     {/* Search Menu */}
                     {/* pops up when searching movies */}
