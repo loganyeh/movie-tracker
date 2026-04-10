@@ -84,9 +84,9 @@ function BrowsePage(){
                         <Search data={searchMovieData}/>
 
                         {/* filter */}
-                        {filterTitles.map((title, index) => {
+                        {/* {filterTitles.map((title, index) => {
                             return <Filter key={index} title={title} />
-                        })}
+                        })} */}
 
                         {/* filter ICON*/}
                         <div className="h-full w-36 flex flex-col justify-center items-end">
@@ -108,7 +108,7 @@ function BrowsePage(){
                     <TrendingBlock title={"UPCOMING"} data={upcomingData} />
 
                     {/* TOP 10 TRENDING SECTION */}
-                    <TopMoviesBlock data={top10MoviesData} />
+                    {/* <TopMoviesBlock data={top10MoviesData} /> */}
 
                 </div>
 

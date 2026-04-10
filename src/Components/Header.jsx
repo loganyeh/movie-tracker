@@ -12,6 +12,7 @@ function Header(){
 
     return(
         <>
+            {/* <div className={`py-3 flex justify-center bg-gray-900 text-gray-300`}> */}
             <div className={`py-3 hidden xl:flex justify-center bg-gray-900 text-gray-300`}>
 
                 {/* controls width compared to parent's width */}

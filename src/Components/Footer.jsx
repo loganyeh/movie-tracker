@@ -10,27 +10,34 @@ function Footer(){
 
     return(
         <>
-            <div className="2xl:h-72 xl:h-64 w-full flex bg-gray-900">
+            <div className="border px-8 py-6 xl:py-16 xl:flex xl:justify-center bg-gray-900">
+            {/* <div className="2xl:h-72 xl:h-64 w-full flex bg-gray-900"> */}
 
-                {/* left side */}
-                <div className="h-full w-1/2 flex justify-center items-center">
-                    <div className="h-2/3 w-1/2">
-                        <div className="text-lg text-blue-400 font-semibold">Site Theme</div>
-                        <div className="mt-2">
-                            <i className='bx bx-sun mr-4 text-white 2xl:text-3xl xl:text-2xl' ></i>
-                            <i className='bx bxs-moon mr-4 text-black 2xl:text-3xl xl:text-2xl' ></i>
-                            <i className='bx bx-moon mr-4 text-white 2xl:text-3xl xl:text-2xl' ></i>
-                            <i className='bx bxs-sun mr-4 text-black 2xl:text-3xl xl:text-2xl' ></i>
+                {/* controls inner for width to parent's width */}
+                <div className="w-full max-w-7xl flex flex-col xl:flex-row xl:justify-between gap-6">
+
+                    {/* screen color */}
+                    <div className="flex flex-col gap-4">
+                        {/* text */}
+                        <div className="text-blue-400 font-semibold">Site Theme</div>
+
+                        {/* boxes */}
+                        <div className="flex gap-3.5 text-2xl">
+                            <i className='bx bx-sun border-2 border-gray-600 text-white bg-black rounded' ></i>
+                            <i className='bx bxs-moon border-2 border-gray-600 text-black bg-white rounded' ></i>
+                            <i className='bx bx-moon border-2 border-gray-600 text-white bg-black rounded' ></i>
+                            <i className='bx bxs-sun border-2 border-gray-600 text-black bg-white rounded' ></i>
                         </div>
                     </div>
-                </div>
 
-                {/* right side */}
-                <div className="h-full w-1/2 flex justify-center items-center">
-                    <FooterColumn column={columnOne} />
-                    <FooterColumn column={columnTwo} />
-                    <FooterColumn column={columnThree} />
-                    <FooterColumn column={columnFour} />
+                    {/* Right Side - Footer Column */}
+                    <div className="flex flex-col xl:grid xl:grid-cols-4 gap-8 xl:gap-16">
+                        <FooterColumn column={columnOne} />
+                        <FooterColumn column={columnTwo} />
+                        <FooterColumn column={columnThree} />
+                        <FooterColumn column={columnFour} />
+                    </div>
+
                 </div>
 
             </div>
