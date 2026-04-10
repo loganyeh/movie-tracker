@@ -69,7 +69,7 @@ function BrowsePage(){
     return(
         <>
             {/*  */}
-            <div className="min-h-screen w-screen bg-gray-200">
+            <div className="bg-gray-200">
 
                 {/* header */}
                 <Header />

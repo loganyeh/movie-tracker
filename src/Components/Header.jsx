@@ -12,7 +12,7 @@ function Header(){
 
     return(
         <>
-            <div className={`2xl:h-20 xl:h-16 w-full flex bg-gray-900 text-gray-300`}>
+            <div className={`border-2 border-red-600 hidden 2xl:h-20 xl:h-16 w-full xl:flex bg-gray-900 text-gray-300`}>
 
                 {/* logo section */}
                 <div className="h-full w-1/3 flex justify-center items-center">
