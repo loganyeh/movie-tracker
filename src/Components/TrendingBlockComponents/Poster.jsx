@@ -15,17 +15,12 @@ function Poster({ data }){
 
     return(
         <>
-            <div className="h-auto w-1/6 flex flex-col justify-start items-center">
-                <Link to={`/movie`} onClick={handleClick} className="h-auto w-9/12 bg-white rounded-md">
-                    <img className="w-full rounded-md cursor-pointer" src={`https://image.tmdb.org/t/p/w500${data.poster}`} alt={`${data.title}.jpg`} />
-                </Link>
-                <div className="min-h-8 w-fullflex justify-center items-center font-medium">
-                    <div className="h-auto w-10/12 text-gray-500 text-md flex justify-center items-center">
-                        <Link to={"/movie"} onClick={handleClick} className="h-auto">
-                            <span className={`h-full ${bubbleColors[data?.key]} cursor-pointer`}>{data.title}</span>
-                        </Link>
-                    </div>
-                </div>
+            <div className="flex flex-col gap-2">
+                {/* Poster Image */}
+                <Link to={`/movie`} onClick={handleClick} className="aspect-[11/16] lg:aspect-[4/5] xl:aspect-[5/6] bg-center bg-cover rounded-lg cursor-pointer"
+                style={{ backgroundImage: `url(${`https://image.tmdb.org/t/p/w500${data.poster}`})`}}></Link>
+                {/* Title Name */}
+                <Link to={"/movie"} onClick={handleClick} className={`${bubbleColors[data?.key]} w-fit text-xs md:text-sm font-semibold text-gray-500 tracking-tight line-clamp-2 cursor-pointer`}>{data?.title}</Link>
             </div>
         </>
     )

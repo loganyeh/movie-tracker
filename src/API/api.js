@@ -29,7 +29,7 @@ export async function fetchNowPlaying(){
     const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
     const data = await response.json();
 
-    const nowPlayingData = data.results.slice(0, 6).map((movie, index) => {
+    const nowPlayingData = data.results.slice(0, 5).map((movie, index) => {
       return {
         key: index,
         id: movie.id,
@@ -54,7 +54,7 @@ export async function fetchPopular(){
   const response = await fetch('https://api.themoviedb.org/3/movie/popular', options);
   const data = await response.json();
 
-  const popularData = data.results.slice(6, 12).map((data, index) => {
+  const popularData = data.results.slice(6, 11).map((data, index) => {
     return {
       key: index, 
       id: data.id,
@@ -79,7 +79,7 @@ export async function fetchTopRated(){
   const response = await fetch('https://api.themoviedb.org/3/movie/top_rated', options);
   const data = await response.json();
 
-  const topRatedData = data.results.slice(0, 6).map((data, index) => {
+  const topRatedData = data.results.slice(0, 5).map((data, index) => {
     return {
       key: index,
       id: data.id, 
@@ -104,7 +104,7 @@ export async function fetchUpcoming(){
   const response = await fetch('https://api.themoviedb.org/3/movie/upcoming', options);
   const data = await response.json();
 
-  const upcomingData = data.results.slice(0, 6).map((data, index) => {
+  const upcomingData = data.results.slice(0, 5).map((data, index) => {
     return {
       key: index, 
       id: data.id,
