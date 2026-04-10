@@ -58,9 +58,10 @@ function MovieInfoPage(){
                 <Header />
 
                 {/* body */}
-                <div className="min-h-200 w-full">
+                <div className="border min-h-200 w-full">
+
                     {/* Movie Banner */}
-                    <div className="relative 2xl:h-80 xl:h-64 w-full flex justify-center items-center">
+                    <div className="border relative 2xl:h-80 xl:h-64 w-full flex justify-center items-center">
                         <MovieBanner data={movieData} />
                     </div>
 
