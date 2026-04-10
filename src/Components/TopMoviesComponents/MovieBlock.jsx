@@ -8,7 +8,7 @@ function MovieBlock({ data }){
 
     return(
         <>
-            <div className="2xl:h-20 xl:h-16 w-full flex mb-8">
+            <div className="2xl:h-20 xl:h-16 w-full flex">
                 {/* ranking */}
                 <div className="h-full w-1/12 flex justify-center items-center">
                     <div className="h-1/2 w-1/2 flex justify-center items-center text-gray-600">
