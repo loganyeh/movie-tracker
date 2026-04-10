@@ -102,7 +102,6 @@ function BrowsePage(){
                     </div>
 
                     {/* Search Menu */}
-                    {/* pops up when searching movies */}
                     <SearchMovieBlock data={searchMovieData} />
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
