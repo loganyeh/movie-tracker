@@ -26,10 +26,10 @@ function MovieColumnDetails({ data }){
 
     return(
         <>
-            <div className="p-5 flex gap-7 bg-white rounded-sm shadow overflow-x-auto scroll-smooth">
+            <div className="p-5 flex md:flex-col gap-[28px] md:gap-4 bg-white rounded-sm shadow overflow-x-auto scroll-smooth">
                 {/* Column Details */}
                 {columnDetailData.map((row, index) => {
-                    return <div key={index} className="flex gap-1.5 flex-col text-sm whitespace-nowrap">
+                    return <div key={index} className="flex gap-1.5 flex-col text-sm whitespace-nowrap md:whitespace-normal">
                                 <div className="text-gray-400">{row.title}</div>
                                 {(row.stat).map((stat, index) => {
                                     return <div key={index} className="text-gray-500">{stat}</div> 
