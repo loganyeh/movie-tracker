@@ -73,7 +73,7 @@ function MovieInfoPage(){
             </div>
 
             {/* body */}
-            <div className="border pb-24 p-5 flex gap-10 flex-col bg-gray-200">
+            <div className="pb-24 p-5 flex gap-10 flex-col bg-gray-200">
 
                     <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
                     <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
