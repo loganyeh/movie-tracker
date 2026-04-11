@@ -59,72 +59,76 @@ function MovieInfoPage(){
             {/* Movie Banner */}
             <MovieBanner data={movieData} />
 
+            <div className="flex justify-center">
+                <div className="w-full max-w-[1400px] flex flex-col md:flex-row">
+                    {/* 1 */}
+                    <InfoPoster data={movieData} />
 
-            <div className="flex flex-col md:flex-row">
-                {/* 1 */}
-                <InfoPoster data={movieData} />
-
-                {/* 2 */}
-                <div className="md:flex md:gap-4 md:flex-col">
-                    <MovieDescription data={movieData} />
-                    <Tabs />
+                    {/* 2 */}
+                    <div className="md:flex md:gap-4 md:flex-col">
+                        <MovieDescription data={movieData} />
+                        <Tabs />
+                    </div>
                 </div>
             </div>
 
 
             {/* body */}
-            <div className="pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
+            <div className="flex justify-center bg-gray-200">
 
-                {/* 1 */}
-                <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
-                    <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
-                    <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
+                <div className="w-full max-w-[1400px] pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
 
-                    <MovieColumnDetails data={movieData} />
+                    {/* 1 */}
+                    <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
+                        <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
+                        <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
-                    <div className="hidden md:flex gap-3.5 flex-col">
-                        <Tags />
-                        <EditComment />
-                        <SocialMedia />
+                        <MovieColumnDetails data={movieData} />
+
+                        <div className="hidden md:flex gap-3.5 flex-col">
+                            <Tags />
+                            <EditComment />
+                            <SocialMedia />
+                        </div>
                     </div>
-                </div>
-                
-                {/* Mobile Description Block */}    
-                <div className="md:hidden flex gap-2.5 flex-col"> 
-                    <div className="text-sm font-medium text-gray-600">Description</div>
-                    <div className="p-5 bg-white text-sm text-gray-600 font-light rounded-sm shadow">It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.
-                        <br />
-                        <br />Source: Crunchyroll
+                    
+                    {/* Mobile Description Block */}    
+                    <div className="md:hidden flex gap-2.5 flex-col"> 
+                        <div className="text-sm font-medium text-gray-600">Description</div>
+                        <div className="p-5 bg-white text-sm text-gray-600 font-light rounded-sm shadow">It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.
+                            <br />
+                            <br />Source: Crunchyroll
+                        </div>
                     </div>
-                </div>
 
-                {/* 2 */}
-                {/* <div className="border flex gap-10 flex-col flex-1"> */}
-                <div className="flex gap-10 flex-col flex-1 min-w-0">
-                    <Relations data={relationData}/>
+                    {/* 2 */}
+                    {/* <div className="border flex gap-10 flex-col flex-1"> */}
+                    <div className="flex gap-10 flex-col flex-1 min-w-0">
+                        <Relations data={relationData}/>
 
-                    <Characters data={creditsData} />
+                        <Characters data={creditsData} />
 
-                    <Staff data={creditsData} />
+                        <Staff data={creditsData} />
 
-                    <Distribution />
+                        <Distribution />
 
-                    <Watch data={videoData} />
+                        <Watch data={videoData} />
 
-                    <TrailerFollowing trailerData={videoData} />
+                        <TrailerFollowing trailerData={videoData} />
 
-                    <Recommendations data={relationData} />
+                        <Recommendations data={relationData} />
 
-                    <ThreadReview />
+                        <ThreadReview />
 
-                    <div className="md:hidden">
-                        <SocialMedia />
-                        <Tags />
+                        <div className="md:hidden">
+                            <SocialMedia />
+                            <Tags />
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        
+    
             <Footer />
 
         </>

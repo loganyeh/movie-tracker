@@ -8,7 +8,7 @@ function Relations({ data }){
 
                 <div className="text-gray-600 font-semibold">Relations</div>
 
-                <div className="flex gap-8 md:gap-4 md:flex-col overflow-x-auto scroll-smooth">
+                <div className="flex gap-8 md:gap-4 md:flex-col xl:grid xl:grid-cols-2 xl:gap-x-8 overflow-x-auto scroll-smooth">
                     {data?.results?.slice(0, 6)?.map((data, index) => {
                         return <div key={index} className="flex shrink-0">
                                     <div className="w-20 aspect-[2/3] rounded-l-md shadow-md bg-center bg-cover"
