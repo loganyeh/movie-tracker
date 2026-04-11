@@ -92,6 +92,10 @@ function MovieInfoPage(){
 
                     <Characters data={creditsData} />
 
+                    <Staff data={creditsData} />
+
+                    <Distribution />
+
                     {/* info and stats */}
                     {/* <div className="h-auto w-full pt-4 pb-16 flex"> */}
 
@@ -126,7 +130,7 @@ function MovieInfoPage(){
                             {/* <Characters data={creditsData} /> */}
 
                             {/* staff */}
-                            <Staff data={creditsData} />
+                            {/* <Staff data={creditsData} /> */}
 
                             {/* status distibution and score distrubution */}
                             {/* <Distribution /> */}

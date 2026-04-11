@@ -11,18 +11,13 @@ function Staff({ data }){
 
     return(
         <>
-            <div className="min-h-40 w-11/12 mb-6">
-
-                <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Staff</div>
-                <div className="h-auto w-full flex flex-wrap 2xl:justify-start xl:justify-around items-center">
-
+            <div className="flex gap-3 flex-col">
+                <div className="text-gray-600 font-semibold">Staff</div>
+                <div className="flex gap-3 flex-col ">
                     {/* card */}
-                    {data?.crew?.slice(0, 3)?.map((data, index) => {
+                    {data?.crew?.slice(0, 4)?.map((data, index) => {
                         return <StaffCard key={index} data={data} />
                     })}
-
-
-                    
                 </div>
 
             </div>
