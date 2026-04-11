@@ -5,7 +5,7 @@ function TrailerFollowing({ trailerData }){
 
     return(
         <>
-            <div className="h-auto w-11/12 mb-6 flex">
+            <div className="flex gap-6 flex-col">
 
                 {/* trailer */}
                 <Trailer data={trailerData} />

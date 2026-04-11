@@ -100,6 +100,11 @@ function MovieInfoPage(){
 
                     <TrailerFollowing trailerData={videoData} />
 
+                    <Recommendations data={relationData} />
+
+                    <ThreadReview />
+                    {/* left offf at threadreview */}
+
                     {/* info and stats */}
                     {/* <div className="h-auto w-full pt-4 pb-16 flex"> */}
 
@@ -146,10 +151,10 @@ function MovieInfoPage(){
                             {/* <TrailerFollowing trailerData={videoData} /> */}
 
                             {/* recommendations */}
-                            <Recommendations data={relationData} />
+                            {/* <Recommendations data={relationData} /> */}
 
                             {/* threads and reviews */}
-                            <ThreadReview />
+                            {/* <ThreadReview /> */}
 
                         </div>
 
