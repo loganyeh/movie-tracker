@@ -77,6 +77,9 @@ function MovieInfoPage(){
             {/* body */}
             <div className="p-5 flex gap-10 flex-col bg-gray-200">
 
+                    <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
+                    <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
+
                     <MovieColumnDetails data={movieData} />
                     
                     {/* Mobile Description Block */}
@@ -103,7 +106,10 @@ function MovieInfoPage(){
                     <Recommendations data={relationData} />
 
                     <ThreadReview />
-                    {/* left offf at threadreview */}
+
+                    <SocialMedia />
+
+                    <Tags />
 
                     {/* info and stats */}
                     {/* <div className="h-auto w-full pt-4 pb-16 flex"> */}
@@ -112,8 +118,8 @@ function MovieInfoPage(){
                         <div className="h-full w-1/4 flex flex-col justify-start items-center">
 
                             {/* All Time Stats - highest rated & most popular */}
-                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
-                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
+                            {/* <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
+                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} /> */}
 
                             {/* Movie Column Details */}
                             {/* <MovieColumnDetails data={movieData} /> */}
@@ -160,7 +166,7 @@ function MovieInfoPage(){
 
                     {/* </div> */}
 
-                    <Tags />
+                    {/* <Tags /> */}
 
             </div>
         

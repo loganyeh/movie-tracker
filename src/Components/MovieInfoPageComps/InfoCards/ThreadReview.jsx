@@ -5,7 +5,7 @@ function ThreadReview(){
 
     return(
         <>
-            <div className="h-auto w-11/12 mb-6 flex">
+            <div className="flex gap-8 flex-col">
 
                 {/* THREAD */}
                 <Thread />

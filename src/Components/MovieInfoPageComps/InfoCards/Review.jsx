@@ -4,13 +4,17 @@ function Review(){
 
     return(
         <>
-            <div className="h-full w-1/2 flex flex-col justify-center items-start">
+            <div className="flex gap-2 flex-col">
 
                 {/* reviews title */}
-                <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Reviews</div>
+                <div className="font-semibold text-gray-600">Reviews</div>
 
                 {/* REVIEW CARD */}
-                <ReviewCard />
+                <div className="flex gap-4 flex-col">
+                    {Array.from({length: 2}).map((_, index) => {
+                        return <ReviewCard key={index} />
+                    })}
+                </div>
 
             </div>
         </>
