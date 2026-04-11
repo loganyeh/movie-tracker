@@ -96,6 +96,10 @@ function MovieInfoPage(){
 
                     <Distribution />
 
+                    <Watch data={videoData} />
+
+                    <TrailerFollowing trailerData={videoData} />
+
                     {/* info and stats */}
                     {/* <div className="h-auto w-full pt-4 pb-16 flex"> */}
 
@@ -136,10 +140,10 @@ function MovieInfoPage(){
                             {/* <Distribution /> */}
 
                             {/* watch */}
-                            <Watch data={videoData} />
+                            {/* <Watch data={videoData} /> */}
 
                             {/* trailer */}
-                            <TrailerFollowing trailerData={videoData} />
+                            {/* <TrailerFollowing trailerData={videoData} /> */}
 
                             {/* recommendations */}
                             <Recommendations data={relationData} />
