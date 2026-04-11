@@ -4,13 +4,13 @@ function StaffCard({ data }){
 
     return(
         <>
-            <div className="h-auto 2xl:w-80 xl:w-5/12 mr-10 mb-6 flex bg-white rounded shadow-md">
-                <div className="h-auto 2xl:w-1/4 xl:w-auto bg-blue-300 rounded-l">
-                    <img className="2xl:h-auto w-auto xl:h-28 text-xs text-gray-400 rounded-l" src={`https://image.tmdb.org/t/p/original${data?.profile_path}`} alt="No Image" />
-                </div>
-                <div className="h-28 w-3/4 flex justify-around items-center">
-                    <div className="h-full w-auto pl-1 flex justify-start items-center text-gray-600 text-sm">{ data?.name || "Author"}</div>
-                    <div className="h-full w-auto pl-1 flex justify-start items-center text-gray-500 text-xs">{ data?.job || "Original Creator"}</div>
+            <div className="flex items-center bg-white rounded shadow">
+                <div className="w-20 aspect-[3/4] bg-cover bg-center rounded-l"
+                style={{ backgroundImage: `url(${`https://image.tmdb.org/t/p/original${data?.profile_path}`})`}}></div>
+
+                <div className="w-full p-2 flex gap-5 flex-col text-sm">
+                    <div className="text-gray-600">{data?.name || "Author"}</div>
+                    <div className="text-gray-500">{data?.job || "Original Creator"}</div>
                 </div>
             </div>
         </>

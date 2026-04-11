@@ -13,19 +13,19 @@ function Characters({ data }){
 
     return(
         <>
-            <div className="min-h-40 w-11/12 mb-6">
-                <div className="h-10 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Characters</div>
-                <div className="h-auto w-full flex flex-wrap 2xl:justify-start xl:justify-around items-center">
+            <div className="flex gap-3 flex-col">
+                <div className="text-gray-600 font-semibold">Characters</div>
+                {/* <div className="flex flex-wrap 2xl:justify-start xl:justify-around items-center"> */}
+
+                <div className="flex gap-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-8">
 
                     {/* card */}
-                    {/* {characterData.map((character, index) => {
-                        return <CharacterCard key={index} />
-                    })} */}
                     {data?.cast?.slice(0, 6)?.map((character, index) => {
                         return <CharacterCard key={index} data={character} />
                     })}
-
                 </div>
+
+                {/* </div> */}
             </div>
         </>
     )

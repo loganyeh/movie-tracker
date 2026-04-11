@@ -53,100 +53,84 @@ function MovieInfoPage(){
 
     return(
         <>
-            <div className="min-h-screen w-screen bg-gray-200">
-                {/* header */}
-                <Header />
+            {/* header */}
+            <Header />
 
-                {/* body */}
-                <div className="min-h-200 w-full">
-                    {/* Movie Banner */}
-                    <div className="relative 2xl:h-80 xl:h-64 w-full flex justify-center items-center">
-                        <MovieBanner data={movieData} />
+            {/* Movie Banner */}
+            <MovieBanner data={movieData} />
+
+            <div className="flex justify-center">
+                <div className="w-full max-w-[1400px] flex flex-col md:flex-row">
+                    {/* 1 */}
+                    <InfoPoster data={movieData} />
+
+                    {/* 2 */}
+                    <div className="md:flex md:gap-4 md:flex-col">
+                        <MovieDescription data={movieData} />
+                        <Tabs />
                     </div>
+                </div>
+            </div>
 
-                    {/* Movie Info Description */}
-                    <div className="2xl:h-72 xl:h-64 w-full flex bg-white shadow-md">
 
-                        {/* Poster and Toggle */}
-                        <div className="relative h-full w-1/4 flex flex-col justify-around items-center">
-                            <InfoPoster data={movieData} />
-                        </div>
+            {/* body */}
+            <div className="flex justify-center bg-gray-200">
 
-                        {/* Movie Summary */}
-                        <div className="h-full w-3/4 flex flex-col justify-center items-center">
-                            {/* Movie Description */}
-                            <MovieDescription data={movieData} />
+                <div className="w-full max-w-[1400px] pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
 
-                            {/* Tabs */}
-                            <Tabs />
-                        </div>
+                    {/* 1 */}
+                    <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
+                        <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
+                        <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
-                    </div>
+                        <MovieColumnDetails data={movieData} />
 
-                    {/* ------------------------------- */}
-
-                    {/* info and stats */}
-                    <div className="h-auto w-full pt-4 pb-16 flex">
-
-                        {/* Column Stats/Info */}
-                        <div className="h-full w-1/4 flex flex-col justify-start items-center">
-
-                            {/* All Time Stats - highest rated & most popular */}
-                            <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
-                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
-
-                            {/* Movie Column Details */}
-                            <MovieColumnDetails data={movieData} />
-
-                            {/* Tags */}
+                        <div className="hidden md:flex gap-3.5 flex-col">
                             <Tags />
-
-                            {/* Write/Edit Comment */}
                             <EditComment />
-
-                            {/* Social Media */}
                             <SocialMedia />
-                            
                         </div>
-
-                        {/* right side */}
-                        <div className="h-full w-3/4">
-
-                            {/* relations */}
-                            <Relations data={relationData}/>
-
-                            {/* characters */}
-                            <Characters data={creditsData} />
-
-                            {/* staff */}
-                            <Staff data={creditsData} />
-
-                            {/* status distibution and score distrubution */}
-                            <Distribution />
-
-                            {/* watch */}
-                            <Watch data={videoData} />
-
-                            {/* trailer */}
-                            <TrailerFollowing trailerData={videoData} />
-
-                            {/* recommendations */}
-                            <Recommendations data={relationData} />
-
-                            {/* threads and reviews */}
-                            <ThreadReview />
-
+                    </div>
+                    
+                    {/* Mobile Description Block */}    
+                    <div className="md:hidden flex gap-2.5 flex-col"> 
+                        <div className="text-sm font-medium text-gray-600">Description</div>
+                        <div className="p-5 bg-white text-sm text-gray-600 font-light rounded-sm shadow">It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.
+                            <br />
+                            <br />Source: Crunchyroll
                         </div>
+                    </div>
 
+                    {/* 2 */}
+                    {/* <div className="border flex gap-10 flex-col flex-1"> */}
+                    <div className="flex gap-10 flex-col flex-1 min-w-0">
+                        <Relations data={relationData}/>
+
+                        <Characters data={creditsData} />
+
+                        <Staff data={creditsData} />
+
+                        <Distribution />
+
+                        <Watch data={videoData} />
+
+                        <TrailerFollowing trailerData={videoData} />
+
+                        <Recommendations data={relationData} />
+
+                        <ThreadReview />
+
+                        <div className="md:hidden">
+                            <SocialMedia />
+                            <Tags />
+                        </div>
                     </div>
 
                 </div>
-
-                {/* footer */}
-                <Footer />
-
             </div>
-        
+    
+            <Footer />
+
         </>
     )
 }

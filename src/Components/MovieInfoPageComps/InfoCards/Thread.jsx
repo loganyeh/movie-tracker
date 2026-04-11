@@ -4,18 +4,20 @@ function Thread(){
 
     return(
         <>
-            <div className="h-full w-1/2 flex flex-col justify-center items-start">
+            <div className="flex gap-2 flex-col">
 
                 {/* threads */}
-                <div className="h-10 w-11/12 flex justify-between items-center text-gray-600 text-lg font-semibold rounded">
-                    <div>Threads</div>
+                <div className="flex justify-between items-center text-gray-600 font-semibold">
+                    <div className="font-semibold">Threads</div>
                     <div className="text-xs font-light">Create New Thread</div>
                 </div>
 
 
                 {/*  */}
-                <div className="h-auto w-11/12">
-                    <ThreadCard />
+                <div className="flex gap-4 flex-col">
+                    {Array.from({length: 2}).map((_, index) => {
+                        return <ThreadCard key={index} />
+                    })}
                 </div>
 
                     

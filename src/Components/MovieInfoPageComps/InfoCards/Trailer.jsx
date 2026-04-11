@@ -4,19 +4,13 @@ function Trailer({ data }){
 
     return(
         <>
-            <div className="h-full w-1/2 flex flex-col justify-center items-start">
+            <div className="flex gap-2 flex-col">
 
-                <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold rounded">Trailer</div>
-                <div className="h-64 w-11/12 flex justify-center items-center bg-blue-400 rounded cursor-pointer"
-                    style={{
-                        backgroundImage: `url(${`https://img.youtube.com/vi/${data?.results[0]?.key}/hqdefault.jpg`})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                    }}
-                >
-                    <div className="h-auto w-auto flex justify-center items-center">
-                        <i className='bx bx-play-circle text-6xl text-gray-200 hover:text-red-600 cursor-pointer'></i>
-                    </div>
+                <div className="text-gray-600 font-semibold">Trailer</div>
+
+                <div className="h-56 flex justify-center items-center rounded-xs bg-cover bg-center"
+                style={{ backgroundImage: `url(${`https://img.youtube.com/vi/${data?.results[0]?.key}/hqdefault.jpg`})` }}>
+                    <i className='bx bx-play-circle text-6xl text-gray-200'></i>
                 </div>
                     
             </div>

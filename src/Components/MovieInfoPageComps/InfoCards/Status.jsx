@@ -20,34 +20,31 @@ function Status(){
 
     return(
         <>
-            <div className="h-full w-1/2 flex flex-col justify-center items-start">
+            <div className="flex gap-2 flex-col">
  
                 {/* Title */}
-                <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Status Distribution</div>
+                <div className="text-gray-600 font-semibold">Status Distribution</div>
 
-                <div className="2xl:h-36 xl:h-28 w-11/12 bg-white rounded shadow-md">
-                    <div className="h-11/12 w-full flex justify-around items-center">
-
-                        {/* statusess */}
+                <div className="bg-white rounded shadow-md">
+                    {/* status */}
+                    <div className="px-3 py-5 flex gap-3 justify-around overflow-x-auto smooth-scroll">
                         {statusData.map((status, index) => {
-                            return <div key={index} className="h-full w-1/6">
-                                        <div className="h-1/2 w-full flex justify-center items-end">
-                                            <div className={`h-8/12 w-full flex justify-center items-center text-white 2xl:text-base xl:text-sm ${status.bgColor} rounded-md`}>{status.title}</div>
-                                        </div>
-                                        <div className="h-auto w-full mt-2 flex justify-center items-center"><span className={`h-full mr-1 2xl:text-sm xl:text-xs ${status.textColor}`}>{status.users}</span><span className="h-full text-xs">Users</span></div>
+                            return <div key={index} className="flex gap-1 flex-col">
+                                        <div className={`px-4 py-1.5 text-white ${status.bgColor} text-center text-xs rounded`}>{status.title}</div>
+                                        <div className="flex gap-1 text-xs"><span className={`${status.textColor}`}>{status.users}</span>Users</div>
                                     </div>
                         })}
-
                     </div>
 
                     {/* color bar */}
-                    <div className="h-1/12 w-full flex rounded-b">
+                    <div className="flex rounded-b">
                         {statusColorBar.map((color, index) => {
-                            return <div key={index} className={`h-full ${color.width} ${color.bgColor}`}></div>
+                            return <div key={index} className={`h-2.5 ${color.width} ${color.bgColor}`}></div>
                         })}
                     </div>
-                    
+
                 </div>
+
             </div>
         </>
     )

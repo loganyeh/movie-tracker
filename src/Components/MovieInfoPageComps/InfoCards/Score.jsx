@@ -17,21 +17,19 @@ function Score(){
 
     return(
         <>
-            <div className="h-full w-1/2 flex flex-col justify-center items-start">
+            <div className="flex gap-2 flex-col">
 
                 {/* distribution title */}
-                <div className="h-10 w-11/12 flex whitespace-wrap justify-start items-center text-gray-600 text-lg font-semibold">Score Distribution</div>
+                <div className="text-gray-600 font-semibold">Score Distribution</div>
 
                 {/* color icons */}
-                <div className="2xl:h-36 xl:h-28 w-11/12 flex justify-around items-center bg-white rounded shadow-md">
+                <div className="p-4 flex justify-between items-end bg-white rounded shadow-md">
                     {/* Score Color Bar */}
                     {scoreData.map((score, index) => {
-                        return <div key={index} className="h-full 2xl:w-1/12 xl:w-4 pb-2 flex justify-center items-end">
-                                    <div className={`${score.height} ${score.width} ${score.bgColor} rounded-full`}></div>
-                                </div>
+                        return <div key={index} className={`${score.height} ${score.width} ${score.bgColor} rounded-full`}></div>
                     })}
-
                 </div>
+
             </div>
         </>
     )
