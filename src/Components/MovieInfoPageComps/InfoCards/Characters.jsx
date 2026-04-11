@@ -17,7 +17,7 @@ function Characters({ data }){
                 <div className="text-gray-600 font-semibold">Characters</div>
                 {/* <div className="flex flex-wrap 2xl:justify-start xl:justify-around items-center"> */}
 
-                <div className="flex gap-3 flex-col">
+                <div className="flex gap-4 flex-col">
 
                     {/* card */}
                     {data?.cast?.slice(0, 6)?.map((character, index) => {

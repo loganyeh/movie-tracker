@@ -56,8 +56,6 @@ function MovieInfoPage(){
             {/* header */}
             <Header />
 
-
-
             {/* NEW Header WIP */}
             {/* Movie Banner */}
             <div className="border">
@@ -75,7 +73,7 @@ function MovieInfoPage(){
             </div>
 
             {/* body */}
-            <div className="p-5 flex gap-10 flex-col bg-gray-200">
+            <div className="border pb-24 p-5 flex gap-10 flex-col bg-gray-200">
 
                     <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
                     <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
@@ -111,66 +109,8 @@ function MovieInfoPage(){
 
                     <Tags />
 
-                    {/* info and stats */}
-                    {/* <div className="h-auto w-full pt-4 pb-16 flex"> */}
-
-                        {/* Column Stats/Info */}
-                        <div className="h-full w-1/4 flex flex-col justify-start items-center">
-
-                            {/* All Time Stats - highest rated & most popular */}
-                            {/* <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
-                            <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} /> */}
-
-                            {/* Movie Column Details */}
-                            {/* <MovieColumnDetails data={movieData} /> */}
-
-                            {/* Tags */}
-                            {/* <Tags /> */}
-
-                            {/* Write/Edit Comment */}
-                            {/* <EditComment /> */}
-
-                            {/* Social Media */}
-                            {/* <SocialMedia /> */}
-                            
-                        </div>
-
-                        {/* right side */}
-                        <div className="h-full w-3/4">
-
-                            {/* relations */}
-                            {/* <Relations data={relationData}/> */}
-
-                            {/* characters */}
-                            {/* <Characters data={creditsData} /> */}
-
-                            {/* staff */}
-                            {/* <Staff data={creditsData} /> */}
-
-                            {/* status distibution and score distrubution */}
-                            {/* <Distribution /> */}
-
-                            {/* watch */}
-                            {/* <Watch data={videoData} /> */}
-
-                            {/* trailer */}
-                            {/* <TrailerFollowing trailerData={videoData} /> */}
-
-                            {/* recommendations */}
-                            {/* <Recommendations data={relationData} /> */}
-
-                            {/* threads and reviews */}
-                            {/* <ThreadReview /> */}
-
-                        </div>
-
-                    {/* </div> */}
-
-                    {/* <Tags /> */}
-
             </div>
         
-            {/* footer */}
             <Footer />
 
         </>

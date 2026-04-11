@@ -4,8 +4,10 @@ function Relations({ data }){
 
     return(
         <>
-            <div className="w-full">
-                <div className="border text-gray-600 text-lg font-semibold">Relations</div>
+            <div className="border flex gap-2 flex-col">
+
+                <div className="text-gray-600 font-semibold">Relations</div>
+
                 <div className="border border-red-600 w-full flex gap-6">
                     {data?.results?.slice(0, 1)?.map((data, index) => {
                         return <div key={index} className="flex">
@@ -14,10 +16,10 @@ function Relations({ data }){
                                          
                                     </div>
 
-                                    <div className="border min-w-56 p-2.5 flex flex-col bg-white">
-                                        <div className="border">Source</div>
-                                        <div className="border">Demon Slayer</div>
-                                        <div className="border">Manga * Finished</div>
+                                    <div className="border p-2.5 flex flex-col bg-white">
+                                        {/* <div className="border">Source</div> */}
+                                        {/* <div className="border">Demon Slayer</div> */}
+                                        {/* <div className="border">Manga * Finished</div> */}
                                     </div>
                                 </div>
                     })}
