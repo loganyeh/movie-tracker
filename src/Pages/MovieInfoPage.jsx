@@ -56,19 +56,20 @@ function MovieInfoPage(){
             {/* header */}
             <Header />
 
-            {/* NEW Header WIP */}
             {/* Movie Banner */}
-            <div className="border">
+            <MovieBanner data={movieData} />
 
-                {/* Movie Splash Art */}
-                <MovieBanner data={movieData} />
-
-                {/* Movie Poster & Status Dropdown & Favorite Button */}
+            <div className="flex flex-col md:flex-row">
+                {/* group 1 */}
                 <InfoPoster data={movieData} />
-                {/* <MovieDescription data={movieData} /> */}
-                <div className="p-4 text-lg text-gray-500 font-semibold">{movieData?.title || "Demon Slayer"}</div>
 
-                <Tabs />
+                {/* group 2 */}
+                <div>
+                    <MovieDescription data={movieData} />
+                    <Tabs />
+                </div>
+                {/* <div className="p-4 text-lg text-gray-500 font-semibold">{movieData?.title || "Demon Slayer"}</div> */}
+
 
             </div>
 
