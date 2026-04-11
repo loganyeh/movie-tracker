@@ -18,7 +18,7 @@ function SocialMedia(){
             <div className="flex gap-2 flex-col">
                 <div className="text-gray-600 font-semibold">External & Streaming Links</div>
 
-                <div className="grid gap-x-6 gap-y-3 grid-cols-2">
+                <div className="grid gap-x-6 gap-y-3 grid-cols-2 md:flex md:flex-col">
                     {socialMediaData.map((socialMedia, index) => {
                         return <div key={index} className="p-0.5 flex gap-1 items-center bg-white rounded shadow-md">
                                         <div className={`${socialMedia.color} p-1 flex items-center justify-center text-white rounded`}>{socialMedia.logo}</div>

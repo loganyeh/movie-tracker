@@ -76,20 +76,21 @@ function MovieInfoPage(){
             <div className="pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
 
                 {/* 1 */}
-                <div className="border w-full flex gap-3.5 flex-col md:max-w-[210px]">
+                <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
                     <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
                     <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
                     <MovieColumnDetails data={movieData} />
+
+                    <div className="hidden md:flex gap-3.5 flex-col">
+                        <Tags />
+                        <EditComment />
+                        <SocialMedia />
+                    </div>
                 </div>
                 
-                {/* <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl xl:text-base' ></i>} ranking={"161"} text={"Highest Rated"} />
-                <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl xl:text-base' ></i>} ranking={"2"} text={"Most Popular"} />
-
-                <MovieColumnDetails data={movieData} /> */}
-                
                 {/* Mobile Description Block */}    
-                <div className="border md:hidden flex gap-2.5 flex-col"> 
+                <div className="md:hidden flex gap-2.5 flex-col"> 
                     <div className="text-sm font-medium text-gray-600">Description</div>
                     <div className="p-5 bg-white text-sm text-gray-600 font-light rounded-sm shadow">It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.
                         <br />
@@ -98,8 +99,9 @@ function MovieInfoPage(){
                 </div>
 
                 {/* 2 */}
-                <div className="border flex gap-10 flex-col flex-1">
-                    {/* <Relations data={relationData}/>
+                {/* <div className="border flex gap-10 flex-col flex-1"> */}
+                <div className="flex gap-10 flex-col flex-1 min-w-0">
+                    <Relations data={relationData}/>
 
                     <Characters data={creditsData} />
 
@@ -115,9 +117,10 @@ function MovieInfoPage(){
 
                     <ThreadReview />
 
-                    <SocialMedia />
-
-                    <Tags /> */}
+                    <div className="md:hidden">
+                        <SocialMedia />
+                        <Tags />
+                    </div>
                 </div>
 
             </div>

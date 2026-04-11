@@ -12,7 +12,7 @@ function Recommendations({ data }){
                 </div>
 
                 {/* movie poster # 1 */}
-                <div className="flex gap-6 overflow-x-auto scroll-smooth">
+                <div className="flex gap-6 md:grid md:grid-cols-3 overflow-x-auto scroll-smooth md:overflow-x-hidden">
                     {data?.results?.slice(7, 12).map((data, index) => {
                         return <div key={index} className="flex gap-2 flex-col">
                                     <div className="w-36 aspect-[3/4] bg-blue-300 rounded shadow-md bg-cover bg-center shrink-0"
