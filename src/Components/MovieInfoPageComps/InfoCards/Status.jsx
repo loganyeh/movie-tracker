@@ -27,7 +27,7 @@ function Status(){
 
                 <div className="bg-white rounded shadow-md">
                     {/* status */}
-                    <div className="px-3 py-5 flex gap-3 lg:justify-around overflow-x-auto smooth-scroll">
+                    <div className="px-3 py-5 flex gap-3 justify-around overflow-x-auto smooth-scroll">
                         {statusData.map((status, index) => {
                             return <div key={index} className="flex gap-1 flex-col">
                                         <div className={`px-4 py-1.5 text-white ${status.bgColor} text-center text-xs rounded`}>{status.title}</div>

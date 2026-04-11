@@ -4,7 +4,7 @@ function ThreadCard({ tweet, views, comments, img, username, time, status}){
 
     return(
         <>
-            <div className="px-3 py-4 flex bg-white rounded shadow-md">
+            <div className="px-3 py-4 flex justify-between bg-white rounded shadow-md">
 
                 <div className="flex gap-3 flex-col">
                     <div className="text-sm text-gray-600">{tweet || "What if you had the ability to make your own Demon Slayer breathing style/form... what would it be?"}</div>
