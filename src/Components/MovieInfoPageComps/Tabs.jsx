@@ -1,16 +1,14 @@
 
 
 function Tabs(){
-    const tabNames = ["Overview", "Watch", "Characters", "Staff", "Stats", "Review", "Social"];
+    const tabNames = ["Overview", "Watch", "Characters", "Staff", "Reviews", "Stats", "Social"];
 
     return(
         <>
-            <div className="h-2/12 w-2/3 flex justify-center items-center">
-                <div className="h-full w-full flex justify-between items-center">
-                    {tabNames.map((tab, index) => {
-                        return <div key={index} className="text-sm text-gray-500 font-semibold">{tab}</div>
-                    })}
-                </div>
+            <div className="px-10 py-2 flex gap-6 overflow-x-scroll scroll-smooth">
+                {tabNames.map((tab, index) => {
+                    return <div key={index} className="text-xs text-gray-500 font-light">{tab}</div>
+                })}
             </div>
         </>
     )

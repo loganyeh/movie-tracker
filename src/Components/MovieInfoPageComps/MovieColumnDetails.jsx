@@ -26,16 +26,15 @@ function MovieColumnDetails({ data }){
 
     return(
         <>
-            <div className="h-auto w-2/3 m-2 mb-6 bg-white rounded-lg shadow-md">
+            <div className="p-5 flex gap-7 bg-white rounded-sm shadow overflow-x-auto scroll-smooth">
                 {/* Column Details */}
                 {columnDetailData.map((row, index) => {
-                    return <div key={index} className="min-h-12 w-8/12 m-4">
-                        <div className="h-6 w-full flex justify-start items-center text-gray-600 text-md">{row.title}</div>
-                        {/* <div className="h-6 w-full flex justify-start items-center text-gray-400 text-xs">{row.stat}</div> */}
-                        {(row.stat).map((stat, index) => {
-                            return <div key={index} className="min-h-6 w-full flex justify-start items-center text-gray-400 text-xs">{stat}</div> 
-                        })}
-                    </div>
+                    return <div key={index} className="flex gap-1.5 flex-col text-sm whitespace-nowrap">
+                                <div className="text-gray-400">{row.title}</div>
+                                {(row.stat).map((stat, index) => {
+                                    return <div key={index} className="text-gray-500">{stat}</div> 
+                                })}
+                            </div>
                 })}
 
             </div>

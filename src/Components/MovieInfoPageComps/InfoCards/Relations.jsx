@@ -4,14 +4,22 @@ function Relations({ data }){
 
     return(
         <>
-            <div className="min-h-40 w-11/12 mb-6">
-                <div className="h-10 flex justify-start items-center text-gray-600 text-lg font-semibold">Relations</div>
-                <div className="h-auto w-full flex justify-start items-center">
-                    {/* <div className="border border-black h-full w-32 mr-12 rounded shadow-md"></div> */}
-                    {data?.results?.slice(0, 6)?.map((data, index) => {
-                        return <div key={index} className="h-full w-40 mr-12 rounded shadow-md">
-                            <img className="rounded" src={`https://image.tmdb.org/t/p/original${data?.poster_path}`} alt="" />
-                        </div>
+            <div className="">
+                <div className="text-gray-600 text-lg font-semibold">Relations</div>
+                <div className="border border-red-600 flex gap-6">
+                    {data?.results?.slice(0, 1)?.map((data, index) => {
+                        return <div key={index} className="flex bg-white">
+                                    <div className="aspect-[16/9] rounded-l shadow-md bg-center bg-cover shrink-0"
+                                    style={{ backgroundImage: `url(${`https://image.tmdb.org/t/p/original${data?.poster_path}`})`}}>
+                                         
+                                    </div>
+
+                                    <div className="p-2.5 bg-white">
+                                        <div className="">Source</div>
+                                        <div className="">Demon Slayer</div>
+                                        <div className="">Manga * Finished</div>
+                                    </div>
+                                </div>
                     })}
                 </div>
                 
