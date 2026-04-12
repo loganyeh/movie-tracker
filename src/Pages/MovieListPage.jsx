@@ -14,8 +14,6 @@ import FilterIconBlock from "../Components/MovieListComps/FilterIconBlock";
 
 function MovieListPage(){
     const listCats = ["Watching", "Completed", "Paused", "Dropped", "Planning"];
-    const filterBlockCats = ["Format", "Status", "Genres", "Country"];
-    const blockTitles = ["Watching", "Completed", "Paused", "Planning", "Dropped"];
 
     return(
         <>
@@ -44,7 +42,7 @@ function MovieListPage(){
                         <ListStatus title={"Lists"} category={listCats} />
 
                         {/* Filters */}
-                        <FilterDropdown category={filterBlockCats} />
+                        <FilterDropdown />
 
                         {/* Year */}
                         <YearSliderBar />
@@ -63,9 +61,8 @@ function MovieListPage(){
                             <FilterIconBlock />
                         </div>
 
-                        {blockTitles.map((block, index) => {
-                            return <WatchStatusBlock key={index} blockTitle={block} />
-                        })}
+                        <WatchStatusBlock />
+
                     </div>
 
                 </div>
