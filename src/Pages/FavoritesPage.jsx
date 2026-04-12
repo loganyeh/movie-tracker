@@ -12,33 +12,20 @@ function FavoritesPage(){
 
     return(
         <>
-            <div className="h-screen w-screen bg-gray-200">
+            <Header />
 
-                {/* header */}
-                <Header />
+            <ProfileBanner />
 
-                {/* Profile Banner */}
-                <ProfileBanner />
+            <MiddleNavBar />
 
-                {/* Middle Nav Bar */}
-                <MiddleNavBar />
-
-                {/* body */}
-                <div className="h-auto w-full 2xl:pb-64 xl:pb-52 flex justify-center items-center bg-gray-200 text-4xl">
-                    
-                    {/* favorite block container */}
-                    <div className="h-auto w-full flex flex-col justify-center items-center">
-                        <FavoriteBlock title={"Movie"} numOfFavs={10}/>
-                        <FavoriteBlock title={"Characters"} numOfFavs={4}/>
-                    </div>
-
+            <div className="pb-20 2xl:pb-40 flex justify-center bg-gray-200">
+                <div className="w-full 2xl:max-w-[1400px] max-w-7xl p-5 flex gap-10 flex-col bg-gray-200">
+                    <FavoriteBlock title={"Movie"} numOfFavs={5}/>
+                    <FavoriteBlock title={"Characters"} numOfFavs={4}/>
                 </div>
-
-                {/* footer */}
-                <Footer />
-
             </div>
         
+            <Footer />
         </>
     )
 }
