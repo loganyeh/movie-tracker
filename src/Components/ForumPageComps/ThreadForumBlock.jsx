@@ -4,24 +4,27 @@ function ThreadForumBlock({ title }){
 
     return(
         <>
-            <div className="h-auto w-full mt-6">
+            <div className="flex gap-3 flex-col">
+
                 {/* header */}
-                <div className="h-10 w-full flex justify-between items-center">
-                    <div className="h-10 w-auto flex justify-center items-center text-gray-600 font-medium">{title || "Recently Active Threads"}</div>
-                    <div className="h-10 w-auto flex justify-center items-center text-gray-500 text-xs font-medium">View All</div>
+                <div className="flex justify-between items-center">
+                    <div className="text-gray-600 font-medium">{title || "Recently Active Threads"}</div>
+                    <div className="hidden md:flex text-gray-500 text-xs font-medium">View All</div>
                 </div>
 
                 {/* threads */}
-                {Array.from({length: 4}).map((_, index) => {
-                    return <div key={index} className="h-auto w-full mb-4 bg-white shadow-md rounded">
-                                <div className="h-10 w-full pl-4 flex justify-start items-end text-gray-700 font-normal text-lg">Crunchyroll Release Schedule for Spring 2026 Season</div>
-                                <div className="h-10 w-full pl-6 pt-1 flex justify-start items-start text-gray-500 text-sm truncate">Crunchyroll announced on Tuesday that it is streaming the following anime (dub languages streaming at later date in parentheses) for the spring 2026 season: March 28 Agents</div>
-                                <div className="h-10 w-full pl-4 flex justify-start items-center">
-                                    <div className="h-6 w-6 mr-2 bg-blue-400 rounded"></div>
-                                    <div className="text-sm text-gray-700"><span className="text-blue-400">Hanni</span> replied 1 hour ago</div>
+                <div className="flex gap-6 flex-col">
+                    {Array.from({length: 3}).map((_, index) => {
+                        return <div key={index} className="p-3 flex gap-4 flex-col bg-white shadow-md rounded">
+                                    <div className="text-gray-700 font-normal">Crunchyroll Release Schedule for Spring 2026 Season</div>
+                                    <div className="text-gray-500 text-sm">Crunchyroll announced on Tuesday that it is streaming the following anime (dub languages streaming at later date in parentheses) for the spring 2026 season: March 28 Agents</div>
+                                    <div className="flex gap-2 justify-start items-center">
+                                        <div className="w-6 aspect-square bg-blue-400 rounded"></div>
+                                        <div className="text-sm text-gray-700"><span className="text-blue-400">Hanni</span> replied 1 hour ago</div>
+                                    </div>
                                 </div>
-                            </div>
-                })}
+                    })}
+                </div>
             </div>
         </>
     )
