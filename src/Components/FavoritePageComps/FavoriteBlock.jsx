@@ -4,21 +4,19 @@ function FavoriteBlock({ title, numOfFavs}){
 
     return(
         <>
-            <div className="h-auto w-9/12 mt-10">
+            <div className="flex gap-3 flex-col">
 
                 {/* Anime Title */}
-                <div className="h-auto w-full flex justify-between items-center">
-                    <div className="2xl:h-12 xl:h-10 w-auto flex justify-center items-center 2xl:text-lg xl:text-base font-semibold text-gray-600">{title || "Anime"}</div>
-                    <div className="2xl:h-8 xl:h-6 w-auto 2xl:px-3 xl:px-2 flex justify-center items-center bg-blue-400 text-white 2xl:text-sm xl:text-xs rounded">Reorder</div>
+                <div className="flex justify-between items-center">
+                    <div className="font-semibold text-gray-600">{title || "Anime"}</div>
+                    <div className="p-1.5 bg-blue-400 text-white text-xs rounded">Reorder</div>
                 </div>
 
                 {/* Anime Fav Body */}
-                <div className="h-auto w-full flex justify-center items-center">
-                    <div className="min-h-40 w-full mx-2 flex flex-wrap justify-around items-center bg-white shadow-md rounded">
-                        {Array.from({length: numOfFavs || 10}).map((_, index) => {
-                            return <div key={index} className="border h-30 w-24 2xl:m-4 xl:m-3 bg-blue-300 rounded"></div>
-                        })}
-                    </div>
+                <div className="py-6 grid gap-y-6 grid-cols-2 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-9 2xl:grid-cols-11 place-items-center bg-white shadow rounded">
+                    {Array.from({length: numOfFavs || 10}).map((_, index) => {
+                        return <div key={index} className="border border-gray-200 w-[88px] aspect-[2/3] bg-blue-300 rounded"></div>
+                    })}
                 </div>
 
             </div>
