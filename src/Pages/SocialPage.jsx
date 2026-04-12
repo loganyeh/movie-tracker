@@ -12,40 +12,34 @@ function SocialPage(){
 
     return(
         <>
-            <div className="h-screen w-screen">
+            <Header />
 
-                {/* header */}
-                <Header />
+            <ProfileBanner />
 
-                <ProfileBanner />
+            <MiddleNavBar />
 
-                {/* TEMPORARY middle nav */}
-                <MiddleNavBar />
+
+            <div className="pb-96 flex justify-center bg-gray-200">
 
                 {/* body */}
-                <div className="h-auto w-full flex justify-center items-center bg-gray-200">
-                    
-                    {/* container */}
-                    <div className="h-auto w-10/12 flex justify-around items-start">
-
+                <div className="p-5 w-full max-w-7xl 2xl:max-w-[1400px] flex flex-col md:flex-row gap-10 bg-gray-200">
                         {/* left */}
-                        <div className="h-full w-2/12">
+                        <div className="w-full md:max-w-[210px]">
                             <ListStatus title={"Social"} category={socialListData} />
                         </div>
 
                         {/* right */}
-                        <div className="h-96 w-9/12 mb-96 flex justify-center items-center 2xl:text-2xl xl:text-xl text-gray-500 font-normal">
+                        <div className="flex flex-1 justify-center items-center text-lg text-gray-500 font-medium">
                             Following 0 users ｡ﾟヽ(ﾟ´Д｀)ﾉﾟ｡
                         </div>
 
-                    </div>
-
                 </div>
 
-                {/* footer */}
-                <Footer />
 
             </div>
+
+
+            <Footer />
         </>
     )
 }
