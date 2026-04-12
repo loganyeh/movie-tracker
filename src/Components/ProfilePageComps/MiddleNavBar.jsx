@@ -14,12 +14,10 @@ function MiddleNavBar(){
 
     return(
         <>
-            <div className="2xl:h-12 xl:h-10 w-full flex justify-center items-center bg-white shadow">
-                <div className="h-full w-8/12 flex justify-between items-center text-sm text-gray-600 font-semibold">
-                    {middleNavData.map((data, index) => {
-                        return <Link key={index} to={data.url} className="cursor-pointer" ><span className="2xl:text-sm xl:text-xs hover:text-blue-400">{data.title}</span></Link>
-                    })}
-                </div>
+            <div className="border-b border-gray-400 px-12 md:px-14 py-3 flex gap-12 md:gap-x-14 md:gap-y-6 xl:gap-20 md:flex-wrap md:justify-center bg-white shadow overflow-x-auto md:overflow-x-visible scroll-smooth">
+                {middleNavData.map((data, index) => {
+                    return <Link key={index} to={data.url} className="text-sm font-medium text-gray-500 cursor-pointer whitespace-nowrap hover:text-blue-400" >{data.title}</Link>
+                })}
             </div>
         </>
     )

@@ -10,6 +10,7 @@ import FilterDropdown from "../Components/MovieListComps/FilterDropdown";
 import YearSliderBar from "../Components/MovieListComps/YearSliderBar";
 import SortDropdown from "../Components/MovieListComps/SortDropdown";
 import ShuffleButton from "../Components/MovieListComps/ShuffleButton";
+import FilterIconBlock from "../Components/MovieListComps/FilterIconBlock";
 
 function MovieListPage(){
     const listCats = ["Watching", "Completed", "Paused", "Dropped", "Planning"];
@@ -18,67 +19,59 @@ function MovieListPage(){
 
     return(
         <>
-            <div className="h-auto w-screen bg-gray-200">
+            {/* header */}
+            <Header />
 
-                {/* header */}
-                <Header />
+            {/* Profile Banner */}
+            <ProfileBanner />
 
-                {/* Profile Banner */}
-                <ProfileBanner />
+            {/* Middle NAV BAR */}
+            <MiddleNavBar />
 
-                {/* Middle NAV BAR */}
-                <MiddleNavBar />
+            <div className="bg-gray-200 flex justify-center">
 
-                {/* body */}
-                {/* add pb-20 after done */}
-                <div className="h-auto w-full flex justify-center items-start pb-20">
+                <div className="w-full 2xl:max-w-[1400px] xl:max-w-7xl p-4 pb-16 md:p-6 md:pb-24 flex gap-10 2xl:gap-12 flex-col md:flex-row bg-gray-200">
 
-                    {/* container */}
-                    <div className="h-auto w-10/12 flex justify-around items-start">
+                    <div className="md:hidden">
+                        <FilterSearchBar />
+                    </div>
 
-                        {/* left side */}
-                        <div className="h-auto w-2/12">
+                    <div className="hidden w-full max-w-[210px] md:flex gap-5 flex-col">
+                        {/* filter search */}
+                        <FilterSearchBar />
 
-                            {/* filter search */}
-                            <FilterSearchBar />
+                        {/* Lists */}
+                        <ListStatus title={"Lists"} category={listCats} />
 
-                            {/* Lists */}
-                            <ListStatus title={"Lists"} category={listCats} />
+                        {/* Filters */}
+                        <FilterDropdown category={filterBlockCats} />
 
-                            {/* Filters */}
-                            <FilterDropdown category={filterBlockCats} />
+                        {/* Year */}
+                        <YearSliderBar />
 
-                            {/* Year */}
-                            <YearSliderBar />
+                        {/* Sort */}
+                        <SortDropdown />
 
-                            {/* Sort */}
-                            <SortDropdown />
-
-                            {/* Shuffle Button */}
-                            <ShuffleButton />
-
-                        </div>
-                        
-                        {/* right side */}
-                        <div className="h-auto w-9/12">
-
-                            {/* BLOCKS */}
-                            {blockTitles.map((block, index) => {
-                                return <WatchStatusBlock key={index} blockTitle={block} />
-                            })}
-
-                        </div>
-
-
+                        {/* Shuffle Button */}
+                        <ShuffleButton />
                     </div>
 
 
+                    <div className="flex md:flex-1 gap-8 flex-col">
+
+                        <div className="hidden md:flex justify-end">
+                            <FilterIconBlock />
+                        </div>
+
+                        {blockTitles.map((block, index) => {
+                            return <WatchStatusBlock key={index} blockTitle={block} />
+                        })}
+                    </div>
+
                 </div>
-
-                {/* footer */}
-                <Footer />
-
             </div>
+            
+            <Footer />
         
         </>
     )
