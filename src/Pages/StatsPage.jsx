@@ -73,6 +73,8 @@ function StatsPage(){
         {category: "China", percentage: "3"},
         {category: "South Korea", percentage: "1"},
     ]
+    // left off here move pie data to pie comp 
+    // left off on this page
 
     return(
         <>
