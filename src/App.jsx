@@ -21,7 +21,7 @@ import SubmissionsPage from "./Pages/SubmissionsPage.jsx";
 function App() {
   // search state variable
   const [isQuery, setIsQuery] = useState();
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
 
   // characters state variable 
   const [actorData, setActorData] = useState();
@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <MyContext.Provider value={{ 
-          isQuery, setIsQuery, query, setQuery,
+          isQuery, setIsQuery,
           actorData, setActorData, relationsData, setRelationsData,
           movieID, setMovieID, movieTitleURL, setMovieTitleURL, movieData, setMovieData, relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData,
        }}>

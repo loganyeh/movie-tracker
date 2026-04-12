@@ -13,16 +13,14 @@ import { MyContext } from "../Context/MyContext";
 import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
 function BrowsePage(){
-    const { 
-        isQuery, setIsQuery, query, setQuery
-     } = useContext(MyContext);
-
     const [nowPlayingData, setNowPlayingData] = useState([]);
     const [popularData, setPopularData] = useState([]);
     const [topRatedData, setTopRatedData] = useState([]);
     const [upcomingData, setUpcomingData] = useState([]);
     const [top10MoviesData, setTop10MoviesData] = useState([]);
     const [searchMovieData, setSearchMovieData] = useState([]);
+
+    const [query, setQuery] = useState("");
 
     useEffect(() => {
 
@@ -91,7 +89,7 @@ function BrowsePage(){
                     {/* Search & Filters & Icon */}
                     <div className="w-full max-w-7xl flex gap-4 xl:grid xl:gap-5 xl:grid-cols-7">
                         {/* search */}
-                        <Search data={searchMovieData}/>
+                        <Search data={searchMovieData} query={query} setQuery={setQuery} />
 
                         {/* filter */}
                         <Filter />
@@ -104,7 +102,7 @@ function BrowsePage(){
                     </div>
 
                     {/* Search Menu */}
-                    <SearchMovieBlock data={searchMovieData} />
+                    <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} />
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />

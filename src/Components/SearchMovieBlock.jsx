@@ -1,9 +1,6 @@
 import Poster from "./TrendingBlockComponents/Poster";
-import { useState, useContext, useEffect } from "react";
-import { MyContext } from "../Context/MyContext";
 
-function SearchMovieBlock({ data }){
-    const { query, setQuery } = useContext(MyContext);
+function SearchMovieBlock({ data, query, setQuery }){
 
     return(
         <>
