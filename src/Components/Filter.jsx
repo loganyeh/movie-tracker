@@ -1,17 +1,20 @@
 
 
-function Filter({ title }){
+function Filter(){
+    const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
 
     return(
-        <>
-            <div className="hidden xl:flex flex-col gap-3">
-                <div className="text-gray-700 font-semibold">{title}</div>
+        <>  
+            {filterTitles.map((filter, index) => {
+                return <div key={index} className="hidden xl:flex flex-col gap-3">
+                <div className="text-gray-700 font-semibold">{filter}</div>
                 {/* filters */}
                 <div className="w-full p-2.5 flex justify-between items-center text-gray-400 bg-gray-50 rounded-lg shadow-md">
                     <div className="text-sm font-medium outline-none">Any</div>
                     <i className='bx bx-chevron-down text-xl' ></i>
                 </div>
             </div>
+            })}
         </>
     )
 }

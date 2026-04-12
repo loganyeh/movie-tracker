@@ -14,7 +14,6 @@ function ForumPage(){
         "News", "Music", "Gaming", "Visual Novels", "Light Novels", "Forum Games", "Recommendations",
         "Site Feedback", "Bug Reports", "AniList Apps", "Misc",
     ];
-    const threadsData = ["Recently Active Threads", "Release Discussion Threads", "Newly Created Threads"];
 
     return(
         <>
@@ -61,10 +60,8 @@ function ForumPage(){
                             {/* pin comment */}
                             <PinComment numOfPins={6} />
 
-                            {/* forum threads */}
-                            {threadsData.map((thread, index) => {
-                                return <ThreadForumBlock key={index} title={thread} />
-                            })}
+                            <ThreadForumBlock />
+
                         </div>
 
 

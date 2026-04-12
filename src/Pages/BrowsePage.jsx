@@ -17,8 +17,6 @@ function BrowsePage(){
         isQuery, setIsQuery, query, setQuery
      } = useContext(MyContext);
 
-    const filterTitles = ["Genres", "Year", "Season", "Format", "Airing Status"];
-
     useEffect(() => {
 
         async function loadNowPlaying(){
@@ -89,10 +87,8 @@ function BrowsePage(){
                         <Search data={searchMovieData}/>
 
                         {/* filter */}
-                        {filterTitles.map((title, index) => {
-                            return <Filter key={index} title={title} />
-                        })}
-
+                        <Filter />
+                        
                         {/* filter ICON*/}
                         <div className="flex justify-end items-end">
                             <i className='bx bx-slider p-2 xl:p-1.5 text-2xl text-gray-400 bg-gray-50 rounded-lg shadow-md' ></i>
