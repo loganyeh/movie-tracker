@@ -13,9 +13,16 @@ import { MyContext } from "../Context/MyContext";
 import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
 function BrowsePage(){
-    const { nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
+    const { 
         isQuery, setIsQuery, query, setQuery
      } = useContext(MyContext);
+
+    const [nowPlayingData, setNowPlayingData] = useState([]);
+    const [popularData, setPopularData] = useState([]);
+    const [topRatedData, setTopRatedData] = useState([]);
+    const [upcomingData, setUpcomingData] = useState([]);
+    const [top10MoviesData, setTop10MoviesData] = useState([]);
+    const [searchMovieData, setSearchMovieData] = useState([]);
 
     useEffect(() => {
 

@@ -19,13 +19,6 @@ import ReviewsPage from "./Pages/ReviewsPage.jsx";
 import SubmissionsPage from "./Pages/SubmissionsPage.jsx";
 
 function App() {
-  const [nowPlayingData, setNowPlayingData] = useState([]);
-  const [popularData, setPopularData] = useState([]);
-  const [topRatedData, setTopRatedData] = useState([]);
-  const [upcomingData, setUpcomingData] = useState([]);
-  const [top10MoviesData, setTop10MoviesData] = useState([]);
-  const [searchMovieData, setSearchMovieData] = useState([]);
-
   // search state variable
   const [isQuery, setIsQuery] = useState();
   const [query, setQuery] = useState("");
@@ -44,7 +37,7 @@ function App() {
   
   return (
     <>
-      <MyContext.Provider value={{ nowPlayingData, setNowPlayingData, popularData, setPopularData, topRatedData, setTopRatedData, upcomingData, setUpcomingData, top10MoviesData, setTop10MoviesData, searchMovieData, setSearchMovieData,
+      <MyContext.Provider value={{ 
           isQuery, setIsQuery, query, setQuery,
           actorData, setActorData, relationsData, setRelationsData,
           movieID, setMovieID, movieTitleURL, setMovieTitleURL, movieData, setMovieData, relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData,
