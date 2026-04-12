@@ -15,7 +15,6 @@ function Header(){
             {/* <div className={`py-3 flex justify-center bg-gray-900 text-gray-300`}> */}
             <div className={`py-3 hidden xl:flex justify-center bg-gray-900 text-gray-300`}>
 
-                {/* controls width compared to parent's width */}
                 <div className="w-full max-w-6xl flex justify-between">
 
                     {/* logo section */}
@@ -33,7 +32,7 @@ function Header(){
                     {/* profile settings section */}
                     <div className="flex gap-3 items-center">
                         <Link to={"/"} className="flex"><i className='bx bx-search text-2xl cursor-pointer hover:text-white'></i></Link>
-                        <img className="h-10 w-10 rounded" src="../hanni.jpg" alt="" />
+                        <img className="w-10 aspect-square rounded" src="../hanni.jpg" alt="" />
                         <i className='bx bx-chevron-down text-2xl' ></i>
                     </div>
 

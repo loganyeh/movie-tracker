@@ -11,9 +11,12 @@ export async function fetchMovieID(query){
     const data = await response.json();
 
     // data?.results[0].id;
+    console.log(data.results);
 
     return data?.results[0].id || null;
 };
+
+fetchMovieID()
 
 export async function fetchMovieInfoData(query){
     const options = {

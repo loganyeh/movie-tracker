@@ -1,6 +1,10 @@
 
+// type PinCommentProp = {
+//     numOfPins: Number;
+// }
 
 function PinComment({ numOfPins }){
+// function PinComment({ numOfPins }: PinCommentProp){
 
     return(
         <>

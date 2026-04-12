@@ -13,7 +13,6 @@ function Footer(){
             <div className="border px-8 py-6 xl:py-16 xl:flex xl:justify-center bg-gray-900">
             {/* <div className="2xl:h-72 xl:h-64 w-full flex bg-gray-900"> */}
 
-                {/* controls inner for width to parent's width */}
                 <div className="w-full max-w-7xl flex flex-col xl:flex-row xl:justify-between gap-6">
 
                     {/* screen color */}

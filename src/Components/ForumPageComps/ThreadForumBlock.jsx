@@ -1,14 +1,17 @@
 
 
-function ThreadForumBlock({ title }){
+function ThreadForumBlock(){
+
+    const threadsData = ["Recently Active Threads", "Release Discussion Threads", "Newly Created Threads"];
 
     return(
         <>
-            <div className="flex gap-3 flex-col">
+            {threadsData.map((thread, index) => {
+                return <div key={index} className="flex gap-3 flex-col">
 
                 {/* header */}
                 <div className="flex justify-between items-center">
-                    <div className="text-gray-600 font-medium">{title || "Recently Active Threads"}</div>
+                    <div className="text-gray-600 font-medium">{thread || "Recently Active Threads"}</div>
                     <div className="hidden md:flex text-gray-500 text-xs font-medium">View All</div>
                 </div>
 
@@ -26,6 +29,7 @@ function ThreadForumBlock({ title }){
                     })}
                 </div>
             </div>
+            })}
         </>
     )
 }

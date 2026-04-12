@@ -1,6 +1,6 @@
 
 
-function StatIconsBlock({ data }){
+function StatIconsBlock(){
     const statsIconData = [
         {icon: 'bx bx-desktop', number: 75, category: "Total Anime"},
         {icon: 'bx bx-play', number: 1736, category: "Episodes Watched"},

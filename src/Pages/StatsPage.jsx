@@ -10,21 +10,17 @@ import ListStatus from "../Components/MovieListComps/ListStatus";
 import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock";
 import BarGraphBlock from "../Components/StatsPageComps/BarGraphBlock";
 import PieChartBlock from "../Components/StatsPageComps/PieChartBlock";
-// import PieChart from "../Components/StatsPageComps/PieChart";
+
+// export type BarGraphType = {
+//     barHeight: string;
+//     barY: number;
+//     barX: number;
+// }
 
 function StatsPage(){
 
     const animeStatsList = ["Overview", "Genres", "Tags", "Voice Actors", "Studios", "Staff"];
     const mangaStatsList = ["Overview", "Genres", "Tags", "Staff"];
-
-    const statsIconData = [
-        {icon: 'bx bx-desktop text-3xl text-gray-400', number: 75, category: "Total Anime"},
-        {icon: 'bx bx-play', number: 1736, category: "Episodes Watched"},
-        {icon: 'bx bx-calendar-alt', number: 28.6, category: "Days Watched"},
-        {icon: 'bx bx-hourglass', number: 40.3, category: "Days Planned"},
-        {icon: 'bx bx-objects-vertical-top', number: 78.21, category: "Mean Score"},
-        {icon: 'bx bx-checkbox-minus', number: 14.2, category: "Standard Deviation"},
-    ];
 
     const scoreData = [
         {barHeight: "h-3/12", barY: 4, barX: 5},
@@ -57,23 +53,6 @@ function StatsPage(){
 
     ];
 
-    // Pie Chart Data
-    const formatDistributionData = [
-        {category: "TV", percentage: "68"},
-        {category: "Movie", percentage: "11"},
-        {category: "OVA", percentage: "10"},
-    ]
-    const statusDistributionData = [
-        {category: "Plannning", percentage: "68"},
-        {category: "Completed", percentage: "24"},
-        {category: "Paused", percentage: "5"},
-    ]
-    const countryDistributionData = [
-        {category: "Japan", percentage: "96"},
-        {category: "China", percentage: "3"},
-        {category: "South Korea", percentage: "1"},
-    ]
-
     return(
         <>
             <Header />
@@ -102,16 +81,14 @@ function StatsPage(){
                         </div>
 
                         {/* stats */}
-                        <StatIconsBlock data={statsIconData} />
+                        <StatIconsBlock />
 
                         {/* score bar graphs */}
                         <BarGraphBlock data={scoreData} title={"Score"} />
                         <BarGraphBlock data={episodeCountData} title={"Episode Count"} />
 
                         <div className="flex flex-col gap-8 xl:grid xl:grid-cols-3">
-                            <PieChartBlock title={"Format Distribution"} data={formatDistributionData} />
-                            <PieChartBlock title={"Status Distribution"} data={statusDistributionData} />
-                            <PieChartBlock title={"Country Distribution"} data={countryDistributionData} />
+                            <PieChartBlock  />
                         </div>
 
                         {/* Release Year */}

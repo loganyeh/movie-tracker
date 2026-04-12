@@ -1,13 +1,16 @@
 import FilterIconBlock from "./FilterIconBlock";
 
-function WatchStatusBlock({ blockTitle }){
+function WatchStatusBlock(){
+    const blockTitles = ["Watching", "Completed", "Paused", "Planning", "Dropped"];
+
 
     return(
         <>
-            <div className="flex gap-3 flex-col">
+            {blockTitles.map((block, index) => {
+                return <div key={index} className="flex gap-3 flex-col">
                 <div className="flex justify-between">
-                    <div className="flex-1 px-3 text-lg font-normal text-gray-600">{blockTitle}</div>
-                    <div className={`${blockTitle === "Watching" ? `` : `hidden`} md:hidden`}><FilterIconBlock /></div>
+                    <div className="flex-1 px-3 text-lg font-normal text-gray-600">{block}</div>
+                    <div className={`${block === "Watching" ? `` : `hidden`} md:hidden`}><FilterIconBlock /></div>
                 </div>
 
                 {/* block body */}
@@ -46,9 +49,8 @@ function WatchStatusBlock({ blockTitle }){
 
                 </div>
 
-
             </div>
-        
+            })}
         </>
     )
 }
