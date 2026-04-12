@@ -30,7 +30,7 @@ function MovieListPage(){
 
             <div className="bg-gray-200 flex justify-center">
 
-                <div className="w-full 2xl:max-w-[1400px] xl:max-w-7xl p-4 pb-16 md:p-6 md:pb-24 flex gap-10 flex-col md:flex-row bg-gray-200">
+                <div className="w-full 2xl:max-w-[1400px] xl:max-w-7xl p-4 pb-16 md:p-6 md:pb-24 flex gap-10 2xl:gap-12 flex-col md:flex-row bg-gray-200">
 
                     <div className="md:hidden">
                         <FilterSearchBar />
