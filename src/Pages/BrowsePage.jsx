@@ -75,7 +75,6 @@ function BrowsePage(){
                 <Header />
 
                 {/* body */}
-                {/* added padding for sides */}
                 <div className="w-full px-5 pt-6 xl:pt-10 flex gap-8 flex-col items-center">
                     
                     {/* Browse & Anime Popup above Search Bar @ Mobile */}
