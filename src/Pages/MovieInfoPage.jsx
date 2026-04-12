@@ -79,7 +79,7 @@ function MovieInfoPage(){
                 <div className="w-full max-w-[1400px] pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
 
                     {/* 1 */}
-                    <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
+                    <div className="border w-full flex gap-3.5 flex-col md:max-w-[210px]">
                         <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
                         <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
 
@@ -103,7 +103,7 @@ function MovieInfoPage(){
 
                     {/* 2 */}
                     {/* <div className="border flex gap-10 flex-col flex-1"> */}
-                    <div className="flex gap-10 flex-col flex-1 min-w-0">
+                    <div className="border flex gap-10 flex-col flex-1 min-w-0">
                         <Relations data={relationData}/>
 
                         <Characters data={creditsData} />
