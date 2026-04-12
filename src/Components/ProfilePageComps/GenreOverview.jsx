@@ -11,27 +11,29 @@ function GenreOverview(){
 
     return(
         <>
-            <div className="h-auto w-4/5 mt-4">
-                <div className="2xl:h-10 xl:h-10 w-full pl-2 flex justify-start items-center 2xl:text-base xl:text-sm text-gray-600 font-semibold">Genre Overview</div>
+            <div className="flex gap-2 flex-col">
 
-                <div className="h-auto w-full flex flex-col bg-white shadow-md rounded">
+                <div className="pl-2 text-gray-600 font-semibold">Genre Overview</div>
 
-                    <div className="2xl:h-24 xl:h-20 w-full flex">
+                <div className="flex flex-col bg-white shadow-md rounded">
+
+                    <div className="px-2 py-4 flex justify-around">
                         {genreOverviewData.map((genre, index) => {
-                            return <div key={index} className={`h-full w-1/5 flex flex-col justify-center items-center`}>
-                                        <div className={`2xl:h-8 w-10/12 xl:h-6 flex justify-center items-center ${genre.bgColor} text-white 2xl:text-sm xl:text-xs 2xl:font-normal xl:font-light rounded`}>{genre.genre}</div>
-                                        <div className={`mt-1 ${genre.textColor} 2xl:text-sm xl:text-xs`}>{genre.numOfEntries} <span className="text-xs text-gray-400">Entries</span></div>
+                            return <div key={index} className={`flex gap-2 flex-col items-center`}>
+                                        <div className={`${genre.bgColor} px-3 py-1.5 text-center text-white 2xl:text-sm text-xs 2xl:font-normal font-light rounded`}>{genre.genre}</div>
+                                        <div className={`${genre.textColor} 2xl:text-sm text-xs`}>{genre.numOfEntries} <span className="text-xs text-gray-400">Entries</span></div>
                                     </div>
                         })}
                     </div>
 
-                    <div className="h-2 w-full flex">
+                    <div className="flex">
                         {genreOverviewData.map((genre, index) => {
-                            return <div key={index} className={`h-full ${genre.bar} ${genre.bgColor}`}></div>
+                            return <div key={index} className={`p-1.5 ${genre.bar} ${genre.bgColor}`}></div>
                         })}
                     </div>
 
                 </div>
+
             </div>
         
         </>

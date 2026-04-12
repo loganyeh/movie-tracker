@@ -15,70 +15,45 @@ function ProfilePage(){
 
     return(
         <>
-            <div className="min-h-screen w-screen bg-gray-200">
-                {/* --- HEADER */}
-                <Header />
+            <Header />
+
+            <ProfileBanner />
+
+            <MiddleNavBar />
+
+            <div className="flex justify-center bg-gray-200">
 
                 {/* --- body */}
-                <div className="h-auto w-full">
+                <div className="p-5 pb-16 xl:pb-32 w-full 2xl:max-w-[1400px] max-w-7xl flex gap-10">
 
-                    {/* - profile banner */}
-                    <ProfileBanner />
+                    {/* Left Side */}
+                    <div className="hidden w-full max-w-md 2xl:max-w-xl xl:flex gap-8 flex-col">
+                        <ActiveHistory />
 
-                    {/* - midSection NavBar */}
-                    <MiddleNavBar />
+                        <GenreOverview />
 
-                    {/* -- Profile Page Stats */}
-                    <div className="h-auto w-full flex justify-center items-center pb-20">
-                        
-                        {/* Container */}
-                        <div className="h-auto w-10/12 flex justify-center items-start">
+                        {/* - Anime FAVORITES */}
+                        <FavoritesBlock blockName={"Movies"} posterAmount={5} />
+                        <FavoritesBlock blockName={"Characters"} posterAmount={6} />
 
-                            {/* Left Side */}
-                            <div className="h-auto w-1/2 flex flex-col justify-center items-center">
+                    </div>
 
-                                {/* - Active History */}
-                                <ActiveHistory />
+                    {/* Right Side */}
+                    <div className="flex gap-6 flex-col flex-1">
+                        <TotalChart />
 
-                                {/* - Genre Overview */}
-                                <GenreOverview />
+                        <ActivityStatusBar />
 
-                                {/* - Anime FAVORITES */}
-                                <FavoritesBlock blockName={"Movies"} posterAmount={5} />
-                                {/* <FavoritesBlock blockName={"Shows"} posterAmount={5} /> */}
-                                {/* - Character FAVORITES */}
-                                <FavoritesBlock blockName={"Characters"} posterAmount={6} />
+                        <StatusTimeline />
 
-                            </div>
-
-                            {/* Right Side */}
-                            <div className="h-auto w-1/2 flex flex-col justify-center items-center">
-
-                                {/* -- Charts */}
-                                <TotalChart />
-
-                                {/* -- Activity */}
-                                <ActivityStatusBar />
-
-                                {/* Status Timeline */}
-                                <StatusTimeline />
-
-                                {/* Load More Timeline */}
-                                <LoadMoreStatusTimeline />
-
-                            </div>
-
-                        </div>
-
+                        <LoadMoreStatusTimeline />
                     </div>
 
                 </div>
 
-                {/* --- FOOTER */}
-                <Footer />
-
             </div>
         
+            <Footer />
         </>
     )
 }
