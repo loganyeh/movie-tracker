@@ -27,12 +27,12 @@ function StatsPage(){
     ];
 
     const scoreData = [
-        {barHeight: "h-1/12", barY: 4, barX: 5},
-        {barHeight: "h-2/12", barY: 5, barX: 6},
-        {barHeight: "h-4/12", barY: 6, barX: 7},
-        {barHeight: "h-5/12", barY: 7, barX: 8},
-        {barHeight: "h-6/12", barY: 8, barX: 9},
-        {barHeight: "h-3/12", barY: 9, barX: 10},
+        {barHeight: "h-3/12", barY: 4, barX: 5},
+        {barHeight: "h-5/12", barY: 5, barX: 6},
+        {barHeight: "h-6/12", barY: 6, barX: 7},
+        {barHeight: "h-7/12", barY: 7, barX: 8},
+        {barHeight: "h-8/12", barY: 8, barX: 9},
+        {barHeight: "h-5/12", barY: 9, barX: 10},
     ]
 
     const episodeCountData = [
@@ -60,7 +60,7 @@ function StatsPage(){
     // Pie Chart Data
     const formatDistributionData = [
         {category: "TV", percentage: "68"},
-        {category: "MOVIE", percentage: "11"},
+        {category: "Movie", percentage: "11"},
         {category: "OVA", percentage: "10"},
     ]
     const statusDistributionData = [
@@ -76,64 +76,59 @@ function StatsPage(){
 
     return(
         <>
-            <div className="h-screen w-screen bg-gray-200">
+            <Header />
 
-                {/* header */}
-                <Header />
+            <ProfileBanner />
 
-                {/* profile banner */}
-                <ProfileBanner />
+            <MiddleNavBar />
 
-                {/* TEMPORARY middle nav */}
-                <MiddleNavBar />
+            <div className="flex justify-center bg-gray-200">
 
                 {/* body */}
-                <div className="h-auto w-full flex justify-center items-center bg-gray-200">
+                <div className="w-full 2xl:max-w-[1400px] max-w-7xl p-4 pb-16 md:p-6 md:pb-24 lg:pb-32 flex gap-10 2xl:gap-12 justify-center bg-gray-200">
                     
-                    {/* container */}
-                    <div className="h-auto w-10/12 pb-32 flex justify-around items-start">
+                    {/* 1 */}
+                    <div className="hidden w-full max-w-[210px] md:flex gap-5 flex-col">
+                        <ListStatus title={"Anime Stats"} category={animeStatsList}/>
+                        <ListStatus title={"Manga Stats"} category={mangaStatsList}/>
+                    </div>
 
-                        {/* left */}
-                        <div className="h-auto w-2/12">
-                            <ListStatus title={"Anime Stats"} category={animeStatsList}/>
-                            <ListStatus title={"Manga Stats"} category={mangaStatsList}/>
+                    {/* 2 */}
+                    <div className="w-full flex gap-16 flex-col md:flex-1">
+
+                        <div className="md:hidden flex justify-between items-center">
+                            <div className="text-lg text-gray-600 tracking-wide font-semibold">hanni's Stats</div>
+                            <i className='bx bx-dots-horizontal-rounded p-1.5 text-2xl text-gray-600 bg-white rounded shadow' ></i>
                         </div>
 
-                        {/* right */}
-                        <div className="h-full w-9/12">
+                        {/* stats */}
+                        <StatIconsBlock data={statsIconData} />
 
-                            {/* stats */}
-                            <StatIconsBlock data={statsIconData} />
+                        {/* score bar graphs */}
+                        <BarGraphBlock data={scoreData} title={"Score"} />
+                        <BarGraphBlock data={episodeCountData} title={"Episode Count"} />
 
-                            {/* score bar graphs */}
-                            <BarGraphBlock data={scoreData} title={"Score"} />
-                            {/* episode count */}
-                            <BarGraphBlock data={episodeCountData} title={"Episode Count"} />
-
-                            {/* Pie Charts */}
-                            <div className="h-auto w-full my-20 flex justify-between items-center">
-                                <PieChartBlock title={"Format Distribution"} data={formatDistributionData} />
-                                <PieChartBlock title={"Status Distribution"} data={statusDistributionData} />
-                                <PieChartBlock title={"Country Distribution"} data={countryDistributionData} />
-                            </div>
-
-                            {/* Release Year */}
-                            <BarGraphBlock data={releaseYearData} title={"Release Year"}/>
-
-
-                            {/* Watch Year */}
-                            <BarGraphBlock data={watchYearData} title={"Watch Year"} />
-
+                        <div className="flex flex-col gap-8 xl:grid xl:grid-cols-3">
+                            <PieChartBlock title={"Format Distribution"} data={formatDistributionData} />
+                            <PieChartBlock title={"Status Distribution"} data={statusDistributionData} />
+                            <PieChartBlock title={"Country Distribution"} data={countryDistributionData} />
                         </div>
+
+                        {/* Release Year */}
+                        <BarGraphBlock data={releaseYearData} title={"Release Year"}/>
+
+                        {/* Watch Year */}
+                        <BarGraphBlock data={watchYearData} title={"Watch Year"} />
 
                     </div>
 
                 </div>
 
-                {/* footer */}
-                <Footer />
 
             </div>
+
+            <Footer />
+
         </>
     )
 }

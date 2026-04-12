@@ -1,25 +1,24 @@
-import PieChart from "./PieChart";
 
 function PieChartBlock({ title, data }){
     const pieChartColor = ["bg-blue-400", "bg-gray-600", "bg-red-400"];
 
     return(
         <>
-            {/* <div className="border border-purple-600 h-auto w-full mt-20 flex justify-around items-center"> */}
             {Array.from({length: 1}).map((_, index) => {
-                return <div key={index} className="h-auto 2xl:w-80 xl:w-64 flex flex-col justify-start items-center bg-gray-50 shadow-md rounded">
+                return <div key={index} className="p-4 flex gap-6 flex-col bg-gray-50 shadow-md rounded">
 
-                            <div className="h-8 w-full pl-4 flex justify-start items-end text-gray-600 font-semibold">{title || "Format Distribution"}</div>
+                            <div className="text-gray-600 font-semibold">{title || "Format Distribution"}</div>
 
-                            <div className="2xl:h-40 xl:h-auto w-full 2xl:pb-0 xl:pb-4 flex 2xl:flex-row justify-center items-center xl:flex-col">
-
-                                <div className="2xl:h-40 xl:h-24 w-5/12 flex justify-center items-center"><i className='bx bx-pie-chart-alt-2 text-7xl' ></i></div>
-                                
-                                <div className="2xl:h-40 xl:h-auto 2xl:w-7/12 xl:w-11/12 flex flex-col justify-center items-center">
+                            <div className="flex gap-6 flex-col md:flex-row xl:flex-col 2xl:flex-row">
+                                <div className="text-center">
+                                    <i className='bx bx-pie-chart-alt-2 text-[96px]' ></i>
+                                </div>
+                                    
+                                <div className="flex gap-2.5 flex-col md:w-full">
                                     {data.map((data, index) => {
-                                        return <div key={index} className={`h-6 w-11/12 m-1 flex justify-between items-center bg-blue-400 ${pieChartColor[index]} rounded-md`}>
-                                                    <div className="h-full w-auto pl-2 flex justify-center items-center text-sm font-normal text-white">{data.category}</div>
-                                                    <div className="h-full w-10 flex justify-center items-center px-2 text-sm font-semibold bg-white text-gray-700 opacity-70 rounded">{data.percentage}%</div>
+                                        return <div key={index} className={`pl-2 flex justify-between items-center ${pieChartColor[index]} text-xs rounded`}>
+                                                    <div className="font-normal text-white">{data.category}</div>
+                                                    <div className="w-12 py-1.5 text-center font-semibold bg-white/50 text-gray-700 rounded">{data.percentage}%</div>
                                                 </div>
                                     })}
                                 </div>
@@ -29,7 +28,6 @@ function PieChartBlock({ title, data }){
                         </div>
             })}
 
-            {/* </div> */}
         </>
     )
 }
