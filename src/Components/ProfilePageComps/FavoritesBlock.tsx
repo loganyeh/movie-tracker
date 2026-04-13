@@ -1,6 +1,10 @@
 
+type FavoritesBlockProp = {
+    blockName: string;
+    posterAmount: number;
+}
 
-function FavoritesBlock({ blockName, posterAmount }){
+function FavoritesBlock({ blockName, posterAmount }: FavoritesBlockProp){
 
     return(
         <>

@@ -1,6 +1,10 @@
 
+type StatusTimelineProp = {
+    length?: number;
+}
 
-function StatusTimeline({ length }){
+
+function StatusTimeline({ length }: StatusTimelineProp ){
 
     return(
         <>

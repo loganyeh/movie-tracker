@@ -1,6 +1,12 @@
+import type { chartDataType } from "./TotalChart.js";
 
+type ChartBlock = {
+    data: chartDataType[];
+    measure: string[];
+    barProgress: string;
+}
 
-function ChartBlock({ data, measure, barProgress }){
+function ChartBlock({ data, measure, barProgress }: ChartBlock){
 
     return(
         <>
