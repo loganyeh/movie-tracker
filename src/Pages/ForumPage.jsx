@@ -2,7 +2,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 // from MovieList comps
-import ListStatus from "../Components/MovieListComps/ListStatus";
+import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 // comps
 import PinComment from "../Components/ForumPageComps/PinComment";

@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
 import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
 
-import ListStatus from "../Components/MovieListComps/ListStatus";
+import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 function SubmissionsPage(){
     const submissionListData = ["Anime", "Manga", "Characters", "Staff"];

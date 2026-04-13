@@ -1,4 +1,4 @@
-import FilterIconBlock from "./FilterIconBlock.jsx";
+import FilterIconBlock from "./FilterIconBlock.js";
 
 function WatchStatusBlock() {
   const blockTitles = [
@@ -18,9 +18,7 @@ function WatchStatusBlock() {
               <div className="flex-1 px-3 text-lg font-normal text-gray-600">
                 {block}
               </div>
-              <div
-                className={`${block === "Watching" ? `` : `hidden`} md:hidden`}
-              >
+              <div className={`${block === "Watching" ? `` : `hidden`} md:hidden`}>
                 <FilterIconBlock />
               </div>
             </div>

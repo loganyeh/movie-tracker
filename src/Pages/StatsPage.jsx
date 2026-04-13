@@ -4,7 +4,7 @@ import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
 import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
 
 // comp from movieListPage
-import ListStatus from "../Components/MovieListComps/ListStatus";
+import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 // page COMPS
 import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock";
