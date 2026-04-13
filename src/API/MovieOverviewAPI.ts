@@ -100,6 +100,8 @@ export async function fetchCredits(query : number){
     const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/credits`, options);
     const data = await response.json();
 
+    console.log(data);
+
     return data;
 };
 

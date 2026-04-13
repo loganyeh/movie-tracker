@@ -1,6 +1,6 @@
-import CharacterCard from "./CharacterCard";
+import CharacterCard from "./CharacterCard.jsx";
 
-function Characters({ data }){
+function Characters({ data } ){
 
     const characterData = [
         { character: "Tanjirou Kamado", actor: "Natsuki Hinae", lead: "Main", language: "Japanese" },  

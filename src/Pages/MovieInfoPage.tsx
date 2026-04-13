@@ -16,7 +16,7 @@ import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia.js";
 
 // body - right side - info blocks
 import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.js";
-import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.jsx";
+import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.js";
 import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.jsx";
 import Distribution from "../Components/MovieInfoPageComps/Distribution.jsx";
 import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch.jsx";
@@ -127,10 +127,15 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
                         {relationData && 
                             (<Relations data={relationData}/>)
                         }
+                        
+                        {creditsData &&
+                            (<Characters data={creditsData} />)
+                        }
 
-                        <Characters data={creditsData} />
-
-                        <Staff data={creditsData} />
+                        {/* {creditsData &&
+                            ()
+                        } */}
+                        {/* <Staff data={creditsData} /> */}
 
                         <Distribution />
 
