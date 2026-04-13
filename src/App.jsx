@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 import BrowsePage from "./Pages/BrowsePage.tsx";
-import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
+import MovieInfoPage from "./Pages/MovieInfoPage.tsx";
 import ProfilePage from "./Pages/ProfilePage.tsx";
 import WIP from "./Pages/WIP.tsx";
 import MovieListPage from "./Pages/MovieListPage.tsx";

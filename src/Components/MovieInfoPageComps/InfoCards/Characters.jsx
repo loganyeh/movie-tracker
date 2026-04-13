@@ -1,6 +1,4 @@
-import { useContext, useEffect } from "react";
 import CharacterCard from "./CharacterCard";
-import { MyContext } from "../../../Context/MyContext";
 
 function Characters({ data }){
 

@@ -1,34 +1,34 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
 
 // header
-import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner";
-import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster";
-import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription";
-import Tabs from "../Components/MovieInfoPageComps/Tabs";
+import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner.jsx";
+import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster.jsx";
+import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription.jsx";
+import Tabs from "../Components/MovieInfoPageComps/Tabs.js";
 
 // body
-import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat";
-import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails";
-import Tags from "../Components/MovieInfoPageComps/Tags";
-import EditComment from "../Components/MovieInfoPageComps/EditComment";
-import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia";
+import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat.js";
+import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails.jsx";
+import Tags from "../Components/MovieInfoPageComps/Tags.js";
+import EditComment from "../Components/MovieInfoPageComps/EditComment.js";
+import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia.js";
 
 // body - right side - info blocks
-import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations";
-import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters";
-import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff";
-import Distribution from "../Components/MovieInfoPageComps/Distribution";
-import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch";
-import TrailerFollowing from "../Components/MovieInfoPageComps/InfoCards/TrailerFollowing";
-import Recommendations from "../Components/MovieInfoPageComps/InfoCards/Recommendations";
-import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadReview";
+import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.jsx";
+import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.jsx";
+import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.jsx";
+import Distribution from "../Components/MovieInfoPageComps/Distribution.jsx";
+import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch.jsx";
+import TrailerFollowing from "../Components/MovieInfoPageComps/InfoCards/TrailerFollowing.jsx";
+import Recommendations from "../Components/MovieInfoPageComps/InfoCards/Recommendations.jsx";
+import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadReview.jsx";
 
 // Hooks
 import { useEffect, useState } from "react";
 
 // api calls
-import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI";
+import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.js";
 
 function MovieInfoPage({ movieID }){
     const [movieData, setMovieData] = useState();
@@ -80,8 +80,8 @@ function MovieInfoPage({ movieID }){
 
                     {/* 1 */}
                     <div className="w-full flex gap-3.5 flex-col md:max-w-[210px]">
-                        <AllTimeStat boxicon={<i className='bx bxs-star text-yellow-300 2xl:text-xl' ></i>} ranking={"161"} text={"Highest Rated"} />
-                        <AllTimeStat boxicon={<i className='bx bxs-heart text-red-500 2xl:text-xl' ></i>} ranking={"2"} text={"Most Popular"} />
+                        <AllTimeStat boxicon={'bx bxs-star text-yellow-300 2xl:text-xl'} ranking={"161"} text={"Highest Rated"} />
+                        <AllTimeStat boxicon={'bx bxs-heart text-red-500 2xl:text-xl'} ranking={"2"} text={"Most Popular"} />
 
                         <MovieColumnDetails data={movieData} />
 
