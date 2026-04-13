@@ -4,7 +4,7 @@ import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
 import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
 
 // comps
-import ListStatus from "../Components/MovieListComps/ListStatus";
+import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 
 function SocialPage(){

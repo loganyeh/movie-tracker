@@ -1,4 +1,4 @@
-import FooterColumn from "./FooterComponents/FooterColumn";
+import FooterColumn from "./FooterComponents/FooterColumn.js";
 
 function Footer(){
 

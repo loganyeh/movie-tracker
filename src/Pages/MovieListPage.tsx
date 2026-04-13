@@ -1,16 +1,16 @@
 // components
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
-import WatchStatusBlock from "../Components/MovieListComps/WatchStatusBlock";
-import FilterSearchBar from "../Components/MovieListComps/FilterSearchBar";
-import ListStatus from "../Components/MovieListComps/ListStatus";
-import FilterDropdown from "../Components/MovieListComps/FilterDropdown";
-import YearSliderBar from "../Components/MovieListComps/YearSliderBar";
-import SortDropdown from "../Components/MovieListComps/SortDropdown";
-import ShuffleButton from "../Components/MovieListComps/ShuffleButton";
-import FilterIconBlock from "../Components/MovieListComps/FilterIconBlock";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
+import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
+import WatchStatusBlock from "../Components/MovieListComps/WatchStatusBlock.js";
+import FilterIconBlock from "../Components/MovieListComps/FilterIconBlock.js";
+import FilterSearchBar from "../Components/MovieListComps/FilterSearchBar.js";
+import ListStatus from "../Components/MovieListComps/ListStatus.js";
+import FilterDropdown from "../Components/MovieListComps/FilterDropdown.js";
+import YearSliderBar from "../Components/MovieListComps/YearSliderBar.js";
+import SortDropdown from "../Components/MovieListComps/SortDropdown.js";
+import ShuffleButton from "../Components/MovieListComps/ShuffleButton.js";
 
 function MovieListPage(){
     const listCats = ["Watching", "Completed", "Paused", "Dropped", "Planning"];

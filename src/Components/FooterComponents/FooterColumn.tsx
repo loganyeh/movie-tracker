@@ -1,5 +1,9 @@
 
-function FooterColumn({ column }){
+type FooterColumnType = {
+    column: string[]
+}
+
+function FooterColumn({ column }: FooterColumnType ){
 
     return(
         <>

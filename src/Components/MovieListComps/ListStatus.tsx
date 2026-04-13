@@ -1,11 +1,10 @@
 
-// type ListStatusProp = {
-//     title: string;
-//     category: string[];
-// }
+type ListStatusProp = {
+    title: string;
+    category: string[];
+}
 
-function ListStatus({ title, category }){
-// function ListStatus({ title, category }: ListStatusProp){
+function ListStatus({ title, category }: ListStatusProp){
 
     return(
         <>
