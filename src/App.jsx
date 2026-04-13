@@ -3,7 +3,7 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import BrowsePage from "./Pages/BrowsePage";
+import BrowsePage from "./Pages/BrowsePage.tsx";
 import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.tsx";
 import WIP from "./Pages/WIP.tsx";

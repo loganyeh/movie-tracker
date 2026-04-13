@@ -1,10 +1,10 @@
 
+type SearchProp = {
+    query: string;
+    setQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
-function Search({ data, query, setQuery }){
-
-    function handleSearch(e){
-        console.log(data);
-    }
+function Search({ query, setQuery }: SearchProp ){
 
     return(
         <>

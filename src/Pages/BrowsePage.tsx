@@ -1,18 +1,16 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import Search from "../Components/Search";
-import Filter from "../Components/Filter";
-import TrendingBlock from "../Components/TrendingBlock";
-import TopMoviesBlock from "../Components/TopMoviesBlock";
-import SearchMovieBlock from "../Components/SearchMovieBlock";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
+import Search from "../Components/Search.js";
+import Filter from "../Components/Filter.js";
+import TrendingBlock from "../Components/TrendingBlock.jsx";
+import TopMoviesBlock from "../Components/TopMoviesBlock.jsx";
+import SearchMovieBlock from "../Components/SearchMovieBlock.jsx";
 
 import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { MyContext } from "../Context/MyContext";
 
-import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.js";
 
-function BrowsePage({ setMovieID }){
+function BrowsePage({ setMovieID }: any){
     const [nowPlayingData, setNowPlayingData] = useState([]);
     const [popularData, setPopularData] = useState([]);
     const [topRatedData, setTopRatedData] = useState([]);
@@ -89,7 +87,7 @@ function BrowsePage({ setMovieID }){
                     {/* Search & Filters & Icon */}
                     <div className="w-full max-w-7xl flex gap-4 xl:grid xl:gap-5 xl:grid-cols-7">
                         {/* search */}
-                        <Search data={searchMovieData} query={query} setQuery={setQuery} />
+                        <Search query={query} setQuery={setQuery} />
 
                         {/* filter */}
                         <Filter />
