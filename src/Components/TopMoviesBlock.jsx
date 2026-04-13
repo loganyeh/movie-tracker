@@ -1,5 +1,5 @@
 import MovieBlock from "./TopMoviesComponents/MovieBlock";
-import Poster from "./TrendingBlockComponents/Poster";
+import Poster from "./TrendingBlockComponents/Poster.js";
 
 function TopMoviesBlock({ data, query }){
     const bubbleColors = ["bg-green-400", "bg-red-400", "bg-pink-400", "bg-red-500", "bg-red-400", "bg-yellow-200", "bg-blue-500", "bg-yellow-500", "bg-blue-300", "bg-yellow-200"];

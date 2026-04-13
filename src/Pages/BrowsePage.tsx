@@ -2,13 +2,15 @@ import Header from "../Components/Header.js";
 import Footer from "../Components/Footer.js";
 import Search from "../Components/Search.js";
 import Filter from "../Components/Filter.js";
-import TrendingBlock from "../Components/TrendingBlock.jsx";
+import TrendingBlock from "../Components/TrendingBlock.js";
 import TopMoviesBlock from "../Components/TopMoviesBlock.jsx";
 import SearchMovieBlock from "../Components/SearchMovieBlock.jsx";
 
 import { useEffect, useState } from "react";
 
-import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.js";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.ts";
+
+
 
 function BrowsePage({ setMovieID }: any){
     const [nowPlayingData, setNowPlayingData] = useState([]);
@@ -100,7 +102,7 @@ function BrowsePage({ setMovieID }: any){
                     </div>
 
                     {/* Search Menu */}
-                    <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} setMovieID={setMovieID} />
+                    {/* <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} setMovieID={setMovieID} /> */}
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} query={query} setMovieID={setMovieID} />

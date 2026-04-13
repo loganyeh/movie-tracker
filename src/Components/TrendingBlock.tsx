@@ -1,7 +1,16 @@
-import Poster from "./TrendingBlockComponents/Poster";
+import Poster from "./TrendingBlockComponents/Poster.js";
 import { useState } from "react";
 
-function TrendingBlock({ title, data, query, setMovieID }){
+import type { TrendingMoviesType } from "../API/api.js";
+
+type TrendingBlockType = {
+    title: string;
+    data: TrendingMoviesType[];
+    query: string;
+    setMovieID: React.Dispatch<React.SetStateAction<number>>;
+}
+
+function TrendingBlock({ title, data, query, setMovieID }: TrendingBlockType){
     const [loading, setLoading] = useState();
 
     return(
@@ -16,8 +25,8 @@ function TrendingBlock({ title, data, query, setMovieID }){
 
                 {/* movie posters */}
                 <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-5 gap-3 lg:gap-4 xl:gap-10">
-                    {data.map((data, index) => {
-                        return <Poster key={index} data={data} setMovieID={setMovieID} />
+                    {data.slice(0, 5).map((data, index) => {
+                        return <Poster key={index} id={data.id} poster={data.poster_path} title={data.original_title} setMovieID={setMovieID} />
                     })}
                 </div>
 

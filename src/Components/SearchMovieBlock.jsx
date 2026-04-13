@@ -1,4 +1,4 @@
-import Poster from "./TrendingBlockComponents/Poster";
+import Poster from "./TrendingBlockComponents/Poster.js";
 
 function SearchMovieBlock({ data, query, setQuery, setMovieID }){
 
