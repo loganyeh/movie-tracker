@@ -4,7 +4,7 @@ function SearchMovieBlock({ data, query, setQuery, setMovieID }){
 
     return(
         <>
-                <div className={`${!query ? "hidden" : ""} w-full max-w-7xl mb-20 flex gap-8 flex-col`}>
+                <div className={`border ${!query ? "hidden" : ""} w-full max-w-7xl mb-20 flex gap-8 flex-col`}>
                     
                     {/* trending now title/header */}
                     <div className="flex justify-between">

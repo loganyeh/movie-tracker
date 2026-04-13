@@ -3,21 +3,21 @@ import Footer from "../Components/Footer.js";
 import Search from "../Components/Search.js";
 import Filter from "../Components/Filter.js";
 import TrendingBlock from "../Components/TrendingBlock.js";
-import TopMoviesBlock from "../Components/TopMoviesBlock.jsx";
+import TopMoviesBlock from "../Components/TopMoviesBlock.js";
 import SearchMovieBlock from "../Components/SearchMovieBlock.jsx";
 
 import { useEffect, useState } from "react";
 
 import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.ts";
 
-
+import type { Top10MoviesType, TrendingMoviesType } from "../API/api.ts";
 
 function BrowsePage({ setMovieID }: any){
-    const [nowPlayingData, setNowPlayingData] = useState([]);
-    const [popularData, setPopularData] = useState([]);
-    const [topRatedData, setTopRatedData] = useState([]);
-    const [upcomingData, setUpcomingData] = useState([]);
-    const [top10MoviesData, setTop10MoviesData] = useState([]);
+    const [nowPlayingData, setNowPlayingData] = useState<TrendingMoviesType[]>([]);
+    const [popularData, setPopularData] = useState<TrendingMoviesType[]>([]);
+    const [topRatedData, setTopRatedData] = useState<TrendingMoviesType[]>([]);
+    const [upcomingData, setUpcomingData] = useState<TrendingMoviesType[]>([]);
+    const [top10MoviesData, setTop10MoviesData] = useState<Top10MoviesType[]>([]);
     const [searchMovieData, setSearchMovieData] = useState([]);
 
     const [query, setQuery] = useState("");
@@ -102,7 +102,7 @@ function BrowsePage({ setMovieID }: any){
                     </div>
 
                     {/* Search Menu */}
-                    {/* <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} setMovieID={setMovieID} /> */}
+                    <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} setMovieID={setMovieID} />
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
                     <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} query={query} setMovieID={setMovieID} />

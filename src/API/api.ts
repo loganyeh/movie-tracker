@@ -92,7 +92,7 @@ export async function fetchUpcoming(){
   return data.results;
 }
 
-type Top10MoviesType = {
+export type Top10MoviesType = {
   id: number;
   original_title: string;
   poster_path: string;
@@ -158,18 +158,18 @@ export async function fetchSearchMovie(query){
   };
   
   const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options);
-  const data = await response.json();
+  const data: MoviesApiResponse = await response.json();
 
-  const searchMovieData = data.results.map((data, index) => {
-    return {
-      key: index, 
-      id: data.id,
-      title: data.original_title, 
-      poster: data.poster_path,
-    }
-  })
+  // const searchMovieData = data.results.map((data, index) => {
+  //   return {
+  //     key: index, 
+  //     id: data.id,
+  //     title: data.original_title, 
+  //     poster: data.poster_path,
+  //   }
+  // })
 
-  return searchMovieData;
+  return data.results;
 
 }
 

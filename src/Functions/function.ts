@@ -1,5 +1,5 @@
 
-export function genreIDSwitch(genreID){
+export function genreIDSwitch(genreID : number){
 
     switch(genreID){
         case 28:
@@ -47,7 +47,7 @@ export function genreIDSwitch(genreID){
 
 }
 
-export function movieRatingColor(dataRating){
+export function movieRatingColor(dataRating: number){
     
     switch(dataRating){
         case 0:
