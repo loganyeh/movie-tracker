@@ -125,7 +125,7 @@ export async function fetchTop10Movies(){
 
 // ----------------------------------------
 // Search - Movie
-export async function fetchSearchMovie(query : string | number){
+export async function fetchSearchMovie(query : string){
   const options = {
     method: 'GET',
     headers: {
