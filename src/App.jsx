@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import BrowsePage from "./Pages/BrowsePage";
 import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
-import ProfilePage from "./Pages/ProfilePage.jsx";
+import ProfilePage from "./Pages/ProfilePage.tsx";
 import WIP from "./Pages/WIP.jsx";
 import MovieListPage from "./Pages/MovieListPage.tsx";
 import FavoritesPage from "./Pages/FavoritesPage.jsx";

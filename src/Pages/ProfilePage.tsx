@@ -1,15 +1,15 @@
 // components
-import Header from "../Components/Header";
-import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
-import ActiveHistory from "../Components/ProfilePageComps/ActiveHistory";
-import GenreOverview from "../Components/ProfilePageComps/GenreOverview";
-import FavoritesBlock from "../Components/ProfilePageComps/FavoritesBlock";
-import TotalChart from "../Components/ProfilePageComps/TotalChart";
-import ActivityStatusBar from "../Components/ProfilePageComps/ActivityStatusBar";
-import StatusTimeline from "../Components/ProfilePageComps/StatusTimeline";
-import LoadMoreStatusTimeline from "../Components/ProfilePageComps/LoadMoreStatusTimeline";
-import Footer from "../Components/Footer";
+import Header from "../Components/Header.js";
+import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
+import ActiveHistory from "../Components/ProfilePageComps/ActiveHistory.js";
+import GenreOverview from "../Components/ProfilePageComps/GenreOverview.js";
+import FavoritesBlock from "../Components/ProfilePageComps/FavoritesBlock.js";
+import TotalChart from "../Components/ProfilePageComps/TotalChart.js";
+import ActivityStatusBar from "../Components/ProfilePageComps/ActivityStatusBar.js";
+import StatusTimeline from "../Components/ProfilePageComps/StatusTimeline.js";
+import LoadMoreStatusTimeline from "../Components/ProfilePageComps/LoadMoreStatusTimeline.js";
+import Footer from "../Components/Footer.js";
 
 function ProfilePage(){
 
