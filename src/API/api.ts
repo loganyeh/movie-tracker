@@ -120,35 +120,12 @@ export async function fetchTop10Movies(){
   const response = await fetch('https://api.themoviedb.org/3/movie/top_rated', options);
   const data: Top10ApiResponse = await response.json();
 
-  // console.log(data.results);
-
-  // const top10MoviesData = data.results.slice(0, 10).map((data, index) => {
-  //   function monthDateYearConvert(date){
-  //     const parts = date.split("-");
-  //     return `${parts[1]}-${parts[2]}-${parts[0]}`;
-  //   }
-
-  //   return {
-  //     key: index, 
-  //     id: data.id,
-  //     title: data.original_title,
-  //     poster: data.poster_path,
-  //     vote_average: data.vote_average.toString().replace(".", "").slice(0, 2),
-  //     vote_count: data.vote_count.toLocaleString(),
-  //     popularity: (data.popularity * 10000).toLocaleString(),
-  //     release_date: monthDateYearConvert(data.release_date),
-  //     genre_ids: data.genre_ids,
-  //   }
-    
-  // });
-  // vote_average: Math.round(data.vote_average * 2) / 2,
-
   return data.results;
 }
 
 // ----------------------------------------
 // Search - Movie
-export async function fetchSearchMovie(query){
+export async function fetchSearchMovie(query : string | number){
   const options = {
     method: 'GET',
     headers: {
@@ -159,15 +136,6 @@ export async function fetchSearchMovie(query){
   
   const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options);
   const data: MoviesApiResponse = await response.json();
-
-  // const searchMovieData = data.results.map((data, index) => {
-  //   return {
-  //     key: index, 
-  //     id: data.id,
-  //     title: data.original_title, 
-  //     poster: data.poster_path,
-  //   }
-  // })
 
   return data.results;
 

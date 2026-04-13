@@ -1,10 +1,19 @@
 import Poster from "./TrendingBlockComponents/Poster.js";
 
-function SearchMovieBlock({ data, query, setQuery, setMovieID }){
+import type { TrendingMoviesType } from "../API/api.js";
+
+type SearchMovieBlockProp = {
+    data: TrendingMoviesType[];
+    query: string;
+    setQuery: React.Dispatch<React.SetStateAction<string>>;
+    setMovieID: React.Dispatch<React.SetStateAction<number>>;
+}
+
+function SearchMovieBlock({ data, query, setQuery, setMovieID }: SearchMovieBlockProp){
 
     return(
         <>
-                <div className={`border ${!query ? "hidden" : ""} w-full max-w-7xl mb-20 flex gap-8 flex-col`}>
+                <div className={`${!query ? "hidden" : ""} w-full max-w-7xl mb-20 flex gap-8 flex-col`}>
                     
                     {/* trending now title/header */}
                     <div className="flex justify-between">
@@ -46,7 +55,7 @@ function SearchMovieBlock({ data, query, setQuery, setMovieID }){
                     {/* Movie Search Grid */}
                     <div className="grid gap-2.5 md:gap-x-3 md:gap-y-5 lg:gap-y-8 xl:gap-x-8 xl:gap-y-10 grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-5">
                         {data.map((data, index) => {
-                            return <Poster key={index} data={data} setMovieID={setMovieID} />
+                            return <Poster key={index} id={data.id} poster={data.poster_path} title={data.original_title} setMovieID={setMovieID} />
                         })}
                     </div>
 

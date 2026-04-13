@@ -4,7 +4,7 @@ import Search from "../Components/Search.js";
 import Filter from "../Components/Filter.js";
 import TrendingBlock from "../Components/TrendingBlock.js";
 import TopMoviesBlock from "../Components/TopMoviesBlock.js";
-import SearchMovieBlock from "../Components/SearchMovieBlock.jsx";
+import SearchMovieBlock from "../Components/SearchMovieBlock.js";
 
 import { useEffect, useState } from "react";
 
@@ -18,7 +18,7 @@ function BrowsePage({ setMovieID }: any){
     const [topRatedData, setTopRatedData] = useState<TrendingMoviesType[]>([]);
     const [upcomingData, setUpcomingData] = useState<TrendingMoviesType[]>([]);
     const [top10MoviesData, setTop10MoviesData] = useState<Top10MoviesType[]>([]);
-    const [searchMovieData, setSearchMovieData] = useState([]);
+    const [searchMovieData, setSearchMovieData] = useState<TrendingMoviesType[]>([]);
 
     const [query, setQuery] = useState("");
 
