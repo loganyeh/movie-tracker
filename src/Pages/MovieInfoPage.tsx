@@ -2,20 +2,20 @@ import Header from "../Components/Header.js";
 import Footer from "../Components/Footer.js";
 
 // header
-import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner.jsx";
-import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster.jsx";
-import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription.jsx";
+import MovieBanner from "../Components/MovieInfoPageComps/MovieBanner.js";
+import InfoPoster from "../Components/MovieInfoPageComps/InfoPoster.js";
+import MovieDescription from "../Components/MovieInfoPageComps/MovieDescription.js";
 import Tabs from "../Components/MovieInfoPageComps/Tabs.js";
 
 // body
 import AllTimeStat from "../Components/MovieInfoPageComps/AllTimeStat.js";
-import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails.jsx";
+import MovieColumnDetails from "../Components/MovieInfoPageComps/MovieColumnDetails.js";
 import Tags from "../Components/MovieInfoPageComps/Tags.js";
 import EditComment from "../Components/MovieInfoPageComps/EditComment.js";
 import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia.js";
 
 // body - right side - info blocks
-import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.jsx";
+import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.js";
 import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.jsx";
 import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.jsx";
 import Distribution from "../Components/MovieInfoPageComps/Distribution.jsx";
@@ -28,17 +28,23 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 import { useEffect, useState } from "react";
 
 // api calls
-import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.js";
+import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.ts";
 
-function MovieInfoPage({ movieID }){
-    const [movieData, setMovieData] = useState();
+import type { MovieInfoDataType } from "../API/MovieOverviewAPI.ts";
+
+type MovieInfoPageProp = {
+    movieID: number;
+}
+
+function MovieInfoPage({ movieID }: MovieInfoPageProp){
+    const [movieData, setMovieData] = useState<MovieInfoDataType>();
     const [relationData, setRelationData] = useState();
     const [creditsData, setCreditsData]= useState();
     const [videoData, setVideoData] = useState();
 
     useEffect(() => {
         async function getMovieInfoData(){
-            const apiMovieData = await fetchMovieInfoData(movieID);
+            const apiMovieData: MovieInfoDataType = await fetchMovieInfoData(movieID);
             const apiRelationData = await fetchRelations(movieID);
             const creditsData = await fetchCredits(movieID);
             const videoData = await fetchVideos(movieID);
@@ -57,16 +63,22 @@ function MovieInfoPage({ movieID }){
             <Header />
 
             {/* Movie Banner */}
-            <MovieBanner data={movieData} />
+            {movieData && 
+                (<MovieBanner backdrop_path={movieData.backdrop_path} />)
+            }
 
             <div className="flex justify-center">
                 <div className="w-full max-w-[1400px] flex flex-col md:flex-row">
                     {/* 1 */}
-                    <InfoPoster data={movieData} />
+                    {movieData &&
+                        (<InfoPoster poster_path={movieData?.poster_path} />)
+                    }
 
                     {/* 2 */}
                     <div className="md:flex md:gap-4 md:flex-col">
-                        <MovieDescription data={movieData} />
+                        {movieData &&
+                            (<MovieDescription original_title={movieData.original_title} overview={movieData.overview} production_companies={movieData.production_companies} />)
+                        }
                         <Tabs />
                     </div>
                 </div>
@@ -83,7 +95,15 @@ function MovieInfoPage({ movieID }){
                         <AllTimeStat boxicon={'bx bxs-star text-yellow-300 2xl:text-xl'} ranking={"161"} text={"Highest Rated"} />
                         <AllTimeStat boxicon={'bx bxs-heart text-red-500 2xl:text-xl'} ranking={"2"} text={"Most Popular"} />
 
-                        <MovieColumnDetails data={movieData} />
+                        {movieData && 
+                            (<MovieColumnDetails 
+                                original_title={movieData.original_title} production_companies={movieData.production_companies} 
+                                runtime={movieData.runtime} status={movieData.status} 
+                                release_date={movieData.release_date} vote_average={movieData.vote_average} 
+                                popularity={movieData.popularity} vote_count={movieData.vote_count} 
+                                budget={movieData.budget} genres={movieData.genres}
+                                spoken_languages={movieData.spoken_languages} tagline={movieData.tagline} />)
+                        }
 
                         <div className="hidden md:flex gap-3.5 flex-col">
                             <Tags />
@@ -104,7 +124,9 @@ function MovieInfoPage({ movieID }){
                     {/* 2 */}
                     {/* <div className="border flex gap-10 flex-col flex-1"> */}
                     <div className="flex gap-10 flex-col flex-1 min-w-0">
-                        <Relations data={relationData}/>
+                        {relationData && 
+                            (<Relations data={relationData}/>)
+                        }
 
                         <Characters data={creditsData} />
 
@@ -114,7 +136,7 @@ function MovieInfoPage({ movieID }){
 
                         <Watch data={videoData} />
 
-                        <TrailerFollowing trailerData={videoData} />
+                        {/* <TrailerFollowing trailerData={videoData} /> */}
 
                         <Recommendations data={relationData} />
 

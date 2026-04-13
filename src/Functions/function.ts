@@ -70,7 +70,6 @@ export function movieRatingColor(dataRating: number){
         case 7.5: 
         case 8: 
         case 8.5: 
-        case 8: 
         case 9.5: 
         case 10: 
             return "text-green-600 bg-green-600"

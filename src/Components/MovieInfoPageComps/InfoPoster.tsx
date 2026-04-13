@@ -1,12 +1,15 @@
 
+type InfoPoster = {
+    poster_path: string;
+}
 
-function InfoPoster({ data }){
+function InfoPoster({ poster_path }: InfoPoster ){
 
     return(
         <>
                 <div className="px-6 py-1.5 flex gap-4 md:flex-col justify-center items-center">
                     <div className="w-24 md:w-56 -mt-20 md:-mt-32 aspect-[3/4] bg-cover bg-center rounded-sm"
-                    style={{ backgroundImage: `url(${`https://image.tmdb.org/t/p/w500${data?.poster_path}`})`}}>
+                    style={{ backgroundImage: `url(${`https://image.tmdb.org/t/p/w500${poster_path}`})`}}>
                     </div>
 
                     <div className="flex gap-4 flex-1 md:flex-0 md:w-full items-center">

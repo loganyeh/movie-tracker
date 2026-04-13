@@ -1,4 +1,6 @@
-export async function fetchMovieID(query){
+import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.js";
+
+export async function fetchMovieID(query : number){
     const options = {
         method: 'GET',
         headers: {
@@ -15,9 +17,31 @@ export async function fetchMovieID(query){
     return data?.results[0].id || null;
 };
 
-fetchMovieID()
+export type MovieInfoDataType = {
+  backdrop_path: string;
+  poster_path: string;
+  original_title: string;
+  overview: string;
+  production_companies: {
+    name: string;
+  }[];
+  runtime: number;
+  status: string;
+  release_date: string;
+  vote_average: number;
+  popularity: number;
+  vote_count: number;
+  budget: number;
+  genres: {
+    name: string;
+  }[];
+  spoken_languages: {
+    english_name: string;
+  }[];
+  tagline: string;
+}
 
-export async function fetchMovieInfoData(query){
+export async function fetchMovieInfoData(query : number){
     const options = {
         method: 'GET',
         headers: {
@@ -27,7 +51,7 @@ export async function fetchMovieInfoData(query){
       };
       
       const response = await fetch(`https://api.themoviedb.org/3/movie/${query || 24428}?language=en-US`, options);
-      const data = await response.json();
+      const data: MovieInfoDataType = await response.json();
 
     //   console.log(data);
 
@@ -35,7 +59,15 @@ export async function fetchMovieInfoData(query){
 }
 
 // --------------------
-export async function fetchRelations(query){
+export type RelationsType = {
+    poster_path: string;
+}
+
+type RelationsApiResponse = {
+    results: RelationsType[];
+}
+
+export async function fetchRelations(query : number){
     const options = {
         method: 'GET',
         headers: {
@@ -45,13 +77,18 @@ export async function fetchRelations(query){
       };
       
       const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/recommendations`, options);
-      const data = await response.json();
+      const data: RelationsApiReponse = await response.json();
 
-      return data;
+    //   console.log(data);
+
+      return data.results;
 };
 
 // FETCH CREDITS
-export async function fetchCredits(query){
+
+
+
+export async function fetchCredits(query : number){
     const options = {
         method: 'GET',
         headers: {
@@ -83,7 +120,7 @@ export async function fetchReviews(){
 }
 
 // FETCH VIDEOS
-export async function fetchVideos(query){
+export async function fetchVideos(query : number){
     const options = {
         method: 'GET',
         headers: {
