@@ -12,7 +12,7 @@ import { MyContext } from "../Context/MyContext";
 
 import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api";
 
-function BrowsePage(){
+function BrowsePage({ setMovieID }){
     const [nowPlayingData, setNowPlayingData] = useState([]);
     const [popularData, setPopularData] = useState([]);
     const [topRatedData, setTopRatedData] = useState([]);
@@ -102,16 +102,16 @@ function BrowsePage(){
                     </div>
 
                     {/* Search Menu */}
-                    <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} />
+                    <SearchMovieBlock data={searchMovieData} query={query} setQuery={setQuery} setMovieID={setMovieID} />
 
                     {/* Trending/Most Popular Posters Ratings Stuff */}
-                    <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} />
-                    <TrendingBlock title={"POPULAR"} data={popularData} />
-                    <TrendingBlock title={"TOP RATED"} data={topRatedData} />
-                    <TrendingBlock title={"UPCOMING"} data={upcomingData} />
+                    <TrendingBlock title={"NOW PLAYING"} data={nowPlayingData} query={query} setMovieID={setMovieID} />
+                    <TrendingBlock title={"POPULAR"} data={popularData} query={query} setMovieID={setMovieID} />
+                    <TrendingBlock title={"TOP RATED"} data={topRatedData} query={query} setMovieID={setMovieID} />
+                    <TrendingBlock title={"UPCOMING"} data={upcomingData} query={query} setMovieID={setMovieID} />
 
                     {/* TOP 10 TRENDING SECTION */}
-                    <TopMoviesBlock data={top10MoviesData} />
+                    <TopMoviesBlock data={top10MoviesData} query={query} />
 
                 </div>
 

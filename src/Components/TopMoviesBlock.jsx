@@ -1,15 +1,12 @@
 import MovieBlock from "./TopMoviesComponents/MovieBlock";
-import { useContext } from "react";
-import { MyContext } from "../Context/MyContext";
 import Poster from "./TrendingBlockComponents/Poster";
 
-function TopMoviesBlock({ data }){
-    const { query, setQuery } = useContext(MyContext);
+function TopMoviesBlock({ data, query }){
     const bubbleColors = ["bg-green-400", "bg-red-400", "bg-pink-400", "bg-red-500", "bg-red-400", "bg-yellow-200", "bg-blue-500", "bg-yellow-500", "bg-blue-300", "bg-yellow-200"];
 
     return(
         <>
-            <div className={`${!query ? "" : "hidden"} w-full mb-16 flex gap-4 flex-col max-w-7xl`}>
+            <div className={`${query ? "hidden" : ""} w-full mb-16 flex gap-4 flex-col max-w-7xl`}>
                 {/* header title */}
                 <div className="flex items-center justify-between">
                     <div className="text-lg text-zinc-500 font-semibold leading-loose tracking-wider">TOP 100 Movies</div>

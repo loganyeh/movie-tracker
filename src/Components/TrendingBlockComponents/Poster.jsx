@@ -1,12 +1,7 @@
-// hooks
-import { useContext } from "react";
-import { MyContext } from "../../Context/MyContext";
-
 // api 
 import { Link } from "react-router-dom";
 
-function Poster({ data }){
-    const { movieID, setMovieID } = useContext(MyContext);
+function Poster({ data, setMovieID }){
     const bubbleColors = ["hover:text-green-400", "hover:text-red-400", "hover:text-pink-400", "hover:text-red-500", "hover:text-red-400", "hover:text-blue-500"];
 
     async function handleClick(){

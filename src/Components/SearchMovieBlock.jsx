@@ -1,6 +1,6 @@
 import Poster from "./TrendingBlockComponents/Poster";
 
-function SearchMovieBlock({ data, query, setQuery }){
+function SearchMovieBlock({ data, query, setQuery, setMovieID }){
 
     return(
         <>
@@ -46,7 +46,7 @@ function SearchMovieBlock({ data, query, setQuery }){
                     {/* Movie Search Grid */}
                     <div className="grid gap-2.5 md:gap-x-3 md:gap-y-5 lg:gap-y-8 xl:gap-x-8 xl:gap-y-10 grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-5">
                         {data.map((data, index) => {
-                            return <Poster key={index} data={data} />
+                            return <Poster key={index} data={data} setMovieID={setMovieID} />
                         })}
                     </div>
 

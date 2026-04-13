@@ -25,16 +25,16 @@ import Recommendations from "../Components/MovieInfoPageComps/InfoCards/Recommen
 import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadReview";
 
 // Hooks
-import { useContext, useEffect, useState } from "react";
-import { MyContext } from "../Context/MyContext";
+import { useEffect, useState } from "react";
 
 // api calls
 import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI";
 
-function MovieInfoPage(){
-    const { movieID, setMovieID, movieData, setMovieData, 
-        relationData, setRelationData, creditsData, setCreditsData, videoData, setVideoData
-    } = useContext(MyContext);
+function MovieInfoPage({ movieID }){
+    const [movieData, setMovieData] = useState();
+    const [relationData, setRelationData] = useState();
+    const [creditsData, setCreditsData]= useState();
+    const [videoData, setVideoData] = useState();
 
     useEffect(() => {
         async function getMovieInfoData(){
