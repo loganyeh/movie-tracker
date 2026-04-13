@@ -1,12 +1,12 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
 
 // from MovieList comps
 import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 // comps
-import PinComment from "../Components/ForumPageComps/PinComment";
-import ThreadForumBlock from "../Components/ForumPageComps/ThreadForumBlock";
+import PinComment from "../Components/ForumPageComps/PinComment.js";
+import ThreadForumBlock from "../Components/ForumPageComps/ThreadForumBlock.js";
 
 function ForumPage(){
     const feedData = ["Overview", "Recent Activity", "New Threads", "Subscribed", "Search"];

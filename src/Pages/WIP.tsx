@@ -1,7 +1,7 @@
 // components
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
 
 function WIP(){
 

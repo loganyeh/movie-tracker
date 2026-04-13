@@ -1,7 +1,7 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
-import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
+import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner.js";
 
 function ReviewsPage(){
 

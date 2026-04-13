@@ -1,14 +1,12 @@
-// import type { BarGraphType } from "../../Pages/StatsPage";
+import type { BarGraphType } from "../../Pages/StatsPage.js"
 
-// type BarGraphBlockProp = {
-//     data: BarGraphType[];
-//     title: string;
-//     category?: string;
-// }
+type BarGraphBlockProp = {
+    data: BarGraphType[];
+    title: string;
+    category?: string;
+}
 
-
-function BarGraphBlock({ data, title, category }){
-// function BarGraphBlock({ data, title, category }: BarGraphBlockProp ){
+function BarGraphBlock({ data, title, category }: BarGraphBlockProp ){
 
     return(
         <>

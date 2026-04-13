@@ -1,12 +1,12 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
 
 // profile banner comps
-import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
+import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
 
 // favoritePage comps
-import FavoriteBlock from "../Components/FavoritePageComps/FavoriteBlock";
+import FavoriteBlock from "../Components/FavoritePageComps/FavoriteBlock.js";
 
 function FavoritesPage(){
 

@@ -1,11 +1,10 @@
 
-// type FavoriteBlockProp = {
-//     title: string;
-//     numOfFavs: number;
-// }
+type FavoriteBlockProp = {
+    title: string;
+    numOfFavs: number;
+}
 
-function FavoriteBlock({ title, numOfFavs}){
-// function FavoriteBlock({ title, numOfFavs}: FavoriteBlockProp){
+function FavoriteBlock({ title, numOfFavs}: FavoriteBlockProp){
 
     return(
         <>

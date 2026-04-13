@@ -1,28 +1,27 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar";
-import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner";
+import Header from "../Components/Header.js";
+import Footer from "../Components/Footer.js";
+import MiddleNavBar from "../Components/ProfilePageComps/MiddleNavBar.js";
+import ProfileBanner from "../Components/ProfilePageComps/ProfileBanner.js";
 
 // comp from movieListPage
 import ListStatus from "../Components/MovieListComps/ListStatus.js";
 
 // page COMPS
-import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock";
-import BarGraphBlock from "../Components/StatsPageComps/BarGraphBlock";
-import PieChartBlock from "../Components/StatsPageComps/PieChartBlock";
+import StatIconsBlock from "../Components/StatsPageComps/StatIconsBlock.js";
+import BarGraphBlock from "../Components/StatsPageComps/BarGraphBlock.js";
+import PieChartBlock from "../Components/StatsPageComps/PieChartBlock.js";
 
-// export type BarGraphType = {
-//     barHeight: string;
-//     barY: number;
-//     barX: number;
-// }
+export type BarGraphType = {
+    barHeight: string;
+    barY: number;
+    barX: number | string;
+}
 
 function StatsPage(){
-
     const animeStatsList = ["Overview", "Genres", "Tags", "Voice Actors", "Studios", "Staff"];
     const mangaStatsList = ["Overview", "Genres", "Tags", "Staff"];
 
-    const scoreData = [
+    const scoreData: BarGraphType[] = [
         {barHeight: "h-3/12", barY: 4, barX: 5},
         {barHeight: "h-5/12", barY: 5, barX: 6},
         {barHeight: "h-6/12", barY: 6, barX: 7},
@@ -31,7 +30,7 @@ function StatsPage(){
         {barHeight: "h-5/12", barY: 9, barX: 10},
     ]
 
-    const episodeCountData = [
+    const episodeCountData: BarGraphType[] = [
         {barHeight: "h-6/12", barY: 4, barX: "1"},
         {barHeight: "h-4/12", barY: 5, barX: "2-6"},
         {barHeight: "h-10/12", barY: 6, barX: "7-16"},
@@ -39,14 +38,14 @@ function StatsPage(){
         {barHeight: "h-2/12", barY: 8, barX: "101+"},
     ]
 
-    const releaseYearData = [
+    const releaseYearData: BarGraphType[] = [
         {barHeight: "h-6/12", barY: 6, barX: "2023"},
         {barHeight: "h-8/12", barY: 8, barX: "2024"},
         {barHeight: "h-7/12", barY: 7, barX: "2025"},
         {barHeight: "h-10/12", barY: 25, barX: "2026"},
     ]; 
     
-    const watchYearData = [
+    const watchYearData: BarGraphType[] = [
         {barHeight: "h-1/12", barY: 1, barX: "2024"},
         {barHeight: "h-2/12", barY: 3, barX: "2025"},
         {barHeight: "h-10/12", barY: 70, barX: "2026"},
