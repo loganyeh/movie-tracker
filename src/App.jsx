@@ -3,19 +3,19 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import BrowsePage from "./Pages/BrowsePage";
-import MovieInfoPage from "./Pages/MovieInfoPage.jsx";
+import BrowsePage from "./Pages/BrowsePage.tsx";
+import MovieInfoPage from "./Pages/MovieInfoPage.tsx";
 import ProfilePage from "./Pages/ProfilePage.tsx";
-import WIP from "./Pages/WIP.jsx";
+import WIP from "./Pages/WIP.tsx";
 import MovieListPage from "./Pages/MovieListPage.tsx";
-import FavoritesPage from "./Pages/FavoritesPage.jsx";
-import ForumPage from "./Pages/ForumPage.jsx";
+import FavoritesPage from "./Pages/FavoritesPage.tsx";
+import ForumPage from "./Pages/ForumPage.tsx";
 
 // middle nav pages
-import StatsPage from "./Pages/StatsPage.jsx";
-import SocialPage from "./Pages/SocialPage.jsx";
-import ReviewsPage from "./Pages/ReviewsPage.jsx";
-import SubmissionsPage from "./Pages/SubmissionsPage.jsx";
+import StatsPage from "./Pages/StatsPage.tsx";
+import SocialPage from "./Pages/SocialPage.tsx";
+import ReviewsPage from "./Pages/ReviewsPage.tsx";
+import SubmissionsPage from "./Pages/SubmissionsPage.tsx";
 
 function App() {
   // movieOverviewAPI variables 
