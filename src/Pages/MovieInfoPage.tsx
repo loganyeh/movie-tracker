@@ -56,7 +56,7 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
             setCreditsData(creditsData);
             setVideoData(videoData);
 
-            setLoading(true);
+            setLoading(false);
         }
         
         getMovieInfoData();
