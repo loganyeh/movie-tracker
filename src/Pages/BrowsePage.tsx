@@ -8,9 +8,9 @@ import SearchMovieBlock from "../Components/SearchMovieBlock.js";
 
 import { useEffect, useState } from "react";
 
-import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.ts";
+import { fetchNowPlaying, fetchPopular, fetchTopRated, fetchUpcoming, fetchTop10Movies, fetchSearchMovie } from "../API/api.js";
 
-import type { Top10MoviesType, TrendingMoviesType } from "../API/api.ts";
+import type { Top10MoviesType, TrendingMoviesType } from "../API/api.js";
 
 function BrowsePage({ setMovieID }: any){
     const [nowPlayingData, setNowPlayingData] = useState<TrendingMoviesType[]>([]);

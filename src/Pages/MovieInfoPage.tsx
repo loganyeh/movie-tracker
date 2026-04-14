@@ -28,9 +28,9 @@ import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadRevie
 import { useEffect, useState } from "react";
 
 // api calls
-import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.ts";
+import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.js";
 
-import type { MovieInfoDataType, RelationsType, CreditsApiResponse, VideoType } from "../API/MovieOverviewAPI.ts";
+import type { MovieInfoDataType, RelationsType, CreditsApiResponse, VideoType } from "../API/MovieOverviewAPI.js";
 
 type MovieInfoPageProp = {
     movieID: number;

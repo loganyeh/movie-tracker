@@ -1,5 +1,5 @@
-import { genreIDSwitch } from "../../Functions/function.ts";
-import { movieRatingColor } from "../../Functions/function.ts";
+import { genreIDSwitch } from "../../Functions/function.js";
+import { movieRatingColor } from "../../Functions/function.js";
 
 type MovieBlockType = {
     index: number;
