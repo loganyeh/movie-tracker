@@ -37,6 +37,7 @@ type MovieInfoPageProp = {
 }
 
 function MovieInfoPage({ movieID }: MovieInfoPageProp){
+    const [loading, setLoading] = useState(true);
     const [movieData, setMovieData] = useState<MovieInfoDataType>();
     const [relationData, setRelationData] = useState<RelationsType[]>();
     const [creditsData, setCreditsData]= useState<CreditsApiResponse>();
@@ -44,6 +45,8 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
 
     useEffect(() => {
         async function getMovieInfoData(){
+            setLoading(true);
+
             const apiMovieData: MovieInfoDataType = await fetchMovieInfoData(movieID);
             const apiRelationData = await fetchRelations(movieID);
             const creditsData = await fetchCredits(movieID);
@@ -52,6 +55,8 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
             setRelationData(apiRelationData);
             setCreditsData(creditsData);
             setVideoData(videoData);
+
+            setLoading(true);
         }
         
         getMovieInfoData();
@@ -64,7 +69,7 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
 
             {/* Movie Banner */}
             {movieData && 
-                (<MovieBanner backdrop_path={movieData.backdrop_path} />)
+                (<MovieBanner backdrop_path={movieData.backdrop_path} loading={loading} />)
             }
 
             <div className="flex justify-center">
