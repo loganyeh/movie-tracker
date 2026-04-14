@@ -61,6 +61,7 @@ export async function fetchMovieInfoData(query : number){
 // --------------------
 export type RelationsType = {
     poster_path: string;
+    original_title: string;
 }
 
 type RelationsApiResponse = {
@@ -109,8 +110,6 @@ export async function fetchCredits(query : number){
     const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/credits`, options);
     const data: CreditsApiResponse = await response.json();
 
-    console.log(data);
-
     return data;
 };
 
@@ -131,6 +130,15 @@ export async function fetchReviews(){
 }
 
 // FETCH VIDEOS
+export type VideoType = {
+    key: string;
+    name: string;
+}
+
+type VideoApiResponse = {
+    results: VideoType[]
+}
+
 export async function fetchVideos(query : number){
     const options = {
         method: 'GET',
@@ -141,9 +149,11 @@ export async function fetchVideos(query : number){
       };
 
       const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/videos?language=en-US`, options);
-      const data = await response.json();
+      const data: VideoApiResponse = await response.json();
 
-      return data;
+    //   console.log(data);
+
+      return data.results;
 }
 
 

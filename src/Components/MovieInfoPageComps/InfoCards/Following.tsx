@@ -1,6 +1,12 @@
 
+type FollowingProp = {
+    img?: string;
+    username?: string;
+    status?: string;
+    rating?: string;
+}
 
-function Following({ img, username, status, rating }){
+function Following({ img, username, status, rating }: FollowingProp ){
 
     return(
         <>

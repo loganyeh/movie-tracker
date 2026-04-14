@@ -1,6 +1,11 @@
 
+type ReviewCardProp = {
+    img?: string;
+    review?: string;
+    likes?: string;
+}
 
-function ReviewCard({ img, review, likes }){
+function ReviewCard({ img, review, likes }: ReviewCardProp ){
 
     return(
         <>

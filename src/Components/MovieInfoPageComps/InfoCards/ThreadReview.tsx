@@ -1,5 +1,5 @@
-import Thread from "./Thread";
-import Review from "./Review";
+import Thread from "./Thread.js";
+import Review from "./Review.js";
 
 function ThreadReview(){
 

@@ -1,4 +1,4 @@
-import ThreadCard from "./ThreadCard";
+import ThreadCard from "./ThreadCard.js";
 
 function Thread(){
 

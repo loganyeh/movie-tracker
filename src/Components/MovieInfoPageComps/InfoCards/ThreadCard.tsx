@@ -1,6 +1,15 @@
 
+type ThreadCardProp = {
+    tweet?: string;
+    views?: number;
+    comments?: string;
+    img?: string;
+    username?: string;
+    time?: string;
+    status?: string;
+}
 
-function ThreadCard({ tweet, views, comments, img, username, time, status}){
+function ThreadCard({ tweet, views, comments, img, username, time, status}: ThreadCardProp ){
 
     return(
         <>

@@ -18,11 +18,11 @@ import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia.js";
 import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.js";
 import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.js";
 import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.js";
-import Distribution from "../Components/MovieInfoPageComps/Distribution.jsx";
-import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch.jsx";
-import TrailerFollowing from "../Components/MovieInfoPageComps/InfoCards/TrailerFollowing.jsx";
-import Recommendations from "../Components/MovieInfoPageComps/InfoCards/Recommendations.jsx";
-import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadReview.jsx";
+import Distribution from "../Components/MovieInfoPageComps/Distribution.js";
+import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch.js";
+import TrailerFollowing from "../Components/MovieInfoPageComps/InfoCards/TrailerFollowing.js";
+import Recommendations from "../Components/MovieInfoPageComps/InfoCards/Recommendations.js";
+import ThreadReview from "../Components/MovieInfoPageComps/InfoCards/ThreadReview.js";
 
 // Hooks
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ import { useEffect, useState } from "react";
 // api calls
 import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.ts";
 
-import type { MovieInfoDataType, CreditsApiResponse, CreditsType } from "../API/MovieOverviewAPI.ts";
+import type { MovieInfoDataType, CreditsApiResponse, VideoType } from "../API/MovieOverviewAPI.ts";
 
 type MovieInfoPageProp = {
     movieID: number;
@@ -40,7 +40,7 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
     const [movieData, setMovieData] = useState<MovieInfoDataType>();
     const [relationData, setRelationData] = useState();
     const [creditsData, setCreditsData]= useState<CreditsApiResponse>();
-    const [videoData, setVideoData] = useState();
+    const [videoData, setVideoData] = useState<VideoType[]>([]);
 
     useEffect(() => {
         async function getMovieInfoData(){
@@ -135,15 +135,20 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
                         {creditsData &&
                             (<Staff data={creditsData.crew} />)
                         }
-                        
 
                         <Distribution />
 
-                        <Watch data={videoData} />
+                        {videoData && 
+                            (<Watch data={videoData} />)
+                        }
 
-                        {/* <TrailerFollowing trailerData={videoData} /> */}
+                        {videoData && 
+                            (<TrailerFollowing data={videoData} />)
+                        }
 
-                        <Recommendations data={relationData} />
+                        {relationData && 
+                            (<Recommendations data={relationData} />)
+                        }
 
                         <ThreadReview />
 
