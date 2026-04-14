@@ -30,7 +30,7 @@ import { useEffect, useState } from "react";
 // api calls
 import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.ts";
 
-import type { MovieInfoDataType, CreditsApiResponse, VideoType } from "../API/MovieOverviewAPI.ts";
+import type { MovieInfoDataType, RelationsType, CreditsApiResponse, VideoType } from "../API/MovieOverviewAPI.ts";
 
 type MovieInfoPageProp = {
     movieID: number;
@@ -38,7 +38,7 @@ type MovieInfoPageProp = {
 
 function MovieInfoPage({ movieID }: MovieInfoPageProp){
     const [movieData, setMovieData] = useState<MovieInfoDataType>();
-    const [relationData, setRelationData] = useState();
+    const [relationData, setRelationData] = useState<RelationsType[]>();
     const [creditsData, setCreditsData]= useState<CreditsApiResponse>();
     const [videoData, setVideoData] = useState<VideoType[]>([]);
 

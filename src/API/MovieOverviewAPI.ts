@@ -78,7 +78,7 @@ export async function fetchRelations(query : number){
       };
       
       const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/recommendations`, options);
-      const data: RelationsApiReponse = await response.json();
+      const data: RelationsApiResponse = await response.json();
 
     //   console.log(data);
 
