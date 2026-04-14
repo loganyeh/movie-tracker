@@ -1,6 +1,12 @@
-import CharacterCard from "./CharacterCard.jsx";
+import CharacterCard from "./CharacterCard.js";
 
-function Characters({ data } ){
+import type { CreditsType } from "../../../API/MovieOverviewAPI.js";
+
+type CharactersProp = {
+    data: CreditsType[];
+}
+
+function Characters({ data }: CharactersProp ){
 
     const characterData = [
         { character: "Tanjirou Kamado", actor: "Natsuki Hinae", lead: "Main", language: "Japanese" },  
@@ -18,8 +24,8 @@ function Characters({ data } ){
                 <div className="flex gap-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-8">
 
                     {/* card */}
-                    {data?.cast?.slice(0, 6)?.map((character, index) => {
-                        return <CharacterCard key={index} data={character} />
+                    {data.slice(0, 6)?.map((data, index) => {
+                        return <CharacterCard key={index} profile_path={data.profile_path} character={data.character} name={data.name} />
                     })}
                 </div>
 

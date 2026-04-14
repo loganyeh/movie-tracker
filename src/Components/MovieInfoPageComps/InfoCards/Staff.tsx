@@ -1,6 +1,12 @@
-import StaffCard from "./StaffCard";
+import StaffCard from "./StaffCard.js";
 
-function Staff({ data }){
+import type { CreditsType } from "../../../API/MovieOverviewAPI.js";
+
+type StaffProp = {
+    data: CreditsType[];
+}
+
+function Staff({ data }: StaffProp ){
 
     const staffData = [
         { img: "placeholder//", name: "Koyoharu Gotogue", role: "Original Creator"},
@@ -15,8 +21,8 @@ function Staff({ data }){
                 <div className="text-gray-600 font-semibold">Staff</div>
                 <div className="flex gap-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-8">
                     {/* card */}
-                    {data?.crew?.slice(0, 4)?.map((data, index) => {
-                        return <StaffCard key={index} data={data} />
+                    {data.slice(0, 4)?.map((data, index) => {
+                        return <StaffCard key={index} profile_path={data.profile_path} name={data.name} job={data.job} />
                     })}
                 </div>
 

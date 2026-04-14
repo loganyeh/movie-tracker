@@ -85,8 +85,17 @@ export async function fetchRelations(query : number){
 };
 
 // FETCH CREDITS
+export type CreditsType = {
+    profile_path: string;
+    character: string;
+    name: string;
+    job: string;
+}
 
-
+export type CreditsApiResponse = {
+    crew: CreditsType[];
+    cast: CreditsType[];
+}
 
 export async function fetchCredits(query : number){
     const options = {
@@ -98,7 +107,7 @@ export async function fetchCredits(query : number){
     };
     
     const response = await fetch(`https://api.themoviedb.org/3/movie/${query}/credits`, options);
-    const data = await response.json();
+    const data: CreditsApiResponse = await response.json();
 
     console.log(data);
 

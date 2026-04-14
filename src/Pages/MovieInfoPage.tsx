@@ -17,7 +17,7 @@ import SocialMedia from "../Components/MovieInfoPageComps/SocialMedia.js";
 // body - right side - info blocks
 import Relations from "../Components/MovieInfoPageComps/InfoCards/Relations.js";
 import Characters from "../Components/MovieInfoPageComps/InfoCards/Characters.js";
-import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.jsx";
+import Staff from "../Components/MovieInfoPageComps/InfoCards/Staff.js";
 import Distribution from "../Components/MovieInfoPageComps/Distribution.jsx";
 import Watch from "../Components/MovieInfoPageComps/InfoCards/Watch.jsx";
 import TrailerFollowing from "../Components/MovieInfoPageComps/InfoCards/TrailerFollowing.jsx";
@@ -30,7 +30,7 @@ import { useEffect, useState } from "react";
 // api calls
 import { fetchMovieInfoData, fetchRelations, fetchCredits, fetchVideos } from "../API/MovieOverviewAPI.ts";
 
-import type { MovieInfoDataType } from "../API/MovieOverviewAPI.ts";
+import type { MovieInfoDataType, CreditsApiResponse, CreditsType } from "../API/MovieOverviewAPI.ts";
 
 type MovieInfoPageProp = {
     movieID: number;
@@ -39,7 +39,7 @@ type MovieInfoPageProp = {
 function MovieInfoPage({ movieID }: MovieInfoPageProp){
     const [movieData, setMovieData] = useState<MovieInfoDataType>();
     const [relationData, setRelationData] = useState();
-    const [creditsData, setCreditsData]= useState();
+    const [creditsData, setCreditsData]= useState<CreditsApiResponse>();
     const [videoData, setVideoData] = useState();
 
     useEffect(() => {
@@ -129,13 +129,13 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
                         }
                         
                         {creditsData &&
-                            (<Characters data={creditsData} />)
+                            (<Characters data={creditsData.cast} />)
                         }
 
-                        {/* {creditsData &&
-                            ()
-                        } */}
-                        {/* <Staff data={creditsData} /> */}
+                        {creditsData &&
+                            (<Staff data={creditsData.crew} />)
+                        }
+                        
 
                         <Distribution />
 
