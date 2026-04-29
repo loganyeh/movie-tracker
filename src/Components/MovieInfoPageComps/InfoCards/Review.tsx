@@ -4,7 +4,7 @@ function Review(){
 
     return(
         <>
-            <div className="flex gap-2 flex-col">
+            <div className="border border-red-600 flex gap-2 flex-col">
 
                 {/* reviews title */}
                 <div className="font-semibold text-gray-600">Reviews</div>

@@ -1,5 +1,5 @@
 import Status from "./InfoCards/Status.js";
-import Score from "./InfoCards/Score.jsx";
+import Score from "./InfoCards/Score.js";
 
 function Distribution(){
 
