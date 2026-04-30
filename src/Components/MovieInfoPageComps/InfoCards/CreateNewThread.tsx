@@ -12,31 +12,51 @@ function CreateNewThread(){
         <>
             <Header />
 
-            <div className="w-full max-w-7xl pt-8 p-5 flex gap-5 flex-col bg-gray-200">
+            <div className="flex justify-center bg-gray-200">
 
-                <div className="border bg-gray-50 p-1 px-4">Thread Title</div>
+                <div className="w-full 2xl:max-w-7xl pt-8 p-5 md:p-8 pb-16 xl:px-12 flex gap-5 xl:gap-10 flex-col xl:flex-row bg-gray-200">
 
-                <div className="border bg-gray-50 p-10 flex gap-4 flex-col">
-                    <div className="border flex justify-around">
-                        {Array.from({length: 10}).map((_, index) => {
-                            return <div key={index}>0</div>
-                        })}
-                    </div>
-                    <div className="border text-sm">Write Thread Body</div>
-                </div>
+                    <div className="xl:w-full xl:max-w-2xl flex gap-5 flex-col">
+                        {/* Thread Title */}
+                        <input type="text" className="bg-gray-50 p-1 px-4 rounded" placeholder="Thread Title"/>
 
-                <div className="flex gap-2.5 flex-col text-gray-800">
-                    <div className="text-sm font-medium">Categories</div>
-                    <div className="flex gap-2 flex-col">
-                        {categoryNames.map((cat, index) => {
-                            return <div key={index} className="px-2.5 py-1.5 px-2 flex gap-2.5 bg-gray-50 rounded">
-                                <input type="checkbox" className="accent-blue-400" />
-                                <div className="text-xs font-medium">{cat}</div>
+                        {/* Write Thread Body */}
+                        <div className="bg-gray-50 p-10 flex gap-8 flex-col rounded">
+                            <div className="flex justify-around">
+                                {Array.from({length: 10}).map((_, index) => {
+                                    return <i key={index} className='bx bx-bold text-lg text-gray-500'></i>
+                                })}
                             </div>
-                        })}
-                    </div>
-                </div>
+                            <input type="text" className="text-sm font-light focus:outline-none" placeholder="Write thread body"/>
+                        </div>
 
+                        {/* Categories */}
+                        <div className="flex gap-2.5 flex-col text-gray-800">
+                            <div className="text-sm font-medium">Categories</div>
+                            <div className="flex gap-2 flex-col">
+                                {categoryNames.map((cat, index) => {
+                                    return <div key={index} className="px-2.5 py-1.5 px-2 flex gap-2.5 bg-gray-50 rounded">
+                                        <input type="checkbox" className="accent-blue-400" />
+                                        <div className="text-xs font-medium">{cat}</div>
+                                    </div>
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Anime & Manga Categories */}
+                        <div className="flex gap-1.5 flex-col text-sm">
+                            <div className="">Anime & Manga Categories</div>
+                            <input type="text" className="w-full p-2 bg-gray-50 rounded focus:outline-none" placeholder="Search" />
+                        </div>
+
+                    </div>
+
+                    {/* Thread Text */}
+                    <div className="border min-h-14 xl:flex xl:flex-1 bg-gray-50 rounded">
+                        
+                    </div>
+
+                </div>
             </div>
 
             <Footer />
