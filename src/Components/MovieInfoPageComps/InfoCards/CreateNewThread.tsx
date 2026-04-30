@@ -1,5 +1,7 @@
 import Header from "../../Header.js";
 import Footer from "../../Footer.js";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function CreateNewThread(){
     const categoryNames = [
@@ -7,6 +9,10 @@ function CreateNewThread(){
         "Light Novels", "Forum Games", "Recommendations", "Site Feedback", "Bug Reports",
         "AniList Apps", "Misc"
     ]
+
+    const [threadTitle, setThreadTitle] = useState<string>("");
+    const [threadBody, setThreadBody] = useState<string>("");
+    
 
     return(
         <>
@@ -18,7 +24,7 @@ function CreateNewThread(){
 
                     <div className="xl:w-full xl:max-w-2xl flex gap-5 flex-col">
                         {/* Thread Title */}
-                        <input type="text" className="bg-gray-50 p-1 px-4 rounded focus:outline-none" placeholder="Thread Title"/>
+                        <input onChange={(e) => {setThreadTitle(e.target.value)}} type="text" className="bg-gray-50 p-1 px-4 rounded focus:outline-none" placeholder="Thread Title"/>
 
                         {/* Write Thread Body */}
                         <div className="bg-gray-50 p-10 flex gap-8 flex-col rounded">
@@ -27,7 +33,7 @@ function CreateNewThread(){
                                     return <i key={index} className='bx bx-bold text-lg text-gray-500'></i>
                                 })}
                             </div>
-                            <input type="text" className="text-sm font-light focus:outline-none" placeholder="Write thread body"/>
+                            <input onChange={(e) => {setThreadBody(e.target.value)}} type="text" className="text-sm font-light focus:outline-none" placeholder="Write thread body"/>
                         </div>
 
                         {/* Categories */}
@@ -58,7 +64,7 @@ function CreateNewThread(){
                         </div>
 
                         {/* Save Button */}
-                        <div className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</div>
+                        <Link to={"/movie"} className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</Link>
                     </div>
 
                 </div>

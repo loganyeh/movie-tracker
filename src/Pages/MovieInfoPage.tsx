@@ -86,7 +86,7 @@ function MovieInfoPage({ movieID }: MovieInfoPageProp){
 
 
             {/* body */}
-            <div className="border-2 border-red-600 flex justify-center bg-gray-200">
+            <div className="flex justify-center bg-gray-200">
 
                 <div className="w-full max-w-[1400px] pb-24 p-5 flex md:flex-row gap-10 flex-col bg-gray-200">
 

@@ -1,4 +1,5 @@
 import "./index.css";
+import { ScrollToTop } from "./Functions/function.ts";
 
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -25,6 +26,7 @@ function App() {
   
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<BrowsePage setMovieID={setMovieID} />} />
         <Route path={`/movie`} element={<MovieInfoPage movieID={movieID} />}/>

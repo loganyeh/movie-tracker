@@ -1,7 +1,24 @@
 import ThreadCard from "./ThreadCard.js";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+export type ThreadApi = {
+    thread: string;
+}
 
 function Thread(){
+    const [threads, setThreads] = useState<ThreadApi[]>([]);
+
+    useEffect(() => {
+        async function getThreads(){
+            const response = await fetch("http://localhost:3000/threads");
+            const data = await response.json();
+            setThreads(data);
+
+        }
+
+        getThreads();
+    }, [])
 
     return(
         <>
@@ -11,15 +28,17 @@ function Thread(){
                 <div className="flex justify-between items-center text-gray-600 font-semibold">
                     <div className="font-semibold">Threads</div>
                     <Link to={"/createnewthread"} className="text-xs font-light">Create New Thread</Link>
-                    {/* <div className="text-xs font-light">Create New Thread</div> */}
                 </div>
 
 
                 {/*  */}
                 <div className="flex gap-4 flex-col">
-                    {Array.from({length: 2}).map((_, index) => {
+                    {threads.map((thread, index) => {
                         return <ThreadCard key={index} />
                     })}
+                    {/* {Array.from({length: 2}).map((_, index) => {
+                        return <ThreadCard key={index} />
+                    })} */}
                 </div>
 
                     
