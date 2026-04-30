@@ -28,9 +28,8 @@ function Thread(){
                 {/* threads */}
                 <div className="flex justify-between items-center text-gray-600 font-semibold">
                     <div className="font-semibold">Threads</div>
-                    <Link to={"/createnewthread"} className="text-xs font-light">Create New Thread</Link>
+                    <Link to={"/createnewthread"} className="text-xs font-light hover:text-blue-500">Create New Thread</Link>
                 </div>
-
 
                 {/*  */}
                 <div className="flex gap-4 flex-col">

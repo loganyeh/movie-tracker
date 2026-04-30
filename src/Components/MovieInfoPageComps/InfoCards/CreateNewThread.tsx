@@ -24,7 +24,6 @@ function CreateNewThread(){
         });
 
     }
-    
 
     return(
         <>

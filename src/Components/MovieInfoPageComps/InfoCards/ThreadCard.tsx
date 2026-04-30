@@ -1,4 +1,5 @@
 import type { ThreadApi } from "./Thread.js";
+import { Link } from "react-router-dom";
 
 type ThreadCardProp = {
     thread: ThreadApi;
@@ -21,15 +22,22 @@ function ThreadCard({ thread }: ThreadCardProp ){
                     <div className="w-fit px-2 py-0.5 bg-blue-400 text-white text-xs font-light rounded-full">{"general"}</div>
                 </div>
                 
-                <div className="flex gap-2 items-start shrink-0">
-                        <div className="flex gap-1 items-center text-xs">
-                            <i className='bx bxs-bar-chart-alt-2 text-gray-500' ></i>
-                            <div className="text-gray-400">{"120"}</div>
+                <div className="flex gap-2 flex-col items-start shrink-0">
+                        <div className="flex gap-2">
+                            <div className="flex gap-1 items-center text-xs">
+                                <i className='bx bxs-bar-chart-alt-2 text-gray-500' ></i>
+                                <div className="text-gray-400">{"120"}</div>
+                            </div>
+                            <div className="flex gap-1 items-center text-xs">
+                                <i className='bx bx-chat text-gray-500' ></i>
+                                <div className="text-gray-400">{"3"}</div>
+                            </div>
                         </div>
-                        <div className="flex gap-1 items-center text-xs">
-                            <i className='bx bx-chat text-gray-500' ></i>
-                            <div className="text-gray-400">{"3"}</div>
-                        </div>
+
+                        <Link to={"/createnewthread"} className="w-full flex justify-end">
+                            <i className='bx bx-edit-alt text-gray-500 hover:text-blue-500' ></i>
+                        </Link>
+
                 </div>
 
             </div>
