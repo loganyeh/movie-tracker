@@ -14,16 +14,16 @@ function CreateNewThread(){
 
             <div className="flex justify-center bg-gray-200">
 
-                <div className="border w-full 2xl:max-w-[1400px] pt-8 p-5 md:p-8 pb-16 xl:px-12 xl:pb-96 flex gap-5 xl:gap-10 flex-col xl:flex-row xl:items-start bg-gray-200">
+                <div className="w-full 2xl:max-w-[1800px] pt-8 p-5 md:p-8 pb-16 xl:px-12 xl:pb-96 flex gap-5 xl:gap-10 flex-col xl:flex-row xl:items-start bg-gray-200">
 
                     <div className="xl:w-full xl:max-w-2xl flex gap-5 flex-col">
                         {/* Thread Title */}
-                        <input type="text" className="bg-gray-50 p-1 px-4 rounded" placeholder="Thread Title"/>
+                        <input type="text" className="bg-gray-50 p-1 px-4 rounded focus:outline-none" placeholder="Thread Title"/>
 
                         {/* Write Thread Body */}
                         <div className="bg-gray-50 p-10 flex gap-8 flex-col rounded">
-                            <div className="flex justify-around">
-                                {Array.from({length: 10}).map((_, index) => {
+                            <div className="flex justify-between">
+                                {Array.from({length: 14}).map((_, index) => {
                                     return <i key={index} className='bx bx-bold text-lg text-gray-500'></i>
                                 })}
                             </div>
@@ -46,7 +46,7 @@ function CreateNewThread(){
                         {/* Anime & Manga Categories */}
                         <div className="flex gap-1.5 flex-col text-sm">
                             <div className="">Anime & Manga Categories</div>
-                            <input type="text" className="w-full p-2 bg-gray-50 rounded focus:outline-none" placeholder="Search" />
+                            <input type="text" className="w-full p-2 px-4 bg-gray-50 rounded focus:outline-none" placeholder="Search" />
                         </div>
 
                     </div>
@@ -65,7 +65,6 @@ function CreateNewThread(){
             </div>
 
             <Footer />
-        
         </>
     )
 }

@@ -1,4 +1,5 @@
 import ThreadCard from "./ThreadCard.js";
+import { Link } from "react-router-dom";
 
 function Thread(){
 
@@ -9,7 +10,8 @@ function Thread(){
                 {/* threads */}
                 <div className="flex justify-between items-center text-gray-600 font-semibold">
                     <div className="font-semibold">Threads</div>
-                    <div className="text-xs font-light">Create New Thread</div>
+                    <Link to={"/createnewthread"} className="text-xs font-light">Create New Thread</Link>
+                    {/* <div className="text-xs font-light">Create New Thread</div> */}
                 </div>
 
 
