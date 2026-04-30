@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export type ThreadApi = {
     thread: string;
+    name: string;
 }
 
 function Thread(){
@@ -12,7 +13,7 @@ function Thread(){
     useEffect(() => {
         async function getThreads(){
             const response = await fetch("http://localhost:3000/threads");
-            const data = await response.json();
+            const data: ThreadApi[] = await response.json();
             setThreads(data);
 
         }
@@ -34,7 +35,7 @@ function Thread(){
                 {/*  */}
                 <div className="flex gap-4 flex-col">
                     {threads.map((thread, index) => {
-                        return <ThreadCard key={index} />
+                        return <ThreadCard key={index} thread={thread} />
                     })}
                     {/* {Array.from({length: 2}).map((_, index) => {
                         return <ThreadCard key={index} />

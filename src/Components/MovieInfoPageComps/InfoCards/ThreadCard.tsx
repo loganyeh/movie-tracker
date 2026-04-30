@@ -1,20 +1,22 @@
+import type { ThreadApi } from "./Thread.js";
 
 type ThreadCardProp = {
-    threadTitle?: string;
-    threadBody?: string;
+    thread: ThreadApi;
 }
 
-function ThreadCard({ threadTitle, threadBody }: ThreadCardProp ){
+function ThreadCard({ thread }: ThreadCardProp ){
+
+    if(!thread) return null;
 
     return(
         <>
             <div className="px-3 py-4 flex justify-between bg-white rounded shadow-md">
 
                 <div className="flex gap-3 flex-col">
-                    <div className="text-sm text-gray-600">{threadBody || "What if you had the ability to make your own Demon Slayer breathing style/form... what would it be?"}</div>
+                    <div className="text-sm text-gray-600">{thread.thread || "What if you had the ability to make your own Demon Slayer breathing style/form... what would it be?"}</div>
                     <div className="flex gap-2.5 items-center">
                         <div className="h-6 w-6 bg-blue-300 rounded"></div>
-                        <div className="text-xs">{"Rukia"} replied {"3 months"} ago</div>
+                        <div className="text-xs">{thread.name || "Rukia"} replied {"3 months"} ago</div>
                     </div>
                     <div className="w-fit px-2 py-0.5 bg-blue-400 text-white text-xs font-light rounded-full">{"general"}</div>
                 </div>

@@ -12,6 +12,18 @@ function CreateNewThread(){
 
     const [threadTitle, setThreadTitle] = useState<string>("");
     const [threadBody, setThreadBody] = useState<string>("");
+
+    async function CreateThread(){
+        await fetch("http://localhost:3000/threads", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: threadTitle,
+                thread: threadBody,
+            })
+        });
+
+    }
     
 
     return(
@@ -64,7 +76,7 @@ function CreateNewThread(){
                         </div>
 
                         {/* Save Button */}
-                        <Link to={"/movie"} className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</Link>
+                        <Link to={"/movie"} onClick={CreateThread} className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</Link>
                     </div>
 
                 </div>
