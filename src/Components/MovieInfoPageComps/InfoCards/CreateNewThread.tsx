@@ -14,7 +14,7 @@ function CreateNewThread(){
 
             <div className="flex justify-center bg-gray-200">
 
-                <div className="w-full 2xl:max-w-7xl pt-8 p-5 md:p-8 pb-16 xl:px-12 flex gap-5 xl:gap-10 flex-col xl:flex-row bg-gray-200">
+                <div className="border w-full 2xl:max-w-[1400px] pt-8 p-5 md:p-8 pb-16 xl:px-12 xl:pb-96 flex gap-5 xl:gap-10 flex-col xl:flex-row xl:items-start bg-gray-200">
 
                     <div className="xl:w-full xl:max-w-2xl flex gap-5 flex-col">
                         {/* Thread Title */}
@@ -33,7 +33,7 @@ function CreateNewThread(){
                         {/* Categories */}
                         <div className="flex gap-2.5 flex-col text-gray-800">
                             <div className="text-sm font-medium">Categories</div>
-                            <div className="flex gap-2 flex-col">
+                            <div className="flex gap-2 xl:gap-3.5 flex-col xl:grid xl:grid-cols-3">
                                 {categoryNames.map((cat, index) => {
                                     return <div key={index} className="px-2.5 py-1.5 px-2 flex gap-2.5 bg-gray-50 rounded">
                                         <input type="checkbox" className="accent-blue-400" />
@@ -51,9 +51,14 @@ function CreateNewThread(){
 
                     </div>
 
-                    {/* Thread Text */}
-                    <div className="border min-h-14 xl:flex xl:flex-1 bg-gray-50 rounded">
+                    <div className="w-full flex gap-5 flex-col">
+                        {/* Thread Text */}
+                        <div className="min-h-14 xl:min-h-24 xl:mt-5 xl:flex xl:flex-1 bg-gray-50 rounded">
                         
+                        </div>
+
+                        {/* Save Button */}
+                        <div className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</div>
                     </div>
 
                 </div>
