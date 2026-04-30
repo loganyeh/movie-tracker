@@ -17,6 +17,8 @@ import SocialPage from "./Pages/SocialPage.tsx";
 import ReviewsPage from "./Pages/ReviewsPage.tsx";
 import SubmissionsPage from "./Pages/SubmissionsPage.tsx";
 
+import CreateNewThread from "./Components/MovieInfoPageComps/InfoCards/CreateNewThread.tsx";
+
 function App() {
   // movieOverviewAPI variables 
   const [movieID, setMovieID] = useState(569094);
@@ -37,6 +39,8 @@ function App() {
         <Route path="/social" element={<SocialPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/submissions" element={<SubmissionsPage />} />
+
+        <Route path="/createnewthread" element={<CreateNewThread />} />
 
       </Routes>
     </>
