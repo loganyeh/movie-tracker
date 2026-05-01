@@ -27,7 +27,7 @@ function App() {
   
   return (
     <>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Routes>
         <Route path="/" element={<BrowsePage setMovieID={setMovieID} />} />
         <Route path={`/movie`} element={<MovieInfoPage movieID={movieID} />}/>
