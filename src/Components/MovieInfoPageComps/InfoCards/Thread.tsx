@@ -47,12 +47,8 @@ function Thread(){
                     {threads.map((thread, index) => {
                         return <ThreadCard key={index} thread={thread} deleteThread={deleteThread} />
                     })}
-                    {/* {Array.from({length: 2}).map((_, index) => {
-                        return <ThreadCard key={index} />
-                    })} */}
                 </div>
 
-                    
                 </div>
         </>
     )
