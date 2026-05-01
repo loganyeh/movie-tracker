@@ -4,17 +4,12 @@ import EditThread from "./EditThread.js";
 
 type ThreadCardProp = {
     thread: ThreadApi;
+    deleteThread: (id: number) => void;
 }
 
-function ThreadCard({ thread }: ThreadCardProp ){
+function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
 
     if(!thread) return null;
-
-    async function deleteThread(){
-        await fetch(`http://localhost:3000/threads/${thread.id}`, {
-        method: "DELETE"
-    });
-    }
 
     return(
         <>
@@ -47,7 +42,7 @@ function ThreadCard({ thread }: ThreadCardProp ){
                                 <i className='bx bx-edit-alt text-gray-500 hover:text-red-500' ></i>
                             </Link>
 
-                            <i onClick={deleteThread} className='bx bx-trash text-gray-500 hover:text-red-500 cursor-pointer'></i>
+                            <i onClick={() => deleteThread(thread.id)} className='bx bx-trash text-gray-500 hover:text-red-500 cursor-pointer'></i>
 
                         </div>
 

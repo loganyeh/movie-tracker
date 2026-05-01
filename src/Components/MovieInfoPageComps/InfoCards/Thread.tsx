@@ -20,7 +20,17 @@ function Thread(){
         }
 
         getThreads();
-    }, [])
+    }, []);
+
+    async function deleteThread(id: number){
+        await fetch(`http://localhost:3000/threads/${id}`, {
+        method: "DELETE"
+    });
+
+        setThreads(prev => 
+            prev.filter(thread => thread.id !== id)
+        );
+    }
 
     return(
         <>
@@ -35,7 +45,7 @@ function Thread(){
                 {/*  */}
                 <div className="flex gap-4 flex-col">
                     {threads.map((thread, index) => {
-                        return <ThreadCard key={index} thread={thread} />
+                        return <ThreadCard key={index} thread={thread} deleteThread={deleteThread} />
                     })}
                     {/* {Array.from({length: 2}).map((_, index) => {
                         return <ThreadCard key={index} />
