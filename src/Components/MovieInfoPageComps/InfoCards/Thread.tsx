@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export type ThreadApi = {
+    id: number;
     thread: string;
     name: string;
 }
@@ -15,7 +16,7 @@ function Thread(){
             const response = await fetch("http://localhost:3000/threads");
             const data: ThreadApi[] = await response.json();
             setThreads(data);
-
+ 
         }
 
         getThreads();

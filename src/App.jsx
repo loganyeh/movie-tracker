@@ -19,6 +19,7 @@ import ReviewsPage from "./Pages/ReviewsPage.tsx";
 import SubmissionsPage from "./Pages/SubmissionsPage.tsx";
 
 import CreateNewThread from "./Components/MovieInfoPageComps/InfoCards/CreateNewThread.tsx";
+import EditThread from "./Components/MovieInfoPageComps/InfoCards/EditThread.tsx"; 
 
 function App() {
   // movieOverviewAPI variables 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/submissions" element={<SubmissionsPage />} />
 
         <Route path="/createnewthread" element={<CreateNewThread />} />
+        <Route path="/editthread/:id" element={<EditThread />} />
 
       </Routes>
     </>

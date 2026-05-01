@@ -1,5 +1,6 @@
 import type { ThreadApi } from "./Thread.js";
 import { Link } from "react-router-dom";
+import EditThread from "./EditThread.js";
 
 type ThreadCardProp = {
     thread: ThreadApi;
@@ -8,6 +9,14 @@ type ThreadCardProp = {
 function ThreadCard({ thread }: ThreadCardProp ){
 
     if(!thread) return null;
+
+    async function editThread() {
+        const response = await fetch(`/threads/${thread.id}`);
+        const data = await response.json();
+
+
+
+    }
 
     return(
         <>
@@ -34,8 +43,8 @@ function ThreadCard({ thread }: ThreadCardProp ){
                             </div>
                         </div>
 
-                        <Link to={"/createnewthread"} className="w-full flex justify-end">
-                            <i className='bx bx-edit-alt text-gray-500 hover:text-blue-500' ></i>
+                        <Link to={`/editthread/${thread.id}`} onClick={editThread} className="w-full flex justify-end">
+                            <i className='bx bx-edit-alt text-gray-500 hover:text-red-500' ></i>
                         </Link>
 
                 </div>

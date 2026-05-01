@@ -1,9 +1,14 @@
 import Header from "../../Header.js";
 import Footer from "../../Footer.js";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import type { ThreadApi } from "./Thread.js";
 
-function CreateNewThread(){
+type EditThreadProp = {
+    
+}
+
+function EditThread(){
     const categoryNames = [
         "General", "Anime", "Manga", "Release Discussion", "News", "Music", "Gaming", "Visual Novels", 
         "Light Novels", "Forum Games", "Recommendations", "Site Feedback", "Bug Reports",
@@ -13,17 +18,33 @@ function CreateNewThread(){
     const [threadTitle, setThreadTitle] = useState<string>("");
     const [threadBody, setThreadBody] = useState<string>("");
 
-    async function CreateThread(){
-        await fetch("http://localhost:3000/threads", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                name: threadTitle,
-                thread: threadBody,
-            })
-        });
+    const { id } = useParams();
 
+    const [thread, setThread] = useState<ThreadApi>();
+
+    // 1. get existing data
+    useEffect(() => {
+        async function fetchThread() {
+            const res = await fetch(`http://localhost:3000/threads/${id}`);
+            const data = await res.json();
+            setThread(data);
+        }
+
+        fetchThread();
+    }, [id]);
+
+    // 2. update function (same page)
+    async function updateThread() {
+        await fetch(`http://localhost:3000/threads/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(thread)
+        });
     }
+
+    if (!thread) return <div>Loading...</div>;
 
     return(
         <>
@@ -35,7 +56,7 @@ function CreateNewThread(){
 
                     <div className="xl:w-full xl:max-w-2xl flex gap-5 flex-col shrink-0">
                         {/* Thread Title */}
-                        <input onChange={(e) => {setThreadTitle(e.target.value)}} type="text" className="bg-gray-50 p-1 px-4 rounded focus:outline-none" placeholder="Thread Title"/>
+                        <input onChange={(e) => {setThread({...thread, name: e.target.value})}} value={thread.name} type="text" className="bg-gray-50 p-1 px-4 rounded focus:outline-none" placeholder="Thread Title"/>
 
                         {/* Write Thread Body */}
                         <div className="bg-gray-50 p-10 flex gap-8 flex-col rounded">
@@ -44,7 +65,7 @@ function CreateNewThread(){
                                     return <i key={index} className='bx bx-bold text-lg text-gray-500'></i>
                                 })}
                             </div>
-                            <input onChange={(e) => {setThreadBody(e.target.value)}} type="text" className="text-sm font-light focus:outline-none" placeholder="Write thread body"/>
+                            <input onChange={(e) => {setThread({...thread, thread: e.target.value})}} value={thread.thread} type="text" className="text-sm font-light focus:outline-none" placeholder="Write thread body"/>
                         </div>
 
                         {/* Categories */}
@@ -71,11 +92,11 @@ function CreateNewThread(){
                     <div className="w-full flex gap-5 flex-col">
                         {/* Thread Text */}
                         <div className="min-h-14 xl:min-h-24 xl:mt-5 xl:flex xl:flex-1 p-10 text-sm bg-gray-50 rounded">
-                                {threadBody}
+                                {thread.thread}
                         </div>
 
-                        {/* Save Button */}
-                        <Link to={"/movie"} onClick={CreateThread} className="p-2 text-sm text-center text-white bg-blue-400 rounded">Save</Link>
+                        {/* Edit Button */}
+                        <Link to={"/movie"} onClick={updateThread} className="p-2 text-sm text-center text-white bg-red-400 rounded">Edit</Link>
                     </div>
 
                 </div>
@@ -86,4 +107,4 @@ function CreateNewThread(){
     )
 }
 
-export default CreateNewThread;
+export default EditThread;
