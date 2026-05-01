@@ -4,19 +4,12 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import type { ThreadApi } from "./Thread.js";
 
-type EditThreadProp = {
-    
-}
-
 function EditThread(){
     const categoryNames = [
         "General", "Anime", "Manga", "Release Discussion", "News", "Music", "Gaming", "Visual Novels", 
         "Light Novels", "Forum Games", "Recommendations", "Site Feedback", "Bug Reports",
         "AniList Apps", "Misc"
     ]
-
-    const [threadTitle, setThreadTitle] = useState<string>("");
-    const [threadBody, setThreadBody] = useState<string>("");
 
     const { id } = useParams();
 

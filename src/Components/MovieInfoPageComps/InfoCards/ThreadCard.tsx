@@ -10,12 +10,10 @@ function ThreadCard({ thread }: ThreadCardProp ){
 
     if(!thread) return null;
 
-    async function editThread() {
-        const response = await fetch(`/threads/${thread.id}`);
-        const data = await response.json();
-
-
-
+    async function deleteThread(){
+        await fetch(`http://localhost:3000/threads/${thread.id}`, {
+        method: "DELETE"
+    });
     }
 
     return(
@@ -43,9 +41,15 @@ function ThreadCard({ thread }: ThreadCardProp ){
                             </div>
                         </div>
 
-                        <Link to={`/editthread/${thread.id}`} onClick={editThread} className="w-full flex justify-end">
-                            <i className='bx bx-edit-alt text-gray-500 hover:text-red-500' ></i>
-                        </Link>
+                        <div className="flex justify-end gap-2 w-full">   
+
+                            <Link to={`/editthread/${thread.id}`} className="w-full flex justify-end">
+                                <i className='bx bx-edit-alt text-gray-500 hover:text-red-500' ></i>
+                            </Link>
+
+                            <i onClick={deleteThread} className='bx bx-trash text-gray-500 hover:text-red-500 cursor-pointer'></i>
+
+                        </div>
 
                 </div>
 

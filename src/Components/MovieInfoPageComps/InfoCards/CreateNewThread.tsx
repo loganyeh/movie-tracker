@@ -12,8 +12,9 @@ function CreateNewThread(){
 
     const [threadTitle, setThreadTitle] = useState<string>("");
     const [threadBody, setThreadBody] = useState<string>("");
+    
+    async function CreateThread(){ 
 
-    async function CreateThread(){
         await fetch("http://localhost:3000/threads", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
