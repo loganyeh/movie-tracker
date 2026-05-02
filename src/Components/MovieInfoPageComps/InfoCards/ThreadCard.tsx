@@ -10,6 +10,9 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
 
     if(!thread) return null;
 
+    // i think put the comments in this comp and pass the thread.id to it 
+
+
     return(
         <>
             <div className="px-3 py-4 bg-white rounded shadow-md">
@@ -54,9 +57,9 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                         <i className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
                     </div>
 
-                    {Array.from({length: 1}).map((_, index) => {
+                    {thread.comments.map((comment, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
-                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, exercitationem, expedita aliquid quidem soluta qui fuga voluptatibus ipsa, asperiores perspiciatis nemo nam optio error quisquam autem. Molestiae in illo eum.</div>
+                                    <div className="">{comment.comment}</div>
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
                                         <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
@@ -64,6 +67,16 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                                     </div>
                                 </div>
                     })}
+                    {/* {Array.from({length: 1}).map((_, index) => {
+                        return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
+                                    <div className=""></div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
+                                        <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
+                                        <i className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
+                                    </div>
+                                </div>
+                    })} */}
                     
                 </div>
 
