@@ -67,6 +67,7 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                                     </div>
                                 </div>
                     })}
+                    
                     {/* {Array.from({length: 1}).map((_, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
                                     <div className=""></div>
