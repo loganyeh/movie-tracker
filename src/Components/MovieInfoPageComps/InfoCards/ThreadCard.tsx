@@ -1,14 +1,12 @@
-import type { ThreadApi, CommentsApi } from "./Thread.js";
+import type { ThreadApi } from "./Thread.js";
 import { Link } from "react-router-dom";
-import EditThread from "./EditThread.js";
 
 type ThreadCardProp = {
     thread: ThreadApi;
-    comments: CommentsApi;
     deleteThread: (id: number) => void;
 }
 
-function ThreadCard({ thread, comments, deleteThread }: ThreadCardProp ){
+function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
 
     if(!thread) return null;
 
@@ -56,19 +54,9 @@ function ThreadCard({ thread, comments, deleteThread }: ThreadCardProp ){
                         <i className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
                     </div>
 
-                    {/* {comments.map((comment, index) => {
-                        return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
-                                    <div>{comment.comment}</div>
-                                    <div className="flex flex-col items-center gap-2">
-                                        <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
-                                        <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
-                                        <i className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
-                                    </div>
-                                </div>
-                    })} */}
                     {Array.from({length: 1}).map((_, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
-                                    <div>{comments.comment}</div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, exercitationem, expedita aliquid quidem soluta qui fuga voluptatibus ipsa, asperiores perspiciatis nemo nam optio error quisquam autem. Molestiae in illo eum.</div>
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
                                         <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>

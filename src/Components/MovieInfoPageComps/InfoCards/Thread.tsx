@@ -8,13 +8,8 @@ export type ThreadApi = {
     name: string;
 }
 
-export type CommentsApi = {
-    comment: string;
-}
-
 function Thread(){
     const [threads, setThreads] = useState<ThreadApi[]>([]);
-    const [comments, setComments] = useState<CommentsApi[]>([]);
 
     useEffect(() => {
         async function getThreads(){
@@ -24,16 +19,6 @@ function Thread(){
         };
 
         getThreads();
-
-
-        async function getComments(){
-            const response = await fetch(`http://localhost:3000/threads/${id}/comments`);
-            const data: CommentsApi[] = await response.json();
-            setComments(data);
-        };
-
-        getComments();
-
     }, []);
 
     async function deleteThread(id: number){
@@ -59,7 +44,7 @@ function Thread(){
                 {/*  */}
                 <div className="flex gap-4 flex-col">
                     {threads.map((thread, index) => {
-                        return <ThreadCard key={index} thread={thread} comments={comments} deleteThread={deleteThread} />
+                        return <ThreadCard key={index} thread={thread} deleteThread={deleteThread} />
                     })}
                 </div>
 
