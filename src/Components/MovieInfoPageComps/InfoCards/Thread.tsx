@@ -28,12 +28,19 @@ function Thread(){
     async function deleteThread(id: number){
         await fetch(`http://localhost:3000/threads/${id}`, {
         method: "DELETE"
-    });
+        });
 
         setThreads(prev => 
             prev.filter(thread => thread.id !== id)
         );
-    }
+    };
+
+    // async function deleteComment(id: number){
+    //     await fetch(`http:localhost:3000/threads/${id}/comments`, {
+    //         method: "DELETE"
+    //     });
+
+    // };
 
     return(
         <>
