@@ -24,7 +24,6 @@ function Thread(){
     };
 
     useEffect(() => {
-
         getThreads();
     }, []);
 

@@ -77,7 +77,7 @@ function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
                             <input className="border w-full p-4" onChange={(e) => {setCommentText(e.target.value)}} type="text" placeholder="Type your comment here..."/>
                             <div className="flex flex-col items-center gap-2">
                                 <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
-                                <i onClick={() => {
+                                <i onClick={() => { 
                                     setIsComment(false);
                                     addComment();
                                     setCommentText("");
