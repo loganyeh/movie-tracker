@@ -17,12 +17,13 @@ export type ThreadApi = {
 function Thread(){
     const [threads, setThreads] = useState<ThreadApi[]>([]);
 
+    async function getThreads(){
+        const response = await fetch("http://localhost:3000/threads");
+        const data: ThreadApi[] = await response.json();
+        setThreads(data);
+    };
+
     useEffect(() => {
-        async function getThreads(){
-            const response = await fetch("http://localhost:3000/threads");
-            const data: ThreadApi[] = await response.json();
-            setThreads(data);
-        };
 
         getThreads();
     }, []);
@@ -50,7 +51,7 @@ function Thread(){
                 {/*  */}
                 <div className="flex gap-4 flex-col">
                     {threads.map((thread, index) => {
-                        return <ThreadCard key={index} thread={thread} deleteThread={deleteThread} />
+                        return <ThreadCard key={index} thread={thread} deleteThread={deleteThread} refreshThreads={getThreads} />
                     })}
                 </div>
 

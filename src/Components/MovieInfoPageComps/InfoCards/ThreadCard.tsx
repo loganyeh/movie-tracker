@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 type ThreadCardProp = {
     thread: ThreadApi;
     deleteThread: (id: number) => void;
+    refreshThreads: () => void;
 }
 
-function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
+function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
     
     const [isComment, setIsComment] = useState(false);
     const [commentText, setCommentText] = useState("");
@@ -23,6 +24,8 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                 comment: commentText,
             })
         });
+
+        refreshThreads();
     };
 
     return(
@@ -71,14 +74,14 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
 
                     {isComment && (
                         <div className={`border flex justify-end items-start gap-2 p-3 text-sm text-gray-600`}>
-                            <input className="border w-full" onChange={(e) => {setCommentText(e.target.value)}} type="text" placeholder="Type your comment here..."/>
+                            <input className="border w-full p-4" onChange={(e) => {setCommentText(e.target.value)}} type="text" placeholder="Type your comment here..."/>
                             <div className="flex flex-col items-center gap-2">
                                 <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
                                 <i onClick={() => {
                                     setIsComment(false);
                                     addComment();
                                     setCommentText("");
-                                }} className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
+                                }} className='bx bx-plus cursor-pointer hover:text-blue-500 focus:outline-none' ></i>
                             </div>
                         </div>
                     )}
