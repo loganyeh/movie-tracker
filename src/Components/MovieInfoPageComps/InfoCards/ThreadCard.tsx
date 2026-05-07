@@ -1,14 +1,32 @@
+import { useState } from "react";
 import type { ThreadApi } from "./Thread.js";
 import { Link } from "react-router-dom";
 
 type ThreadCardProp = {
     thread: ThreadApi;
     deleteThread: (id: number) => void;
+    refreshThreads: () => void;
 }
 
-function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
+function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
+    
+    const [isComment, setIsComment] = useState(false);
+    const [commentText, setCommentText] = useState("");
 
     if(!thread) return null;
+
+    async function addComment(){
+        await fetch(`http://localhost:3000/threads/${thread.id}/comments`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                id: thread.id,
+                comment: commentText,
+            })
+        });
+
+        refreshThreads();
+    };
 
     return(
         <>
@@ -51,12 +69,27 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                 <div className="">
                     <div className="flex justify-end items-center gap-2">
                         <div className="text-sm">Comments</div>
-                        <i className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
+                        <i onClick={() => setIsComment(prev => !prev)} className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
                     </div>
 
-                    {Array.from({length: 1}).map((_, index) => {
+                    {isComment && (
+                        <div className={`border flex justify-end items-start gap-2 p-3 text-sm text-gray-600`}>
+                            <input className="border w-full p-4" onChange={(e) => {setCommentText(e.target.value)}} type="text" placeholder="Type your comment here..."/>
+                            <div className="flex flex-col items-center gap-2">
+                                <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
+                                <i onClick={() => { 
+                                    setIsComment(false);
+                                    addComment();
+                                    setCommentText("");
+                                }} className='bx bx-plus cursor-pointer hover:text-blue-500 focus:outline-none' ></i>
+                            </div>
+                        </div>
+                    )}
+                    
+
+                    {thread.comments.map((comment, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
-                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, exercitationem, expedita aliquid quidem soluta qui fuga voluptatibus ipsa, asperiores perspiciatis nemo nam optio error quisquam autem. Molestiae in illo eum.</div>
+                                    <div className="">{comment.comment}</div>
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
                                         <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
@@ -64,6 +97,17 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                                     </div>
                                 </div>
                     })}
+                    
+                    {/* {Array.from({length: 1}).map((_, index) => {
+                        return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
+                                    <div className=""></div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
+                                        <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
+                                        <i className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
+                                    </div>
+                                </div>
+                    })} */}
                     
                 </div>
 
