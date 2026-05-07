@@ -6,12 +6,10 @@ export type ThreadApi = {
     id: number;
     thread: string;
     name: string;
-    comments: [
-        {
-            id: number,
-            comment: string
-        }
-    ]
+    comments: {
+        id: number,
+        comment: string
+    }[]
 }
 
 function Thread(){
