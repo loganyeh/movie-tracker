@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { ThreadApi } from "./Thread.js";
 import { Link } from "react-router-dom";
 
@@ -7,11 +8,22 @@ type ThreadCardProp = {
 }
 
 function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
+    
+    const [isComment, setIsComment] = useState(false);
+    const [commentText, setCommentText] = useState("");
 
     if(!thread) return null;
 
-    // i think put the comments in this comp and pass the thread.id to it 
-
+    async function addComment(){
+        await fetch(`http://localhost:3000/threads/${thread.id}/comments`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                id: thread.id,
+                comment: commentText,
+            })
+        });
+    };
 
     return(
         <>
@@ -54,8 +66,23 @@ function ThreadCard({ thread, deleteThread }: ThreadCardProp ){
                 <div className="">
                     <div className="flex justify-end items-center gap-2">
                         <div className="text-sm">Comments</div>
-                        <i className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
+                        <i onClick={() => setIsComment(prev => !prev)} className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
                     </div>
+
+                    {isComment && (
+                        <div className={`border flex justify-end items-start gap-2 p-3 text-sm text-gray-600`}>
+                            <input className="border w-full" onChange={(e) => {setCommentText(e.target.value)}} type="text" placeholder="Type your comment here..."/>
+                            <div className="flex flex-col items-center gap-2">
+                                <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
+                                <i onClick={() => {
+                                    setIsComment(false);
+                                    addComment();
+                                    setCommentText("");
+                                }} className='bx bx-plus cursor-pointer hover:text-blue-500' ></i>
+                            </div>
+                        </div>
+                    )}
+                    
 
                     {thread.comments.map((comment, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
