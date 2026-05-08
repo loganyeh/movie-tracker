@@ -6,12 +6,10 @@ export type ThreadApi = {
     id: number;
     thread: string;
     name: string;
-    comments: [
-        {
-            id: number,
-            comment: string
-        }
-    ]
+    comments: {
+        id: number,
+        comment: string
+    }[]
 }
 
 function Thread(){
@@ -30,12 +28,19 @@ function Thread(){
     async function deleteThread(id: number){
         await fetch(`http://localhost:3000/threads/${id}`, {
         method: "DELETE"
-    });
+        });
 
         setThreads(prev => 
             prev.filter(thread => thread.id !== id)
         );
-    }
+    };
+
+    // async function deleteComment(id: number){
+    //     await fetch(`http:localhost:3000/threads/${id}/comments`, {
+    //         method: "DELETE"
+    //     });
+
+    // };
 
     return(
         <>
