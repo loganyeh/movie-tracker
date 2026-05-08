@@ -29,13 +29,12 @@ function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
         refreshThreads();
     };
 
-    async function deleteComment(id: number){
-        await fetch(`http://localhost:3000/threads/${id}/comments`, {
+    async function deleteComment(id: number, commentID: number){
+        await fetch(`http://localhost:3000/threads/${id}/comments/${commentID}`, {
             method: "DELETE"
         });
 
-        
-
+        refreshThreads();
     };
 
     return(
@@ -103,7 +102,7 @@ function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
                                         <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
-                                        <i onClick={() => deleteComment(thread.id)} className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
+                                        <i onClick={() => deleteComment(thread.id, comment.id)} className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
                                     </div>
                                 </div>
                     })}
