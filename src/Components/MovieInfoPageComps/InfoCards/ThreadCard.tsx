@@ -11,9 +11,10 @@ type ThreadCardProp = {
 
 function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
     const [isComment, setIsComment] = useState(false);
-    const [isEditComment, setIsEditComment] = useState(false);
-    const [changeComment, setChangeComment] = useState("");
     const [commentText, setCommentText] = useState("");
+
+    const [editingCommentId, setEditingCommentId] = useState<number | null>(null);
+    const [editText, setEditText] = useState("");
 
     if(!thread) return null;
 
@@ -36,6 +37,23 @@ function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
         });
 
         refreshThreads();
+    };
+
+    async function editComment(id: number, commentID: number){
+        await fetch(`http://localhost:3000/threads/${id}/comments/${commentID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                comment: editText
+            })
+        });
+
+        
+        refreshThreads();
+        setEditingCommentId(null);
+        setEditText("");
     };
 
     return(
@@ -98,11 +116,26 @@ function ThreadCard({ thread, deleteThread, refreshThreads }: ThreadCardProp ){
                     
                     {thread.comments.map((comment, index) => {
                         return <div key={index} className="flex justify-end items-start gap-2 p-3 text-sm text-gray-600">
-                                    <div className="p-5 w-full">{comment.comment}</div> 
+                                    <div className="border p-5 w-full">
+                                        {editingCommentId === comment.id 
+                                            ?
+                                            (<input type="text" value={editText} onChange={(e) => setEditText(e.target.value)} className="border w-full" />)
+                                            :
+                                            (<div className="">{comment.comment}</div>)
+                                        }
+                                    </div> 
+
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="shrink-0 w-6 h-6 bg-blue-300 rounded"></div>
-                                        <i className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
-                                        <i onClick={() => deleteComment(thread.id, comment.id)} className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
+                                            {editingCommentId === comment.id 
+                                                ?
+                                                (<i onClick={() => {editComment(thread.id, comment.id)}} className='bx bx-edit-alt cursor-pointer hover:text-red-800' ></i>)
+                                                :
+                                                <div className="text-center">
+                                                    <i onClick={() => {setEditingCommentId(comment.id), setEditText(comment.comment)}} className='bx bx-edit-alt cursor-pointer hover:text-red-500' ></i>
+                                                    <i onClick={() => deleteComment(thread.id, comment.id)} className='bx bx-trash cursor-pointer hover:text-red-500' ></i>
+                                                </div>
+                                            }
                                     </div>
                                 </div>
                     })}
