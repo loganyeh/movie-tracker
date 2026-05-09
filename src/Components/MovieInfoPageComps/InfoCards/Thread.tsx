@@ -35,13 +35,6 @@ function Thread(){
         );
     };
 
-    // async function deleteComment(id: number){
-    //     await fetch(`http:localhost:3000/threads/${id}/comments`, {
-    //         method: "DELETE"
-    //     });
-
-    // };
-
     return(
         <>
             <div className="flex gap-2 flex-col">
